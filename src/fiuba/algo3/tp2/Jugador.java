@@ -7,5 +7,9 @@ public class Jugador {
 	public Jugador() {
 		this.puntosDeVida = 8000;
 	}
+
+	public void quitarPuntosDeVida(int puntosPerdidos) {
+		this.puntosDeVida = this.puntosDeVida - puntosPerdidos;
+	}
 	
 }

@@ -9,7 +9,7 @@ public abstract class Zona {
 	
 	public void agregarCarta(Carta carta) {
 		if (this.limite +1 > this.limite) {
-			throw new //se lanza error
+			throw new ZonaAlcanzoCantidadMaximaDeCartasError();
 		}
 		this.cartas.add(carta);
 	}
