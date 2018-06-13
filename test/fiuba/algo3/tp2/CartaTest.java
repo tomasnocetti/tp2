@@ -35,7 +35,7 @@ public class CartaTest {
 	
 	@Test
 	public void test04colocarCartaTrampaEnCampoBocaAbajo() {
-		CartaTrampa carta = new CartaTrampa();
+		CartaTrampaOMagica carta = new CartaTrampaOMagica();
 		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
 		campo.agregarCarta(carta);
 		carta.colocarBocaAbajo();
