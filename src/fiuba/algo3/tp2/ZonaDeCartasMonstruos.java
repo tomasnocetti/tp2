@@ -5,7 +5,7 @@ public class ZonaDeCartasMonstruos extends Zona{
 	public ZonaDeCartasMonstruos() {
 		this.limite = 5;
 		this.cantidadDeCartas = 0;
-		this.settearArregleInicial(limite,cartas);
+		this.settearDiccionarioInicial(limite,cartas);
 	}
 	
 	public void agregarCarta(CartaMonstruo carta, int posicion) {

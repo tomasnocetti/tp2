@@ -67,4 +67,9 @@ public class CartaMonstruo implements Carta{
 		// TODO Auto-generated method stub
 		return this.destruida;
 	}
+
+	public void aplicarEfecto() {
+		// TODO Auto-generated method stub
+		
+	}
 }
