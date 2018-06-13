@@ -9,7 +9,7 @@ public class MonstruoBocaAbajo implements EstadoMonstruo {
 		throw new MonstruoBocaAbajoException();
 	}
 	
-	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, PosicionMonstruo posicion) {
+	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, PosicionMonstruo posicion, CartaMonstruo cartaActual) {
 		//should be implemented
 		throw new MonstruoBocaAbajoException();
 	}

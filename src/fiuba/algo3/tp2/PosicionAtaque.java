@@ -16,9 +16,19 @@ public class PosicionAtaque implements PosicionMonstruo {
 		return true;
 	}
 
-	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante) {
+	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, CartaMonstruo cartaActual) {
 		// TODO Auto-generated method stub
-//		Logica del ataque recibido
+		int diferenciaAtaque = this.puntosDeAtaque - puntosDeAtaqueRecibidos;
+		if(diferenciaAtaque < 0) {
+			cartaActual.destruirCarta();
+			System.out.println(diferenciaAtaque);
+			cartaActual.quitarVidaAJugador(-1 * diferenciaAtaque);
+		} else if ( diferenciaAtaque > 0) {
+			cartaAtacante.recibirCoontraataque(diferenciaAtaque);
+		} else {
+			cartaActual.destruirCarta();
+			cartaAtacante.recibirCoontraataque(0);
+		}
 	}
 
 }

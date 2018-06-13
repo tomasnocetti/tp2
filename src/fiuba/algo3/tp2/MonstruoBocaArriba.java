@@ -10,9 +10,9 @@ public class MonstruoBocaArriba implements EstadoMonstruo {
 		posicion.atacarMonstruo(cartaAtacante, cartaAtacada);
 	}
 	
-	public void recibirAtaque(int puntosDeAtaqueRecibidos,CartaMonstruo cartaAtacante, PosicionMonstruo posicion) {
+	public void recibirAtaque(int puntosDeAtaqueRecibidos,CartaMonstruo cartaAtacante, PosicionMonstruo posicion, CartaMonstruo cartaActual) {
 		//should be implemented
-		posicion.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante);
+		posicion.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante,cartaActual);
 	}
 	
 //	public void colocarPosicionAtaque() {
