@@ -8,17 +8,19 @@ public class CartaTest {
 
 	@Test
 	public void test01colocarCartaMonstruoPosicionAtaque() {
-		CartaMonstruo carta = new CartaMonstruo(4,1000,100); //estrellas,ataque,def
+		Jugador jugador = new Jugador();
+		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador); //estrellas,ataque,def
 		carta.colocarPosicionAtaque();
 		assertEquals(carta.estaEnPosicionAtaque() == true);
-		//deberiamos tener un atriubuto para definir su posicion?
+		//deberiamos tener un atriubuto para definir su posicion? si
 	}
 
 	@Test
 	public void test02colocarCartaMonstruoPosicionDefensa() {
-		CartaMonstruo carta = new CartaMonstruo(4,1000,100);
+		Jugador jugador = new Jugador();
+		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador);
 		carta.colocarPosicionDefenza();
-		assertEquals(carta.estaEnPosicionDefenza() == true); //nose si seria mejor (carta.estaEnPosicionAtaque == false) para tener 1 solo metodo
+		assertEquals(carta.estaEnPosicionDefenza() == true); 
 	}
 
 	@Test
@@ -28,7 +30,7 @@ public class CartaTest {
 		campo.agregarCarta(carta);
 		carta.colocarBocaAbajo();
 		assertEquals(carta.estaBocaAbajo() == true);
-		assertEquals(campo.cantidadDeCartas() == 1); //no estoy seguro si agregar carta tendria que tener un parametro que pase el estado por ahi
+		assertEquals(campo.cantidadDeCartas() == 1); 
 	}
 	
 	@Test
@@ -42,54 +44,76 @@ public class CartaTest {
 	}
 	
 	@Test
-	public void test06monstruoConMayorAtaqueAtacaAOtroConMenorAtaqueAmbosEnPosicionDeAtaque(){
+	public void test05monstruoConMayorAtaqueAtacaAOtroConMenorAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
-		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100);
-		carta1.colocarPosicionAtaque();
-		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100);
-		carta2.colocarPosicionAtaque();
-		carta2.atacarMonstruo(carta1, atacante, defensor);
+		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
+		carta1.colocarEnPosicionAtaque();
+		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,defensor);
+		carta2.colocarEnPosicionAtaque();
+		carta2.atacarMonstruo(carta1);
 		assertEquals(defensor.darPuntosDeVida() == 7200);
-		//para verificar si una carta esta muerta deferiamos tener un atributo estado?
+		equals(carta1.estaMuerta() == true);
 	}
 	
 	@Test
-	public void test07monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaque(){
+	public void test06monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
-		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100);
-		carta2.colocarPosicionAtaque();
-		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100);
-		carta1.colocarPosicionAtaque();
-		carta1.atacarMonstruo(carta2, atacante, defensor);
+		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,defensor);
+		carta2.colocarEnPosicionAtaque();
+		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
+		carta1.colocarEnPosicionAtaque();
+		carta1.atacarMonstruo(carta2);
 		assertEquals(atacante.darPuntosDeVida() == 7200);
-		//misma duda que test06
+		equals(carta1.estaMuerta() == true);
 	}
 	
 	@Test
-	public void test08monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaque(){
-		fail("Not yet implemented");
+	public void test07monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaque(){
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
+		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
+		carta2.colocarEnPosicionAtaque();
+		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
+		carta1.colocarEnPosicionAtaque();
+		carta1.atacarMonstruo(carta2);
+		equals(carta1.estaMuerta() == true);
+		equals(carta2.estaMuerta() == true);
+		assertEquals(atacante.darPuntosDeVida() == 8000);
+		assertEquals(defensor.darPuntosDeVida() == 8000);
+	}
+
+	@Test
+	public void test08monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMayorDefensa(){
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
+		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
+		carta2.colocarEnPosicionDefensa();
+		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
+		carta1.colocarEnPosicionAtaque();
+		carta1.atacarMonstruo(carta2);
+		equals(carta2.estaMuerta() == false);
+		assertEquals(defensor.darPuntosDeVida() == 8000);
+		
 	}
 
 	@Test
 	public void test09monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMenorDefensa(){
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void test10monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMayorDefensa(){
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void test11monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMayorDefensa(){
-		fail("Not yet implemented");
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
+		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
+		carta2.colocarEnPosicionDefensa();
+		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
+		carta1.colocarEnPosicionAtaque();
+		carta1.atacarMonstruo(carta2);
+		equals(carta2.estaMuerta() == true);
+		assertEquals(defensor.darPuntosDeVida() == 8000);
 	}
 	
 	@Test
-	public void test12agujeroNegro(){ 
-		fail("Not yet implemented");
+	public void test10agujeroNegro(){ 
+		
 	}
 }
 
