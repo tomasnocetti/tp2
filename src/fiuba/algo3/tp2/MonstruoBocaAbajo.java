@@ -5,12 +5,13 @@ public class MonstruoBocaAbajo implements EstadoMonstruo {
 	public MonstruoBocaAbajo() {
 	}
 	
-	public void atacarMonstruo(PosicionMonstruo posicion, int puntosDeAtaque, CartaMonstruo cartaAtacada){
+	public void atacarMonstruo(PosicionMonstruo posicion, CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
 		throw new MonstruoBocaAbajoException();
 	}
 	
-	public void recibirAtaque() {
+	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, PosicionMonstruo posicion) {
 		//should be implemented
+		throw new MonstruoBocaAbajoException();
 	}
 	
 	public void colocarPosicionAtaque() {

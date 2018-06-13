@@ -2,24 +2,24 @@ package fiuba.algo3.tp2;
 
 public class CartaMonstruo implements Carta{
 	
-	private int PuntosDeAtaque;
-    private int PuntosDeDefenza;
+	private int puntosDeAtaque;
+    private int puntosDeDefensa;
     private int estrellas;
 	private EstadoMonstruo estado;
 	private Jugador jugador;
 	private PosicionMonstruo posicion;
 	
     public CartaMonstruo(int estrella, int ataque, int defenza, Jugador jugador) {
-		this.PuntosDeAtaque = ataque;
+		this.puntosDeAtaque = ataque;
 		this.estrellas = estrella;
-		this.PuntosDeDefenza = defenza;
+		this.puntosDeDefensa = defenza;
 		this.estado = null; 
 		this.posicion = null;
 		this.jugador = jugador;
 	}
 
 	public void atacarMonstruo(CartaMonstruo otro) {
-		this.estado.atacarMonstruo(this.posicion,this.PuntosDeAtaque,otro);
+		this.estado.atacarMonstruo(this.posicion,this,otro);
 //		otro.recibirAtaque(this.PuntosDeAtaque,atacante, defensor);
     }
 
@@ -32,15 +32,15 @@ public class CartaMonstruo implements Carta{
 //	}
 	
 	public void colocarEnPosicionDefenza() {
-		this.posicion = new PosicionDefenza();
+		this.posicion = new PosicionDefensa(this.puntosDeDefensa);
 	}
 
 	public void colocarEnPosicionAtaque() {
-		this.posicion = new PosicionAtaque();
+		this.posicion = new PosicionAtaque(this.puntosDeAtaque);
 	}
 
-	public void recibirAtaque(int puntosDeAtaque2) {
+	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante) {
 		// TODO Auto-generated method stub
-		//Codear logica de recibir ataque
+		this.estado.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante, this.posicion);
 	}
 }

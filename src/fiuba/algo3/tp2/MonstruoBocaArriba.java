@@ -2,26 +2,25 @@ package fiuba.algo3.tp2;
 
 public class MonstruoBocaArriba implements EstadoMonstruo {
 	
-	private PosicionMonstruo posicion;
-	
 	public MonstruoBocaArriba() {
 		
 	}
 	
-	public void atacarMonstruo(PosicionMonstruo posicion, int puntosDeAtaque, CartaMonstruo cartaAtacada){
-		posicion.atacarMonstruo(puntosDeAtaque, cartaAtacada);
+	public void atacarMonstruo(PosicionMonstruo posicion,CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
+		posicion.atacarMonstruo(cartaAtacante, cartaAtacada);
 	}
 	
-	public void recibirAtaque() {
+	public void recibirAtaque(int puntosDeAtaqueRecibidos,CartaMonstruo cartaAtacante, PosicionMonstruo posicion) {
 		//should be implemented
+		posicion.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante);
 	}
 	
-	public void colocarPosicionAtaque() {
-		this.posicion = new PosicionAtaque();
-	}
-	
-	public boolean estaEnPosicionAtaque() {
-		return this.posicion.estaEnPosicionAtaque() ;
-	}
+//	public void colocarPosicionAtaque() {
+//		this.posicion = new PosicionAtaque();
+//	}
+//	
+//	public boolean estaEnPosicionAtaque() {
+//		return this.posicion.estaEnPosicionAtaque() ;
+//	}
 
 }
