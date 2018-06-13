@@ -8,8 +8,8 @@ public class MonstruoBocaArriba implements EstadoMonstruo {
 		
 	}
 	
-	public void atacarMonstruo() {
-		//should be implemented
+	public void atacarMonstruo(PosicionMonstruo posicion, int puntosDeAtaque, CartaMonstruo cartaAtacada){
+		posicion.atacarMonstruo(puntosDeAtaque, cartaAtacada);
 	}
 	
 	public void recibirAtaque() {
