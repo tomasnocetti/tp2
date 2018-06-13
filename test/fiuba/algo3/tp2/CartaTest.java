@@ -113,8 +113,45 @@ public class CartaTest {
 	
 	@Test
 	public void test10agujeroNegro(){ 
+		Jugador atacante = new Jugador();
+		Jugador atacado = new Jugador();
+		int pvAtacanteAntesDelAtaque = atacante.darPuntosDeVida();
+		int pvAtacadoAntesDelAtaque = atacado.darPuntosDeVida();
+		
+		atacante.colocarMonstruos();
+		atacado.colocarMonstruos();
+		
+		CartaMagica agujeroNegro = new AgujeroNegro();
+		
+		atacante.colocarBocaArriba(agujeroNegro);
+		
+		int pvAtacanteDespuesDelAtaque = atacante.darPuntosDeVida();
+		int pvAtacadoDespuesDelAtaque = atacado.darPuntosDeVida();
+		
+		boolean monstruosAtacanteDestruidos = atacante.noTieneMonstruosEnElCampo();
+		boolean monstruosAtacadoDestruidos = atacado.noTieneMonstruosEnElCampo();
+		boolean atacanteNoRecibioDano = (pvAtacanteAntesDelAtaque - pvAtacanteDespuesDelAtaque == 0);
+		boolean atacadoNoRecibioDano = (pvAtacadoDespuesDelAtaque - pvAtacadoDespuesDelAtaque == 0);
+		
+		assertEquals(monstruosAtacanteDestruidos && monstruosAtacadoDestruidos && atacanteNoRecibioDano && atacadoNoRecibioDano, true);
+	}
+	
+	// me parecen malos estos tests unitarios porque comproban varias cosas, serian mas bien tests de integracion y habria que dividirlos en varios tests unitarios
+	
+	
+	@Test
+	public void test11SacrificioDeMonstruo() {
+		Jugador jugador = new Jugador();
+		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
+		jugador.colocarBocaArriba(monstruoSacrificado);
+		
+		CartaMonstruo monstruo6Estrellas = new CartaMonstruo(6,1000,1200,jugador);
+		jugador.colocarBocaArriba(monstruo6Estrellas);
+		
+		assertEquals( monstruo6Estrellas.estaEnElCampo() && monstruoSacrificado.estaMuerta(), true);
 		
 	}
+	
 }
 
 
