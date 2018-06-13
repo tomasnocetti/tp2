@@ -10,7 +10,7 @@ public class ZonaDeCartasMonstruosTest {
 		Jugador jugador = new Jugador();
 		CartaMonstruo carta = new CartaMonstruo(3,1000,2000,jugador);
 		ZonaDeCartasMonstruos zona = new ZonaDeCartasMonstruos();
-		zona.agregarCarta(carta, 0);
+		zona.agregarCarta(carta, 1);
 		assertTrue(zona.obtenerCartas().contains(carta));
 	}
 }

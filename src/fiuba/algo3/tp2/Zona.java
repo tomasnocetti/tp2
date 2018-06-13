@@ -1,14 +1,18 @@
 package fiuba.algo3.tp2;
 
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.Hashtable;
 
 public abstract class Zona {
 	
-	protected HashMap<Integer,Carta> cartas;
+	protected Hashtable<Integer,Carta> cartas;
 	protected int limite;
 	protected int cantidadDeCartas;
 	protected Tablero tablero;
+	
+	public Zona() {
+		this.cartas = new Hashtable<Integer,Carta>();
+	}
 	
 	protected void _agregarCarta(Carta carta, int posicion) {
 		if (this.cantidadDeCartas +1 >= this.limite || posicion >= limite) {
@@ -27,13 +31,15 @@ public abstract class Zona {
 		this.tablero.destruirCarta(carta);
 	}
 	
-	protected void settearDiccionarioInicial(int n,HashMap<Integer,Carta> diccionario) {
+	protected void settearDiccionarioInicial(int n) {
 		for (int i=0; i<n; i++) {
-			diccionario.put(i, null);
+			System.out.println("HOLA");
+			this.cartas.put(i, null);
+			System.out.println("HOLA");
 		}
 	}
 	
-	public int devolverClave(HashMap<Integer,Carta> diccionario, Carta carta) {
+	public int devolverClave(Hashtable<Integer,Carta> diccionario, Carta carta) {
 		for(int x: diccionario.keySet()) {
 			if(diccionario.get(x).equals(carta)){
 				return x;
