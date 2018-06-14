@@ -33,15 +33,15 @@ public class CartaTest {
 		assertEquals(campo.cantidadDeCartas(), 1); 
 	}
 	
-//	@Test
-//	public void test04colocarCartaTrampaEnCampoBocaAbajo() {
-//		CartaTrampa carta = new CartaTrampa();
-//		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
-//		campo.agregarCarta(carta);
-//		carta.colocarBocaAbajo();
-//		assertEquals(carta.estaBocaAbajo() == true);
-//		assertEquals(campo.cantidadDeCartas() == 1);
-//	}
+	@Test
+	public void test04colocarCartaTrampaEnCampoBocaAbajo() {
+		CartaTrampa carta = new CartaTrampa();
+		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
+		campo.agregarCarta(carta, 0);
+		carta.colocarBocaAbajo();
+		assertTrue(carta.estaBocaAbajo());
+		assertEquals(campo.cantidadDeCartas(),1);
+	}
 
 
 	@Test

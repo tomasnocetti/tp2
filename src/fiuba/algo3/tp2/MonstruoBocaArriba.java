@@ -19,6 +19,10 @@ public class MonstruoBocaArriba implements EstadoMonstruo {
 		return false;
 	}
 	
+	public boolean estaBocaArriba() {
+		return true;
+	}
+	
 //	public void colocarPosicionAtaque() {
 //		this.posicion = new PosicionAtaque();
 //	}
