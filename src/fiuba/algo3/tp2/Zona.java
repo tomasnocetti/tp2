@@ -51,4 +51,8 @@ public abstract class Zona {
 	public Collection<Carta> obtenerCartas(){
 		return this.cartas.values();
 	}
+	
+	public int cantidadDeCartas() {
+		return this.cartas.size();
+	}
 }

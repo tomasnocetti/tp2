@@ -14,6 +14,10 @@ public class MonstruoBocaArriba implements EstadoMonstruo {
 		//should be implemented
 		posicion.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante,cartaActual);
 	}
+
+	public boolean estaBocaAbajo() {
+		return false;
+	}
 	
 //	public void colocarPosicionAtaque() {
 //		this.posicion = new PosicionAtaque();

@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2;
 
-public interface EstadoMonstruo {
+public interface EstadoMonstruo extends Estado{
 	
 //	public void atacarMonstruo();
 	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, PosicionMonstruo posicion, CartaMonstruo cartaActual);

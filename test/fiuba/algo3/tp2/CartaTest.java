@@ -23,16 +23,16 @@ public class CartaTest {
 		assertTrue(carta.estaEnPosicionDeDefensa()); 
 	}
 
-//	@Test
-//	public void test03colocarCartaMagicaEnCampoBocaAbajo() {
-//		CartaMagica carta = new CartaMagica();
-//		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
-//		campo.agregarCarta(carta);
-//		carta.colocarBocaAbajo();
-//		assertEquals(carta.estaBocaAbajo() == true);
-//		assertEquals(campo.cantidadDeCartas() == 1); 
-//	}
-//	
+	@Test
+	public void test03colocarCartaMagicaEnCampoBocaAbajo() {
+		CartaMagica carta = new CartaMagica();
+		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
+		campo.agregarCarta(carta, 0);
+		carta.colocarBocaAbajo();
+		assertTrue(carta.estaBocaAbajo());
+		assertEquals(campo.cantidadDeCartas(), 1); 
+	}
+	
 //	@Test
 //	public void test04colocarCartaTrampaEnCampoBocaAbajo() {
 //		CartaTrampa carta = new CartaTrampa();
@@ -42,7 +42,8 @@ public class CartaTest {
 //		assertEquals(carta.estaBocaAbajo() == true);
 //		assertEquals(campo.cantidadDeCartas() == 1);
 //	}
-//	
+
+
 	@Test
 	public void test05monstruoConMayorAtaqueAtacaAOtroConMenorAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
@@ -140,7 +141,7 @@ public class CartaTest {
 //	
 //	
 //	@Test
-//	public void test11SacrificioDeMonstruo() {
+//	public void test11SacrificioDeUnMonstruo() {
 //		Jugador jugador = new Jugador();
 //		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
 //		jugador.colocarBocaArriba(monstruoSacrificado);
@@ -149,6 +150,21 @@ public class CartaTest {
 //		jugador.colocarBocaArriba(monstruo6Estrellas);
 //		
 //		assertEquals( monstruo6Estrellas.estaEnElCampo() && monstruoSacrificado.estaMuerta(), true);
+//		
+//	}
+	
+//	@Test
+//	public void test12SacrificioDeDosMonstruos() {
+//		Jugador jugador = new Jugador();
+//		CartaMonstruo monstruoSacrificado1 = new CartaMonstruo(4,1000,1200,jugador);
+//		CartaMonstruo monstruoSacrificado2 = new CartaMonstruo(4,1000,1200,jugador);
+//		jugador.colocarBocaArriba(monstruoSacrificado1);
+//		jugador.colocarBocaArriba(monstruoSacrificado2);
+//		
+//		CartaMonstruo monstruo7Estrellas = new CartaMonstruo(7,1000,1200,jugador);
+//		jugador.colocarBocaArriba(monstruo6Estrellas);
+//		
+//		assertEquals( monstruo7Estrellas.estaEnElCampo() && monstruoSacrificado1.estaMuerta() && monstruoSacrificado2.estaMuerta(), true);
 //		
 //	}
 	

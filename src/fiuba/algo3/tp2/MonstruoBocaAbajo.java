@@ -22,4 +22,8 @@ public class MonstruoBocaAbajo implements EstadoMonstruo {
 		return false;
 	}
 
+	public boolean estaBocaAbajo() {
+		return true;
+	}
+
 }

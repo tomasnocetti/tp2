@@ -72,4 +72,13 @@ public class CartaMonstruo implements Carta{
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void colocarBocaAbajo() {
+		this.estado = new MonstruoBocaAbajo();
+		
+	}
+
+	public boolean estaBocaAbajo() {
+		return this.estado.estaBocaAbajo();
+	}
 }
