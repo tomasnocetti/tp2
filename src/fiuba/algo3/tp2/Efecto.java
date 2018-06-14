@@ -1,7 +1,7 @@
 package fiuba.algo3.tp2;
 
-public class Efecto {
+public interface Efecto {
 	
+	public void activar();
 	
-
 }

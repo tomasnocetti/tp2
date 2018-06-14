@@ -4,12 +4,12 @@ public class Jugador {
 	
 	private int puntosDeVida;
 //	private Mazo mazo;
-//	private Tablero tablero;
+	private Tablero tablero;
 	
 	public Jugador() {
 		this.puntosDeVida = 8000;
 //		this.mazo = new Mazo();
-//		this.tablero = new Tablero();
+		this.tablero = new Tablero();
 	}
 
 	public void quitarPuntosDeVida(int puntosPerdidos) {
@@ -18,6 +18,24 @@ public class Jugador {
 
 	public int darPuntosDeVida() {
 		return this.puntosDeVida;
+	}
+
+	public void colocarMonstruo(CartaMonstruo monstruo, int posicion) {
+		this.tablero.colocarMonstruo(monstruo, posicion);
+		
+	}
+
+	public void colocarBocaArriba(CartaTrampaOMagica carta) {
+		this.tablero.colocarBocaArriba(carta);
+	}
+
+	public boolean noTieneMonstruosEnElCampo() {
+		return this.tablero.noTieneMonstruos();
+	}
+
+	public void destruirMonstruos() {
+		this.tablero.destruirMonstruos();
+		
 	}
 	
 	

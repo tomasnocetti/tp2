@@ -2,6 +2,8 @@ package fiuba.algo3.tp2;
 
 import java.util.Collection;
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Set;
 
 public abstract class Zona {
 	
@@ -27,8 +29,25 @@ public abstract class Zona {
 	
 	public void eliminarCarta(Carta carta) {
 		int posicion = devolverClave(this.cartas,carta);
-		this.cartas.put(posicion, null);
+		//this.cartas.put(posicion, null) -> no se puede insertar un null value
+		this.cartas.remove(posicion);
 		this.tablero.destruirCarta(carta);
+		this.cantidadDeCartas += (-1);
+	}
+	
+	
+	public void vaciar() {
+		Set<Integer> keys = this.cartas.keySet();
+		Iterator<Integer> i = keys.iterator();
+		
+		while (i.hasNext()) {
+			int posicion = i.next();
+			Carta carta = this.cartas.get(posicion);
+			if (carta != null) {
+				this.eliminarCarta(carta);
+			}
+		}
+		
 	}
 	
 	protected void settearDiccionarioInicial(int n) {

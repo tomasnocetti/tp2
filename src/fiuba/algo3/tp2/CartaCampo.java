@@ -7,4 +7,24 @@ public class CartaCampo implements Carta{
 		
 	}
 
+	public void colocarBocaAbajo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void colocarBocaArriba() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean estaBocaAbajo() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean estaBocaArriba() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

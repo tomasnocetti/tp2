@@ -14,5 +14,9 @@ public class ZonaDeCartasMonstruos extends Zona{
 	public void agregarCarta(CartaMonstruo carta, int posicion) {
 		this._agregarCarta(carta, posicion);
 	}
+
+	public boolean estaVacia() {
+		return this.cartas.isEmpty();
+	}
 	
 }

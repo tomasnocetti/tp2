@@ -81,4 +81,13 @@ public class CartaMonstruo implements Carta{
 	public boolean estaBocaAbajo() {
 		return this.estado.estaBocaAbajo();
 	}
+
+	public void colocarBocaArriba() {
+		this.estado = new MonstruoBocaArriba();
+		
+	}
+
+	public boolean estaBocaArriba() {
+		return this.estado.estaBocaArriba();
+	}
 }
