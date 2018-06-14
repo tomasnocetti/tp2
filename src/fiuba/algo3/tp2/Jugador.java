@@ -37,6 +37,11 @@ public class Jugador {
 		this.tablero.destruirMonstruos();
 		
 	}
+
+	public void enviarAlCementerio(CartaMonstruo cartaMonstruo) {
+		this.tablero.destruirCarta(cartaMonstruo);
+		
+	}
 	
 	
 }

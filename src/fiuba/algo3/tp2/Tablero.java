@@ -1,5 +1,8 @@
 package fiuba.algo3.tp2;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 public class Tablero {
 	
 	private ZonaDeCartasMonstruos zonaMonstruos;
@@ -34,6 +37,13 @@ public class Tablero {
 
 	public void destruirMonstruos() {
 		this.zonaMonstruos.vaciar();
+		Collection monstruos = this.zonaMonstruos.obtenerCartas();
+		Iterator<CartaMonstruo> i = monstruos.iterator();
+		
+		while (i.hasNext()) {
+			CartaMonstruo monstruo = i.next();
+			this.destruirCarta(monstruo);
+		}
 		
 	}
 

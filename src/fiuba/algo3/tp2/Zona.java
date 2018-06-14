@@ -10,7 +10,7 @@ public abstract class Zona {
 	protected Hashtable<Integer,Carta> cartas;
 	protected int limite;
 	protected int cantidadDeCartas;
-	protected Tablero tablero;
+	//protected Tablero tablero;
 	
 	public Zona() {
 		this.cartas = new Hashtable<Integer,Carta>();
@@ -31,7 +31,7 @@ public abstract class Zona {
 		int posicion = devolverClave(this.cartas,carta);
 		//this.cartas.put(posicion, null) -> no se puede insertar un null value
 		this.cartas.remove(posicion);
-		this.tablero.destruirCarta(carta);
+		//this.tablero.destruirCarta(carta);
 		this.cantidadDeCartas += (-1);
 	}
 	
