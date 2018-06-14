@@ -123,10 +123,10 @@ public class UnitTestsCarta {
 	public void test15SacrificioDeUnMonstruoSacrificaElMonstruo() {
 		Jugador jugador = new Jugador();
 		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
-		jugador.colocarBocaArriba(monstruoSacrificado);
+		jugador.colocarBocaArriba(monstruoSacrificado, 0);
 		
 		CartaMonstruo monstruo6Estrellas = new CartaMonstruo(6,1000,1200,jugador);
-		jugador.colocarBocaArriba(monstruo6Estrellas);
+		jugador.colocarBocaArriba(monstruo6Estrellas, 0);
 		
 		assertTrue(monstruoSacrificado.estaDestruida());
 		
@@ -137,10 +137,10 @@ public class UnitTestsCarta {
 	public void test16SacrificioDeUnMonstruoColocaElNuevoMonstruoEnElCampo() {
 		Jugador jugador = new Jugador();
 		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
-		jugador.colocarBocaArriba(monstruoSacrificado);
+		jugador.colocarBocaArriba(monstruoSacrificado, 0);
 		
 		CartaMonstruo monstruo6Estrellas = new CartaMonstruo(6,1000,1200,jugador);
-		jugador.colocarBocaArriba(monstruo6Estrellas);
+		jugador.colocarBocaArriba(monstruo6Estrellas, 0);
 		
 		assertTrue( monstruo6Estrellas.estaEnElCampo());
 		

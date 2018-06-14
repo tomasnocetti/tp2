@@ -36,7 +36,7 @@ public class Tablero {
 		
 	}
 	
-	public void colocarBocaArriba(CartaMonstruo carta) {
+	public void colocarBocaArriba(CartaMonstruo carta, int posicion) {
 		ArrayList<CartaMonstruo> monstruosSacrificados = this.zonaMonstruos.sacrificarMonstruos(carta.numeroDeSacrificios());
 		Iterator<CartaMonstruo> m = monstruosSacrificados.iterator();
 		
@@ -45,7 +45,7 @@ public class Tablero {
 			this.destruirCarta(monstruo);
 		}
 		
-		this.zonaMonstruos.agregarCarta(carta, 0);
+		this.zonaMonstruos.agregarCarta(carta, posicion);
 		carta.colocarBocaArriba();
 		
 	}

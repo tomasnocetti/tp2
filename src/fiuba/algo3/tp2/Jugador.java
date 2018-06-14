@@ -29,8 +29,8 @@ public class Jugador {
 		this.tablero.colocarBocaArriba(carta);
 	}
 	
-	public void colocarBocaArriba(CartaMonstruo carta) {
-		this.tablero.colocarBocaArriba(carta);
+	public void colocarBocaArriba(CartaMonstruo carta, int posicion) {
+		this.tablero.colocarBocaArriba(carta, posicion);
 	}
 	
 	public void colocarBocaArriba(CartaCampo carta) {
