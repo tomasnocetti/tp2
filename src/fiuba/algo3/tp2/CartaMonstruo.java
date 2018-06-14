@@ -4,7 +4,7 @@ public class CartaMonstruo implements Carta{
 	
 	private int puntosDeAtaque;
     private int puntosDeDefensa;
-//    private int estrellas;
+    private int estrellas;
 	private EstadoMonstruo estado;
 	private Jugador jugador;
 	private PosicionMonstruo posicion;
@@ -12,7 +12,7 @@ public class CartaMonstruo implements Carta{
 	
     public CartaMonstruo(int estrella, int ataque, int defenza, Jugador jugador) {
 		this.puntosDeAtaque = ataque;
-//		this.estrellas = estrella;
+		this.estrellas = estrella;
 		this.puntosDeDefensa = defenza;
 		this.estado = new MonstruoBocaArriba(); 
 		this.posicion = null;
@@ -89,5 +89,21 @@ public class CartaMonstruo implements Carta{
 
 	public boolean estaBocaArriba() {
 		return this.estado.estaBocaArriba();
+	}
+
+	public boolean estaEnElCampo() {
+		return this.jugador.estaEnElCampo(this);
+	}
+
+	public int numeroDeSacrificios() {
+		if (4 < this.estrellas && this.estrellas < 7) {
+			return 1;
+		}
+		if (6 < this.estrellas) {
+			return 2;
+		}
+		else {
+			return 0;
+		}
 	}
 }

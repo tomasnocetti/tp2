@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -34,6 +35,25 @@ public class Tablero {
 		carta.colocarBocaArriba();
 		
 	}
+	
+	public void colocarBocaArriba(CartaMonstruo carta) {
+		ArrayList<CartaMonstruo> monstruosSacrificados = this.zonaMonstruos.sacrificarMonstruos(carta.numeroDeSacrificios());
+		Iterator<CartaMonstruo> m = monstruosSacrificados.iterator();
+		
+		while (m.hasNext()) {
+			CartaMonstruo monstruo = m.next();
+			this.destruirCarta(monstruo);
+		}
+		
+		this.zonaMonstruos.agregarCarta(carta, 0);
+		carta.colocarBocaArriba();
+		
+	}
+	
+	public void colocarBocaArriba(CartaCampo carta) {
+		// TODO
+		
+	}
 
 	public void destruirMonstruos() {
 		this.zonaMonstruos.vaciar();
@@ -46,6 +66,24 @@ public class Tablero {
 		}
 		
 	}
+
+	public boolean estaEnElCampo(CartaMonstruo cartaMonstruo) {
+		return this.zonaMonstruos.obtenerCartas().contains(cartaMonstruo);
+		
+	}
+	
+	public boolean estaEnElCampo(CartaTrampaOMagica cartaTrampaOMagica) {
+		// TODO
+		return false;
+		
+	}
+	
+	public boolean estaEnElCampo(CartaCampo cartaCampo) {
+		//TODO
+		return false;
+		
+	}
+
 
 
 }

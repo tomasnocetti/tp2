@@ -32,4 +32,19 @@ public class CartaTrampaOMagica implements Carta{
 		return this.estado.estaBocaArriba();
 	}
 
+	public boolean estaEnElCampo() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void destruirCarta() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean estaDestruida() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

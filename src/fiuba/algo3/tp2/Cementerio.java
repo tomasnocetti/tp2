@@ -11,6 +11,7 @@ public class Cementerio{
 	}
 	
 	public void agarrarCarta(Carta carta) {
+		carta.destruirCarta();
 		cartas.add(carta);
 	}
 	

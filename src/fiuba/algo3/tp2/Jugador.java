@@ -28,6 +28,15 @@ public class Jugador {
 	public void colocarBocaArriba(CartaTrampaOMagica carta) {
 		this.tablero.colocarBocaArriba(carta);
 	}
+	
+	public void colocarBocaArriba(CartaMonstruo carta) {
+		this.tablero.colocarBocaArriba(carta);
+	}
+	
+	public void colocarBocaArriba(CartaCampo carta) {
+		this.tablero.colocarBocaArriba(carta);
+	}
+	
 
 	public boolean noTieneMonstruosEnElCampo() {
 		return this.tablero.noTieneMonstruos();
@@ -40,6 +49,21 @@ public class Jugador {
 
 	public void enviarAlCementerio(CartaMonstruo cartaMonstruo) {
 		this.tablero.destruirCarta(cartaMonstruo);
+		
+	}
+
+	public boolean estaEnElCampo(CartaTrampaOMagica carta) {
+		return this.tablero.estaEnElCampo(carta);
+		
+	}
+	
+	public boolean estaEnElCampo(CartaMonstruo carta) {
+		return this.tablero.estaEnElCampo(carta);
+		
+	}
+	
+	public boolean estaEnElCampo(CartaCampo carta) {
+		return this.tablero.estaEnElCampo(carta);
 		
 	}
 	

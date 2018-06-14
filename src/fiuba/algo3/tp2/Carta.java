@@ -6,4 +6,7 @@ public interface Carta {
 	public void colocarBocaArriba();
 	public boolean estaBocaAbajo() ;
 	public boolean estaBocaArriba();
+	public boolean estaEnElCampo();
+	public void destruirCarta();
+	public boolean estaDestruida();
 }

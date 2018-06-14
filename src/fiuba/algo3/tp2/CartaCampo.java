@@ -1,6 +1,12 @@
 package fiuba.algo3.tp2;
 
 public class CartaCampo implements Carta{
+	
+	private boolean destruida;
+	
+	public CartaCampo() {
+		this.destruida = false;
+	}
 
 	public void aplicarEfecto() {
 		// TODO Auto-generated method stub
@@ -25,6 +31,20 @@ public class CartaCampo implements Carta{
 	public boolean estaBocaArriba() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public boolean estaEnElCampo() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void destruirCarta() {
+		this.destruida = true;
+		
+	}
+	
+	public boolean estaDestruida() {
+		return this.estaDestruida();
 	}
 
 }

@@ -140,20 +140,20 @@ public class CartaTest {
 		assertTrue(monstruosAtacanteDestruidos && monstruosAtacadoDestruidos && atacanteNoRecibioDano && atacadoNoRecibioDano);
 	}
 	
-//	
-//	
-//	@Test
-//	public void test11SacrificioDeUnMonstruo() {
-//		Jugador jugador = new Jugador();
-//		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
-//		jugador.colocarBocaArriba(monstruoSacrificado);
-//		
-//		CartaMonstruo monstruo6Estrellas = new CartaMonstruo(6,1000,1200,jugador);
-//		jugador.colocarBocaArriba(monstruo6Estrellas);
-//		
-//		assertEquals( monstruo6Estrellas.estaEnElCampo() && monstruoSacrificado.estaMuerta(), true);
-//		
-//	}
+	
+	
+	@Test
+	public void test11SacrificioDeUnMonstruo() {
+		Jugador jugador = new Jugador();
+		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
+		jugador.colocarBocaArriba(monstruoSacrificado);
+		
+		CartaMonstruo monstruo6Estrellas = new CartaMonstruo(6,1000,1200,jugador);
+		jugador.colocarBocaArriba(monstruo6Estrellas);
+		
+		assertTrue( monstruo6Estrellas.estaEnElCampo() && monstruoSacrificado.estaDestruida());
+		
+	}
 	
 //	@Test
 //	public void test12SacrificioDeDosMonstruos() {
