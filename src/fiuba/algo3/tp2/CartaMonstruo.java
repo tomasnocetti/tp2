@@ -1,12 +1,12 @@
 package fiuba.algo3.tp2;
 
-public class CartaMonstruo implements Carta{
+public class CartaMonstruo extends Carta{
 	
 	private int puntosDeAtaque;
     private int puntosDeDefensa;
     private int estrellas;
-	private EstadoMonstruo estado;
 	private Jugador jugador;
+	private EstadoMonstruo estado;
 	private PosicionMonstruo posicion;
 	private boolean destruida;
 	

@@ -11,7 +11,7 @@ public class MonstruoBocaArriba implements EstadoMonstruo {
 	}
 	
 	public void recibirAtaque(int puntosDeAtaqueRecibidos,CartaMonstruo cartaAtacante, PosicionMonstruo posicion, CartaMonstruo cartaActual) {
-		//should be implemented
+		
 		posicion.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante,cartaActual);
 	}
 

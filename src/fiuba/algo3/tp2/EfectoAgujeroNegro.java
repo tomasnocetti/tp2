@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2;
 
-public class EfectoAgujeroNegro implements Efecto {
+public class EfectoAgujeroNegro implements TieneUnEfecto {
 	
 	private Jugador jugador1;
 	private Jugador jugador2;

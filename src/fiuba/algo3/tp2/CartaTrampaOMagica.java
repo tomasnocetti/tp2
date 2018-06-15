@@ -1,9 +1,7 @@
 package fiuba.algo3.tp2;
 
-public class CartaTrampaOMagica implements Carta{
+public class CartaTrampaOMagica extends Carta{
 	
-	protected Estado estado;
-	protected Efecto efecto;
 	
 	public CartaTrampaOMagica() {
 		this.estado = new BocaAbajo();
