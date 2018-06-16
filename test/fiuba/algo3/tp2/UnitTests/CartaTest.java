@@ -1,14 +1,15 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.UnitTests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Cartas.AgujeroNegro;
-import Cartas.CartaMagica;
-import Cartas.CartaMonstruo.CartaMonstruo;
+import fiuba.algo3.tp2.Cartas.AgujeroNegro;
+import fiuba.algo3.tp2.Cartas.CartaMagica;
+import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
+import fiuba.algo3.tp2.Jugador;
 
-public class UnitTestsCarta {
+public class CartaTest {
 
 	@Test
 	public void test10agujeroNegroDetruyeMonstruosAtacante(){ 

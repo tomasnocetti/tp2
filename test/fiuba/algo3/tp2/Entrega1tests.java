@@ -10,7 +10,7 @@ import fiuba.algo3.tp2.Cartas.CartaTrampa;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
-public class CartaTest {
+public class Entrega1tests {
 
 	@Test
 	public void test01colocarCartaMonstruoPosicionAtaque() {

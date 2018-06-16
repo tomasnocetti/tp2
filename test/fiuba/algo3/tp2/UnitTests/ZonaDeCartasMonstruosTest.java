@@ -1,10 +1,11 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.UnitTests;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import Cartas.CartaMonstruo.CartaMonstruo;
-import Tableros.ZonaDeCartasMonstruos;
+import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
+import fiuba.algo3.tp2.Tableros.ZonaDeCartasMonstruos;
+import fiuba.algo3.tp2.Jugador;
 
 public class ZonaDeCartasMonstruosTest {
 	
