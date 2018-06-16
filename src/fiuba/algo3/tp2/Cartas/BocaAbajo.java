@@ -1,7 +1,9 @@
 package fiuba.algo3.tp2.Cartas;
 
-public class BocaAbajo implements Volteable {
+import fiuba.algo3.tp2.Excepciones.CartaBocaAbajoException;
 
+public class BocaAbajo implements Volteable {
+	
 	public boolean estaBocaAbajo() {
 		return true;
 	}
@@ -10,4 +12,8 @@ public class BocaAbajo implements Volteable {
 		return false;
 	}
 
+	public void activarEfecto(TieneUnEfecto efecto) {
+		// TODO Auto-generated method stub
+		throw new CartaBocaAbajoException();
+	}
 }

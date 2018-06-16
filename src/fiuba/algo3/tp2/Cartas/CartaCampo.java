@@ -3,14 +3,16 @@ package fiuba.algo3.tp2.Cartas;
 public class CartaCampo extends Carta{
 	
 	private boolean destruida;
+//	private TieneUnEfecto efecto;
 	
-	public CartaCampo() {
+	public CartaCampo(TieneUnEfecto efecto) {
 		this.destruida = false;
+		this.efecto = efecto;
 	}
 
-	public void aplicarEfecto() {
+	public void activarEfecto() {
 		// TODO Auto-generated method stub
-		
+		this.estado.activarEfecto(efecto);
 	}
 
 	public void colocarBocaAbajo() {
@@ -25,12 +27,12 @@ public class CartaCampo extends Carta{
 
 	public boolean estaBocaAbajo() {
 		// TODO Auto-generated method stub
-		return false;
+		return this.estado.estaBocaAbajo();
 	}
 
 	public boolean estaBocaArriba() {
 		// TODO Auto-generated method stub
-		return false;
+		return this.estado.estaBocaArriba();
 	}
 
 	public boolean estaEnElCampo() {
@@ -40,7 +42,6 @@ public class CartaCampo extends Carta{
 
 	public void destruirCarta() {
 		this.destruida = true;
-		
 	}
 	
 	public boolean estaDestruida() {

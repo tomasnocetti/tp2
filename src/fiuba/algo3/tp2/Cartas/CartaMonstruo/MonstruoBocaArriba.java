@@ -1,6 +1,8 @@
 package fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
-public class MonstruoBocaArriba implements EstadoMonstruo {
+import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
+
+public class MonstruoBocaArriba implements VolteableMonstruo {
 	
 	public MonstruoBocaArriba() {
 		
@@ -21,6 +23,11 @@ public class MonstruoBocaArriba implements EstadoMonstruo {
 	
 	public boolean estaBocaArriba() {
 		return true;
+	}
+
+	public void activarEfecto(TieneUnEfecto efecto) {
+		// TODO Auto-generated method stub
+		efecto.activarEfecto();
 	}
 	
 //	public void colocarPosicionAtaque() {

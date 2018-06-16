@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
 import fiuba.algo3.tp2.Cartas.Carta;
+import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
 import fiuba.algo3.tp2.Jugador;
 
 public class CartaMonstruo extends Carta{
@@ -9,11 +10,12 @@ public class CartaMonstruo extends Carta{
     private int puntosDeDefensa;
     private int estrellas;
 	private Jugador jugador;
-	private EstadoMonstruo estado;
+	private VolteableMonstruo estado;
 	private PosicionMonstruo posicion;
 	private boolean destruida;
+	private TieneUnEfecto efecto;
 	
-    public CartaMonstruo(int estrella, int ataque, int defenza, Jugador jugador) {
+    public CartaMonstruo(int estrella, int ataque, int defenza, Jugador jugador,TieneUnEfecto efecto) {
 		this.puntosDeAtaque = ataque;
 		this.estrellas = estrella;
 		this.puntosDeDefensa = defenza;
@@ -21,6 +23,7 @@ public class CartaMonstruo extends Carta{
 		this.posicion = null;
 		this.jugador = jugador;
 		this.destruida = false;
+		this.efecto = efecto;
 	}
 
 	public void atacarMonstruo(CartaMonstruo otro) {
@@ -108,5 +111,11 @@ public class CartaMonstruo extends Carta{
 		else {
 			return 0;
 		}
+	}
+
+	@Override
+	public void activarEfecto() {
+		// TODO Auto-generated method stub
+		this.estado.activarEfecto(efecto);
 	}
 }

@@ -1,8 +1,10 @@
 package fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
+import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
+import fiuba.algo3.tp2.Excepciones.CartaBocaAbajoException;
 import fiuba.algo3.tp2.Excepciones.MonstruoBocaAbajoException;
 
-public class MonstruoBocaAbajo implements EstadoMonstruo {
+public class MonstruoBocaAbajo implements VolteableMonstruo {
 	
 	public MonstruoBocaAbajo() {
 	}
@@ -30,6 +32,11 @@ public class MonstruoBocaAbajo implements EstadoMonstruo {
 	
 	public boolean estaBocaArriba() {
 		return false;
+	}
+
+	public void activarEfecto(TieneUnEfecto efecto) {
+		// TODO Auto-generated method stub
+		throw new MonstruoBocaAbajoException();
 	}
 
 }

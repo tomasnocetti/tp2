@@ -1,20 +1,25 @@
 package fiuba.algo3.tp2.Cartas;
 
-public class CartaTrampaOMagica extends Carta{
+public abstract class CartaTrampaOMagica extends Carta{
 	
-	
+	private boolean destruida;
+
+	public CartaTrampaOMagica(TieneUnEfecto efecto) {
+		this.destruida = false;
+		this.efecto = efecto;
+	}
+
 	public CartaTrampaOMagica() {
 		this.estado = new BocaAbajo();
 	}
 
-	public void aplicarEfecto() {
-		this.efecto.activar();
-		
+	public void activarEfecto() {
+		this.efecto.activarEfecto();
 	}
 
 	public void colocarBocaAbajo() {
 		// TODO Auto-generated method sub
-		
+		this.estado = new BocaAbajo();
 	}
 
 	public boolean estaBocaAbajo() {

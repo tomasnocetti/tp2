@@ -15,7 +15,8 @@ public class Entrega1tests {
 	@Test
 	public void test01colocarCartaMonstruoPosicionAtaque() {
 		Jugador jugador = new Jugador();
-		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador); //estrellas,ataque,def
+		TieneUnEfecto efecto = new EfectoVacio();
+		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador,efecto); //estrellas,ataque,def
 		carta.colocarEnPosicionDeAtaque();
 		assertTrue(carta.estaEnPosicionDeAtaque());
 		//deberiamos tener un atriubuto para definir su posicion? si
