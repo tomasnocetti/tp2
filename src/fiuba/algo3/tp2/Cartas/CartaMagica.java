@@ -7,6 +7,7 @@ public class CartaMagica extends CartaTrampaOMagica{
 	}
 
 	public void colocarBocaArriba() {
+		this.estado = new BocaArriba();
 		this.estado.activarEfecto(this.efecto);
 	}
 	

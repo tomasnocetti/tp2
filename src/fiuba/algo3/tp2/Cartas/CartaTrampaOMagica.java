@@ -22,10 +22,10 @@ public abstract class CartaTrampaOMagica extends Carta{
 		return this.estado.estaBocaAbajo();
 	}
 
-	public void colocarBocaArriba() {
-		// TODO Auto-generated method stub
-		
-	}
+//	public void colocarBocaArriba() {
+//		// TODO Auto-generated method stub
+//		this.estado = new BocaArriba();
+//	}
 
 	public boolean estaBocaArriba() {
 		return this.estado.estaBocaArriba();

@@ -9,4 +9,10 @@ public class CartaTrampa extends CartaTrampaOMagica{
 	public void activarEfecto() {
 		this.efecto.activarEfecto();
 	}
+
+	@Override
+	public void colocarBocaArriba() {
+		// TODO Auto-generated method stub
+		this.estado = new BocaArriba();
+	}
 }
