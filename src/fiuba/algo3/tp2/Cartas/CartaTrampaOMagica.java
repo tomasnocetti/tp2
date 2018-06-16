@@ -4,17 +4,13 @@ public abstract class CartaTrampaOMagica extends Carta{
 	
 	private boolean destruida;
 
-	public CartaTrampaOMagica(TieneUnEfecto efecto) {
-		this.destruida = false;
-		this.efecto = efecto;
-	}
-
 	public CartaTrampaOMagica() {
 		this.estado = new BocaAbajo();
+		this.destruida = false;
 	}
 
 	public void activarEfecto() {
-		this.efecto.activarEfecto();
+		this.estado.activarEfecto(this.efecto);
 	}
 
 	public void colocarBocaAbajo() {

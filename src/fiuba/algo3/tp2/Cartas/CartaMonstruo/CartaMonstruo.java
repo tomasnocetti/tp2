@@ -15,7 +15,7 @@ public class CartaMonstruo extends Carta{
 	private boolean destruida;
 	private TieneUnEfecto efecto;
 	
-    public CartaMonstruo(int estrella, int ataque, int defenza, Jugador jugador,TieneUnEfecto efecto) {
+    public CartaMonstruo(int estrella, int ataque, int defenza, Jugador jugador) {
 		this.puntosDeAtaque = ataque;
 		this.estrellas = estrella;
 		this.puntosDeDefensa = defenza;
@@ -23,7 +23,7 @@ public class CartaMonstruo extends Carta{
 		this.posicion = null;
 		this.jugador = jugador;
 		this.destruida = false;
-		this.efecto = efecto;
+//		this.efecto = efecto;
 	}
 
 	public void atacarMonstruo(CartaMonstruo otro) {

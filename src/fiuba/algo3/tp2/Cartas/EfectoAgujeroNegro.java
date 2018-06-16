@@ -12,7 +12,7 @@ public class EfectoAgujeroNegro implements TieneUnEfecto {
 		this.jugador2 = _jugador2;
 	}
 
-	public void activar() {
+	public void activarEfecto() {
 		this.jugador1.destruirMonstruos();
 		this.jugador2.destruirMonstruos();
 

@@ -7,6 +7,7 @@ import org.junit.Test;
 import fiuba.algo3.tp2.Cartas.AgujeroNegro;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaTrampa;
+import fiuba.algo3.tp2.Cartas.EfectoVacio;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
@@ -15,8 +16,7 @@ public class Entrega1tests {
 	@Test
 	public void test01colocarCartaMonstruoPosicionAtaque() {
 		Jugador jugador = new Jugador();
-		TieneUnEfecto efecto = new EfectoVacio();
-		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador,efecto); //estrellas,ataque,def
+		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador); //estrellas,ataque,def
 		carta.colocarEnPosicionDeAtaque();
 		assertTrue(carta.estaEnPosicionDeAtaque());
 		//deberiamos tener un atriubuto para definir su posicion? si
