@@ -1,5 +1,10 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.Cartas.CartaCampo;
+import fiuba.algo3.tp2.Cartas.CartaTrampaOMagica;
+import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
+import fiuba.algo3.tp2.Tableros.Tablero;
+
 public class Jugador {
 	
 	private int puntosDeVida;

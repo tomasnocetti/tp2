@@ -4,6 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import Cartas.AgujeroNegro;
+import Cartas.CartaMagica;
+import Cartas.CartaMonstruo.CartaMonstruo;
+
 public class UnitTestsCarta {
 
 	@Test

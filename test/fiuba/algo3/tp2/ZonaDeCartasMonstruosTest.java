@@ -3,6 +3,9 @@ package fiuba.algo3.tp2;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import Cartas.CartaMonstruo.CartaMonstruo;
+import Tableros.ZonaDeCartasMonstruos;
+
 public class ZonaDeCartasMonstruosTest {
 	
 	@Test
