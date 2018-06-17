@@ -1,10 +1,11 @@
-package fiuba.algo3.tp2.Cartas.CartaMonstruo;
+package fiuba.algo3.tp2.Cartas;
 
-import fiuba.algo3.tp2.Cartas.Carta;
-import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
 import fiuba.algo3.Estados.AccionAtaque;
 import fiuba.algo3.Estados.AccionDefensa;
 import fiuba.algo3.Estados.Accionable;
+import fiuba.algo3.Estados.MonstruoBocaAbajo;
+import fiuba.algo3.Estados.MonstruoBocaArriba;
+import fiuba.algo3.Estados.VolteableMonstruo;
 import fiuba.algo3.tp2.Jugador;
 
 public class CartaMonstruo extends Carta{

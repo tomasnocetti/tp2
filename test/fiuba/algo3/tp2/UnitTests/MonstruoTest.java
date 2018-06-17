@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import fiuba.algo3.tp2.Cartas.AgujeroNegro;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
-import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
+import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Jugador;
 
 public class MonstruoTest {

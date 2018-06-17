@@ -1,6 +1,6 @@
 package fiuba.algo3.Estados;
 
-import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
+import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.CartaEnPosicionDefensaException;
 
 public class AccionDefensa implements Accionable {

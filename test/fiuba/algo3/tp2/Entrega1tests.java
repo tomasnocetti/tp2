@@ -7,9 +7,9 @@ import org.junit.Test;
 import fiuba.algo3.Estados.PosicionAbajo;
 import fiuba.algo3.tp2.Cartas.AgujeroNegro;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
+import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampa;
 import fiuba.algo3.tp2.Cartas.EfectoVacio;
-import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
 public class Entrega1tests {

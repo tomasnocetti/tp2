@@ -1,6 +1,6 @@
-package fiuba.algo3.tp2.Cartas.CartaMonstruo;
+package fiuba.algo3.Estados;
 
-import fiuba.algo3.Estados.Accionable;
+import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
 
 public class MonstruoBocaArriba implements VolteableMonstruo {

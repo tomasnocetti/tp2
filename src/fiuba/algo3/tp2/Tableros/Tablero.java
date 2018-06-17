@@ -7,8 +7,8 @@ import java.util.Iterator;
 
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
+import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampaOMagica;
-import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
 
 public class Tablero {
 	

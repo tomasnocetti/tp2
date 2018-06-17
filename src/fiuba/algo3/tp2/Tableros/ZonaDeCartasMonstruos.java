@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Hashtable;
 
 import fiuba.algo3.tp2.Cartas.Carta;
-import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
+import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
 public class ZonaDeCartasMonstruos extends Zona{
 
