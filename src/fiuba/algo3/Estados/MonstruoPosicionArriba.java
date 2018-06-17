@@ -3,9 +3,9 @@ package fiuba.algo3.Estados;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
 
-public class PosicionArribaMonstruo implements VolteableMonstruo {
+public class MonstruoPosicionArriba implements MonstruoPosicionable {
 	
-	public PosicionArribaMonstruo() {
+	public MonstruoPosicionArriba() {
 		
 	}
 	

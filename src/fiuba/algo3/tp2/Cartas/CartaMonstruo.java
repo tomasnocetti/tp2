@@ -3,9 +3,9 @@ package fiuba.algo3.tp2.Cartas;
 import fiuba.algo3.Estados.AccionAtaque;
 import fiuba.algo3.Estados.AccionDefensa;
 import fiuba.algo3.Estados.Accionable;
-import fiuba.algo3.Estados.PosicionAbajoMonstruo;
-import fiuba.algo3.Estados.PosicionArribaMonstruo;
-import fiuba.algo3.Estados.VolteableMonstruo;
+import fiuba.algo3.Estados.MonstruoPosicionAbajo;
+import fiuba.algo3.Estados.MonstruoPosicionArriba;
+import fiuba.algo3.Estados.MonstruoPosicionable;
 import fiuba.algo3.tp2.Jugador;
 
 public class CartaMonstruo extends Carta{
@@ -14,7 +14,7 @@ public class CartaMonstruo extends Carta{
     private int puntosDeDefensa;
     private int estrellas;
 	private Jugador jugador;
-	private VolteableMonstruo estado;
+	private MonstruoPosicionable estado;
 	private Accionable accion;
 	private boolean destruida;
 	private TieneUnEfecto efecto;
@@ -23,7 +23,7 @@ public class CartaMonstruo extends Carta{
 		this.puntosDeAtaque = ataque;
 		this.estrellas = estrella;
 		this.puntosDeDefensa = defenza;
-		this.estado = new PosicionArribaMonstruo(); 
+		this.estado = new MonstruoPosicionArriba(); 
 		this.accion = null;
 		this.jugador = jugador;
 		this.destruida = false;
@@ -84,7 +84,7 @@ public class CartaMonstruo extends Carta{
 	}
 
 	public void colocarBocaAbajo() {
-		this.estado = new PosicionAbajoMonstruo();
+		this.estado = new MonstruoPosicionAbajo();
 		
 	}
 
@@ -93,7 +93,7 @@ public class CartaMonstruo extends Carta{
 	}
 
 	public void colocarBocaArriba() {
-		this.estado = new PosicionArribaMonstruo();
+		this.estado = new MonstruoPosicionArriba();
 		
 	}
 

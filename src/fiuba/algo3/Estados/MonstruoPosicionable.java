@@ -2,7 +2,7 @@ package fiuba.algo3.Estados;
 
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
-public interface VolteableMonstruo extends Posicionable{
+public interface MonstruoPosicionable extends Posicionable{
 	
 //	public void atacarMonstruo();
 	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual);
