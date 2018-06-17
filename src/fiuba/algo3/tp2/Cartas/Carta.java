@@ -1,9 +1,11 @@
 package fiuba.algo3.tp2.Cartas ;
 
+import fiuba.algo3.Estados.Posicionable;
+
 public abstract class Carta {
 	
 	protected TieneUnEfecto efecto;
-	protected Volteable estado;
+	protected Posicionable estado;
 	
 	public abstract void activarEfecto();
 	public abstract void colocarBocaAbajo();
@@ -15,7 +17,7 @@ public abstract class Carta {
 	public abstract boolean estaDestruida();
 	
 
-	public Volteable obtenerEstado() {
+	public Posicionable obtenerEstado() {
 		return this.estado ;
 	}
 

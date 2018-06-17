@@ -1,8 +1,9 @@
-package fiuba.algo3.tp2.Cartas;
+package fiuba.algo3.Estados;
 
+import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
 import fiuba.algo3.tp2.Excepciones.CartaBocaAbajoException;
 
-public class BocaAbajo implements Volteable {
+public class PosicionAbajo implements Posicionable {
 	
 	public boolean estaBocaAbajo() {
 		return true;

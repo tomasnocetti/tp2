@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
+import fiuba.algo3.Estados.Accionable;
 import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
 import fiuba.algo3.tp2.Excepciones.CartaBocaAbajoException;
 import fiuba.algo3.tp2.Excepciones.MonstruoBocaAbajoException;
@@ -9,11 +10,11 @@ public class MonstruoBocaAbajo implements VolteableMonstruo {
 	public MonstruoBocaAbajo() {
 	}
 	
-	public void atacarMonstruo(PosicionMonstruo posicion, CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
+	public void atacarMonstruo(Accionable posicion, CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
 		throw new MonstruoBocaAbajoException();
 	}
 	
-	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, PosicionMonstruo posicion, CartaMonstruo cartaActual) {
+	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual) {
 		//should be implemented
 		throw new MonstruoBocaAbajoException();
 	}

@@ -4,10 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fiuba.algo3.Estados.PosicionAbajo;
+import fiuba.algo3.Estados.PosicionArriba;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.AgujeroNegro;
-import fiuba.algo3.tp2.Cartas.BocaAbajo;
-import fiuba.algo3.tp2.Cartas.BocaArriba;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
@@ -19,7 +19,7 @@ public class CartaMagicaTest {
 	public void test01colocarCartaMagicaBocaAbajo() {
 		CartaMagica carta = new CartaMagica();
 		carta.colocarBocaAbajo();
-		assertEquals(carta.obtenerEstado().getClass(), BocaAbajo.class);
+		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
 	}
 	
 	@Test

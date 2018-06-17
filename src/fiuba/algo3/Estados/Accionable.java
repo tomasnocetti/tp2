@@ -1,6 +1,8 @@
-package fiuba.algo3.tp2.Cartas.CartaMonstruo;
+package fiuba.algo3.Estados;
 
-public interface PosicionMonstruo {
+import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
+
+public interface Accionable {
 
 //	public void atacarMonstruo();
 	public boolean estaEnPosicionAtaque();

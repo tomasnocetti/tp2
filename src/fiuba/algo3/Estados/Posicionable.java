@@ -1,6 +1,8 @@
-package fiuba.algo3.tp2.Cartas;
+package fiuba.algo3.Estados;
 
-public interface Volteable {
+import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
+
+public interface Posicionable {
 	
 	public boolean estaBocaAbajo();
 	

@@ -1,5 +1,7 @@
 package fiuba.algo3.tp2.Cartas;
 
+import fiuba.algo3.Estados.PosicionArriba;
+
 public class CartaTrampa extends CartaTrampaOMagica{
 	
 	public CartaTrampa() {
@@ -13,6 +15,6 @@ public class CartaTrampa extends CartaTrampaOMagica{
 	@Override
 	public void colocarBocaArriba() {
 		// TODO Auto-generated method stub
-		this.estado = new BocaArriba();
+		this.estado = new PosicionArriba();
 	}
 }

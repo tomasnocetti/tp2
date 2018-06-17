@@ -2,6 +2,9 @@ package fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
+import fiuba.algo3.Estados.AccionAtaque;
+import fiuba.algo3.Estados.AccionDefensa;
+import fiuba.algo3.Estados.Accionable;
 import fiuba.algo3.tp2.Jugador;
 
 public class CartaMonstruo extends Carta{
@@ -11,7 +14,7 @@ public class CartaMonstruo extends Carta{
     private int estrellas;
 	private Jugador jugador;
 	private VolteableMonstruo estado;
-	private PosicionMonstruo posicion;
+	private Accionable posicion;
 	private boolean destruida;
 	private TieneUnEfecto efecto;
 	
@@ -32,11 +35,11 @@ public class CartaMonstruo extends Carta{
     }
 
 	public void colocarEnPosicionDeDefensa() {
-		this.posicion = new PosicionDefensa(this.puntosDeDefensa);
+		this.posicion = new AccionDefensa(this.puntosDeDefensa);
 	}
 
 	public void colocarEnPosicionDeAtaque() {
-		this.posicion = new PosicionAtaque(this.puntosDeAtaque);
+		this.posicion = new AccionAtaque(this.puntosDeAtaque);
 	}
 	
 	public boolean estaEnPosicionDeAtaque() {

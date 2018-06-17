@@ -1,6 +1,8 @@
-package fiuba.algo3.tp2.Cartas;
+package fiuba.algo3.Estados;
 
-public class BocaArriba implements Volteable {
+import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
+
+public class PosicionArriba implements Posicionable {
 	
 
 //	private TieneUnEfecto efecto;

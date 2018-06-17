@@ -71,6 +71,4 @@ public class Jugador {
 		return this.tablero.estaEnElCampo(carta);
 		
 	}
-	
-	
 }

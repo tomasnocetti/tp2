@@ -1,10 +1,12 @@
-package fiuba.algo3.tp2.Cartas.CartaMonstruo;
+package fiuba.algo3.Estados;
 
-public class PosicionAtaque implements PosicionMonstruo {
+import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
+
+public class AccionAtaque implements Accionable {
 	
 	private int puntosDeAtaque;
 
-	public PosicionAtaque(int puntosDeAtaque) {
+	public AccionAtaque(int puntosDeAtaque) {
 		this.puntosDeAtaque = puntosDeAtaque;
 	}
 	public void atacarMonstruo(CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada) {

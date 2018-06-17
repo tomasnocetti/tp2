@@ -1,12 +1,13 @@
-package fiuba.algo3.tp2.Cartas.CartaMonstruo;
+package fiuba.algo3.Estados;
 
+import fiuba.algo3.tp2.Cartas.CartaMonstruo.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.CartaEnPosicionDefensaException;
 
-public class PosicionDefensa implements PosicionMonstruo {
+public class AccionDefensa implements Accionable {
 
 	private int puntosDeDefensa;
 	
-	public PosicionDefensa (int puntosDefensa) {
+	public AccionDefensa (int puntosDefensa) {
 		this.puntosDeDefensa = puntosDefensa;
 	}
 	

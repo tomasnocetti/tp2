@@ -1,11 +1,13 @@
 package fiuba.algo3.tp2.Cartas;
 
+import fiuba.algo3.Estados.PosicionAbajo;
+
 public abstract class CartaTrampaOMagica extends Carta{
 	
 	private boolean destruida;
 
 	public CartaTrampaOMagica() {
-		this.estado = new BocaAbajo();
+		this.estado = new PosicionAbajo();
 		this.destruida = false;
 	}
 
@@ -15,7 +17,7 @@ public abstract class CartaTrampaOMagica extends Carta{
 
 	public void colocarBocaAbajo() {
 		// TODO Auto-generated method sub
-		this.estado = new BocaAbajo();
+		this.estado = new PosicionAbajo();
 	}
 
 	public boolean estaBocaAbajo() {

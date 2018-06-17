@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
+import fiuba.algo3.Estados.Accionable;
 import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
 
 public class MonstruoBocaArriba implements VolteableMonstruo {
@@ -8,11 +9,11 @@ public class MonstruoBocaArriba implements VolteableMonstruo {
 		
 	}
 	
-	public void atacarMonstruo(PosicionMonstruo posicion,CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
+	public void atacarMonstruo(Accionable posicion,CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
 		posicion.atacarMonstruo(cartaAtacante, cartaAtacada);
 	}
 	
-	public void recibirAtaque(int puntosDeAtaqueRecibidos,CartaMonstruo cartaAtacante, PosicionMonstruo posicion, CartaMonstruo cartaActual) {
+	public void recibirAtaque(int puntosDeAtaqueRecibidos,CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual) {
 		
 		posicion.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante,cartaActual);
 	}

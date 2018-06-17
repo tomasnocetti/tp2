@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fiuba.algo3.Estados.PosicionAbajo;
 import fiuba.algo3.tp2.Cartas.AgujeroNegro;
-import fiuba.algo3.tp2.Cartas.BocaAbajo;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaTrampa;
 import fiuba.algo3.tp2.Cartas.EfectoVacio;
@@ -36,7 +36,7 @@ public class Entrega1tests {
 		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
 		campo.agregarCarta(carta, 0);
 		carta.colocarBocaAbajo();
-		assertEquals(carta.obtenerEstado().getClass(), BocaAbajo.class);
+		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
 		assertTrue(campo.obtenerCartas().contains(carta)); 
 	}
 	
@@ -46,7 +46,7 @@ public class Entrega1tests {
 		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
 		campo.agregarCarta(carta, 0);
 		carta.colocarBocaAbajo();
-		assertEquals(carta.obtenerEstado().getClass(), BocaAbajo.class);
+		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
 		assertTrue(campo.obtenerCartas().contains(carta)); 
 	}
 
