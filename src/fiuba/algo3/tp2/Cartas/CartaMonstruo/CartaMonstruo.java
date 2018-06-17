@@ -14,7 +14,7 @@ public class CartaMonstruo extends Carta{
     private int estrellas;
 	private Jugador jugador;
 	private VolteableMonstruo estado;
-	private Accionable posicion;
+	private Accionable accion;
 	private boolean destruida;
 	private TieneUnEfecto efecto;
 	
@@ -23,36 +23,36 @@ public class CartaMonstruo extends Carta{
 		this.estrellas = estrella;
 		this.puntosDeDefensa = defenza;
 		this.estado = new MonstruoBocaArriba(); 
-		this.posicion = null;
+		this.accion = null;
 		this.jugador = jugador;
 		this.destruida = false;
 //		this.efecto = efecto;
 	}
 
 	public void atacarMonstruo(CartaMonstruo otro) {
-		this.estado.atacarMonstruo(this.posicion,this,otro);
+		this.estado.atacarMonstruo(this.accion,this,otro);
 //		otro.recibirAtaque(this.PuntosDeAtaque,atacante, defensor);
     }
 
 	public void colocarEnPosicionDeDefensa() {
-		this.posicion = new AccionDefensa(this.puntosDeDefensa);
+		this.accion = new AccionDefensa(this.puntosDeDefensa);
 	}
 
 	public void colocarEnPosicionDeAtaque() {
-		this.posicion = new AccionAtaque(this.puntosDeAtaque);
+		this.accion = new AccionAtaque(this.puntosDeAtaque);
 	}
 	
 	public boolean estaEnPosicionDeAtaque() {
-		return this.posicion.estaEnPosicionAtaque();
+		return this.accion.estaEnPosicionAtaque();
 	}
 	
 	public boolean estaEnPosicionDeDefensa() {
-		return !this.posicion.estaEnPosicionAtaque();
+		return !this.accion.estaEnPosicionAtaque();
 	}
 	
 	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante) {
 		// TODO Auto-generated method stub
-		this.estado.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante, this.posicion, this);
+		this.estado.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante, this.accion, this);
 	}
 	
 	public void destruirCarta() {
