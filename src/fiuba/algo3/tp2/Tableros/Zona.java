@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
 
-import fiuba.algo3.tp2.Cartas.CartaMonstruo;
+//import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Excepciones.PosicionDeLaZonaOcupadaException;
 import fiuba.algo3.tp2.Excepciones.ZonaAlcanzoCantidadMaximaDeCartasError;
@@ -14,21 +14,18 @@ public abstract class Zona {
 	
 	protected Hashtable<Integer,Carta> cartas;
 	protected int limite;
-	protected int cantidadDeCartas;
-	//protected Tablero tablero;
 	
 	public Zona() {
 		this.cartas = new Hashtable<Integer,Carta>();
 	}
 	
-	protected void _agregarCarta(Carta carta, int posicion) {
-		if (this.cantidadDeCartas +1 >= this.limite || posicion >= limite) {
+	protected void agregarCarta(Carta carta, int posicion) {
+		if (cartas.size() +1 >= this.limite || posicion >= limite) {
 			throw new ZonaAlcanzoCantidadMaximaDeCartasError();
 		}
 		if (cartas.get(posicion) != null) {
 			throw new PosicionDeLaZonaOcupadaException();
 		}
-		this.cantidadDeCartas +=1;
 		this.cartas.put(posicion, carta);
 	}
 	
@@ -39,7 +36,6 @@ public abstract class Zona {
 		//this.cartas.put(posicion, null) -> no se puede insertar un null value
 		this.cartas.remove(posicion);
 		//this.tablero.destruirCarta(carta);
-		this.cantidadDeCartas += (-1);
 	}
 	
 	

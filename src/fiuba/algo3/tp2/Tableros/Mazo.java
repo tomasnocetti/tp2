@@ -13,13 +13,6 @@ public class Mazo{
 	public Mazo() {
 		this.cantidadDeCartas = 40;
 		this.cartas = new ArrayList<Carta>();
-//		this.setteoInicialMazo();
-	}
-	
-	private void setteoInicialMazo() {
-		// TODO Auto-generated method stub
-//		A implementar el setteo inicial del mazo
-		return;
 	}
 
 	public Carta agarrarCarta() {

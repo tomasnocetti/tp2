@@ -16,6 +16,4 @@ public class Cementerio{
 		carta.destruirCarta();
 		cartas.add(carta);
 	}
-	
-	
 }

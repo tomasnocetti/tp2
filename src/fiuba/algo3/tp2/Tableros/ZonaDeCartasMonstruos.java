@@ -1,7 +1,6 @@
 package fiuba.algo3.tp2.Tableros;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Hashtable;
 
 import fiuba.algo3.tp2.Cartas.Carta;
@@ -11,13 +10,11 @@ public class ZonaDeCartasMonstruos extends Zona{
 
 	public ZonaDeCartasMonstruos() {
 		this.limite = 5;
-		this.cantidadDeCartas = 0;
-//		this.settearDiccionarioInicial(this.limite);
 		this.cartas = new Hashtable<Integer,Carta>();
 	}
 	
 	public void agregarCarta(CartaMonstruo carta, int posicion) {
-		this._agregarCarta(carta, posicion);
+		super.agregarCarta(carta, posicion);
 	}
 
 	public boolean estaVacia() {

@@ -17,7 +17,7 @@ import fiuba.algo3.tp2.Tableros.ZonaDeCartasDeCampo;
 public class Jugador {
 	
 	private int puntosDeVida;
-//	private Mazo mazo;
+	//private Mano mazo;
 	private ZonaDeCartasMonstruos zonaMonstruos;
 	private ZonaDeCartasDeCampo zonaCartasDeCampo;
 	private ZonaDeCartasMagicasOTrampas zonaCartasMagicasOTrampas;
@@ -25,11 +25,11 @@ public class Jugador {
 	
 	public Jugador() {
 		this.puntosDeVida = 8000;
-//		this.mazo = new Mazo();
+		//this.mazo = new Mazo();
 		this.cementerio = new Cementerio();
 		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas();
 		this.zonaMonstruos = new ZonaDeCartasMonstruos();
-		//this.zonaCartasDeCampo = new ZonaDeCartasDeCampo();
+		this.zonaCartasDeCampo = new ZonaDeCartasDeCampo();
 	}
 
 	public void quitarPuntosDeVida(int puntosPerdidos) {
@@ -57,14 +57,17 @@ public class Jugador {
 	
 	public void enviarAlCementerio(CartaCampo carta) {
 		cementerio.agarrarCarta(carta);
+		zonaCartasDeCampo.eliminarCarta(carta);
 	}
 	
 	public void enviarAlCementerio(CartaTrampaOMagica carta) {
 		cementerio.agarrarCarta(carta);
+		zonaCartasMagicasOTrampas.eliminarCarta(carta);
 	}
 	
 	public void enviarAlCementerio(CartaMonstruo carta) {
 		cementerio.agarrarCarta(carta);
+		zonaMonstruos.eliminarCarta(carta);
 	}
 	
 	public void colocarMonstruo(CartaMonstruo monstruo, int posicion) {
