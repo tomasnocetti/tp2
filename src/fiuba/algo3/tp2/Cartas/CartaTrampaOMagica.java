@@ -7,21 +7,21 @@ public abstract class CartaTrampaOMagica extends Carta{
 	private boolean destruida;
 
 	public CartaTrampaOMagica() {
-		this.estado = new PosicionAbajo();
+		this.posicion = new PosicionAbajo();
 		this.destruida = false;
 	}
 
 	public void activarEfecto() {
-		this.estado.activarEfecto(this.efecto);
+		this.posicion.activarEfecto(this.efecto);
 	}
 
 	public void colocarBocaAbajo() {
 		// TODO Auto-generated method sub
-		this.estado = new PosicionAbajo();
+		this.posicion = new PosicionAbajo();
 	}
 
 	public boolean estaBocaAbajo() {
-		return this.estado.estaBocaAbajo();
+		return this.posicion.estaBocaAbajo();
 	}
 
 //	public void colocarBocaArriba() {
@@ -30,7 +30,7 @@ public abstract class CartaTrampaOMagica extends Carta{
 //	}
 
 	public boolean estaBocaArriba() {
-		return this.estado.estaBocaArriba();
+		return this.posicion.estaBocaArriba();
 	}
 
 	public boolean estaEnElCampo() {

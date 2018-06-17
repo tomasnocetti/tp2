@@ -5,7 +5,7 @@ import fiuba.algo3.Estados.Posicionable;
 public abstract class Carta {
 	
 	protected TieneUnEfecto efecto;
-	protected Posicionable estado;
+	protected Posicionable posicion;
 	
 	public abstract void activarEfecto();
 	public abstract void colocarBocaAbajo();
@@ -18,7 +18,7 @@ public abstract class Carta {
 	
 
 	public Posicionable obtenerEstado() {
-		return this.estado ;
+		return this.posicion ;
 	}
 
 }

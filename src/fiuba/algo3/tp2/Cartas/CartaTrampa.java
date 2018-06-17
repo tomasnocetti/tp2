@@ -15,6 +15,6 @@ public class CartaTrampa extends CartaTrampaOMagica{
 	@Override
 	public void colocarBocaArriba() {
 		// TODO Auto-generated method stub
-		this.estado = new PosicionArriba();
+		this.posicion = new PosicionArriba();
 	}
 }

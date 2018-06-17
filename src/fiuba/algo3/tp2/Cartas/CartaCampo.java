@@ -10,7 +10,7 @@ public class CartaCampo extends Carta{
 
 	public void activarEfecto() {
 		// TODO Auto-generated method stub
-		this.estado.activarEfecto(this.efecto);
+		this.posicion.activarEfecto(this.efecto);
 	}
 
 	public void colocarBocaAbajo() {
@@ -25,12 +25,12 @@ public class CartaCampo extends Carta{
 
 	public boolean estaBocaAbajo() {
 		// TODO Auto-generated method stub
-		return this.estado.estaBocaAbajo();
+		return this.posicion.estaBocaAbajo();
 	}
 
 	public boolean estaBocaArriba() {
 		// TODO Auto-generated method stub
-		return this.estado.estaBocaArriba();
+		return this.posicion.estaBocaArriba();
 	}
 
 	public boolean estaEnElCampo() {

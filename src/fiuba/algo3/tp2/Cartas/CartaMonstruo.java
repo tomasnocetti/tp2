@@ -14,7 +14,7 @@ public class CartaMonstruo extends Carta{
     private int puntosDeDefensa;
     private int estrellas;
 	private Jugador jugador;
-	private MonstruoPosicionable estado;
+	private MonstruoPosicionable posicion;
 	private Accionable accion;
 	private boolean destruida;
 	private TieneUnEfecto efecto;
@@ -23,7 +23,7 @@ public class CartaMonstruo extends Carta{
 		this.puntosDeAtaque = ataque;
 		this.estrellas = estrella;
 		this.puntosDeDefensa = defenza;
-		this.estado = new MonstruoPosicionArriba(); 
+		this.posicion = new MonstruoPosicionArriba(); 
 		this.accion = null;
 		this.jugador = jugador;
 		this.destruida = false;
@@ -31,7 +31,7 @@ public class CartaMonstruo extends Carta{
 	}
 
 	public void atacarMonstruo(CartaMonstruo otro) {
-		this.estado.atacarMonstruo(this.accion,this,otro);
+		this.posicion.atacarMonstruo(this.accion,this,otro);
 //		otro.recibirAtaque(this.PuntosDeAtaque,atacante, defensor);
     }
 
@@ -53,7 +53,7 @@ public class CartaMonstruo extends Carta{
 	
 	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante) {
 		// TODO Auto-generated method stub
-		this.estado.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante, this.accion, this);
+		this.posicion.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante, this.accion, this);
 	}
 	
 	public void destruirCarta() {
@@ -84,21 +84,21 @@ public class CartaMonstruo extends Carta{
 	}
 
 	public void colocarBocaAbajo() {
-		this.estado = new MonstruoPosicionAbajo();
+		this.posicion = new MonstruoPosicionAbajo();
 		
 	}
 
 	public boolean estaBocaAbajo() {
-		return this.estado.estaBocaAbajo();
+		return this.posicion.estaBocaAbajo();
 	}
 
 	public void colocarBocaArriba() {
-		this.estado = new MonstruoPosicionArriba();
+		this.posicion = new MonstruoPosicionArriba();
 		
 	}
 
 	public boolean estaBocaArriba() {
-		return this.estado.estaBocaArriba();
+		return this.posicion.estaBocaArriba();
 	}
 
 	public boolean estaEnElCampo() {
@@ -120,6 +120,6 @@ public class CartaMonstruo extends Carta{
 	@Override
 	public void activarEfecto() {
 		// TODO Auto-generated method stub
-		this.estado.activarEfecto(efecto);
+		this.posicion.activarEfecto(efecto);
 	}
 }
