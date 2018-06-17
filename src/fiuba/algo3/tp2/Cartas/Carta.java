@@ -13,4 +13,10 @@ public abstract class Carta {
 	public abstract boolean estaEnElCampo();
 	public abstract void destruirCarta();
 	public abstract boolean estaDestruida();
+	
+
+	public Volteable obtenerEstado() {
+		return this.estado ;
+	}
+
 }

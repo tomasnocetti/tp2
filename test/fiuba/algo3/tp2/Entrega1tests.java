@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import fiuba.algo3.tp2.Cartas.AgujeroNegro;
+import fiuba.algo3.tp2.Cartas.BocaAbajo;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaTrampa;
 import fiuba.algo3.tp2.Cartas.EfectoVacio;
@@ -19,7 +20,6 @@ public class Entrega1tests {
 		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador); //estrellas,ataque,def
 		carta.colocarEnPosicionDeAtaque();
 		assertTrue(carta.estaEnPosicionDeAtaque());
-		//deberiamos tener un atriubuto para definir su posicion? si
 	}
 
 	@Test
@@ -36,8 +36,8 @@ public class Entrega1tests {
 		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
 		campo.agregarCarta(carta, 0);
 		carta.colocarBocaAbajo();
-		assertTrue(carta.estaBocaAbajo());
-		assertEquals(campo.cantidadDeCartas(), 1); 
+		assertEquals(carta.obtenerEstado().getClass(), BocaAbajo.class);
+		assertTrue(campo.obtenerCartas().contains(carta)); 
 	}
 	
 	@Test
@@ -46,8 +46,8 @@ public class Entrega1tests {
 		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
 		campo.agregarCarta(carta, 0);
 		carta.colocarBocaAbajo();
-		assertTrue(carta.estaBocaAbajo());
-		assertEquals(campo.cantidadDeCartas(),1);
+		assertEquals(carta.obtenerEstado().getClass(), BocaAbajo.class);
+		assertTrue(campo.obtenerCartas().contains(carta)); 
 	}
 
 
