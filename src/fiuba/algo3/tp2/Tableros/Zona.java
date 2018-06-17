@@ -5,6 +5,7 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
 
+import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Excepciones.PosicionDeLaZonaOcupadaException;
 import fiuba.algo3.tp2.Excepciones.ZonaAlcanzoCantidadMaximaDeCartasError;
@@ -58,9 +59,7 @@ public abstract class Zona {
 	
 	protected void settearDiccionarioInicial(int n) {
 		for (int i=0; i<n; i++) {
-			System.out.println("HOLA");
 			this.cartas.put(i, null);
-			System.out.println("HOLA");
 		}
 	}
 	

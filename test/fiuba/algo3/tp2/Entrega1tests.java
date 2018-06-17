@@ -9,7 +9,7 @@ import fiuba.algo3.tp2.Cartas.AgujeroNegro;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampa;
-import fiuba.algo3.tp2.Cartas.EfectoVacio;
+//import fiuba.algo3.tp2.Cartas.EfectoVacio;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
 public class Entrega1tests {
@@ -124,7 +124,7 @@ public class Entrega1tests {
 		Jugador atacante = new Jugador();
 		Jugador atacado = new Jugador();
 		int pvAtacanteAntesDelAtaque = atacante.darPuntosDeVida();
-		int pvAtacadoAntesDelAtaque = atacado.darPuntosDeVida();
+		//int pvAtacadoAntesDelAtaque = atacado.darPuntosDeVida();
 		
 		CartaMonstruo monstruoAtacante = new CartaMonstruo(4, 1000, 1200, atacante);
 		CartaMonstruo monstruoAtacado = new CartaMonstruo(4, 1000, 1200, atacado);
@@ -139,8 +139,8 @@ public class Entrega1tests {
 		int pvAtacanteDespuesDelAtaque = atacante.darPuntosDeVida();
 		int pvAtacadoDespuesDelAtaque = atacado.darPuntosDeVida();
 		
-		boolean monstruosAtacanteDestruidos = atacante.noTieneMonstruosEnElCampo();
-		boolean monstruosAtacadoDestruidos = atacado.noTieneMonstruosEnElCampo();
+		boolean monstruosAtacanteDestruidos = atacante.noTieneMonstruos();
+		boolean monstruosAtacadoDestruidos = atacado.noTieneMonstruos();
 		boolean atacanteNoRecibioDano = (pvAtacanteAntesDelAtaque - pvAtacanteDespuesDelAtaque == 0);
 		boolean atacadoNoRecibioDano = (pvAtacadoDespuesDelAtaque - pvAtacadoDespuesDelAtaque == 0);
 		
