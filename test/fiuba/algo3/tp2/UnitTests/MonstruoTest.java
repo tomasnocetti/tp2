@@ -7,6 +7,7 @@ import org.junit.Test;
 //import fiuba.algo3.tp2.Cartas.AgujeroNegro;
 //import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
+import fiuba.algo3.Estados.*;
 import fiuba.algo3.tp2.Jugador;
 
 public class MonstruoTest {
@@ -16,7 +17,8 @@ public class MonstruoTest {
 		Jugador jugador = new Jugador();
 		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador); //estrellas,ataque,def
 		carta.colocarEnAccionDeAtaque();
-		assertTrue(carta.estaEnPosicionDeAtaque());
+		Accionable accionMonstruo = carta.obtenerAccion();
+		assertEquals(accionMonstruo.getClass(), AccionAtaque.class);
 	}
 	
 	
@@ -25,7 +27,8 @@ public class MonstruoTest {
 		Jugador jugador = new Jugador();
 		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador);
 		carta.colocarEnAccionDeDefensa();
-		assertTrue(carta.estaEnPosicionDeDefensa()); 
+		Accionable accionMonstruo = carta.obtenerAccion();
+		assertEquals(accionMonstruo.getClass(), AccionDefensa.class); 
 	}
 	
 	
@@ -37,7 +40,7 @@ public class MonstruoTest {
 		carta1.colocarEnAccionDeAtaque();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,atacante);
 		carta2.colocarEnAccionDeAtaque();
-		carta2.atacarMonstruo(carta1);
+		carta2.atacar(carta1);
 		assertEquals(7200,atacado.darPuntosDeVida());
 	}
 	
@@ -50,7 +53,7 @@ public class MonstruoTest {
 		carta1.colocarEnAccionDeAtaque();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,atacante);
 		carta2.colocarEnAccionDeAtaque();
-		carta2.atacarMonstruo(carta1);
+		carta2.atacar(carta1);
 		assertTrue(carta1.estaDestruida()); // este metodo no deberia existir
 	}
 	
@@ -63,7 +66,7 @@ public class MonstruoTest {
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertEquals(7200,atacante.darPuntosDeVida());
 	}
 	
@@ -75,7 +78,7 @@ public class MonstruoTest {
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertTrue(carta1.estaDestruida());
 	}
 	
@@ -88,7 +91,7 @@ public class MonstruoTest {
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertTrue(carta1.estaDestruida()); // este metodo no esta bien
 	}
 	
@@ -101,7 +104,7 @@ public class MonstruoTest {
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertTrue(carta2.estaDestruida());
 	}
 	
@@ -114,7 +117,7 @@ public class MonstruoTest {
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertEquals(8000,atacante.darPuntosDeVida());
 	}
 	
@@ -127,7 +130,7 @@ public class MonstruoTest {
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertEquals(8000,defensor.darPuntosDeVida());
 	}
 	
@@ -140,7 +143,7 @@ public class MonstruoTest {
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertFalse(carta2.estaDestruida());
 		
 	}
@@ -153,7 +156,7 @@ public class MonstruoTest {
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertEquals(8000,defensor.darPuntosDeVida());
 		
 	}
@@ -166,7 +169,7 @@ public class MonstruoTest {
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertTrue(carta2.estaDestruida());
 	}
 	
@@ -178,7 +181,7 @@ public class MonstruoTest {
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertEquals(8000,defensor.darPuntosDeVida());
 	}
 	
