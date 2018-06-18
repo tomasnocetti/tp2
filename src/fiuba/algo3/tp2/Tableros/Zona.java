@@ -8,9 +8,10 @@ import java.util.Set;
 //import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Excepciones.PosicionDeLaZonaOcupadaException;
-import fiuba.algo3.tp2.Excepciones.ZonaAlcanzoCantidadMaximaDeCartasError;
+import fiuba.algo3.tp2.Excepciones.PosicionDeZonaFueraDeRangoExcepcion;
+import fiuba.algo3.tp2.Excepciones.ZonaAlcanzoCantidadMaximaDeCartasExcepcion;
 
-public abstract class Zona {
+public class Zona {
 	
 	protected Hashtable<Integer,Carta> cartas;
 	protected int limite;
@@ -20,11 +21,14 @@ public abstract class Zona {
 	}
 	
 	protected void agregarCarta(Carta carta, int posicion) {
-		if (cartas.size() +1 >= this.limite || posicion >= limite) {
-			throw new ZonaAlcanzoCantidadMaximaDeCartasError();
+		if (posicion > limite) {
+			throw new PosicionDeZonaFueraDeRangoExcepcion();
 		}
 		if (cartas.get(posicion) != null) {
 			throw new PosicionDeLaZonaOcupadaException();
+		}
+		if (cartas.size() +1 > this.limite) {
+			throw new ZonaAlcanzoCantidadMaximaDeCartasExcepcion();
 		}
 		this.cartas.put(posicion, carta);
 	}
@@ -49,13 +53,6 @@ public abstract class Zona {
 			if (carta != null) {
 				this.eliminarCarta(carta);
 			}
-		}
-		
-	}
-	
-	protected void settearDiccionarioInicial(int n) {
-		for (int i=0; i<n; i++) {
-			this.cartas.put(i, null);
 		}
 	}
 	
