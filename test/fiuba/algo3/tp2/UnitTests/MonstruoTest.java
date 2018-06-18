@@ -36,11 +36,12 @@ public class MonstruoTest {
 	
 	@Test
 	public void test03monstruoConMayorAtaqueAtacaAOtroConMenorAtaqueAmbosEnPosicionDeAtaqueYQuitaPuntosDeVidaAlOponente(){
-		Jugador atacante = new Jugador();
+		
 		Jugador atacado = new Jugador();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacado);
+		atacado.colocarCartaEnZona(carta1, 0);
+		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1800, 1000);
 		carta1.colocarEnAccionDeAtaque();
-		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,atacante);
 		carta2.colocarEnAccionDeAtaque();
 		carta2.atacar(carta1);
 		assertEquals(7200,atacado.obtenerPuntosDeVida());
