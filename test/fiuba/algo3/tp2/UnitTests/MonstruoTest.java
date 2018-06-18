@@ -15,7 +15,7 @@ public class MonstruoTest {
 	public void test01colocarCartaMonstruoPosicionAtaque() {
 		Jugador jugador = new Jugador();
 		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador); //estrellas,ataque,def
-		carta.colocarEnPosicionDeAtaque();
+		carta.colocarEnAccionDeAtaque();
 		assertTrue(carta.estaEnPosicionDeAtaque());
 	}
 	
@@ -24,7 +24,7 @@ public class MonstruoTest {
 	public void test02colocarCartaMonstruoPosicionDefensa() {
 		Jugador jugador = new Jugador();
 		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador);
-		carta.colocarEnPosicionDeDefensa();
+		carta.colocarEnAccionDeDefensa();
 		assertTrue(carta.estaEnPosicionDeDefensa()); 
 	}
 	
@@ -34,9 +34,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador atacado = new Jugador();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacado);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,atacante);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		carta2.atacarMonstruo(carta1);
 		assertEquals(7200,atacado.darPuntosDeVida());
 	}
@@ -47,9 +47,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,defensor);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,atacante);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		carta2.atacarMonstruo(carta1);
 		assertTrue(carta1.estaDestruida()); // este metodo no deberia existir
 	}
@@ -60,9 +60,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,defensor);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertEquals(7200,atacante.darPuntosDeVida());
 	}
@@ -72,9 +72,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,defensor);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertTrue(carta1.estaDestruida());
 	}
@@ -85,9 +85,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertTrue(carta1.estaDestruida()); // este metodo no esta bien
 	}
@@ -98,9 +98,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertTrue(carta2.estaDestruida());
 	}
@@ -111,9 +111,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertEquals(8000,atacante.darPuntosDeVida());
 	}
@@ -124,9 +124,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertEquals(8000,defensor.darPuntosDeVida());
 	}
@@ -137,9 +137,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
-		carta2.colocarEnPosicionDeDefensa();
+		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertFalse(carta2.estaDestruida());
 		
@@ -150,9 +150,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
-		carta2.colocarEnPosicionDeDefensa();
+		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertEquals(8000,defensor.darPuntosDeVida());
 		
@@ -163,9 +163,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
-		carta2.colocarEnPosicionDeDefensa();
+		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertTrue(carta2.estaDestruida());
 	}
@@ -175,9 +175,9 @@ public class MonstruoTest {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
-		carta2.colocarEnPosicionDeDefensa();
+		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertEquals(8000,defensor.darPuntosDeVida());
 	}

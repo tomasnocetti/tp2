@@ -29,14 +29,14 @@ public class CartaMonstruo extends Carta{
 	}
 
 	public void atacar(CartaMonstruo otro) {
-		this.posicion.atacar(this.accion,this,otro);
+		this.posicion.atacar(this.accion, this, otro);
     }
 
-	public void colocarEnPosicionDeDefensa() {
+	public void colocarEnAccionDeDefensa() {
 		this.accion = new AccionDefensa(this.puntosDeDefensa);
 	}
 
-	public void colocarEnPosicionDeAtaque() {
+	public void colocarEnAccionDeAtaque() {
 		this.accion = new AccionAtaque(this.puntosDeAtaque);
 	}
 	

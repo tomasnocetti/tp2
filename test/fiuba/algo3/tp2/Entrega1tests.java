@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import fiuba.algo3.Estados.PosicionAbajo;
 import fiuba.algo3.tp2.Cartas.AgujeroNegro;
+import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampa;
@@ -15,19 +16,20 @@ import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 public class Entrega1tests {
 
 	@Test
-	public void test01colocarCartaMonstruoPosicionAtaque() {
-		Jugador jugador = new Jugador();
-		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador); //estrellas,ataque,def
-		carta.colocarEnPosicionDeAtaque();
-		assertTrue(carta.estaEnPosicionDeAtaque());
+	public void test01colocarCartaMonstruoAccionAtaque() {
+		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica();		
+		carta.colocarEnAccionDeAtaque();
+		
 	}
 
 	@Test
-	public void test02colocarCartaMonstruoPosicionDefensa() {
-		Jugador jugador = new Jugador();
-		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador);
-		carta.colocarEnPosicionDeDefensa();
-		assertTrue(carta.estaEnPosicionDeDefensa()); 
+	public void test02colocarCartaMonstruoAccionDefensa() {
+		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica();
+		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica();
+		carta.colocarEnAccionDeDefensa();
+		
+		carta.atacar(carta2);
+		
 	}
 
 	@Test
@@ -56,9 +58,9 @@ public class Entrega1tests {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,defensor);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,atacante);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		carta2.atacarMonstruo(carta1);
 		assertEquals(7200,defensor.darPuntosDeVida());
 		assertTrue(carta1.estaDestruida());
@@ -69,9 +71,9 @@ public class Entrega1tests {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,defensor);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertEquals(7200,atacante.darPuntosDeVida());
 		assertTrue(carta1.estaDestruida());
@@ -82,9 +84,9 @@ public class Entrega1tests {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
-		carta2.colocarEnPosicionDeAtaque();
+		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertTrue(carta1.estaDestruida());
 		assertTrue(carta2.estaDestruida());
@@ -97,9 +99,9 @@ public class Entrega1tests {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
-		carta2.colocarEnPosicionDeDefensa();
+		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertFalse(carta2.estaDestruida());
 		assertEquals(8000,defensor.darPuntosDeVida());
@@ -111,9 +113,9 @@ public class Entrega1tests {
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
-		carta2.colocarEnPosicionDeDefensa();
+		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
-		carta1.colocarEnPosicionDeAtaque();
+		carta1.colocarEnAccionDeAtaque();
 		carta1.atacarMonstruo(carta2);
 		assertTrue(carta2.estaDestruida());
 		assertEquals(8000,defensor.darPuntosDeVida());

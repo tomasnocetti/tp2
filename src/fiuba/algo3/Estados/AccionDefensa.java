@@ -1,7 +1,7 @@
 package fiuba.algo3.Estados;
 
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
-import fiuba.algo3.tp2.Excepciones.CartaEnPosicionDefensaException;
+import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
 
 public class AccionDefensa implements Accionable {
 
@@ -12,7 +12,7 @@ public class AccionDefensa implements Accionable {
 	}
 	
 	public void atacarMonstruo(CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada) {
-		throw new CartaEnPosicionDefensaException();
+		throw new CartaEnAccionDefensaException();
 	}
 
 	public boolean estaEnPosicionAtaque() {

@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.Excepciones;
 
-public class CartaEnPosicionDefensaException extends RuntimeException {
+public class CartaEnAccionDefensaException extends RuntimeException {
 
 	/**
 	 * 
