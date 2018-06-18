@@ -10,6 +10,7 @@ import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampa;
+import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
 //import fiuba.algo3.tp2.Cartas.EfectoVacio;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
@@ -22,14 +23,12 @@ public class Entrega1tests {
 		
 	}
 
-	@Test
+	@Test(expected = CartaEnAccionDefensaException.class)
 	public void test02colocarCartaMonstruoAccionDefensa() {
 		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica();
 		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica();
 		carta.colocarEnAccionDeDefensa();
-		
 		carta.atacar(carta2);
-		
 	}
 
 	@Test
