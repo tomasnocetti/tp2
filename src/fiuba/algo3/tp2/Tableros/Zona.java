@@ -49,8 +49,7 @@ public abstract class Zona {
 			if (carta != null) {
 				this.eliminarCarta(carta);
 			}
-		}
-		
+		}		
 	}
 	
 	protected void settearDiccionarioInicial(int n) {

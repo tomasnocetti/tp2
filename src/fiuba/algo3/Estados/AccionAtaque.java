@@ -19,16 +19,14 @@ public class AccionAtaque implements Accionable {
 	}
 
 	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, CartaMonstruo cartaActual) {
-		// TODO Auto-generated method stub
 		int diferenciaAtaque = this.puntosDeAtaque - puntosDeAtaqueRecibidos;
 		if(diferenciaAtaque < 0) {
-			cartaActual.destruirCarta();
-			System.out.println(diferenciaAtaque);
+			// DESTRUIR
 			cartaActual.quitarVidaAJugador(-1 * diferenciaAtaque);
 		} else if ( diferenciaAtaque > 0) {
 			cartaAtacante.recibirCoontraataque(diferenciaAtaque);
 		} else {
-			cartaActual.destruirCarta();
+			// DESTRUIR
 			cartaAtacante.recibirCoontraataque(0);
 		}
 	}

@@ -13,8 +13,6 @@ public abstract class Carta {
 	public abstract boolean estaBocaAbajo() ;
 	public abstract boolean estaBocaArriba();
 	public abstract boolean estaEnElCampo();
-	public abstract void destruirCarta();
-	public abstract boolean estaDestruida();
 	
 
 	public Posicionable obtenerEstado() {
