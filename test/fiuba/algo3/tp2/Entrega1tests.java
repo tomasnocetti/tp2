@@ -59,9 +59,9 @@ public class Entrega1tests {
 		carta1.colocarEnPosicionDeAtaque();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,atacante);
 		carta2.colocarEnPosicionDeAtaque();
-		carta2.atacar(carta1);
+		carta2.atacarMonstruo(carta1);
 		assertEquals(7200,defensor.darPuntosDeVida());
-//		assertTrue(carta1.estaDestruida());
+		assertTrue(carta1.estaDestruida());
 	}
 	
 	@Test
@@ -72,9 +72,9 @@ public class Entrega1tests {
 		carta2.colocarEnPosicionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnPosicionDeAtaque();
-		carta1.atacar(carta2);
+		carta1.atacarMonstruo(carta2);
 		assertEquals(7200,atacante.darPuntosDeVida());
-//		assertTrue(carta1.estaDestruida());
+		assertTrue(carta1.estaDestruida());
 	}
 	
 	@Test
@@ -85,9 +85,9 @@ public class Entrega1tests {
 		carta2.colocarEnPosicionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnPosicionDeAtaque();
-		carta1.atacar(carta2);
-//		assertTrue(carta1.estaDestruida());
-//		assertTrue(carta2.estaDestruida());
+		carta1.atacarMonstruo(carta2);
+		assertTrue(carta1.estaDestruida());
+		assertTrue(carta2.estaDestruida());
 		assertEquals(8000,atacante.darPuntosDeVida());
 		assertEquals(8000,defensor.darPuntosDeVida());
 	}
@@ -100,8 +100,8 @@ public class Entrega1tests {
 		carta2.colocarEnPosicionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnPosicionDeAtaque();
-		carta1.atacar(carta2);
-//		assertFalse(carta2.estaDestruida());
+		carta1.atacarMonstruo(carta2);
+		assertFalse(carta2.estaDestruida());
 		assertEquals(8000,defensor.darPuntosDeVida());
 		
 	}
@@ -114,8 +114,8 @@ public class Entrega1tests {
 		carta2.colocarEnPosicionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
 		carta1.colocarEnPosicionDeAtaque();
-		carta1.atacar(carta2);
-//		assertTrue(carta2.estaDestruida());
+		carta1.atacarMonstruo(carta2);
+		assertTrue(carta2.estaDestruida());
 		assertEquals(8000,defensor.darPuntosDeVida());
 	}
 	
@@ -149,33 +149,33 @@ public class Entrega1tests {
 	
 	
 	
-	@Test
-	public void test11SacrificioDeUnMonstruo() {
-		Jugador jugador = new Jugador();
-		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
-		jugador.colocarBocaArriba(monstruoSacrificado, 0);
-		
-		CartaMonstruo monstruo6Estrellas = new CartaMonstruo(6,1000,1200,jugador);
-		jugador.colocarBocaArriba(monstruo6Estrellas, 0);
-		
+//	@Test
+//	public void test11SacrificioDeUnMonstruo() {
+//		Jugador jugador = new Jugador();
+//		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
+//		jugador.colocarBocaArriba(monstruoSacrificado, 0);
+//		
+//		CartaMonstruo monstruo6Estrellas = new CartaMonstruo(6,1000,1200,jugador);
+//		jugador.colocarBocaArriba(monstruo6Estrellas, 0);
+//		
 //		assertTrue( monstruo6Estrellas.estaEnElCampo() && monstruoSacrificado.estaDestruida());
-		
-	}
+//		
+//	}
 	
-	@Test
-	public void test12SacrificioDeDosMonstruos() {
-		Jugador jugador = new Jugador();
-		CartaMonstruo monstruoSacrificado1 = new CartaMonstruo(4,1000,1200,jugador);
-		CartaMonstruo monstruoSacrificado2 = new CartaMonstruo(4,1000,1200,jugador);
-		jugador.colocarBocaArriba(monstruoSacrificado1, 0);
-		jugador.colocarBocaArriba(monstruoSacrificado2, 1);
-		
-		CartaMonstruo monstruo7Estrellas = new CartaMonstruo(7,1000,1200,jugador);
-		jugador.colocarBocaArriba(monstruo7Estrellas, 0);
-		
+//	@Test
+//	public void test12SacrificioDeDosMonstruos() {
+//		Jugador jugador = new Jugador();
+//		CartaMonstruo monstruoSacrificado1 = new CartaMonstruo(4,1000,1200,jugador);
+//		CartaMonstruo monstruoSacrificado2 = new CartaMonstruo(4,1000,1200,jugador);
+//		jugador.colocarBocaArriba(monstruoSacrificado1, 0);
+//		jugador.colocarBocaArriba(monstruoSacrificado2, 1);
+//		
+//		CartaMonstruo monstruo7Estrellas = new CartaMonstruo(7,1000,1200,jugador);
+//		jugador.colocarBocaArriba(monstruo7Estrellas, 0);
+//		
 //		assertEquals( monstruo7Estrellas.estaEnElCampo() && monstruoSacrificado1.estaDestruida() && monstruoSacrificado2.estaDestruida(), true);
-		
-	}
+//		
+//	}
 	
 }
 

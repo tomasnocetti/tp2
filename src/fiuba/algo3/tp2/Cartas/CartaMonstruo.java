@@ -16,6 +16,7 @@ public class CartaMonstruo extends Carta{
 	private Jugador jugador;
 	private MonstruoPosicionable posicion;
 	private Accionable accion;
+	private boolean destruida;
 	private TieneUnEfecto efecto;
 	
     public CartaMonstruo(int estrella, int ataque, int defenza, Jugador jugador) {
@@ -25,6 +26,8 @@ public class CartaMonstruo extends Carta{
 		this.posicion = new MonstruoPosicionArriba(); 
 		this.accion = null;
 		this.jugador = jugador;
+		this.destruida = false;
+//		this.efecto = efecto;
 	}
 
 	public void atacar(CartaMonstruo otro) {
@@ -51,6 +54,10 @@ public class CartaMonstruo extends Carta{
 		// TODO Auto-generated method stub
 		this.posicion.defender(puntosDeAtaqueRecibidos, cartaAtacante, this.accion, this);
 	}
+	
+	public void destruirCarta() {
+		this.destruida = true;
+	}
 
 	public void quitarVidaAJugador(int puntosPerdidos) {
 		// TODO Auto-generated method stub
@@ -62,11 +69,17 @@ public class CartaMonstruo extends Carta{
 	public void recibirCoontraataque(int puntosPerdidos) {
 		// TODO Auto-generated method stub
 		this.jugador.quitarPuntosDeVida(puntosPerdidos);
+		this.destruirCarta();
 	}
 
+	public boolean estaDestruida() {
+		// TODO Auto-generated method stub
+		return this.destruida;
+	}
 
 	public void aplicarEfecto() {
 		// TODO Auto-generated method stub
+		
 	}
 
 	public void colocarBocaAbajo() {

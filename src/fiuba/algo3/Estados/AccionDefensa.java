@@ -26,7 +26,7 @@ public class AccionDefensa implements Accionable {
 		if(diferenciaAtaque > 0) {
 			return;
 		} else if ( diferenciaAtaque <= 0) {
-			// DESTRUIR
+			cartaActual.destruirCarta();
 		}
 	}
 

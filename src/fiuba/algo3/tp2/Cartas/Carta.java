@@ -11,6 +11,8 @@ public abstract class Carta {
 	public abstract void colocarBocaAbajo();
 	public abstract void colocarBocaArriba();
 	public abstract boolean estaEnElCampo();
+	public abstract void destruirCarta();
+	public abstract boolean estaDestruida();
 	
 
 	public Posicionable obtenerEstado() {
