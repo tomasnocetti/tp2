@@ -39,8 +39,8 @@ public class CartaMagicaTest {
 		CartaMonstruo monstruoAtacante = new CartaMonstruo(4, 1000, 1200, atacante);
 		CartaMonstruo monstruoAtacado = new CartaMonstruo(4, 1000, 1200, atacado);
 		
-		atacante.colocarMonstruo(monstruoAtacante, 0);
-		atacado.colocarMonstruo(monstruoAtacado, 0);
+		atacante.colocarCartaEnZona(monstruoAtacante, 0);
+		atacado.colocarCartaEnZona(monstruoAtacado, 0);
 		
 		CartaMagica agujeroNegro = new AgujeroNegro(atacante, atacado);
 		
@@ -59,8 +59,8 @@ public class CartaMagicaTest {
 		CartaMonstruo monstruoAtacante = new CartaMonstruo(4, 1000, 1200, atacante);
 		CartaMonstruo monstruoAtacado = new CartaMonstruo(4, 1000, 1200, atacado);
 		
-		atacante.colocarMonstruo(monstruoAtacante, 0);
-		atacado.colocarMonstruo(monstruoAtacado, 0);
+		atacante.colocarCartaEnZona(monstruoAtacante, 0);
+		atacado.colocarCartaEnZona(monstruoAtacado, 0);
 		
 		CartaMagica agujeroNegro = new AgujeroNegro(atacante, atacado);
 		
@@ -75,19 +75,19 @@ public class CartaMagicaTest {
 	public void test05agujeroNegroAtacanteNoRecibioDano(){ 
 		Jugador atacante = new Jugador();
 		Jugador atacado = new Jugador();
-		int pvAtacanteAntesDelAtaque = atacante.darPuntosDeVida();
+		int pvAtacanteAntesDelAtaque = atacante.obtenerPuntosDeVida();
 		
 		CartaMonstruo monstruoAtacante = new CartaMonstruo(4, 1000, 1200, atacante);
 		CartaMonstruo monstruoAtacado = new CartaMonstruo(4, 1000, 1200, atacado);
 		
-		atacante.colocarMonstruo(monstruoAtacante, 0);
-		atacado.colocarMonstruo(monstruoAtacado, 0);
+		atacante.colocarCartaEnZona(monstruoAtacante, 0);
+		atacado.colocarCartaEnZona(monstruoAtacado, 0);
 		
 		CartaMagica agujeroNegro = new AgujeroNegro(atacante, atacado);
 		
 		atacante.colocarBocaArriba(agujeroNegro);
 		
-		int pvAtacanteDespuesDelAtaque = atacante.darPuntosDeVida();
+		int pvAtacanteDespuesDelAtaque = atacante.obtenerPuntosDeVida();
 		
 		assertEquals(pvAtacanteAntesDelAtaque, pvAtacanteDespuesDelAtaque);
 	}
@@ -100,14 +100,14 @@ public class CartaMagicaTest {
 		CartaMonstruo monstruoAtacante = new CartaMonstruo(4, 1000, 1200, atacante);
 		CartaMonstruo monstruoAtacado = new CartaMonstruo(4, 1000, 1200, atacado);
 		
-		atacante.colocarMonstruo(monstruoAtacante, 0);
-		atacado.colocarMonstruo(monstruoAtacado, 0);
+		atacante.colocarCartaEnZona(monstruoAtacante, 0);
+		atacado.colocarCartaEnZona(monstruoAtacado, 0);
 		
 		CartaMagica agujeroNegro = new AgujeroNegro(atacante, atacado);
 		
-		int pvAtacadoAntesDelAtaque = atacado.darPuntosDeVida();
+		int pvAtacadoAntesDelAtaque = atacado.obtenerPuntosDeVida();
 		atacante.colocarBocaArriba(agujeroNegro);
-		int pvAtacadoDespuesDelAtaque = atacado.darPuntosDeVida();
+		int pvAtacadoDespuesDelAtaque = atacado.obtenerPuntosDeVida();
 		
 		assertEquals(pvAtacadoAntesDelAtaque, pvAtacadoDespuesDelAtaque);
 	}

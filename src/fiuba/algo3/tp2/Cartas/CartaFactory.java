@@ -6,6 +6,8 @@ public class CartaFactory {
 	
 	public static CartaMonstruo crearCartaMonstruoGenerica() {
 		Jugador jugador = new Jugador();
-		return new CartaMonstruo(4, 1000, 100, jugador);
+		CartaMonstruo carta = new CartaMonstruo(4, 1000, 100, jugador);
+		jugador.colocarCartaEnZona(carta, 0);
+		return carta;
 	}
 }

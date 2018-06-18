@@ -7,6 +7,8 @@ import fiuba.algo3.Estados.MonstruoPosicionAbajo;
 import fiuba.algo3.Estados.MonstruoPosicionArriba;
 import fiuba.algo3.Estados.MonstruoPosicionable;
 import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
+import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
 
 public class CartaMonstruo extends Carta{
 	
@@ -29,6 +31,7 @@ public class CartaMonstruo extends Carta{
 	}
     
 	public void atacar(CartaMonstruo otro) {
+		if(!this.jugador.estaEnElCampo(this)) throw new CartaNoSeEncuentraEnZona();
 		this.posicion.atacar(this, otro);
     }
 

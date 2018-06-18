@@ -36,7 +36,7 @@ public class Jugador {
 		this.puntosDeVida = this.puntosDeVida - puntosPerdidos;
 	}
 
-	public int darPuntosDeVida() {
+	public int obtenerPuntosDeVida() {
 		return this.puntosDeVida;
 	}
 
@@ -70,15 +70,15 @@ public class Jugador {
 		zonaMonstruos.eliminarCarta(carta);
 	}
 	
-	public void colocarMonstruo(CartaMonstruo monstruo, int posicion) {
+	public void colocarCartaEnZona(CartaMonstruo monstruo, int posicion) {
 		this.zonaMonstruos.agregarCarta(monstruo, posicion);
 	}
 
-	public void colocarCartaTrampaOMagica(CartaTrampaOMagica carta, int posicion) {
+	public void colocarCartaEnZona(CartaTrampaOMagica carta, int posicion) {
 		this.zonaCartasMagicasOTrampas.agregarCarta(carta, posicion);
 	}
 	
-	public void colocarCartaCampo(CartaCampo campo, int posicion) {
+	public void colocarCartaEnZona(CartaCampo campo, int posicion) {
 		this.zonaCartasDeCampo.agregarCarta(campo, posicion);
 	}
 	

@@ -41,7 +41,7 @@ public class MonstruoTest {
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,atacante);
 		carta2.colocarEnAccionDeAtaque();
 		carta2.atacar(carta1);
-		assertEquals(7200,atacado.darPuntosDeVida());
+		assertEquals(7200,atacado.obtenerPuntosDeVida());
 	}
 	
 	
@@ -67,7 +67,7 @@ public class MonstruoTest {
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
 		carta1.atacar(carta2);
-		assertEquals(7200,atacante.darPuntosDeVida());
+		assertEquals(7200,atacante.obtenerPuntosDeVida());
 	}
 	
 	@Test
@@ -118,7 +118,7 @@ public class MonstruoTest {
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
 		carta1.atacar(carta2);
-		assertEquals(8000,atacante.darPuntosDeVida());
+		assertEquals(8000,atacante.obtenerPuntosDeVida());
 	}
 	
 	
@@ -131,7 +131,7 @@ public class MonstruoTest {
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
 		carta1.atacar(carta2);
-		assertEquals(8000,defensor.darPuntosDeVida());
+		assertEquals(8000,defensor.obtenerPuntosDeVida());
 	}
 	
 	
@@ -157,7 +157,7 @@ public class MonstruoTest {
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
 		carta1.atacar(carta2);
-		assertEquals(8000,defensor.darPuntosDeVida());
+		assertEquals(8000,defensor.obtenerPuntosDeVida());
 		
 	}
 	
@@ -182,7 +182,7 @@ public class MonstruoTest {
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
 		carta1.colocarEnAccionDeAtaque();
 		carta1.atacar(carta2);
-		assertEquals(8000,defensor.darPuntosDeVida());
+		assertEquals(8000,defensor.obtenerPuntosDeVida());
 	}
 	
 	
