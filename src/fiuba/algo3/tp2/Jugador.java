@@ -79,8 +79,8 @@ public class Jugador {
 		zonaMonstruos.eliminarCarta(carta);
 	}
 	
-	public void colocarMonstruo(CartaMonstruo monstruo, int posicion) {
-		this.zonaMonstruos.agregarCarta(monstruo, posicion);
+	public void colocarMonstruo(CartaMonstruo monstruo, int posicion, ArrayList<CartaMonstruo> cartasSacrificadas) {
+		this.zonaMonstruos.agregarCartaMonstruo(monstruo, posicion, cartasSacrificadas);
 	}
 
 	public void colocarCartaTrampaOMagica(CartaTrampaOMagica carta, int posicion) {

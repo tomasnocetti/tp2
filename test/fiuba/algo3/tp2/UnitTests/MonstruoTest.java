@@ -2,6 +2,8 @@ package fiuba.algo3.tp2.UnitTests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 import fiuba.algo3.tp2.Cartas.CartaFactory;
@@ -39,7 +41,7 @@ public class MonstruoTest {
 		
 		Jugador atacado = new Jugador();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacado);
-		atacado.colocarMonstruo(carta1, 0);
+		atacado.colocarMonstruo(carta1, 0, new ArrayList<CartaMonstruo>());
 		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1800, 1000);
 		carta1.colocarEnAccionDeAtaque();
 		carta2.colocarEnAccionDeAtaque();
