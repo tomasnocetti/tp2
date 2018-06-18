@@ -10,31 +10,15 @@ public class MonstruoPosicionAbajo implements MonstruoPosicionable {
 	public MonstruoPosicionAbajo() {
 	}
 	
-	public void atacarMonstruo(Accionable posicion, CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
+	public void atacar(Accionable posicion, CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
 		throw new MonstruoBocaAbajoException();
 	}
 	
-	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual) {
+	public void defender(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual) {
 		//should be implemented
 		throw new MonstruoBocaAbajoException();
 	}
 	
-	public void colocarPosicionAtaque() {
-		//should be implemented and raise error
-	}
-	
-	public boolean estaEnPosicionAtaque() {
-		return false;
-	}
-
-	public boolean estaBocaAbajo() {
-		return true;
-	}
-	
-	public boolean estaBocaArriba() {
-		return false;
-	}
-
 	public void activarEfecto(TieneUnEfecto efecto) {
 		// TODO Auto-generated method stub
 		throw new MonstruoBocaAbajoException();

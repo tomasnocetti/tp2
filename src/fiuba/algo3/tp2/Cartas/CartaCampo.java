@@ -17,16 +17,6 @@ public class CartaCampo extends Carta{
 		
 	}
 
-	public boolean estaBocaAbajo() {
-		// TODO Auto-generated method stub
-		return this.posicion.estaBocaAbajo();
-	}
-
-	public boolean estaBocaArriba() {
-		// TODO Auto-generated method stub
-		return this.posicion.estaBocaArriba();
-	}
-
 	public boolean estaEnElCampo() {
 		// TODO Auto-generated method stub
 		return false;

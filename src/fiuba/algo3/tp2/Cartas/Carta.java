@@ -10,8 +10,6 @@ public abstract class Carta {
 	public abstract void activarEfecto();
 	public abstract void colocarBocaAbajo();
 	public abstract void colocarBocaArriba();
-	public abstract boolean estaBocaAbajo() ;
-	public abstract boolean estaBocaArriba();
 	public abstract boolean estaEnElCampo();
 	
 

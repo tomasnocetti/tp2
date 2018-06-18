@@ -28,7 +28,7 @@ public class CartaMonstruo extends Carta{
 	}
 
 	public void atacar(CartaMonstruo otro) {
-		this.posicion.atacarMonstruo(this.accion,this,otro);
+		this.posicion.atacar(this.accion,this,otro);
     }
 
 	public void colocarEnPosicionDeDefensa() {
@@ -49,7 +49,7 @@ public class CartaMonstruo extends Carta{
 	
 	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante) {
 		// TODO Auto-generated method stub
-		this.posicion.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante, this.accion, this);
+		this.posicion.defender(puntosDeAtaqueRecibidos, cartaAtacante, this.accion, this);
 	}
 
 	public void quitarVidaAJugador(int puntosPerdidos) {
@@ -74,17 +74,9 @@ public class CartaMonstruo extends Carta{
 		
 	}
 
-	public boolean estaBocaAbajo() {
-		return this.posicion.estaBocaAbajo();
-	}
-
 	public void colocarBocaArriba() {
 		this.posicion = new MonstruoPosicionArriba();
 		
-	}
-
-	public boolean estaBocaArriba() {
-		return this.posicion.estaBocaArriba();
 	}
 
 	public boolean estaEnElCampo() {
