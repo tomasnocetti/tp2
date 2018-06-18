@@ -5,13 +5,13 @@ import fiuba.algo3.tp2.Cartas.TieneUnEfecto;
 
 public class MonstruoPosicionArriba implements MonstruoPosicionable {
 	
-	public void atacar(Accionable posicion,CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
-		posicion.atacarMonstruo(cartaAtacante, cartaAtacada);
+	public void atacar(CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
+		Accionable accionAtacante = cartaAtacante.obtenerAccion(); 
+		accionAtacante.atacar(cartaAtacante, cartaAtacada);
 	}
 	
 	public void defender(int puntosDeAtaqueRecibidos,CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual) {
-		
-		posicion.recibirAtaque(puntosDeAtaqueRecibidos, cartaAtacante,cartaActual);
+		posicion.defender(puntosDeAtaqueRecibidos, cartaAtacante,cartaActual);
 	}
 
 	public void activarEfecto(TieneUnEfecto efecto) {

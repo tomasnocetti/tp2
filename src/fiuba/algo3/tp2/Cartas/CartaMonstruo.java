@@ -29,7 +29,7 @@ public class CartaMonstruo extends Carta{
 	}
 
 	public void atacar(CartaMonstruo otro) {
-		this.posicion.atacar(this.accion, this, otro);
+		this.posicion.atacar(this, otro);
     }
 
 	public void colocarEnAccionDeDefensa() {
@@ -40,17 +40,16 @@ public class CartaMonstruo extends Carta{
 		this.accion = new AccionAtaque(this.puntosDeAtaque);
 	}
 	
-	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante) {
+	public Accionable obtenerAccion() {
+		return this.accion;
+	}
+	
+	public void defender(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante) {
 		// TODO Auto-generated method stub
 		this.posicion.defender(puntosDeAtaqueRecibidos, cartaAtacante, this.accion, this);
 	}
 
 	public void quitarVidaAJugador(int puntosPerdidos) {
-		// TODO Auto-generated method stub
-		this.jugador.quitarPuntosDeVida(puntosPerdidos);
-	}
-
-	public void recibirCoontraataque(int puntosPerdidos) {
 		// TODO Auto-generated method stub
 		this.jugador.quitarPuntosDeVida(puntosPerdidos);
 	}
