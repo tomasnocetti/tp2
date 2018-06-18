@@ -20,6 +20,9 @@ public class AccionAtaque implements Accionable {
 			cartaActual.enviarAlCementerio();
 			return;
 		}
+		if(diferenciaAtaque == 0) {
+			cartaActual.enviarAlCementerio();
+		}
 		cartaActual.atacar(cartaAtacante);
 	}
 }

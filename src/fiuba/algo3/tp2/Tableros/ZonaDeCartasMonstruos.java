@@ -25,7 +25,7 @@ public class ZonaDeCartasMonstruos extends Zona{
 		ArrayList<CartaMonstruo> monstruosSacrificados = new ArrayList<CartaMonstruo>();
 		for (int i = 0 ; i < numeroDeSacrificios ; i++) {
 			Carta monstruo = this.cartas.get(i);
-			monstruosSacrificados.add((CartaMonstruo) monstruo); //que feo
+			monstruosSacrificados.add((CartaMonstruo) monstruo); 
 			this.eliminarCarta(monstruo);
 		}
 		return monstruosSacrificados;
