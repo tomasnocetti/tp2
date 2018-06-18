@@ -23,4 +23,5 @@ public class Mazo{
 		this.cantidadDeCartas -=1;
 		return carta;
 	}
+	
 }

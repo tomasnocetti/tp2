@@ -10,14 +10,17 @@ import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampaOMagica;
 import fiuba.algo3.tp2.Tableros.Cementerio;
+import fiuba.algo3.tp2.Tableros.Mazo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMonstruos;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasDeCampo;
+import fiuba.algo3.tp2.Tableros.ZonaMano;
 
 public class Jugador {
 	
 	private int puntosDeVida;
-	//private Mano mazo;
+	private ZonaMano mano;
+	private Mazo mazo;
 	private ZonaDeCartasMonstruos zonaMonstruos;
 	private ZonaDeCartasDeCampo zonaCartasDeCampo;
 	private ZonaDeCartasMagicasOTrampas zonaCartasMagicasOTrampas;
@@ -25,11 +28,14 @@ public class Jugador {
 	
 	public Jugador() {
 		this.puntosDeVida = 8000;
-		//this.mazo = new Mazo();
+		this.mano = new ZonaMano();
 		this.cementerio = new Cementerio();
 		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas();
 		this.zonaMonstruos = new ZonaDeCartasMonstruos();
 		this.zonaCartasDeCampo = new ZonaDeCartasDeCampo();
+		for (int i = 0; i<5; i++ ) {
+			this.mano.agarrarCarta(this.mazo);
+		}
 	}
 
 	public void quitarPuntosDeVida(int puntosPerdidos) {
@@ -112,6 +118,10 @@ public class Jugador {
 	
 	public boolean estaEnElCampo(CartaCampo cartaCampo) {
 		return false;
+	}
+	
+	public void agarrarCarta() {
+		this.mano.agarrarCarta(this.mazo);
 	}
 	
 }
