@@ -33,11 +33,14 @@ public class Jugador {
 		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas();
 		this.zonaMonstruos = new ZonaDeCartasMonstruos();
 		this.zonaCartasDeCampo = new ZonaDeCartasDeCampo();
-		for (int i = 0; i<5; i++ ) {
+	}
+
+	public void agarrarCartasDelMazo(int numero) {
+		for (int i = 0; i < numero; i++ ) {
 			this.mano.agarrarCarta(this.mazo);
 		}
 	}
-
+	
 	public void quitarPuntosDeVida(int puntosPerdidos) {
 		this.puntosDeVida = this.puntosDeVida - puntosPerdidos;
 	}
