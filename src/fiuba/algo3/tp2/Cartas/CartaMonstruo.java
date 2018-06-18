@@ -27,7 +27,7 @@ public class CartaMonstruo extends Carta{
 		this.jugador = jugador;
 	}
 
-	public void atacarMonstruo(CartaMonstruo otro) {
+	public void atacar(CartaMonstruo otro) {
 		this.posicion.atacarMonstruo(this.accion,this,otro);
     }
 

@@ -59,7 +59,7 @@ public class Entrega1tests {
 		carta1.colocarEnPosicionDeAtaque();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,atacante);
 		carta2.colocarEnPosicionDeAtaque();
-		carta2.atacarMonstruo(carta1);
+		carta2.atacar(carta1);
 		assertEquals(7200,defensor.darPuntosDeVida());
 //		assertTrue(carta1.estaDestruida());
 	}
@@ -72,7 +72,7 @@ public class Entrega1tests {
 		carta2.colocarEnPosicionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnPosicionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 		assertEquals(7200,atacante.darPuntosDeVida());
 //		assertTrue(carta1.estaDestruida());
 	}
@@ -85,7 +85,7 @@ public class Entrega1tests {
 		carta2.colocarEnPosicionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnPosicionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 //		assertTrue(carta1.estaDestruida());
 //		assertTrue(carta2.estaDestruida());
 		assertEquals(8000,atacante.darPuntosDeVida());
@@ -100,7 +100,7 @@ public class Entrega1tests {
 		carta2.colocarEnPosicionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
 		carta1.colocarEnPosicionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 //		assertFalse(carta2.estaDestruida());
 		assertEquals(8000,defensor.darPuntosDeVida());
 		
@@ -114,7 +114,7 @@ public class Entrega1tests {
 		carta2.colocarEnPosicionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
 		carta1.colocarEnPosicionDeAtaque();
-		carta1.atacarMonstruo(carta2);
+		carta1.atacar(carta2);
 //		assertTrue(carta2.estaDestruida());
 		assertEquals(8000,defensor.darPuntosDeVida());
 	}
