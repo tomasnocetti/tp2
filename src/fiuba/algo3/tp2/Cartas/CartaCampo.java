@@ -22,4 +22,8 @@ public class CartaCampo extends Carta{
 		return false;
 	}
 
+	public void enviarAlCementerio() {
+		this.jugador.enviarAlCementerio(this);
+	}
+	
 }

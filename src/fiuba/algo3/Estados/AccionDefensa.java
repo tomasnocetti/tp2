@@ -16,13 +16,9 @@ public class AccionDefensa implements Accionable {
 	}
 
 	public void defender(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, CartaMonstruo cartaActual) {
-		// TODO Auto-generated method stub
 		int diferenciaAtaque = this.puntosDeDefensa - puntosDeAtaqueRecibidos;
-		if(diferenciaAtaque > 0) {
-			return;
-		} else if ( diferenciaAtaque <= 0) {
-		}
+		if(diferenciaAtaque > 0) return;
+		cartaActual.enviarAlCementerio();
 	}
-
 
 }

@@ -17,11 +17,9 @@ public class AccionAtaque implements Accionable {
 		int diferenciaAtaque = this.puntosDeAtaque - puntosDeAtaqueRecibidos;
 		if(diferenciaAtaque < 0) {
 			cartaActual.quitarVidaAJugador(-1 * diferenciaAtaque);
-		} else if ( diferenciaAtaque > 0) {
-			cartaAtacante.recibirCoontraataque(diferenciaAtaque);
-		} else {
-			cartaAtacante.recibirCoontraataque(0);
+			cartaActual.enviarAlCementerio();
+			return;
 		}
+		cartaActual.atacar(cartaAtacante);
 	}
-
 }
