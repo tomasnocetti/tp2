@@ -18,7 +18,6 @@ public class Zona {
 	
 	public Zona() {
 		this.cartas = new Hashtable<Integer,Carta>();
-		this.limite = 10;
 	}
 	
 	protected void agregarCarta(Carta carta, int posicion) {

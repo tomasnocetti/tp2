@@ -12,6 +12,10 @@ public class CartaTrampa extends CartaTrampaOMagica{
 		this.efecto.activarEfecto();
 	}
 
+	public void enviarAlCementerio() {
+		this.jugador.enviarAlCementerio(this);
+	}
+	
 	@Override
 	public void colocarBocaArriba() {
 		// TODO Auto-generated method stub

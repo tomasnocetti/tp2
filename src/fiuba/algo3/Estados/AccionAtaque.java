@@ -9,25 +9,20 @@ public class AccionAtaque implements Accionable {
 	public AccionAtaque(int puntosDeAtaque) {
 		this.puntosDeAtaque = puntosDeAtaque;
 	}
-	public void atacarMonstruo(CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada) {
-		// to be implemented
-		cartaAtacada.recibirAtaque(this.puntosDeAtaque, cartaAtacante);
+	public void atacar(CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada) {
+		cartaAtacada.defender(this.puntosDeAtaque, cartaAtacante);
 	}
 	
-	public boolean estaEnPosicionAtaque() {
-		return true;
-	}
-
-	public void recibirAtaque(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, CartaMonstruo cartaActual) {
-		// TODO Auto-generated method stub
+	public void defender(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, CartaMonstruo cartaActual) {
 		int diferenciaAtaque = this.puntosDeAtaque - puntosDeAtaqueRecibidos;
 		if(diferenciaAtaque < 0) {
 			cartaActual.quitarVidaAJugador(-1 * diferenciaAtaque);
-		} else if ( diferenciaAtaque > 0) {
-			cartaAtacante.recibirCoontraataque(diferenciaAtaque);
-		} else {
-			cartaAtacante.recibirCoontraataque(0);
+			cartaActual.enviarAlCementerio();
+			return;
 		}
+		if(diferenciaAtaque == 0) {
+			cartaActual.enviarAlCementerio();
+		}
+		cartaActual.atacar(cartaAtacante);
 	}
-
 }

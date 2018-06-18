@@ -13,4 +13,9 @@ public class CartaMagica extends CartaTrampaOMagica{
 		this.posicion.activarEfecto(this.efecto);
 	}
 	
+	public void enviarAlCementerio() {
+		this.jugador.enviarAlCementerio(this);
+	}
+	
+	
 }

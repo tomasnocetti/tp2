@@ -10,7 +10,7 @@ public class MonstruoPosicionAbajo implements MonstruoPosicionable {
 	public MonstruoPosicionAbajo() {
 	}
 	
-	public void atacar(Accionable posicion, CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
+	public void atacar(CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
 		throw new MonstruoBocaAbajoException();
 	}
 	
