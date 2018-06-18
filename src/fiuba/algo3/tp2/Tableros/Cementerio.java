@@ -12,8 +12,7 @@ public class Cementerio{
 		this.cartas = new ArrayList<Carta>();
 	}
 	
-	public void agarrarCarta(Carta carta) {
-		carta.destruirCarta();
+	public void agregarCarta(Carta carta) {
 		cartas.add(carta);
 	}
 }

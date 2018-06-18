@@ -56,17 +56,17 @@ public class Jugador {
 	}	
 	
 	public void enviarAlCementerio(CartaCampo carta) {
-		cementerio.agarrarCarta(carta);
+		cementerio.agregarCarta(carta);
 		zonaCartasDeCampo.eliminarCarta(carta);
 	}
 	
 	public void enviarAlCementerio(CartaTrampaOMagica carta) {
-		cementerio.agarrarCarta(carta);
+		cementerio.agregarCarta(carta);
 		zonaCartasMagicasOTrampas.eliminarCarta(carta);
 	}
 	
 	public void enviarAlCementerio(CartaMonstruo carta) {
-		cementerio.agarrarCarta(carta);
+		cementerio.agregarCarta(carta);
 		zonaMonstruos.eliminarCarta(carta);
 	}
 	
