@@ -19,15 +19,15 @@ public class Entrega1tests {
 
 	@Test
 	public void test01colocarCartaMonstruoAccionAtaque() {
-		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica();		
+		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);		
 		carta.colocarEnAccionDeAtaque();
 		
 	}
 
 	@Test(expected = CartaEnAccionDefensaException.class)
 	public void test02colocarCartaMonstruoAccionDefensa() {
-		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica();
-		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica();
+		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
 		carta.colocarEnAccionDeDefensa();
 		carta.atacar(carta2);
 	}

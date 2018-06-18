@@ -4,9 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fiuba.algo3.tp2.Cartas.CartaFactory;
 //import fiuba.algo3.tp2.Cartas.AgujeroNegro;
 //import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
+import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
 import fiuba.algo3.Estados.*;
 import fiuba.algo3.tp2.Jugador;
 
@@ -45,16 +47,17 @@ public class MonstruoTest {
 	}
 	
 	
-	@Test
+	@Test(expected = CartaNoSeEncuentraEnZona.class)
 	public void test04monstruoConMayorAtaqueAtacaAOtroConMenorAtaqueAmbosEnPosicionDeAtaqueYLoDestruye(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
-		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,defensor);
+		CartaMonstruo carta1 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(2000, 1000);
 		carta1.colocarEnAccionDeAtaque();
-		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,atacante);
 		carta2.colocarEnAccionDeAtaque();
+		// Ataca y lo destrulle.
+		carta2.atacar(carta1); 
+		// Ataca y lanza excepcion.
 		carta2.atacar(carta1);
-		assertTrue(carta1.estaDestruida()); // este metodo no deberia existir
+		
 	}
 	
 	

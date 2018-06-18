@@ -27,7 +27,6 @@ public class CartaMonstruo extends Carta{
 		this.posicion = new MonstruoPosicionArriba(); 
 		this.accion = null;
 		this.jugador = jugador;
-//		this.efecto = efecto;
 	}
     
 	public void atacar(CartaMonstruo otro) {
@@ -52,7 +51,7 @@ public class CartaMonstruo extends Carta{
 	}
 	
 	public void defender(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante) {
-		// TODO Auto-generated method stub
+		if(!this.jugador.estaEnElCampo(this)) throw new CartaNoSeEncuentraEnZona();
 		this.posicion.defender(puntosDeAtaqueRecibidos, cartaAtacante, this.accion, this);
 	}
 
