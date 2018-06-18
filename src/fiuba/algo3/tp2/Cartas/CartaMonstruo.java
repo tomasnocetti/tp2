@@ -27,6 +27,10 @@ public class CartaMonstruo extends Carta{
 		this.jugador = jugador;
 //		this.efecto = efecto;
 	}
+    
+    public Accionable obtenerAccion() {
+    	return this.accion;
+    }
 
 	public void atacar(CartaMonstruo otro) {
 		this.posicion.atacar(this.accion, this, otro);
