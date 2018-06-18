@@ -124,4 +124,18 @@ public class Jugador {
 		this.mano.agarrarCarta(this.mazo);
 	}
 	
+	public void ponerCartaEnTablero(CartaTrampaOMagica carta, int posicion) {
+		this.mano.eliminarCarta(carta);
+		this.zonaCartasMagicasOTrampas.agregarCarta(carta, posicion);
+	}
+
+	public void ponerCartaEnTablero(CartaCampo carta, int posicion) {
+		this.mano.eliminarCarta(carta);
+		this.zonaCartasDeCampo.agregarCarta(carta, posicion);
+	}
+	
+	public void ponerCartaEnTablero(CartaMonstruo carta, int posicion) {
+		this.mano.eliminarCarta(carta);
+		this.zonaMonstruos.agregarCarta(carta,posicion);
+	}
 }

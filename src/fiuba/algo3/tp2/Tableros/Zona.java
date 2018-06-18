@@ -35,11 +35,7 @@ public class Zona {
 	
 	public void eliminarCarta(Carta carta) {
 		int posicion = devolverClave(this.cartas,carta);
-		System.out.println("Carta eliminada en posicion :");
-		System.out.println(posicion);
-		//this.cartas.put(posicion, null) -> no se puede insertar un null value
 		this.cartas.remove(posicion);
-		//this.tablero.destruirCarta(carta);
 	}
 	
 	

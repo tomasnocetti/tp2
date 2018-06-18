@@ -20,7 +20,7 @@ public class ZonaDeCartasDeCampoTest {
 	}
 	
 	@Test(expected = PosicionDeLaZonaOcupadaException.class) 
-	public void test03agregoCartaEnPosicionOcupadaDaExcepcion() {
+	public void test02agregoCartaEnPosicionOcupadaDaExcepcion() {
 		CartaCampo carta1 = new CartaCampo();
 		CartaCampo carta2 = new CartaCampo();
 		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo();
@@ -29,9 +29,28 @@ public class ZonaDeCartasDeCampoTest {
 	}
 	
 	@Test(expected = PosicionDeZonaFueraDeRangoExcepcion.class) 
-	public void test04agregoCartaEnPosicionSeisDaExceptionFueraDeRango() {
+	public void test03agregoCartaEnPosicionSeisDaExceptionFueraDeRango() {
 		CartaCampo carta = new CartaCampo();
 		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo();
 		zona.agregarCarta(carta, 2);
+	}
+	
+	@Test
+	public void test04agregarCartaYEliminarCarta() {
+		CartaCampo carta = new CartaCampo();
+		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo();
+		zona.agregarCarta(carta, 1);
+		zona.eliminarCarta(carta);
+		assertFalse(zona.obtenerCartas().contains(carta));
+	}
+	
+	@Test
+	public void test05agregarCartaEliminarCartaYAgregarNuevamente() {
+		CartaCampo carta = new CartaCampo();
+		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo();
+		zona.agregarCarta(carta, 1);
+		zona.eliminarCarta(carta);
+		zona.agregarCarta(carta, 1);
+		assertTrue(zona.obtenerCartas().contains(carta));
 	}
 }
