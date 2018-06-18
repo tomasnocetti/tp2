@@ -44,7 +44,7 @@ public class MonstruoTest {
 		carta1.colocarEnAccionDeAtaque();
 		carta2.colocarEnAccionDeAtaque();
 		carta2.atacar(carta1);
-		assertEquals(7200,atacado.darPuntosDeVida());
+		assertEquals(7200,atacado.obtenerPuntosDeVida());
 	}
 	
 	

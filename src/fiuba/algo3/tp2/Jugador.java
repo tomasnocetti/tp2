@@ -45,7 +45,7 @@ public class Jugador {
 		this.puntosDeVida = this.puntosDeVida - puntosPerdidos;
 	}
 
-	public int darPuntosDeVida() {
+	public int obtenerPuntosDeVida() {
 		return this.puntosDeVida;
 	}
 
