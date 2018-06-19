@@ -4,15 +4,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fiuba.algo3.Estados.AccionAtaque;
+import fiuba.algo3.Estados.Accionable;
 import fiuba.algo3.Estados.PosicionAbajo;
-import fiuba.algo3.tp2.Cartas.AgujeroNegro;
 import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampa;
 import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
 import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
-//import fiuba.algo3.tp2.Cartas.EfectoVacio;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
 public class Entrega1tests {
@@ -21,8 +21,10 @@ public class Entrega1tests {
 	public void test01colocarCartaMonstruoAccionAtaque() {
 		Jugador jugador = new Jugador();
 		CartaFactory cartaFactory = new CartaFactory(jugador);
-		CartaMonstruo carta = cartaFactory.crearCartaMonstruoGenerica(1000, 1000);		
+		CartaMonstruo carta = cartaFactory.crearCartaMonstruoGenerica(1000, 1000);
 		
+		Accionable accionMonstruo = carta.obtenerAccion();
+		assertEquals(accionMonstruo.getClass(), AccionAtaque.class);		
 	}
 
 	@Test(expected = CartaEnAccionDefensaException.class)
