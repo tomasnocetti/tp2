@@ -25,8 +25,8 @@ public class EfectoTest {
 		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000, jugador2);
 		carta2.colocarEnAccionDeAtaque();
 		Efecto efecto = new EfectoAgujeroNegro();
-		efecto.activarSobreJugadorDefensivo(jugador);
-		efecto.activarSobreJugadorOfensivo(jugador2);
+		efecto.activarSobreJugadorAtacado(jugador);
+		efecto.activarSobreJugadorAtacante(jugador2);
 		carta.atacar(carta2);
 	}
 }

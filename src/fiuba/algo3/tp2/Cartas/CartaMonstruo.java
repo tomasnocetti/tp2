@@ -40,6 +40,14 @@ public class CartaMonstruo extends Carta{
 		this.accion = new AccionAtaque(this.puntosDeAtaque);
 	}
 	
+	public int obtenerPuntosAtaque() {
+		return this.puntosDeAtaque;
+	}
+	
+	public int obtenerPuntosDefensa() {
+		return this.puntosDeDefensa;
+	}
+	
 	public void enviarAlCementerio() {
 		this.jugador.enviarAlCementerio(this);
 	}

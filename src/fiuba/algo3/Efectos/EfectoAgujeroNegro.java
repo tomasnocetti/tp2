@@ -4,11 +4,11 @@ import fiuba.algo3.tp2.Jugador;
 
 public class EfectoAgujeroNegro extends Efecto {
 	
-	public void activarSobreJugadorOfensivo(Jugador jugador) {
+	public void activarSobreJugadorAtacante(Jugador jugador) {
 		jugador.destruirMonstruos();
 	};
 
-	public void activarSobreJugadorDefensivo(Jugador jugador) {
+	public void activarSobreJugadorAtacado(Jugador jugador) {
 		jugador.destruirMonstruos();
 	};
 }

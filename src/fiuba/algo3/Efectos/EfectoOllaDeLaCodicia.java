@@ -2,10 +2,10 @@ package fiuba.algo3.Efectos;
 
 import fiuba.algo3.tp2.Jugador;
 
-public class EfectoVacio extends Efecto {
+public class EfectoOllaDeLaCodicia extends Efecto {
 	
 	public void activarSobreJugadorAtacante(Jugador jugador) {
-		return;
+		jugador.agarrarCartasDelMazo(2);
 	}
 	
 	public void activarSobreJugadorAtacado(Jugador jugador) {

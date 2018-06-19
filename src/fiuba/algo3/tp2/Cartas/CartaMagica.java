@@ -10,7 +10,7 @@ public class CartaMagica extends CartaTrampaOMagica{
 	}
 
 	public void activar(Jugador oponente) {
-		this.efecto.activarSobreJugadorOfensivo(this.jugador);
-		this.efecto.activarSobreJugadorDefensivo(oponente);
+		this.efecto.activarSobreJugadorAtacante(this.jugador);
+		this.efecto.activarSobreJugadorAtacado(oponente);
 	}
 }
