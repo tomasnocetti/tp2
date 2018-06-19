@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fiuba.algo3.Efectos.EfectoVacio;
+import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Excepciones.PosicionDeLaZonaOcupadaException;
 import fiuba.algo3.tp2.Excepciones.PosicionDeZonaFueraDeRangoExcepcion;
@@ -13,32 +15,44 @@ public class ZonaDeCartasDeCampoTest {
 
 	@Test
 	public void test01agregoUnaCartaALaZonaYVerificoQueSeAgrego() {
-		CartaCampo carta = new CartaCampo();
-		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo();
+		Jugador jugador = new Jugador();
+		EfectoVacio efecto = new EfectoVacio();
+		CartaCampo carta = new CartaCampo(jugador, efecto);
+		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
 		zona.agregarCarta(carta, 1);
 		assertTrue(zona.obtenerCartas().contains(carta));
 	}
 	
 	@Test(expected = PosicionDeLaZonaOcupadaException.class) 
 	public void test02agregoCartaEnPosicionOcupadaDaExcepcion() {
-		CartaCampo carta1 = new CartaCampo();
-		CartaCampo carta2 = new CartaCampo();
-		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo();
-		zona.agregarCarta(carta1, 1);
+		Jugador jugador = new Jugador();
+		EfectoVacio efecto = new EfectoVacio();
+		
+		CartaCampo carta = new CartaCampo(jugador, efecto);
+		CartaCampo carta2 = new CartaCampo(jugador, efecto);
+		
+		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
+		
+		zona.agregarCarta(carta, 1);
 		zona.agregarCarta(carta2, 1);
 	}
 	
 	@Test(expected = PosicionDeZonaFueraDeRangoExcepcion.class) 
-	public void test03agregoCartaEnPosicionSeisDaExceptionFueraDeRango() {
-		CartaCampo carta = new CartaCampo();
-		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo();
+	public void test03agregoCartaEnPosicionDosDaExceptionFueraDeRango() {
+		Jugador jugador = new Jugador();
+		EfectoVacio efecto = new EfectoVacio();
+		CartaCampo carta = new CartaCampo(jugador, efecto);
+		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
 		zona.agregarCarta(carta, 2);
 	}
 	
 	@Test
 	public void test04agregarCartaYEliminarCarta() {
-		CartaCampo carta = new CartaCampo();
-		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo();
+		Jugador jugador = new Jugador();
+		EfectoVacio efecto = new EfectoVacio();
+		
+		CartaCampo carta = new CartaCampo(jugador, efecto);
+		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
 		zona.agregarCarta(carta, 1);
 		zona.eliminarCarta(carta);
 		assertFalse(zona.obtenerCartas().contains(carta));
@@ -46,8 +60,11 @@ public class ZonaDeCartasDeCampoTest {
 	
 	@Test
 	public void test05agregarCartaEliminarCartaYAgregarNuevamente() {
-		CartaCampo carta = new CartaCampo();
-		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo();
+		Jugador jugador = new Jugador();
+		EfectoVacio efecto = new EfectoVacio();
+		
+		CartaCampo carta = new CartaCampo(jugador, efecto);
+		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
 		zona.agregarCarta(carta, 1);
 		zona.eliminarCarta(carta);
 		zona.agregarCarta(carta, 1);
