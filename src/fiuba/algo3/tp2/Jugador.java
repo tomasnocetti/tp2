@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
+import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampaOMagica;
 import fiuba.algo3.tp2.Tableros.Cementerio;
@@ -29,7 +30,7 @@ public class Jugador {
 	public Jugador() {
 		this.puntosDeVida = 8000;
 		this.mano = new ZonaMano(this);
-		this.mazo = new Mazo(this);
+		this.mazo = CartaFactory.inicializarMazoGenerico(this);
 		this.cementerio = new Cementerio();
 		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas(this);
 		this.zonaMonstruos = new ZonaDeCartasMonstruos(this);

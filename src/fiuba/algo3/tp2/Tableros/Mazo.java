@@ -12,17 +12,17 @@ public class Mazo{
 	private ArrayList<Carta> cartas;
 	private Jugador jugador;
 	
-	public Mazo(Jugador jugador) {
+	public Mazo(Jugador _jugador, ArrayList<Carta> _cartas) {
 		this.cantidadDeCartas = 40;
-		this.cartas = new ArrayList<Carta>();
-		this.jugador = jugador;
+		this.cartas = _cartas;
+		this.jugador = _jugador;
 	}
 
 	public Carta agarrarCarta() {
 		if (this.cantidadDeCartas == 0) {
 			throw new MazoDeCartasVacioException();
 		}
-		Carta carta = cartas.remove(cantidadDeCartas);
+		Carta carta = cartas.remove(cantidadDeCartas - 1);
 		this.cantidadDeCartas -=1;
 		return carta;
 	}
