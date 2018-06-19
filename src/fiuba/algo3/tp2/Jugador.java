@@ -94,14 +94,6 @@ public class Jugador {
 		return this.zonaMonstruos.estaVacia();
 	}
 	
-	public void colocarBocaArriba(Carta carta) {
-		carta.colocarBocaArriba();
-	}
-	
-	public void colocarBocaAbajo(Carta carta) {
-		carta.colocarBocaAbajo();
-	}
-
 	public boolean estaEnElCampo(CartaMonstruo cartaMonstruo) {
 		return this.zonaMonstruos.obtenerCartas().contains(cartaMonstruo);
 	}

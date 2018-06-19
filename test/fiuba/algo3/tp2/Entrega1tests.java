@@ -53,7 +53,7 @@ public class Entrega1tests {
 		Jugador jugador = new Jugador();
 		CartaFactory cartaFactory = new CartaFactory(jugador);
 		CartaMagica carta = cartaFactory.crearCartaMagicaGenerica();
-		jugador.colocarBocaAbajo(carta);
+		carta.colocarBocaAbajo();
 		jugador.colocarCartaEnZona(carta,  0);
 		
 		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
@@ -66,7 +66,7 @@ public class Entrega1tests {
 		Jugador jugador = new Jugador();
 		CartaFactory cartaFactory = new CartaFactory(jugador);
 		CartaTrampa carta = cartaFactory.crearCartaTrampaGenerica();
-		jugador.colocarBocaAbajo(carta);
+		carta.colocarBocaAbajo();
 		jugador.colocarCartaEnZona(carta,  0);
 		
 		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
