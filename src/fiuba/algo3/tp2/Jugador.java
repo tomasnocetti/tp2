@@ -75,16 +75,19 @@ public class Jugador {
 		zonaMonstruos.eliminarCarta(carta);
 	}
 	
-	public void colocarMonstruo(CartaMonstruo monstruo, int posicion, ArrayList<CartaMonstruo> cartasSacrificadas) {
-		this.zonaMonstruos.agregarCartaMonstruo(monstruo, posicion, cartasSacrificadas);
+	public void colocarCartaEnZona(CartaMonstruo carta, int posicion, ArrayList<CartaMonstruo> cartasSacrificadas) {
+		this.mano.eliminarCarta(carta);
+		this.zonaMonstruos.agregarCartaMonstruo(carta, posicion, cartasSacrificadas);
 	}
 
-	public void colocarCartaTrampaOMagica(CartaTrampaOMagica carta, int posicion) {
+	public void colocarCartaEnZona(CartaTrampaOMagica carta, int posicion) {
+		this.mano.eliminarCarta(carta);
 		this.zonaCartasMagicasOTrampas.agregarCarta(carta, posicion);
 	}
 	
-	public void colocarCartaCampo(CartaCampo campo, int posicion) {
-		this.zonaCartasDeCampo.agregarCarta(campo, posicion);
+	public void colocarCartaEnZona(CartaCampo carta, int posicion) {
+		this.mano.eliminarCarta(carta);
+		this.zonaCartasDeCampo.agregarCarta(carta, posicion);
 	}
 	
 	public boolean noTieneMonstruos() {
@@ -121,20 +124,5 @@ public class Jugador {
 	
 	public void agarrarCarta() {
 		this.mano.agarrarCarta(this.mazo);
-	}
-	
-	public void ponerCartaEnTablero(CartaTrampaOMagica carta, int posicion) {
-		this.mano.eliminarCarta(carta);
-		this.zonaCartasMagicasOTrampas.agregarCarta(carta, posicion);
-	}
-
-	public void ponerCartaEnTablero(CartaCampo carta, int posicion) {
-		this.mano.eliminarCarta(carta);
-		this.zonaCartasDeCampo.agregarCarta(carta, posicion);
-	}
-	
-	public void ponerCartaEnTablero(CartaMonstruo carta, int posicion) {
-		this.mano.eliminarCarta(carta);
-		this.zonaMonstruos.agregarCarta(carta,posicion); 
 	}
 }
