@@ -1,20 +1,12 @@
 package fiuba.algo3.tp2.Cartas;
 
+import fiuba.algo3.Efectos.Efecto;
+import fiuba.algo3.tp2.Jugador;
+
 public class CartaCampo extends Carta{
 	
-	public void activarEfecto() {
-		// TODO Auto-generated method stub
-		this.posicion.activarEfecto(this.efecto);
-	}
-
-	public void colocarBocaAbajo() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void colocarBocaArriba() {
-		// TODO Auto-generated method stub
-		
+	public CartaCampo(Jugador jugador, Efecto efecto) {
+		super(jugador, efecto);
 	}
 
 	public boolean estaEnElCampo() {

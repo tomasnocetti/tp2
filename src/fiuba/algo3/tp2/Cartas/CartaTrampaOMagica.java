@@ -1,31 +1,21 @@
 package fiuba.algo3.tp2.Cartas;
 
+import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Estados.PosicionAbajo;
+import fiuba.algo3.tp2.Jugador;
 
 public abstract class CartaTrampaOMagica extends Carta{
-	
-	public CartaTrampaOMagica() {
+
+	public CartaTrampaOMagica(Jugador jugador, Efecto efecto) {
+		super(jugador, efecto);
 		this.posicion = new PosicionAbajo();
 	}
-
-	public void activarEfecto() {
-		this.posicion.activarEfecto(this.efecto);
-	}
-
-	public void colocarBocaAbajo() {
-		// TODO Auto-generated method sub
-		this.posicion = new PosicionAbajo();
-	}
-
-	
-//	public void colocarBocaArriba() {
-//		// TODO Auto-generated method stub
-//		this.estado = new BocaArriba();
-//	}
 
 	public boolean estaEnElCampo() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.jugador.estaEnElCampo(this);
 	}
 
+	public void enviarAlCementerio( ) {
+		this.jugador.enviarAlCementerio(this);
+	}
 }

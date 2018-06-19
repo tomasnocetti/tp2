@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.Cartas;
 
+import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Estados.AccionAtaque;
 import fiuba.algo3.Estados.AccionDefensa;
 import fiuba.algo3.Estados.Accionable;
@@ -7,7 +8,6 @@ import fiuba.algo3.Estados.MonstruoPosicionAbajo;
 import fiuba.algo3.Estados.MonstruoPosicionArriba;
 import fiuba.algo3.Estados.MonstruoPosicionable;
 import fiuba.algo3.tp2.Jugador;
-import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
 import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
 
 public class CartaMonstruo extends Carta{
@@ -15,18 +15,16 @@ public class CartaMonstruo extends Carta{
 	private int puntosDeAtaque;
     private int puntosDeDefensa;
     private int estrellas;
-	private Jugador jugador;
 	private MonstruoPosicionable posicion;
 	private Accionable accion;
-	private TieneUnEfecto efecto;
 	
-    public CartaMonstruo(int estrella, int ataque, int defenza, Jugador jugador) {
-		this.puntosDeAtaque = ataque;
+    public CartaMonstruo(Jugador jugador, Efecto efecto, int estrella, int ataque, int defenza) {
+    	super(jugador, efecto);
+    	this.puntosDeAtaque = ataque;
 		this.estrellas = estrella;
 		this.puntosDeDefensa = defenza;
 		this.posicion = new MonstruoPosicionArriba(); 
 		this.accion = null;
-		this.jugador = jugador;
 	}
     
 	public void atacar(CartaMonstruo otro) {
@@ -51,7 +49,7 @@ public class CartaMonstruo extends Carta{
 	}
 	
 	public void defender(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante) {
-		if(!this.jugador.estaEnElCampo(this)) throw new CartaNoSeEncuentraEnZona();
+		if(!this.estaEnElCampo()) throw new CartaNoSeEncuentraEnZona();
 		this.posicion.defender(puntosDeAtaqueRecibidos, cartaAtacante, this.accion, this);
 	}
 
@@ -89,11 +87,5 @@ public class CartaMonstruo extends Carta{
 		else {
 			return 0;
 		}
-	}
-
-	@Override
-	public void activarEfecto() {
-		// TODO Auto-generated method stub
-		this.posicion.activarEfecto(efecto);
 	}
 }
