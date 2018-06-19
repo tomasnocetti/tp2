@@ -15,5 +15,5 @@ public class ZonaDeCartasDeCampo extends Zona{
 	
 	public void agregarCarta(CartaCampo carta, int posicion) {
 		super.agregarCarta(carta, posicion);
-	}	
+	}
 }

@@ -49,11 +49,6 @@ public class Jugador {
 		return this.puntosDeVida;
 	}
 
-	
-	public void colocarBocaArriba(CartaCampo carta) {
-		this.colocarBocaArriba(carta);
-	}
-
 	public void destruirMonstruos() {
 		this.zonaMonstruos.vaciar();
 		Collection<Carta> monstruos = this.zonaMonstruos.obtenerCartas();
@@ -139,6 +134,6 @@ public class Jugador {
 	
 	public void ponerCartaEnTablero(CartaMonstruo carta, int posicion) {
 		this.mano.eliminarCarta(carta);
-		this.zonaMonstruos.agregarCarta(carta,posicion);
+		this.zonaMonstruos.agregarCarta(carta,posicion); 
 	}
 }
