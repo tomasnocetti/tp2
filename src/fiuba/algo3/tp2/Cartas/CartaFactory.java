@@ -20,6 +20,18 @@ public class CartaFactory {
 		return carta;
 	}
 	
+	public CartaMonstruo crearCartaMonstruoGenerica1Sacrificio(int puntosAtaque, int puntosDefensa) {
+		Efecto efecto = new EfectoVacio();
+		CartaMonstruo carta = new CartaMonstruo(jugador, efecto, 5, puntosAtaque, puntosDefensa);
+		return carta;
+	}
+	
+	public CartaMonstruo crearCartaMonstruoGenerica2Sacrificio(int puntosAtaque, int puntosDefensa) {
+		Efecto efecto = new EfectoVacio();
+		CartaMonstruo carta = new CartaMonstruo(jugador, efecto, 7, puntosAtaque, puntosDefensa);
+		return carta;
+	}
+	
 	public CartaMagica crearCartaMagicaGenerica() {
 		Efecto efecto = new EfectoVacio();
 		CartaMagica carta = new CartaMagica(jugador, efecto);

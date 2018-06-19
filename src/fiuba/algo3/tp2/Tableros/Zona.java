@@ -5,6 +5,7 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
 
+import fiuba.algo3.tp2.Jugador;
 //import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Excepciones.PosicionDeLaZonaOcupadaException;
@@ -15,9 +16,11 @@ public class Zona {
 	
 	protected Hashtable<Integer,Carta> cartas;
 	protected int limite;
+	protected Jugador jugador;
 	
-	public Zona() {
+	public Zona(Jugador jugador) {
 		this.cartas = new Hashtable<Integer,Carta>();
+		this.jugador = jugador;
 	}
 	
 	protected void agregarCarta(Carta carta, int posicion) {

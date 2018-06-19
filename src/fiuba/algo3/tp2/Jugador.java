@@ -31,9 +31,9 @@ public class Jugador {
 		this.mano = new ZonaMano(this);
 		this.mazo = new Mazo(this);
 		this.cementerio = new Cementerio();
-		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas();
-		this.zonaMonstruos = new ZonaDeCartasMonstruos();
-		this.zonaCartasDeCampo = new ZonaDeCartasDeCampo();
+		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas(this);
+		this.zonaMonstruos = new ZonaDeCartasMonstruos(this);
+		this.zonaCartasDeCampo = new ZonaDeCartasDeCampo(this);
 	}
 
 	public void agarrarCartasDelMazo(int numero) {

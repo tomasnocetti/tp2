@@ -186,18 +186,23 @@ public class Entrega1tests {
 	
 	
 	
-//	@Test
-//	public void test11SacrificioDeUnMonstruo() {
-//		Jugador jugador = new Jugador();
-//		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
-//		jugador.colocarBocaArriba(monstruoSacrificado, 0);
-//		
-//		CartaMonstruo monstruo6Estrellas = new CartaMonstruo(6,1000,1200,jugador);
-//		jugador.colocarBocaArriba(monstruo6Estrellas, 0);
-//		
-//		assertTrue( monstruo6Estrellas.estaEnElCampo() && monstruoSacrificado.estaDestruida());
-//		
-//	}
+	@Test
+	public void test11SacrificioDeUnMonstruo() {
+		Jugador atacante = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaMonstruo mounstruo = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		
+		atacante.colocarCartaEnZona(mounstruo, 0, new ArrayList<CartaMonstruo>());
+		
+		CartaMonstruo mounstruoSacrificio = factoryAtacante.crearCartaMonstruoGenerica1Sacrificio(1000, 1000);
+		ArrayList<CartaMonstruo> sacrificios = new ArrayList<CartaMonstruo>();
+		sacrificios.add(mounstruo);
+		
+		atacante.colocarCartaEnZona(mounstruoSacrificio, 1, sacrificios);
+		
+		assertTrue( mounstruoSacrificio.estaEnElCampo());
+		assertTrue( atacante.obtenerCartasEnCementerio().contains(mounstruo));
+	}
 	
 //	@Test
 //	public void test12SacrificioDeDosMonstruos() {

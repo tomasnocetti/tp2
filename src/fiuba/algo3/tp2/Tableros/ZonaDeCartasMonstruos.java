@@ -2,43 +2,39 @@ package fiuba.algo3.tp2.Tableros;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Iterator;
 
+import fiuba.algo3.Estados.MonstruoPosicionArriba;
+import fiuba.algo3.Estados.MonstruoPosicionable;
+import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.CantidadDeSacrificiosIncorrectoException;
 
 public class ZonaDeCartasMonstruos extends Zona{
 
-	public ZonaDeCartasMonstruos() {
+	public ZonaDeCartasMonstruos(Jugador jugador) {
+		super(jugador);
 		this.limite = 5;
-		this.cartas = new Hashtable<Integer,Carta>();
-	}
-	
+	}	
 
 	public void agregarCarta(CartaMonstruo carta, int posicion, ArrayList<CartaMonstruo> cartasSacrificio) {
 		if (cartasSacrificio.size() != carta.numeroDeSacrificios()) {
 			throw new CantidadDeSacrificiosIncorrectoException();
 		}
-		for(int i = 0; i<cartasSacrificio.size(); i++) {
-		Carta cartaEliminar = cartasSacrificio.get(i);
-		this.eliminarCarta(cartaEliminar);
+		
+		Iterator<CartaMonstruo> i = cartasSacrificio.iterator();
+		while (i.hasNext()) {
+			CartaMonstruo monstruo = (CartaMonstruo) i.next();
+			this.eliminarCarta(monstruo);
+			this.jugador.enviarAlCementerio(monstruo);
+			
 		}
 		super.agregarCarta(carta, posicion);	
 	}
 
 	public boolean estaVacia() {
 		return this.cartas.isEmpty();
-	}
-
-	public ArrayList<CartaMonstruo> sacrificarMonstruos(int numeroDeSacrificios) {
-		ArrayList<CartaMonstruo> monstruosSacrificados = new ArrayList<CartaMonstruo>();
-		for (int i = 0 ; i < numeroDeSacrificios ; i++) {
-			Carta monstruo = this.cartas.get(i);
-			monstruosSacrificados.add((CartaMonstruo) monstruo); 
-			this.eliminarCarta(monstruo);
-		}
-		return monstruosSacrificados;
-		
 	}
 	
 }
