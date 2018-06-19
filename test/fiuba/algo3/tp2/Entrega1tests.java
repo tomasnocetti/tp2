@@ -2,6 +2,7 @@ package fiuba.algo3.tp2;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import fiuba.algo3.Estados.AccionAtaque;
@@ -17,6 +18,11 @@ import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
 public class Entrega1tests {
 
+	@Before 
+	public void initialize() {
+		
+	}
+	
 	@Test
 	public void test01colocarCartaMonstruoAccionAtaque() {
 		Jugador jugador = new Jugador();
@@ -145,6 +151,8 @@ public class Entrega1tests {
 		
 		CartaMagica agujeroNegro = CartaFactory.crearCartaAgujeroNegro(atacante);
 		atacante.colocarCartaEnZona(agujeroNegro, 0);
+	
+		agujeroNegro.colocarBocaArriba();
 		
 		int pvAtacanteDespuesDelAtaque = atacante.obtenerPuntosDeVida();
 		int pvAtacadoDespuesDelAtaque = atacado.obtenerPuntosDeVida();
