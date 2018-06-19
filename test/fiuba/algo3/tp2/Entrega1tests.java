@@ -43,7 +43,7 @@ public class Entrega1tests {
 		CartaFactory factoryAtacado = new CartaFactory(atacado);
 		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
 		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
-		atacante.colocarEnAccionDeDefensa(carta);
+		carta.colocarEnAccionDeDefensa();
 		carta.atacar(carta2);
 	}
 
@@ -112,15 +112,22 @@ public class Entrega1tests {
 	public void test07monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
-		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
-		carta2.colocarEnAccionDeAtaque();
-		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnAccionDeAtaque();
-		carta1.atacar(carta2);
-		//assertTrue(carta1.estaDestruida());
-		//assertTrue(carta2.estaDestruida());
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryDefensor = new CartaFactory(defensor);
+		CartaMonstruo carta1 = factoryDefensor.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta2 = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		atacante.colocarCartaEnZona(carta2, 0, new ArrayList<CartaMonstruo>());
+		defensor.colocarCartaEnZona(carta1, 0, new ArrayList<CartaMonstruo>());
+		
+		carta1.atacar(carta2); // ambas cartas se destruyen
 		assertEquals(8000,atacante.obtenerPuntosDeVida());
 		assertEquals(8000,defensor.obtenerPuntosDeVida());
+		
+		assertFalse(atacante.obtenerMonstruos().contains(carta2));
+		assertTrue(atacante.obtenerCartasEnCementerio().contains(carta2));
+		
+		assertFalse(defensor.obtenerMonstruos().contains(carta1));
+		assertTrue(defensor.obtenerCartasEnCementerio().contains(carta1));
 	}
 
 	@Test
