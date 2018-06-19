@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import fiuba.algo3.Estados.AccionAtaque;
@@ -15,16 +14,9 @@ import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampa;
 import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
-import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
-import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
 public class Entrega1tests {
 
-	@Before 
-	public void initialize() {
-		
-	}
-	
 	@Test
 	public void test01colocarCartaMonstruoAccionAtaque() {
 		Jugador jugador = new Jugador();
