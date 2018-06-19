@@ -5,7 +5,7 @@ import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
-import fiuba.algo3.Efectos.EfectoWasteland;
+import fiuba.algo3.Efectos.EfectoMejoraAtaqueDefensa;;
 
 public class CartaFactory {
 	
@@ -58,7 +58,13 @@ public class CartaFactory {
 	}
 	
 	public CartaCampo crearCartaWasteland() {
-		Efecto efecto = new EfectoWasteland();
+		Efecto efecto = new EfectoMejoraAtaqueDefensa(200, 0, 0, 300);
+		CartaCampo carta = new CartaCampo(this.jugador, efecto);
+		return carta;
+	}
+	
+	public CartaCampo crearCartaSogen() {
+		Efecto efecto = new EfectoMejoraAtaqueDefensa(0, 500, 200, 0);
 		CartaCampo carta = new CartaCampo(this.jugador, efecto);
 		return carta;
 	}
