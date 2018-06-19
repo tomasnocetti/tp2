@@ -93,22 +93,6 @@ public class Jugador {
 	public boolean noTieneMonstruos() {
 		return this.zonaMonstruos.estaVacia();
 	}
-	
-	public void colocarBocaArriba(CartaTrampaOMagica carta) {
-		this.zonaCartasMagicasOTrampas.agregarCarta(carta, 0);
-		carta.colocarBocaArriba();	
-	}
-	
-	public void colocarBocaArriba(CartaMonstruo carta, int posicion) {
-		ArrayList<CartaMonstruo> monstruosSacrificados = this.zonaMonstruos.sacrificarMonstruos(carta.numeroDeSacrificios());
-		Iterator<CartaMonstruo> m = monstruosSacrificados.iterator();
-		while (m.hasNext()) {
-			CartaMonstruo monstruo = m.next();
-			this.enviarAlCementerio(monstruo);
-		}
-		this.zonaMonstruos.agregarCarta(carta, posicion);
-		carta.colocarBocaArriba();
-	}
 
 	public boolean estaEnElCampo(CartaMonstruo cartaMonstruo) {
 		return this.zonaMonstruos.obtenerCartas().contains(cartaMonstruo);
