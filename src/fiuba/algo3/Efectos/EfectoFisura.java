@@ -23,7 +23,7 @@ public class EfectoFisura extends Efecto {
 		
 		while (i.hasNext()) {
 			CartaMonstruo monstruo = (CartaMonstruo) i.next();
-			MonstruoPosicionable posicion = (MonstruoPosicionable) monstruo.obtenerEstado();
+			MonstruoPosicionable posicion = (MonstruoPosicionable) monstruo.obtenerPosicion();
 			if(!MonstruoPosicionArriba.class.isInstance(posicion)) continue;
 			
 			if(cartaConMenorAtaqueBocaArriba == null || cartaConMenorAtaqueBocaArriba.obtenerPuntosAtaque() > monstruo.obtenerPuntosAtaque()) {
