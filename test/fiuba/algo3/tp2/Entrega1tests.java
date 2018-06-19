@@ -84,14 +84,13 @@ public class Entrega1tests {
 		atacante.colocarCartaEnZona(carta2, 0, new ArrayList<CartaMonstruo>());
 		defensor.colocarCartaEnZona(carta1, 0, new ArrayList<CartaMonstruo>());
 		
-		
 		carta2.atacar(carta1); // carta1 se destruye
 		assertEquals(7200, defensor.obtenerPuntosDeVida());
 		assertFalse(defensor.obtenerMonstruos().contains(carta1));
 		assertTrue(defensor.obtenerCartasEnCementerio().contains(carta1));
 	}
 	
-	@Test
+	@Test(expected = CartaNoSeEncuentraEnZona.class)
 	public void test06monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
@@ -111,6 +110,7 @@ public class Entrega1tests {
 	@Test
 	public void test07monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
+<<<<<<< HEAD
 		Jugador defensor = new Jugador();
 		CartaFactory factoryAtacante = new CartaFactory(atacante);
 		CartaFactory factoryDefensor = new CartaFactory(defensor);
@@ -128,59 +128,66 @@ public class Entrega1tests {
 		
 		assertFalse(defensor.obtenerMonstruos().contains(carta1));
 		assertTrue(defensor.obtenerCartasEnCementerio().contains(carta1));
+=======
+		Jugador atacado = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 2000);
+		carta.atacar(carta2);
+
+		assertEquals(8000,atacante.obtenerPuntosDeVida());
+		assertEquals(8000,atacado.obtenerPuntosDeVida());
+>>>>>>> b41e930809092bf459eefe3cfcdf9d9b4efc2984
 	}
 
 	@Test
 	public void test08monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMayorDefensa(){
 		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
-		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
+		Jugador atacado = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 2000);
 		carta2.colocarEnAccionDeDefensa();
-		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnAccionDeAtaque();
-		carta1.atacar(carta2);
-		//assertFalse(carta2.estaDestruida());
-		assertEquals(8000,defensor.obtenerPuntosDeVida());
+		carta.atacar(carta2);
+
+		assertEquals(8000,atacado.obtenerPuntosDeVida());
 		
 	}
 
 	@Test
 	public void test09monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMenorDefensa(){
 		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
-		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
+		Jugador atacado = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 500);
+		
 		carta2.colocarEnAccionDeDefensa();
-		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
-		carta1.colocarEnAccionDeAtaque();
-		carta1.atacar(carta2);
-		//assertTrue(carta2.estaDestruida());
-		assertEquals(8000,defensor.obtenerPuntosDeVida());
+		carta.atacar(carta2);
+
+		assertEquals(8000,atacado .obtenerPuntosDeVida());
 	}
 	
 	@Test
 	public void test10agujeroNegro(){ 
 		Jugador atacante = new Jugador();
 		Jugador atacado = new Jugador();
-				
-		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica(1000, 1000, atacante);
-		carta.colocarEnAccionDeAtaque();
-		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000, atacado);
-		carta2.colocarEnAccionDeAtaque();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
 		
 		CartaMagica agujeroNegro = CartaFactory.crearCartaAgujeroNegro(atacante);
 		atacante.colocarCartaEnZona(agujeroNegro, 0);
-	
-		agujeroNegro.colocarBocaArriba();
-		
-		int pvAtacanteDespuesDelAtaque = atacante.obtenerPuntosDeVida();
-		int pvAtacadoDespuesDelAtaque = atacado.obtenerPuntosDeVida();
+		agujeroNegro.colocarBocaArriba(atacado);
 		
 		boolean monstruosAtacanteDestruidos = atacante.noTieneMonstruos();
 		boolean monstruosAtacadoDestruidos = atacado.noTieneMonstruos();
-		boolean atacanteNoRecibioDano = (pvAtacanteAntesDelAtaque - pvAtacanteDespuesDelAtaque == 0);
-		boolean atacadoNoRecibioDano = (pvAtacadoDespuesDelAtaque - pvAtacadoDespuesDelAtaque == 0);
 		
-		assertTrue(monstruosAtacanteDestruidos && monstruosAtacadoDestruidos && atacanteNoRecibioDano && atacadoNoRecibioDano);
+		assertTrue(monstruosAtacanteDestruidos && monstruosAtacadoDestruidos);
 	}
 	
 	

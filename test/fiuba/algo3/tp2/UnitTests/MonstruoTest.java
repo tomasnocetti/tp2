@@ -20,7 +20,7 @@ public class MonstruoTest {
 	
 	@Test
 	public void test01colocarCartaMonstruoPosicionAtaque() {
-		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenericoEnAtaque(1000, 1000);
 		carta.colocarEnAccionDeAtaque();
 		Accionable accionMonstruo = carta.obtenerAccion();
 		assertEquals(accionMonstruo.getClass(), AccionAtaque.class);
@@ -29,7 +29,7 @@ public class MonstruoTest {
 	
 	@Test
 	public void test02colocarCartaMonstruoPosicionDefensa() {
-		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenericoEnAtaque(1000, 1000);
 		carta.colocarEnAccionDeDefensa();
 		Accionable accionMonstruo = carta.obtenerAccion();
 		assertEquals(accionMonstruo.getClass(), AccionDefensa.class); 
@@ -43,7 +43,7 @@ public class MonstruoTest {
 		Efecto efecto = new EfectoVacio();
 		CartaMonstruo carta1 = new CartaMonstruo(atacado, efecto, 4, 1000, 100);
 		atacado.colocarCartaEnZona(carta1, 0, new ArrayList<CartaMonstruo>());
-		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1800, 1000);
+		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenericoEnAtaque(1800, 1000);
 		carta1.colocarEnAccionDeAtaque();
 		carta2.colocarEnAccionDeAtaque();
 		carta2.atacar(carta1);
@@ -53,8 +53,8 @@ public class MonstruoTest {
 	
 	@Test(expected = CartaNoSeEncuentraEnZona.class)
 	public void test04monstruoConMayorAtaqueAtacaAOtroYLoDestruye() {
-		CartaMonstruo carta1 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
-		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(2000, 1000);
+		CartaMonstruo carta1 = CartaFactory.crearCartaMonstruoGenericoEnAtaque(1000, 1000);
+		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenericoEnAtaque(2000, 1000);
 		carta1.colocarEnAccionDeAtaque();
 		carta2.colocarEnAccionDeAtaque();
 		// Ataca y lo destrulle.
@@ -66,8 +66,8 @@ public class MonstruoTest {
 	
 	@Test(expected = CartaNoSeEncuentraEnZona.class)
 	public void test06monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaqueYSeDestruye(){
-		CartaMonstruo carta1 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
-		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(2000, 1000);
+		CartaMonstruo carta1 = CartaFactory.crearCartaMonstruoGenericoEnAtaque(1000, 1000);
+		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenericoEnAtaque(2000, 1000);
 		carta2.colocarEnAccionDeAtaque();
 		carta1.colocarEnAccionDeAtaque();
 		carta1.atacar(carta2); //Ataca y se destruye
@@ -77,8 +77,8 @@ public class MonstruoTest {
 	
 	@Test(expected = CartaNoSeEncuentraEnZona.class)
 	public void test07monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaqueElPrimerMonstruoSeDestruye(){
-		CartaMonstruo carta1 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
-		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta1 = CartaFactory.crearCartaMonstruoGenericoEnAtaque(1000, 1000);
+		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenericoEnAtaque(1000, 1000);
 		carta2.colocarEnAccionDeAtaque();
 		carta1.colocarEnAccionDeAtaque();
 		
@@ -88,8 +88,8 @@ public class MonstruoTest {
 	
 	@Test(expected = CartaNoSeEncuentraEnZona.class)
 	public void test08monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaqueElSegundoSeDestruye(){
-		CartaMonstruo carta1 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
-		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta1 = CartaFactory.crearCartaMonstruoGenericoEnAtaque(1000, 1000);
+		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenericoEnAtaque(1000, 1000);
 		carta2.colocarEnAccionDeAtaque();
 		carta1.colocarEnAccionDeAtaque();
 		
