@@ -68,6 +68,10 @@ public class CartaMonstruo extends Carta{
 	public Accionable obtenerAccion() {
 		return this.accion;
 	}
+	
+	public MonstruoPosicionable obtenerPosicion() {
+		return this.posicion;
+	}
 
 	public void quitarVidaAJugador(int puntosPerdidos) {
 		// TODO Auto-generated method stub

@@ -8,9 +8,4 @@ public class CartaMagica extends CartaTrampaOMagica{
 	public CartaMagica(Jugador jugador, Efecto efecto) {
 		super(jugador, efecto);
 	}
-
-	public void activar(Jugador oponente) {
-		this.efecto.activarSobreJugadorAtacante(this.jugador);
-		this.efecto.activarSobreJugadorAtacado(oponente);
-	}
 }

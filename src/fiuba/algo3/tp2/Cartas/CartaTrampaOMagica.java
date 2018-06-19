@@ -22,7 +22,12 @@ public abstract class CartaTrampaOMagica extends Carta{
 	
 	public void colocarBocaArriba(Jugador oponente) {
 		this.posicion = new PosicionArriba();
+		this.activar(oponente);
+	}
+	
+	public void activar(Jugador oponente) {
 		this.efecto.activarSobreJugadorAtacante(this.jugador);
 		this.efecto.activarSobreJugadorAtacado(oponente);
 	}
+
 }
