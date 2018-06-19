@@ -43,6 +43,7 @@ public class Entrega1tests {
 		CartaFactory factoryAtacado = new CartaFactory(atacado);
 		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
 		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
+		atacante.colocarCartaEnZona(carta,  0, new ArrayList<CartaMonstruo>());
 		carta.colocarEnAccionDeDefensa();
 		carta.atacar(carta2);
 	}
@@ -138,6 +139,8 @@ public class Entrega1tests {
 		CartaFactory factoryAtacado = new CartaFactory(atacado);
 		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
 		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 2000);
+		atacante.colocarCartaEnZona(carta, 0, new ArrayList<CartaMonstruo>());
+		atacado.colocarCartaEnZona(carta2, 0, new ArrayList<CartaMonstruo>());		
 		carta2.colocarEnAccionDeDefensa();
 		carta.atacar(carta2);
 
@@ -153,6 +156,8 @@ public class Entrega1tests {
 		CartaFactory factoryAtacado = new CartaFactory(atacado);
 		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
 		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 500);
+		atacante.colocarCartaEnZona(carta, 0, new ArrayList<CartaMonstruo>());
+		atacado.colocarCartaEnZona(carta2, 0, new ArrayList<CartaMonstruo>());
 		
 		carta2.colocarEnAccionDeDefensa();
 		carta.atacar(carta2);
