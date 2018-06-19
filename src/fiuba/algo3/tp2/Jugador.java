@@ -98,14 +98,6 @@ public class Jugador {
 		return this.zonaMonstruos.obtenerCartas().contains(cartaMonstruo);
 	}
 	
-	public boolean estaEnElCampo(CartaTrampaOMagica cartaTrampaOMagica) {
-		return false;
-	}	
-	
-	public boolean estaEnElCampo(CartaCampo cartaCampo) {
-		return false;
-	}
-	
 	public void agarrarCarta() {
 		this.mano.agarrarCarta(this.mazo);
 	}
@@ -120,6 +112,14 @@ public class Jugador {
 
 	public Collection<Carta> obtenerCartasEnCementerio() {
 		return this.cementerio.obtenerCartas();
+	}
+	
+	public Collection<Carta> obtenerCartasEnMano() {
+		return this.mano.obtenerCartas();
+	}
+	
+	public Collection<Carta> obtenerCartaCampo() {
+		return this.zonaCartasDeCampo.obtenerCartas();
 	}
 	
 	
