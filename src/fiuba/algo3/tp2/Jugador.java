@@ -25,14 +25,17 @@ public class Jugador {
 	private ZonaDeCartasDeCampo zonaCartasDeCampo;
 	private ZonaDeCartasMagicasOTrampas zonaCartasMagicasOTrampas;
 	private Cementerio cementerio;
+	private Juego juego;
 	
-	public Jugador() {
+	public Jugador(Juego juego) {
 		this.puntosDeVida = 8000;
-		this.mano = new ZonaMano();
+		this.mano = new ZonaMano(this);
+		this.mazo = new Mazo(this);
 		this.cementerio = new Cementerio();
 		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas();
 		this.zonaMonstruos = new ZonaDeCartasMonstruos();
 		this.zonaCartasDeCampo = new ZonaDeCartasDeCampo();
+		this.juego = juego;
 	}
 
 	public void agarrarCartasDelMazo(int numero) {

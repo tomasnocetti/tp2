@@ -10,8 +10,8 @@ public class Juego {
 
 	public Juego() {
 //		this.cartas = new Hashtable<Object, Object>();
-		this.jugador1 = new Jugador();
-		this.jugador2 = new Jugador();
+		this.jugador1 = new Jugador(this);
+		this.jugador2 = new Jugador(this);
 	}
 	
 }

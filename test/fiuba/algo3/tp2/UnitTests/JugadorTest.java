@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
@@ -19,8 +20,9 @@ public class JugadorTest {
 	
 	@Test
 	public void test06monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaqueYSeDestruye(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
+		Juego juego = new Juego();
+		Jugador atacante = new Jugador(juego);
+		Jugador defensor = new Jugador(juego);
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -31,8 +33,9 @@ public class JugadorTest {
 	
 	@Test
 	public void test07monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaqueElPrimerMonstruoSeDestruye(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
+		Juego juego = new Juego();
+		Jugador atacante = new Jugador(juego);
+		Jugador defensor = new Jugador(juego);
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -43,8 +46,9 @@ public class JugadorTest {
 	
 	@Test
 	public void test08monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaqueElSegundoSeTestruye(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
+		Juego juego = new Juego();
+		Jugador atacante = new Jugador(juego);
+		Jugador defensor = new Jugador(juego);
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -57,8 +61,9 @@ public class JugadorTest {
 	
 	@Test
 	public void test11monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMayorDefensaNoDestruyeAlDefensor(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
+		Juego juego = new Juego();
+		Jugador atacante = new Jugador(juego);
+		Jugador defensor = new Jugador(juego);
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -70,8 +75,9 @@ public class JugadorTest {
 	
 	@Test
 	public void test13monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMenorDefensaYLoDestruye(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
+		Juego juego = new Juego();
+		Jugador atacante = new Jugador(juego);
+		Jugador defensor = new Jugador(juego);
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
@@ -82,8 +88,9 @@ public class JugadorTest {
 	
 	@Test
 	public void test05monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaqueYSuJugadorPierdePuntosDeVida(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
+		Juego juego = new Juego();
+		Jugador atacante = new Jugador(juego);
+		Jugador defensor = new Jugador(juego);
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -95,8 +102,9 @@ public class JugadorTest {
 	
 	@Test
 	public void test09monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaqueAtacanteNoPierdeVida(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
+		Juego juego = new Juego();
+		Jugador atacante = new Jugador(juego);
+		Jugador defensor = new Jugador(juego);
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -108,8 +116,9 @@ public class JugadorTest {
 	
 	@Test
 	public void test10monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaqueAtacadoNoPierdeVida(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
+		Juego juego = new Juego();
+		Jugador atacante = new Jugador(juego);
+		Jugador defensor = new Jugador(juego);
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -120,8 +129,9 @@ public class JugadorTest {
 	
 	@Test
 	public void test12monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMayorDefensaNoQuitaPuntosDeVidaAlDefensor(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
+		Juego juego = new Juego();
+		Jugador atacante = new Jugador(juego);
+		Jugador defensor = new Jugador(juego);
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -134,8 +144,9 @@ public class JugadorTest {
 	
 	@Test
 	public void test14monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMenorDefensaYNoQuitaPuntosDeVidaAlDefensor(){
-		Jugador atacante = new Jugador();
-		Jugador defensor = new Jugador();
+		Juego juego = new Juego();
+		Jugador atacante = new Jugador(juego);
+		Jugador defensor = new Jugador(juego);
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
@@ -159,7 +170,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test16SacrificioDeUnMonstruoColocaElNuevoMonstruoEnElCampo() {
-		Jugador jugador = new Jugador();
+		Juego juego = new Juego();
+		Jugador jugador = new Jugador(juego);
 		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
 		jugador.colocarBocaArriba(monstruoSacrificado, 0);
 		
