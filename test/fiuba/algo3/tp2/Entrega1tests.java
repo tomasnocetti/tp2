@@ -34,12 +34,15 @@ public class Entrega1tests {
 
 	@Test
 	public void test03colocarCartaMagicaEnCampoBocaAbajo() {
-		CartaMagica carta = new CartaMagica();
-		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
-		campo.agregarCarta(carta, 0);
-		carta.colocarBocaAbajo();
+		//CartaMagica carta = new CartaMagica();
+		//ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
+		//campo.agregarCarta(carta, 0);
+		//carta.colocarBocaAbajo();
+		Jugador jugador = new Jugador();
+		CartaMagica carta = CartaFactory.crearCartaMagicaParaJugador(jugador);
+		jugador.colocarCartaEnZona(carta,  0);
 		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
-		assertTrue(campo.obtenerCartas().contains(carta)); 
+		assertTrue(jugador.obtenerCartasMagicasYDeTrampa().contains(carta)); 
 	}
 	
 	@Test
