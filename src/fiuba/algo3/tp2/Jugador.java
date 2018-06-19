@@ -93,6 +93,19 @@ public class Jugador {
 	public boolean noTieneMonstruos() {
 		return this.zonaMonstruos.estaVacia();
 	}
+	
+	public void colocarBocaArriba(Carta carta) {
+		carta.colocarBocaArriba();
+	}
+	
+	public void colocarBocaAbajo(Carta carta) {
+		carta.colocarBocaAbajo();
+	}
+	
+	public void colocarEnAccionDeDefensa(CartaMonstruo carta) {
+		carta.colocarEnAccionDeDefensa();
+		
+	}
 
 	public boolean estaEnElCampo(CartaMonstruo cartaMonstruo) {
 		return this.zonaMonstruos.obtenerCartas().contains(cartaMonstruo);
@@ -109,4 +122,10 @@ public class Jugador {
 	public void agarrarCarta() {
 		this.mano.agarrarCarta(this.mazo);
 	}
+
+	public Collection<Carta> obtenerCartasMagicasYTrampas() {
+		return this.zonaCartasMagicasOTrampas.obtenerCartas();
+	}
+	
+	
 }
