@@ -90,7 +90,7 @@ public class Entrega1tests {
 		assertTrue(defensor.obtenerCartasEnCementerio().contains(carta1));
 	}
 	
-	@Test(expected = CartaNoSeEncuentraEnZona.class)
+	@Test
 	public void test06monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
@@ -110,8 +110,8 @@ public class Entrega1tests {
 	@Test
 	public void test07monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
-<<<<<<< HEAD
 		Jugador defensor = new Jugador();
+		
 		CartaFactory factoryAtacante = new CartaFactory(atacante);
 		CartaFactory factoryDefensor = new CartaFactory(defensor);
 		CartaMonstruo carta1 = factoryDefensor.crearCartaMonstruoGenerica(1000, 1000);
@@ -128,17 +128,6 @@ public class Entrega1tests {
 		
 		assertFalse(defensor.obtenerMonstruos().contains(carta1));
 		assertTrue(defensor.obtenerCartasEnCementerio().contains(carta1));
-=======
-		Jugador atacado = new Jugador();
-		CartaFactory factoryAtacante = new CartaFactory(atacante);
-		CartaFactory factoryAtacado = new CartaFactory(atacado);
-		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
-		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 2000);
-		carta.atacar(carta2);
-
-		assertEquals(8000,atacante.obtenerPuntosDeVida());
-		assertEquals(8000,atacado.obtenerPuntosDeVida());
->>>>>>> b41e930809092bf459eefe3cfcdf9d9b4efc2984
 	}
 
 	@Test
