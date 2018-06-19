@@ -12,7 +12,7 @@ public class CartaFactory {
 		Jugador jugador = new Jugador();
 		Efecto efecto = new EfectoVacio();
 		CartaMonstruo carta = new CartaMonstruo(jugador, efecto, 4, puntosAtaque, puntosDefensa);
-		jugador.colocarMonstruo(carta, 0, new ArrayList<CartaMonstruo>());
+		jugador.colocarCartaEnZona(carta, 0, new ArrayList<CartaMonstruo>());
 		return carta;
 	}
 }
