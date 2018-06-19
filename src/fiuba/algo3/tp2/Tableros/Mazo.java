@@ -12,10 +12,10 @@ public class Mazo{
 	private ArrayList<Carta> cartas;
 	private Jugador jugador;
 	
-	public Mazo(Jugador jugador) {
+	public Mazo(Jugador _jugador, ArrayList<Carta> _cartas) {
 		this.cantidadDeCartas = 40;
-		this.cartas = new ArrayList<Carta>();
-		this.jugador = jugador;
+		this.cartas = _cartas;
+		this.jugador = _jugador;
 	}
 
 	public Carta agarrarCarta() {
