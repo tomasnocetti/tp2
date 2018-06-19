@@ -21,6 +21,7 @@ public class AccionAtaque implements Accionable {
 			return;
 		} else if(diferenciaAtaque == 0) {
 			cartaActual.enviarAlCementerio();
+			cartaAtacante.enviarAlCementerio();
 		} else {
 			cartaActual.atacar(cartaAtacante);
 		}

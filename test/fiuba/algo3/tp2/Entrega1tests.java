@@ -43,7 +43,7 @@ public class Entrega1tests {
 		CartaFactory factoryAtacado = new CartaFactory(atacado);
 		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
 		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
-		atacante.colocarEnAccionDeDefensa(carta);
+		carta.colocarEnAccionDeDefensa();
 		carta.atacar(carta2);
 	}
 
@@ -90,7 +90,7 @@ public class Entrega1tests {
 		assertTrue(defensor.obtenerCartasEnCementerio().contains(carta1));
 	}
 	
-	@Test(expected = CartaNoSeEncuentraEnZona.class)
+	@Test
 	public void test06monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
@@ -110,15 +110,24 @@ public class Entrega1tests {
 	@Test
 	public void test07monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
-		Jugador atacado = new Jugador();
+		Jugador defensor = new Jugador();
+		
 		CartaFactory factoryAtacante = new CartaFactory(atacante);
-		CartaFactory factoryAtacado = new CartaFactory(atacado);
-		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
-		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 2000);
-		carta.atacar(carta2);
-
+		CartaFactory factoryDefensor = new CartaFactory(defensor);
+		CartaMonstruo carta1 = factoryDefensor.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta2 = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		atacante.colocarCartaEnZona(carta2, 0, new ArrayList<CartaMonstruo>());
+		defensor.colocarCartaEnZona(carta1, 0, new ArrayList<CartaMonstruo>());
+		
+		carta1.atacar(carta2); // ambas cartas se destruyen
 		assertEquals(8000,atacante.obtenerPuntosDeVida());
-		assertEquals(8000,atacado.obtenerPuntosDeVida());
+		assertEquals(8000,defensor.obtenerPuntosDeVida());
+		
+		assertFalse(atacante.obtenerMonstruos().contains(carta2));
+		assertTrue(atacante.obtenerCartasEnCementerio().contains(carta2));
+		
+		assertFalse(defensor.obtenerMonstruos().contains(carta1));
+		assertTrue(defensor.obtenerCartasEnCementerio().contains(carta1));
 	}
 
 	@Test

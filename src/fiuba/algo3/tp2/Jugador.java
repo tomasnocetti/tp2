@@ -101,11 +101,6 @@ public class Jugador {
 	public void colocarBocaAbajo(Carta carta) {
 		carta.colocarBocaAbajo();
 	}
-	
-	public void colocarEnAccionDeDefensa(CartaMonstruo carta) {
-		carta.colocarEnAccionDeDefensa();
-		
-	}
 
 	public boolean estaEnElCampo(CartaMonstruo cartaMonstruo) {
 		return this.zonaMonstruos.obtenerCartas().contains(cartaMonstruo);
