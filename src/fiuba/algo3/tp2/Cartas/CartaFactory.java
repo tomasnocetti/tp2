@@ -3,6 +3,7 @@ package fiuba.algo3.tp2.Cartas;
 import java.util.ArrayList;
 
 import fiuba.algo3.Efectos.Efecto;
+import fiuba.algo3.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
 
@@ -30,6 +31,12 @@ public class CartaFactory {
 	public CartaTrampa crearCartaTrampaGenerica() {
 		Efecto efecto = new EfectoVacio();
 		CartaTrampa carta = new CartaTrampa(jugador, efecto);
+		return carta;
+	}
+
+	public static CartaMagica crearCartaAgujeroNegro(Jugador jugador) {
+		Efecto efecto = new EfectoAgujeroNegro();
+		CartaMagica carta = new CartaMagica(jugador, efecto);
 		return carta;
 	}
 }

@@ -93,7 +93,7 @@ public class Jugador {
 	public boolean noTieneMonstruos() {
 		return this.zonaMonstruos.estaVacia();
 	}
-
+	
 	public void colocarBocaArriba(Carta carta) {
 		carta.colocarBocaArriba();
 	}
@@ -106,7 +106,6 @@ public class Jugador {
 		carta.colocarEnAccionDeDefensa();
 		
 	}
-	
 
 	public boolean estaEnElCampo(CartaMonstruo cartaMonstruo) {
 		return this.zonaMonstruos.obtenerCartas().contains(cartaMonstruo);
