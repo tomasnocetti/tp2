@@ -126,6 +126,14 @@ public class Jugador {
 	public Collection<Carta> obtenerCartasMagicasYTrampas() {
 		return this.zonaCartasMagicasOTrampas.obtenerCartas();
 	}
+
+	public Collection<Carta> obtenerMonstruos() {
+		return this.zonaMonstruos.obtenerCartas();
+	}
+
+	public Collection<Carta> obtenerCartasEnCementerio() {
+		return this.cementerio.obtenerCartas();
+	}
 	
 	
 }

@@ -2,6 +2,8 @@ package fiuba.algo3.tp2;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -71,30 +73,39 @@ public class Entrega1tests {
 	}
 
 
-	@Test(expected = CartaNoSeEncuentraEnZona.class)
+	@Test
 	public void test05monstruoConMayorAtaqueAtacaAOtroConMenorAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
-		CartaMonstruo carta1 = new CartaMonstruo(4, 1000, 100, defensor);
-		carta1.colocarEnAccionDeAtaque();
-		CartaMonstruo carta2 = new CartaMonstruo(4, 1800, 100, atacante);
-		carta2.colocarEnAccionDeAtaque();
-		carta2.atacar(carta1);
-		assertEquals(7200, defensor.obtenerPuntosDeVida());
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryDefensor = new CartaFactory(defensor);
+		CartaMonstruo carta1 = factoryDefensor.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta2 = factoryAtacante.crearCartaMonstruoGenerica(1800, 1000);
+		atacante.colocarCartaEnZona(carta2, 0, new ArrayList<CartaMonstruo>());
+		defensor.colocarCartaEnZona(carta1, 0, new ArrayList<CartaMonstruo>());
 		
+		
+		carta2.atacar(carta1); // carta1 se destruye
+		assertEquals(7200, defensor.obtenerPuntosDeVida());
+		assertFalse(defensor.obtenerMonstruos().contains(carta1));
+		assertTrue(defensor.obtenerCartasEnCementerio().contains(carta1));
 	}
 	
 	@Test
 	public void test06monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaque(){
 		Jugador atacante = new Jugador();
 		Jugador defensor = new Jugador();
-		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,defensor);
-		carta2.colocarEnAccionDeAtaque();
-		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
-		carta1.colocarEnAccionDeAtaque();
-		carta1.atacar(carta2);
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryDefensor = new CartaFactory(defensor);
+		CartaMonstruo carta1 = factoryDefensor.crearCartaMonstruoGenerica(1800, 1000);
+		CartaMonstruo carta2 = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		atacante.colocarCartaEnZona(carta2, 0, new ArrayList<CartaMonstruo>());
+		defensor.colocarCartaEnZona(carta1, 0, new ArrayList<CartaMonstruo>());
+		
+		carta2.atacar(carta1); //carta2 se destruye
 		assertEquals(7200,atacante.obtenerPuntosDeVida());
-//		assertTrue(carta1.estaDestruida());
+		assertFalse(atacante.obtenerMonstruos().contains(carta2));
+		assertTrue(atacante.obtenerCartasEnCementerio().contains(carta2));
 	}
 	
 	@Test
