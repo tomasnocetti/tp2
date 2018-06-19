@@ -11,6 +11,8 @@ import fiuba.algo3.tp2.Cartas.CartaFactory;
 //import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
+import fiuba.algo3.Efectos.Efecto;
+import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.Estados.*;
 import fiuba.algo3.tp2.Jugador;
 
@@ -18,8 +20,7 @@ public class MonstruoTest {
 	
 	@Test
 	public void test01colocarCartaMonstruoPosicionAtaque() {
-		Jugador jugador = new Jugador();
-		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador); //estrellas,ataque,def
+		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
 		carta.colocarEnAccionDeAtaque();
 		Accionable accionMonstruo = carta.obtenerAccion();
 		assertEquals(accionMonstruo.getClass(), AccionAtaque.class);
@@ -28,8 +29,7 @@ public class MonstruoTest {
 	
 	@Test
 	public void test02colocarCartaMonstruoPosicionDefensa() {
-		Jugador jugador = new Jugador();
-		CartaMonstruo carta = new CartaMonstruo(4,1000,100,jugador);
+		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
 		carta.colocarEnAccionDeDefensa();
 		Accionable accionMonstruo = carta.obtenerAccion();
 		assertEquals(accionMonstruo.getClass(), AccionDefensa.class); 
@@ -40,8 +40,9 @@ public class MonstruoTest {
 	public void test03monstruoConMayorAtaqueAtacaAOtroConMenorAtaqueAmbosEnPosicionDeAtaqueYQuitaPuntosDeVidaAlOponente(){
 		
 		Jugador atacado = new Jugador();
-		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacado);
-		atacado.colocarMonstruo(carta1, 0, new ArrayList<CartaMonstruo>());
+		Efecto efecto = new EfectoVacio();
+		CartaMonstruo carta1 = new CartaMonstruo(atacado, efecto, 4, 1000, 100);
+		atacado.colocarCartaEnZona(carta1, 0, new ArrayList<CartaMonstruo>());
 		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1800, 1000);
 		carta1.colocarEnAccionDeAtaque();
 		carta2.colocarEnAccionDeAtaque();

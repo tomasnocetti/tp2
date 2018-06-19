@@ -16,7 +16,7 @@ public class ZonaMano extends Zona{
 	}
 	
 	public void agarrarCarta(Mazo mazo) {
-		super.agregarCarta(mazo.agarrarCarta(),this.cartas.size());
+		super.agregarCarta(mazo.agarrarCarta(), this.cartas.size());
 	}
 	
 }
