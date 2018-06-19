@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import fiuba.algo3.tp2.Cartas.Carta;
 
-public class Cementerio{
+public class Cementerio {
 	
 	protected ArrayList<Carta> cartas;
 
@@ -14,5 +14,9 @@ public class Cementerio{
 	
 	public void agregarCarta(Carta carta) {
 		cartas.add(carta);
+	}
+	
+	public ArrayList<Carta> obtenerCartas() {
+		return this.cartas;
 	}
 }
