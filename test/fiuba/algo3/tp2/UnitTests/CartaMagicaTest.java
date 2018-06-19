@@ -12,7 +12,6 @@ import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
-import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
 public class CartaMagicaTest {
 
