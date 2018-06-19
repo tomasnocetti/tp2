@@ -209,20 +209,26 @@ public class Entrega1tests {
 		assertTrue( atacante.obtenerCartasEnCementerio().contains(mounstruo));
 	}
 	
-//	@Test
-//	public void test12SacrificioDeDosMonstruos() {
-//		Jugador jugador = new Jugador();
-//		CartaMonstruo monstruoSacrificado1 = new CartaMonstruo(4,1000,1200,jugador);
-//		CartaMonstruo monstruoSacrificado2 = new CartaMonstruo(4,1000,1200,jugador);
-//		jugador.colocarBocaArriba(monstruoSacrificado1, 0);
-//		jugador.colocarBocaArriba(monstruoSacrificado2, 1);
-//		
-//		CartaMonstruo monstruo7Estrellas = new CartaMonstruo(7,1000,1200,jugador);
-//		jugador.colocarBocaArriba(monstruo7Estrellas, 0);
-//		
-//		assertEquals( monstruo7Estrellas.estaEnElCampo() && monstruoSacrificado1.estaDestruida() && monstruoSacrificado2.estaDestruida(), true);
-//		
-//	}
+	@Test
+	public void test12SacrificioDeDosMonstruos() {
+		Jugador atacante = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaMonstruo mounstruo = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo mounstruo2 = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+
+		atacante.colocarCartaEnZona(mounstruo, 0, new ArrayList<CartaMonstruo>());
+		
+		CartaMonstruo mounstruoSacrificio = factoryAtacante.crearCartaMonstruoGenerica2Sacrificio(1000, 1000);
+		ArrayList<CartaMonstruo> sacrificios = new ArrayList<CartaMonstruo>();
+		sacrificios.add(mounstruo);
+		sacrificios.add(mounstruo2);
+		
+		atacante.colocarCartaEnZona(mounstruoSacrificio, 1, sacrificios);
+		
+		assertTrue( mounstruoSacrificio.estaEnElCampo());
+		assertTrue( atacante.obtenerCartasEnCementerio().contains(mounstruo));
+		
+	}
 	
 }
 
