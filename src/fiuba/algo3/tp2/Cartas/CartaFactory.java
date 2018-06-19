@@ -5,7 +5,8 @@ import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
-import fiuba.algo3.Efectos.EfectoMejoraAtaqueDefensa;;
+import fiuba.algo3.Efectos.EfectoMejoraAtaqueDefensa;
+import fiuba.algo3.Efectos.EfectoOllaDeLaCodicia;;
 
 public class CartaFactory {
 	
@@ -68,4 +69,11 @@ public class CartaFactory {
 		CartaCampo carta = new CartaCampo(this.jugador, efecto);
 		return carta;
 	}
+	
+	public CartaMagica crearOllaDeLaCodicia() {
+		Efecto efecto = new EfectoOllaDeLaCodicia();
+		CartaMagica carta = new CartaMagica(this.jugador, efecto);
+		return carta;
+	}
+	
 }
