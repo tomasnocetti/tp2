@@ -26,6 +26,7 @@ public class EfectoTest {
 		carta2.colocarEnAccionDeAtaque();
 		Efecto efecto = new EfectoAgujeroNegro();
 		efecto.activarSobreJugadorDefensivo(jugador);
+		efecto.activarSobreJugadorOfensivo(jugador2);
 		carta.atacar(carta2);
 	}
 }

@@ -128,18 +128,14 @@ public class Entrega1tests {
 	public void test10agujeroNegro(){ 
 		Jugador atacante = new Jugador();
 		Jugador atacado = new Jugador();
-		int pvAtacanteAntesDelAtaque = atacante.obtenerPuntosDeVida();
-		//int pvAtacadoAntesDelAtaque = atacado.darPuntosDeVida();
+				
+		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica(1000, 1000, atacante);
+		carta.colocarEnAccionDeAtaque();
+		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000, atacado);
+		carta2.colocarEnAccionDeAtaque();
 		
-		CartaMonstruo monstruoAtacante = new CartaMonstruo(4, 1000, 1200, atacante);
-		CartaMonstruo monstruoAtacado = new CartaMonstruo(4, 1000, 1200, atacado);
-		
-		atacante.colocarMonstruo(monstruoAtacante, 0);
-		atacado.colocarMonstruo(monstruoAtacado, 0);
-		
-		CartaMagica agujeroNegro = new AgujeroNegro(atacante, atacado);
-		
-		atacante.colocarBocaArriba(agujeroNegro);
+		CartaMagica agujeroNegro = CartaFactory.crearCartaAgujeroNegro(atacante);
+		atacante.colocarCartaEnZona(agujeroNegro, 0);
 		
 		int pvAtacanteDespuesDelAtaque = atacante.obtenerPuntosDeVida();
 		int pvAtacadoDespuesDelAtaque = atacado.obtenerPuntosDeVida();
