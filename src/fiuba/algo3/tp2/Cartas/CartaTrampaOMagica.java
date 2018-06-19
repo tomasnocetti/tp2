@@ -20,7 +20,9 @@ public abstract class CartaTrampaOMagica extends Carta{
 		this.jugador.enviarAlCementerio(this);
 	}
 	
-	public void colocarBocaArriba() {
+	public void colocarBocaArriba(Jugador oponente) {
 		this.posicion = new PosicionArriba();
+		this.efecto.activarSobreJugadorOfensivo(this.jugador);
+		this.efecto.activarSobreJugadorDefensivo(oponente);
 	}
 }
