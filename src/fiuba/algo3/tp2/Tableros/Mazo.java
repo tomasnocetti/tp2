@@ -22,7 +22,7 @@ public class Mazo{
 		if (this.cantidadDeCartas == 0) {
 			throw new MazoDeCartasVacioException();
 		}
-		Carta carta = cartas.remove(cantidadDeCartas);
+		Carta carta = cartas.remove(cantidadDeCartas - 1);
 		this.cantidadDeCartas -=1;
 		return carta;
 	}
