@@ -43,6 +43,12 @@ public class CartaFactory {
 		CartaTrampa carta = new CartaTrampa(jugador, efecto);
 		return carta;
 	}
+	
+	public CartaCampo crearCartaCampoGenerica() {
+		Efecto efecto = new EfectoVacio();
+		CartaCampo carta = new CartaCampo(jugador, efecto);
+		return carta;
+	}
 
 	public static CartaMagica crearCartaAgujeroNegro(Jugador jugador) {
 		Efecto efecto = new EfectoAgujeroNegro();
