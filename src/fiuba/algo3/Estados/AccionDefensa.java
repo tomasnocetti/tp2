@@ -17,8 +17,13 @@ public class AccionDefensa implements Accionable {
 
 	public void defender(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, CartaMonstruo cartaActual) {
 		int diferenciaAtaque = this.puntosDeDefensa - puntosDeAtaqueRecibidos;
-		if(diferenciaAtaque > 0) return;
-		cartaActual.enviarAlCementerio();
+		if(diferenciaAtaque > 0) {
+			cartaAtacante.enviarAlCementerio();
+		};
+		
+		if (diferenciaAtaque < 0) {
+			cartaActual.enviarAlCementerio();
+		};
 	}
 
 }

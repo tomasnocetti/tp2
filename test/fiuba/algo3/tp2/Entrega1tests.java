@@ -143,6 +143,9 @@ public class Entrega1tests {
 		atacado.colocarCartaEnZona(carta2, 0, new ArrayList<CartaMonstruo>());		
 		carta2.colocarEnAccionDeDefensa();
 		carta.atacar(carta2);
+		
+		assertFalse(atacante.obtenerMonstruos().contains(carta));
+		assertTrue(atacante.obtenerCartasEnCementerio().contains(carta));
 
 		assertEquals(8000,atacado.obtenerPuntosDeVida());
 		
@@ -163,6 +166,8 @@ public class Entrega1tests {
 		carta.atacar(carta2);
 
 		assertEquals(8000,atacado .obtenerPuntosDeVida());
+		assertFalse(atacado.obtenerMonstruos().contains(carta2));
+		assertTrue(atacado.obtenerCartasEnCementerio().contains(carta2));
 	}
 	
 	@Test
