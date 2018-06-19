@@ -7,25 +7,29 @@ import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
 
 public class CartaFactory {
-
-//	public static CartaMonstruo crearCartaMonstruoGenerica(int puntosAtaque, int puntosDefensa) {
-//		Jugador jugador = new Jugador();
-//		Efecto efecto = new EfectoVacio();
-//		CartaMonstruo carta = new CartaMonstruo(jugador, efecto, 4, puntosAtaque, puntosDefensa);
-//		jugador.colocarCartaEnZona(carta, 0, new ArrayList<CartaMonstruo>());
-//		return carta;
-//	}
 	
-	public static CartaMonstruo crearCartaMonstruoGenerica(int puntosAtaque, int puntosDefensa, Jugador jugador) {
+	private Jugador jugador;
+
+	public CartaFactory(Jugador jugador) {
+		this.jugador = jugador;
+	}
+	
+	public CartaMonstruo crearCartaMonstruoGenerica(int puntosAtaque, int puntosDefensa) {
 		Efecto efecto = new EfectoVacio();
 		CartaMonstruo carta = new CartaMonstruo(jugador, efecto, 4, puntosAtaque, puntosDefensa);
 		jugador.colocarCartaEnZona(carta, 0, new ArrayList<CartaMonstruo>());
 		return carta;
 	}
 	
-	public static CartaMagica crearCartaMagicaParaJugador(Jugador jugador) {
+	public CartaMagica crearCartaMagicaGenerica() {
 		Efecto efecto = new EfectoVacio();
 		CartaMagica carta = new CartaMagica(jugador, efecto);
+		return carta;
+	}
+	
+	public CartaTrampa crearCartaTrampaGenerica() {
+		Efecto efecto = new EfectoVacio();
+		CartaTrampa carta = new CartaTrampa(jugador, efecto);
 		return carta;
 	}
 }

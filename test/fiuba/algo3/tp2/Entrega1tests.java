@@ -19,40 +19,47 @@ public class Entrega1tests {
 
 	@Test
 	public void test01colocarCartaMonstruoAccionAtaque() {
-		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);		
-		carta.colocarEnAccionDeAtaque();
+		Jugador jugador = new Jugador();
+		CartaFactory cartaFactory = new CartaFactory(jugador);
+		CartaMonstruo carta = cartaFactory.crearCartaMonstruoGenerica(1000, 1000);		
 		
 	}
 
 	@Test(expected = CartaEnAccionDefensaException.class)
 	public void test02colocarCartaMonstruoAccionDefensa() {
-		CartaMonstruo carta = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
-		CartaMonstruo carta2 = CartaFactory.crearCartaMonstruoGenerica(1000, 1000);
-		carta.colocarEnAccionDeDefensa();
+		Jugador atacante = new Jugador();
+		Jugador atacado = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		CartaMonstruo carta = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo carta2 = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
+		atacante.colocarEnAccionDeDefensa(carta);
 		carta.atacar(carta2);
 	}
 
 	@Test
 	public void test03colocarCartaMagicaEnCampoBocaAbajo() {
-		//CartaMagica carta = new CartaMagica();
-		//ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
-		//campo.agregarCarta(carta, 0);
-		//carta.colocarBocaAbajo();
 		Jugador jugador = new Jugador();
-		CartaMagica carta = CartaFactory.crearCartaMagicaParaJugador(jugador);
+		CartaFactory cartaFactory = new CartaFactory(jugador);
+		CartaMagica carta = cartaFactory.crearCartaMagicaGenerica();
+		jugador.colocarBocaAbajo(carta);
 		jugador.colocarCartaEnZona(carta,  0);
+		
 		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
-		assertTrue(jugador.obtenerCartasMagicasYDeTrampa().contains(carta)); 
+		assertTrue(jugador.obtenerCartasMagicasYTrampas().contains(carta)); 
 	}
 	
 	@Test
 	public void test04colocarCartaTrampaEnCampoBocaAbajo() {
-		CartaTrampa carta = new CartaTrampa();
-		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
-		campo.agregarCarta(carta, 0);
-		carta.colocarBocaAbajo();
+
+		Jugador jugador = new Jugador();
+		CartaFactory cartaFactory = new CartaFactory(jugador);
+		CartaTrampa carta = cartaFactory.crearCartaTrampaGenerica();
+		jugador.colocarBocaAbajo(carta);
+		jugador.colocarCartaEnZona(carta,  0);
+		
 		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
-		assertTrue(campo.obtenerCartas().contains(carta)); 
+		assertTrue(jugador.obtenerCartasMagicasYTrampas().contains(carta)); 
 	}
 
 

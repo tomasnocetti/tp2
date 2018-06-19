@@ -1,7 +1,7 @@
 package fiuba.algo3.tp2.Cartas ;
 
 import fiuba.algo3.Efectos.Efecto;
-import fiuba.algo3.Estados.MonstruoPosicionArriba;
+import fiuba.algo3.Estados.*;
 import fiuba.algo3.Estados.Posicionable;
 import fiuba.algo3.tp2.Jugador;
 
@@ -21,6 +21,16 @@ public abstract class Carta {
 	
 	public Posicionable obtenerEstado() {
 		return this.posicion ;
+	}
+	
+	public void colocarBocaAbajo() {
+		this.posicion = new PosicionAbajo();
+		
+	}
+
+	public void colocarBocaArriba() {
+		this.posicion = new PosicionArriba();
+		
 	}
 
 }
