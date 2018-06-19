@@ -20,9 +20,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test06monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaqueYSeDestruye(){
-		Juego juego = new Juego();
-		Jugador atacante = new Jugador(juego);
-		Jugador defensor = new Jugador(juego);
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -33,9 +32,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test07monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaqueElPrimerMonstruoSeDestruye(){
-		Juego juego = new Juego();
-		Jugador atacante = new Jugador(juego);
-		Jugador defensor = new Jugador(juego);
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -46,9 +44,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test08monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaqueElSegundoSeTestruye(){
-		Juego juego = new Juego();
-		Jugador atacante = new Jugador(juego);
-		Jugador defensor = new Jugador(juego);
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -61,9 +58,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test11monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMayorDefensaNoDestruyeAlDefensor(){
-		Juego juego = new Juego();
-		Jugador atacante = new Jugador(juego);
-		Jugador defensor = new Jugador(juego);
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -75,9 +71,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test13monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMenorDefensaYLoDestruye(){
-		Juego juego = new Juego();
-		Jugador atacante = new Jugador(juego);
-		Jugador defensor = new Jugador(juego);
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
@@ -88,9 +83,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test05monstruoConMenorAtaqueAtacaAOtroConMayorAtaqueAmbosEnPosicionDeAtaqueYSuJugadorPierdePuntosDeVida(){
-		Juego juego = new Juego();
-		Jugador atacante = new Jugador(juego);
-		Jugador defensor = new Jugador(juego);
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1800,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -102,9 +96,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test09monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaqueAtacanteNoPierdeVida(){
-		Juego juego = new Juego();
-		Jugador atacante = new Jugador(juego);
-		Jugador defensor = new Jugador(juego);
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -116,9 +109,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test10monstruoAtacaAOtroConIgualAtaqueAmbosEnPosicionDeAtaqueAtacadoNoPierdeVida(){
-		Juego juego = new Juego();
-		Jugador atacante = new Jugador(juego);
-		Jugador defensor = new Jugador(juego);
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,100,defensor);
 		carta2.colocarEnAccionDeAtaque();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -129,9 +121,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test12monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMayorDefensaNoQuitaPuntosDeVidaAlDefensor(){
-		Juego juego = new Juego();
-		Jugador atacante = new Jugador(juego);
-		Jugador defensor = new Jugador(juego);
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1000,100,atacante);
@@ -144,9 +135,8 @@ public class JugadorTest {
 	
 	@Test
 	public void test14monstruoEnPosicionAtaqueAtacaOtroEnPosicionDefensaConMenorDefensaYNoQuitaPuntosDeVidaAlDefensor(){
-		Juego juego = new Juego();
-		Jugador atacante = new Jugador(juego);
-		Jugador defensor = new Jugador(juego);
+		Jugador atacante = new Jugador();
+		Jugador defensor = new Jugador();
 		CartaMonstruo carta2 = new CartaMonstruo(4,1000,1200,defensor);
 		carta2.colocarEnAccionDeDefensa();
 		CartaMonstruo carta1 = new CartaMonstruo(4,1800,100,atacante);
@@ -155,23 +145,22 @@ public class JugadorTest {
 		assertEquals(8000,defensor.obtenerPuntosDeVida());
 	}
 	
-//	@Test
-//	public void test15SacrificioDeUnMonstruoSacrificaElMonstruo() {
-//		Jugador jugador = new Jugador();
-//		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
-//		jugador.colocarBocaArriba(monstruoSacrificado, 0);
-//		
-//		CartaMonstruo monstruo6Estrellas = new CartaMonstruo(6,1000,1200,jugador);
-//		jugador.colocarBocaArriba(monstruo6Estrellas, 0);
-//		
-//		assertTrue(monstruoSacrificado.estaDestruida());
-//		
-//	}
+	@Test
+	public void test15SacrificioDeUnMonstruoSacrificaElMonstruo() {
+		Jugador jugador = new Jugador();
+		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
+		jugador.colocarBocaArriba(monstruoSacrificado, 0);
+		
+		CartaMonstruo monstruo6Estrellas = new CartaMonstruo(6,1000,1200,jugador);
+		jugador.colocarBocaArriba(monstruo6Estrellas, 0);
+		
+		assertTrue(monstruoSacrificado.estaDestruida());
+		
+	}
 	
 	@Test
 	public void test16SacrificioDeUnMonstruoColocaElNuevoMonstruoEnElCampo() {
-		Juego juego = new Juego();
-		Jugador jugador = new Jugador(juego);
+		Jugador jugador = new Jugador();
 		CartaMonstruo monstruoSacrificado = new CartaMonstruo(4,1000,1200,jugador);
 		jugador.colocarBocaArriba(monstruoSacrificado, 0);
 		
