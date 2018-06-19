@@ -19,7 +19,7 @@ public class ZonaDeCartasMonstruosTest {
 		ArrayList<CartaMonstruo> cartasSacrificio = new ArrayList<CartaMonstruo>();
 		CartaMonstruo carta = new CartaMonstruo(3,1000,2000,jugador);
 		ZonaDeCartasMonstruos zona = new ZonaDeCartasMonstruos();
-		zona.agregarCartaMonstruo(carta, 1,cartasSacrificio);
+		zona.agregarCarta(carta, 1,cartasSacrificio);
 		assertTrue(zona.obtenerCartas().contains(carta));
 	}
 
@@ -33,11 +33,11 @@ public class ZonaDeCartasMonstruosTest {
 		CartaMonstruo carta4 = new CartaMonstruo(3,1000,2000,jugador);
 		CartaMonstruo carta5 = new CartaMonstruo(3,1000,2000,jugador);
 		ZonaDeCartasMonstruos zona = new ZonaDeCartasMonstruos();
-		zona.agregarCartaMonstruo(carta1, 1,cartasSacrificio);
-		zona.agregarCartaMonstruo(carta2, 2,cartasSacrificio);
-		zona.agregarCartaMonstruo(carta3, 3,cartasSacrificio);
-		zona.agregarCartaMonstruo(carta4, 4,cartasSacrificio);
-		zona.agregarCartaMonstruo(carta5, 5,cartasSacrificio);
+		zona.agregarCarta(carta1, 1,cartasSacrificio);
+		zona.agregarCarta(carta2, 2,cartasSacrificio);
+		zona.agregarCarta(carta3, 3,cartasSacrificio);
+		zona.agregarCarta(carta4, 4,cartasSacrificio);
+		zona.agregarCarta(carta5, 5,cartasSacrificio);
 		assertTrue(zona.obtenerCartas().contains(carta1) &&
 				zona.obtenerCartas().contains(carta2) &&
 				zona.obtenerCartas().contains(carta3) &&
@@ -52,8 +52,8 @@ public class ZonaDeCartasMonstruosTest {
 		CartaMonstruo carta1 = new CartaMonstruo(3,1000,2000,jugador);
 		CartaMonstruo carta2 = new CartaMonstruo(3,1000,2000,jugador);
 		ZonaDeCartasMonstruos zona = new ZonaDeCartasMonstruos();
-		zona.agregarCartaMonstruo(carta1, 1,cartasSacrificio);
-		zona.agregarCartaMonstruo(carta2, 1,cartasSacrificio);
+		zona.agregarCarta(carta1, 1,cartasSacrificio);
+		zona.agregarCarta(carta2, 1,cartasSacrificio);
 	}
 	
 	@Test(expected = PosicionDeZonaFueraDeRangoExcepcion.class) 
@@ -62,7 +62,7 @@ public class ZonaDeCartasMonstruosTest {
 		ArrayList<CartaMonstruo> cartasSacrificio = new ArrayList<CartaMonstruo>();
 		CartaMonstruo carta1 = new CartaMonstruo(3,1000,2000,jugador);
 		ZonaDeCartasMonstruos zona = new ZonaDeCartasMonstruos();
-		zona.agregarCartaMonstruo(carta1, 6,cartasSacrificio);
+		zona.agregarCarta(carta1, 6,cartasSacrificio);
 	}
 	
 	@Test
@@ -72,9 +72,9 @@ public class ZonaDeCartasMonstruosTest {
 		CartaMonstruo carta1 = new CartaMonstruo(3,1000,2000,jugador);
 		CartaMonstruo carta2 = new CartaMonstruo(5,1000,2000,jugador);
 		ZonaDeCartasMonstruos zona = new ZonaDeCartasMonstruos();
-		zona.agregarCartaMonstruo(carta1, 1,cartasSacrificio);
+		zona.agregarCarta(carta1, 1,cartasSacrificio);
 		cartasSacrificio.add(carta1);
-		zona.agregarCartaMonstruo(carta2, 1,cartasSacrificio);
+		zona.agregarCarta(carta2, 1,cartasSacrificio);
 		assertTrue(zona.obtenerCartas().contains(carta2));
 	}
 	

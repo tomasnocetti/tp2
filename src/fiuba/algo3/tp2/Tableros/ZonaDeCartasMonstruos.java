@@ -15,7 +15,7 @@ public class ZonaDeCartasMonstruos extends Zona{
 	}
 	
 
-	public void agregarCartaMonstruo(CartaMonstruo carta, int posicion, ArrayList<CartaMonstruo> cartasSacrificio) {
+	public void agregarCarta(CartaMonstruo carta, int posicion, ArrayList<CartaMonstruo> cartasSacrificio) {
 		if (cartasSacrificio.size() != carta.numeroDeSacrificios()) {
 			throw new CantidadDeSacrificiosIncorrectoException();
 		}
