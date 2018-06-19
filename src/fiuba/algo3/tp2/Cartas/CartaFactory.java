@@ -3,6 +3,7 @@ package fiuba.algo3.tp2.Cartas;
 
 import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Efectos.EfectoAgujeroNegro;
+import fiuba.algo3.Efectos.EfectoFisura;
 import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.Efectos.EfectoMejoraAtaqueDefensa;
@@ -70,8 +71,14 @@ public class CartaFactory {
 		return carta;
 	}
 	
-	public CartaMagica crearOllaDeLaCodicia() {
+	public CartaMagica crearCartaOllaDeLaCodicia() {
 		Efecto efecto = new EfectoOllaDeLaCodicia();
+		CartaMagica carta = new CartaMagica(this.jugador, efecto);
+		return carta;
+	}
+	
+	public CartaMagica crearCartaFisura() {
+		Efecto efecto = new EfectoFisura();
 		CartaMagica carta = new CartaMagica(this.jugador, efecto);
 		return carta;
 	}
