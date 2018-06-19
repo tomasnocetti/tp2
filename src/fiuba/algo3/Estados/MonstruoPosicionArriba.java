@@ -9,8 +9,8 @@ public class MonstruoPosicionArriba implements MonstruoPosicionable {
 		accionAtacante.atacar(cartaAtacante, cartaAtacada);
 	}
 	
-	public void defender(int puntosDeAtaqueRecibidos,CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual) {
-		posicion.defender(puntosDeAtaqueRecibidos, cartaAtacante,cartaActual);
+	public void defender(CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual) {
+		posicion.defender(cartaAtacante,cartaActual);
 	}
 
 }

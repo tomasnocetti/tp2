@@ -12,9 +12,9 @@ public class MonstruoPosicionAbajo implements MonstruoPosicionable {
 		throw new MonstruoBocaAbajoException();
 	}
 	
-	public void defender(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual) {
-		//should be implemented
-		throw new MonstruoBocaAbajoException();
+	public void defender(CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual) {
+		cartaActual.colocarBocaArriba();
+		posicion.defender(cartaAtacante,cartaActual);
 	}
 
 }

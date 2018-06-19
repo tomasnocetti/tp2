@@ -14,7 +14,16 @@ public class ZonaDeCartasDeCampo extends Zona{
 		this.limite = 1;
 	}
 	
-	public void agregarCarta(CartaCampo carta, int posicion) {
+	private void agregarCarta(CartaCampo carta, int posicion) {
 		super.agregarCarta(carta, posicion);
+	}
+	
+	public void agregarCarta(CartaCampo carta, Jugador jugadorOponente) {
+		Carta cartaEnCampo = this.cartas.get(0);
+		if(cartaEnCampo != null) {
+			this.eliminarCarta(cartaEnCampo);			
+		}
+		this.agregarCarta(carta, 0);
+		carta.activar(jugadorOponente);
 	}
 }

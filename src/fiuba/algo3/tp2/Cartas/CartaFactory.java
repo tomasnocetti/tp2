@@ -5,6 +5,7 @@ import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.Efectos.EfectoWasteland;
 
 public class CartaFactory {
 	
@@ -47,6 +48,12 @@ public class CartaFactory {
 	public static CartaMagica crearCartaAgujeroNegro(Jugador jugador) {
 		Efecto efecto = new EfectoAgujeroNegro();
 		CartaMagica carta = new CartaMagica(jugador, efecto);
+		return carta;
+	}
+	
+	public CartaCampo crearCartaWasteland() {
+		Efecto efecto = new EfectoWasteland();
+		CartaCampo carta = new CartaCampo(this.jugador, efecto);
 		return carta;
 	}
 }

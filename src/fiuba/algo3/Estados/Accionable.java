@@ -5,5 +5,5 @@ import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 public interface Accionable {
 
 	public void atacar(CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada);
-	public void defender(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante, CartaMonstruo cartaActual);
+	public void defender(CartaMonstruo cartaAtacante, CartaMonstruo cartaActual);
 }

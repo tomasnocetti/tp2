@@ -85,9 +85,9 @@ public class Jugador {
 		this.zonaCartasMagicasOTrampas.agregarCarta(carta, posicion);
 	}
 	
-	public void colocarCartaEnZona(CartaCampo carta, int posicion) {
+	public void colocarCartaEnZona(CartaCampo carta, Jugador jugadorOponente) {
 		this.mano.eliminarCarta(carta);
-		this.zonaCartasDeCampo.agregarCarta(carta, posicion);
+		this.zonaCartasDeCampo.agregarCarta(carta, jugadorOponente);
 	}
 	
 	public boolean noTieneMonstruos() {

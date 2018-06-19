@@ -24,7 +24,7 @@ public class CartaMonstruo extends Carta{
 		this.estrellas = estrella;
 		this.puntosDeDefensa = defenza;
 		this.posicion = new MonstruoPosicionArriba(); 
-		this.accion = new AccionAtaque(this.puntosDeAtaque);
+		this.accion = new AccionAtaque();
 	}
     
 	public void atacar(CartaMonstruo otro) {
@@ -32,12 +32,17 @@ public class CartaMonstruo extends Carta{
 		this.posicion.atacar(this, otro);
     }
 
+	public void defender(CartaMonstruo cartaAtacante) {
+		if(!this.estaEnElCampo()) throw new CartaNoSeEncuentraEnZona();
+		this.posicion.defender(cartaAtacante, this.accion, this);
+	}
+	
 	public void colocarEnAccionDeDefensa() {
-		this.accion = new AccionDefensa(this.puntosDeDefensa);
+		this.accion = new AccionDefensa();
 	}
 
 	public void colocarEnAccionDeAtaque() {
-		this.accion = new AccionAtaque(this.puntosDeAtaque);
+		this.accion = new AccionAtaque();
 	}
 	
 	public int obtenerPuntosAtaque() {
@@ -48,17 +53,20 @@ public class CartaMonstruo extends Carta{
 		return this.puntosDeDefensa;
 	}
 	
+	public void configurarPuntosAtaque(int puntos) {
+		this.puntosDeAtaque = puntos;
+	}
+	
+	public void configurarPuntosDefensa(int puntos) {
+		this.puntosDeDefensa = puntos;
+	}
+	
 	public void enviarAlCementerio() {
 		this.jugador.enviarAlCementerio(this);
 	}
 	
 	public Accionable obtenerAccion() {
 		return this.accion;
-	}
-	
-	public void defender(int puntosDeAtaqueRecibidos, CartaMonstruo cartaAtacante) {
-		if(!this.estaEnElCampo()) throw new CartaNoSeEncuentraEnZona();
-		this.posicion.defender(puntosDeAtaqueRecibidos, cartaAtacante, this.accion, this);
 	}
 
 	public void quitarVidaAJugador(int puntosPerdidos) {
