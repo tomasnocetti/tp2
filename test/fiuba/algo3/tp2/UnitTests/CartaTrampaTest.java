@@ -5,24 +5,29 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import fiuba.algo3.Estados.PosicionAbajo;
+import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaTrampa;
-import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
 public class CartaTrampaTest {
 
 	@Test
 	public void test01colocarCartaTrampaBocaAbajo() {
-		CartaTrampa carta = new CartaTrampa();
+		Jugador jugador = new Jugador();
+		CartaFactory factory = new CartaFactory(jugador);
+		CartaTrampa carta = factory.crearCartaTrampaGenerica();
 		carta.colocarBocaAbajo();
 		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
 	}
 	
 	@Test
 	public void test02colocarCartaTrampaEnCampo() {
-		CartaTrampa carta = new CartaTrampa();
-		ZonaDeCartasMagicasOTrampas campo = new ZonaDeCartasMagicasOTrampas();
-		campo.agregarCarta(carta, 0);
-		assertTrue(campo.obtenerCartas().contains(carta)); 
+		Jugador jugador = new Jugador();
+		CartaFactory factory = new CartaFactory(jugador);
+		CartaTrampa carta = factory.crearCartaTrampaGenerica();
+		
+		jugador.colocarCartaEnZona(carta, 0);
+		assertTrue(jugador.obtenerCartasMagicasYTrampas().contains(carta)); 
 	}
 
 }
