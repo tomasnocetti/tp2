@@ -234,17 +234,18 @@ public class Entrega2tests {
 
 	@Test
 	public void test11colocarPartesDeExodiaEnLaManoYVerificarPartidaTerminada() {
-		Jugador atacante = new Jugador();
-		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		Juego juego = Juego.ObtenerJuego();
+		Jugador ganador = juego.jugadorActual();
+		CartaFactory factoryAtacante = new CartaFactory(ganador);
 		ArrayList<CartaMonstruo> partesDeExodia = factoryAtacante.crear5PartesDeExodia();
 		
 		Iterator<CartaMonstruo> i = partesDeExodia.iterator();
 		
 		while (i.hasNext()) {
-			atacante.colocarEnMano(i.next());
+			ganador.colocarEnMano(i.next());
 		}
-
-		// Probar que se gano el juego ! 
+		
+		assertTrue(juego.estadoDelJuegoTerminado());
 	}
 
 }

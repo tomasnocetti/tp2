@@ -10,6 +10,7 @@ import java.util.function.Predicate;
 
 import fiuba.algo3.Estados.PosicionArriba;
 import fiuba.algo3.Estados.Posicionable;
+import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
@@ -42,7 +43,8 @@ public class EfectoExodia extends EfectoMonstruo{
 			if(!cartaBuscada.isPresent()) return;
 		}
 		
-		// ACA GANAR EL JUEGO ! 
+		Juego juego = Juego.ObtenerJuego();
+		juego.asignarGanador(carta.obtenerJugador()); 
 		
 	}
 }

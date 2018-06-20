@@ -23,5 +23,5 @@ public class ZonaMano extends Zona{
 		}
 		Efecto efecto = carta.obtenerEfecto();
 		efecto.activarAlAgregarAZonaMano(this, carta);
-	}
+		}
 }
