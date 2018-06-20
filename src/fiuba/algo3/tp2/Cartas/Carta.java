@@ -19,7 +19,7 @@ public abstract class Carta {
 		this.jugador = jugador;
 	}
 	
-	public Posicionable obtenerEstado() {
+	public Posicionable obtenerPosicion() {
 		return this.posicion ;
 	}
 	

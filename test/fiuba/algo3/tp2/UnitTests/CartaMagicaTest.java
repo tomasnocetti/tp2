@@ -22,7 +22,7 @@ public class CartaMagicaTest {
 		CartaFactory factory = new CartaFactory(jugador);
 		CartaMagica carta = factory.crearCartaMagicaGenerica();
 		carta.colocarBocaAbajo();
-		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
+		assertEquals(carta.obtenerPosicion().getClass(), PosicionAbajo.class);
 	}
 	
 	@Test

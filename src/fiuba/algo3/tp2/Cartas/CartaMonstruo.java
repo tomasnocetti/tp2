@@ -7,6 +7,7 @@ import fiuba.algo3.Estados.Accionable;
 import fiuba.algo3.Estados.MonstruoPosicionAbajo;
 import fiuba.algo3.Estados.MonstruoPosicionArriba;
 import fiuba.algo3.Estados.MonstruoPosicionable;
+import fiuba.algo3.Estados.Posicionable;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
 
@@ -69,8 +70,8 @@ public class CartaMonstruo extends Carta{
 		return this.accion;
 	}
 	
-	public MonstruoPosicionable obtenerPosicion() {
-		return this.posicion;
+	public Posicionable obtenerPosicion() {
+		return (Posicionable) this.posicion;
 	}
 
 	public void quitarVidaAJugador(int puntosPerdidos) {
