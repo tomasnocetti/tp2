@@ -1,13 +1,9 @@
 package fiuba.algo3.tp2.Tableros;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.Iterator;
 
-import fiuba.algo3.Estados.MonstruoPosicionArriba;
-import fiuba.algo3.Estados.MonstruoPosicionable;
 import fiuba.algo3.tp2.Jugador;
-import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.CantidadDeSacrificiosIncorrectoException;
 

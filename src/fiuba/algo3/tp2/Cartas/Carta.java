@@ -11,7 +11,6 @@ public abstract class Carta {
 	protected Posicionable posicion;
 	protected Jugador jugador;
 	
-	public abstract boolean estaEnElCampo();
 	public abstract void enviarAlCementerio();
 	
 	public Carta(Jugador jugador, Efecto efecto) {

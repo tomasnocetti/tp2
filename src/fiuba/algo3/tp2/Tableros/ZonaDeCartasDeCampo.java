@@ -1,7 +1,5 @@
 package fiuba.algo3.tp2.Tableros;
 
-import java.util.Hashtable;
-
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaCampo;

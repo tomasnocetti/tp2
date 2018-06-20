@@ -136,8 +136,7 @@ public class Entrega1tests {
 		carta2.colocarEnAccionDeDefensa();
 		carta.atacar(carta2);
 		
-		assertFalse(atacante.obtenerMonstruos().contains(carta));
-		assertTrue(atacante.obtenerCartasEnCementerio().contains(carta));
+		assertTrue(atacado.obtenerMonstruos().contains(carta2));
 
 		assertEquals(8000,atacado.obtenerPuntosDeVida());
 		

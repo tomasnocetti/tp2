@@ -3,7 +3,6 @@ package fiuba.algo3.tp2;
 import java.util.ArrayList;
 
 import fiuba.algo3.tp2.Cartas.Carta;
-import fiuba.algo3.tp2.Excepciones.JuegoNoHaSidoInicializado;
 
 public class Juego {
 	
