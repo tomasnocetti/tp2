@@ -26,8 +26,8 @@ public abstract class CartaTrampaOMagica extends Carta{
 		this.efecto.activarSobreJugadorAtacado(oponente);
 	}
 	
-	public void activar(Jugador jugadorAtacante, CartaMonstruo cartaAtacada, CartaMonstruo cartaAtacante) {
-		this.efecto.activar(jugadorAtacante, cartaAtacada, cartaAtacante);
+	public boolean activar(Jugador jugadorAtacante, CartaMonstruo cartaAtacada, CartaMonstruo cartaAtacante) {
+		return this.efecto.activarAntesDeDefensa(jugadorAtacante, cartaAtacada, cartaAtacante);
 	}
 
 }

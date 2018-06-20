@@ -9,5 +9,5 @@ public class Efecto {
 	public void activarAlAgregarAZonaMano(ZonaMano zona, Carta carta) {return;}
 	public void activarSobreJugadorAtacante(Jugador jugador) {return;}
 	public void activarSobreJugadorAtacado(Jugador jugador) {return;}
-	public void activar(Jugador jugador, CartaMonstruo cartaAtacada, CartaMonstruo cartaAtacante) {return;}
+	public boolean activarAntesDeDefensa(Jugador jugador, CartaMonstruo cartaAtacada, CartaMonstruo cartaAtacante) {return true;}
 }
