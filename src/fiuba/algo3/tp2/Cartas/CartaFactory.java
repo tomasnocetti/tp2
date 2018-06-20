@@ -7,11 +7,11 @@ import java.util.concurrent.ThreadLocalRandom;
 import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.Efectos.EfectoFisura;
+import fiuba.algo3.Efectos.EfectoJinzo7;
 import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.Efectos.EfectoMejoraAtaqueDefensa;
 import fiuba.algo3.Efectos.EfectoOllaDeLaCodicia;
-import fiuba.algo3.tp2.Tableros.Mazo;
 
 public class CartaFactory {
 	
@@ -87,6 +87,12 @@ public class CartaFactory {
 		return carta;
 	}
 	
+	public CartaMonstruo crearCartaJinzo7(Jugador atacado) {
+		Efecto efecto = new EfectoJinzo7();
+		CartaMonstruo jinzo7 = new CartaMonstruo(this.jugador, efecto, 2, 500, 400);
+		return jinzo7;
+	}
+	
 	public static ArrayList<Carta> inicializarMazoGenerico(Jugador jugador) {
 		ArrayList<Carta> cartas = new ArrayList<Carta>();
 		Efecto efectoVacio = new EfectoVacio();
@@ -146,4 +152,5 @@ public class CartaFactory {
 		return(cartas);
 		
 	}
+
 }

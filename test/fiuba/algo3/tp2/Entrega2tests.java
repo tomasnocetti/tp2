@@ -102,6 +102,19 @@ public class Entrega2tests {
 
 	@Test
 	public void test05colocarJinzo7EnElCampoVerificarAtaqueALosPuntosDeVidaDirecto() {
+		Jugador atacante = new Jugador();
+		Jugador atacado = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		
+		CartaMonstruo monstruoAtacado = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo jinzo7 = factoryAtacante.crearCartaJinzo7(atacado);
+		
+		atacado.colocarCartaEnZona(monstruoAtacado, 0, new ArrayList<CartaMonstruo>());
+		atacante.colocarCartaEnZona(jinzo7, 0, new ArrayList<CartaMonstruo>());
+		
+		jinzo7.activar(atacado);
+		
 
 	}
 

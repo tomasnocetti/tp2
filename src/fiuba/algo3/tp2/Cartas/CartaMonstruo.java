@@ -79,8 +79,9 @@ public class CartaMonstruo extends Carta{
 		this.jugador.quitarPuntosDeVida(puntosPerdidos);
 	}
 
-	public void aplicarEfecto() {
-		// TODO Auto-generated method stub
+	public void activar(Jugador atacado) {
+		this.efecto.activarSobreJugadorAtacante(this.jugador);
+		this.efecto.activarSobreJugadorAtacado(atacado);
 		
 	}
 
