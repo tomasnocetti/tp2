@@ -27,6 +27,10 @@ public class Mazo{
 		this.cantidadDeCartas -=1;
 		return carta;
 	}
+
+	public int obtenerCantidadDeCartas() {
+		return this.cantidadDeCartas;
+	}
 	
 	
 }
