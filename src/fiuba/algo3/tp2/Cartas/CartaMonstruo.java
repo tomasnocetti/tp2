@@ -105,18 +105,6 @@ public class CartaMonstruo extends Carta{
 		return this.jugador.estaEnElCampo(this);
 	}
 
-	public int numeroDeSacrificios() {
-		if (4 < this.estrellas && this.estrellas < 7) {
-			return 1;
-		}
-		if (6 < this.estrellas) {
-			return 2;
-		}
-		else {
-			return 0;
-		}
-	}
-
 	public boolean invocacionValida(ArrayList<CartaMonstruo> cartasSacrificadas) {
 		return this.invocador.invocar(cartasSacrificadas);
 	}
