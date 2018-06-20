@@ -34,10 +34,12 @@ public class AlGoHo extends Application{
 		stage.setTitle("AlGoHo");
         
 		BorderPane layoutJuego = new BorderPane();
+		layoutJuego.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
+		layoutJuego.getStyleClass().add("layout");
 		
 		FlowPane zonaMano = this.crearZonaMano();
 		VBox tableroDeJuego = this.crearTableroDeJuego();
-		VBox zonaInformacionCarta = new VBox();
+		VBox zonaInformacionCarta = this.generarZonaInformacionCarta();
 		
 		layoutJuego.setBottom(zonaMano);
         layoutJuego.setCenter(tableroDeJuego);
@@ -48,7 +50,6 @@ public class AlGoHo extends Application{
         
         Scene scenePrincipal = new Scene(contenedorPrincipal, 900, 1000);
 
-
         scenePrincipal.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
         
         stage.setScene(scenePrincipal);
@@ -56,50 +57,21 @@ public class AlGoHo extends Application{
         stage.show();
 	}
 
+	private VBox generarZonaInformacionCarta() {
+		VBox zonaInformativa = new VBox();
+		zonaInformativa.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
+		zonaInformativa.getStyleClass().add("informacion");
+		zonaInformativa.getChildren().add(new Button("Info"));
+		zonaInformativa.setPrefWidth(300);
+		return zonaInformativa;
+	}
+
 	private VBox crearTableroDeJuego() {
 		
-		GridPane zonaMonstruos1 = new GridPane();
-		zonaMonstruos1.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		zonaMonstruos1.getStyleClass().add("gridPane-cartas");
-		zonaMonstruos1.setAlignment(Pos.CENTER);
-		for(int i = 0; i < 5; i++) {
-			Rectangle contenedor = new Rectangle(150,150);
-			contenedor.setFill(javafx.scene.paint.Color.GRAY);
-			zonaMonstruos1.add(contenedor, i+1 , 0);
-		}
-		GridPane zonaTrampas1 = new GridPane();
-		zonaTrampas1.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		zonaTrampas1.getStyleClass().add("gridPane-cartas");
-		zonaTrampas1.setAlignment(Pos.CENTER);
-		for(int i = 0; i < 5; i++) {
-			Rectangle contenedor = new Rectangle(150,150);
-			contenedor.setFill(javafx.scene.paint.Color.GRAY);
-			zonaTrampas1.add(contenedor, i+1, 1);
-		}
-		
-		GridPane zonaMonstruos2 = new GridPane();
-		zonaMonstruos2.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		zonaMonstruos2.getStyleClass().add("gridPane-cartas");
-		zonaMonstruos2.setAlignment(Pos.CENTER);
-		for(int i = 0; i < 5; i++) {
-			Rectangle contenedor = new Rectangle(150,150);
-			contenedor.setFill(javafx.scene.paint.Color.GRAY);
-			zonaMonstruos2.add(contenedor, i+1 , 0);
-		}
-		GridPane zonaTrampas2 = new GridPane();
-		zonaTrampas2.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		zonaTrampas2.getStyleClass().add("gridPane-cartas");
-		zonaTrampas2.setAlignment(Pos.CENTER);
-		for(int i = 0; i < 5; i++) {
-			Rectangle contenedor = new Rectangle(150,150);
-			contenedor.setFill(javafx.scene.paint.Color.GRAY);
-			contenedor.getStyleClass().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-			contenedor.setStyle("contenedorCarta");
-			zonaTrampas2.add(contenedor, i+1, 1);
-		}
-		
-		VBox jugador1 = new VBox(zonaMonstruos1,zonaTrampas1);
-		VBox jugador2 = new VBox(zonaMonstruos2,zonaTrampas2);
+		VBox jugador1 = this.generarZonaMonstruosyTrampa(true);
+		jugador1.setSpacing(10);
+		VBox jugador2 = this.generarZonaMonstruosyTrampa(false);
+		jugador2.setSpacing(10);
 
 		VBox tableroDeJuego = new VBox();
 		tableroDeJuego.setSpacing(250);
@@ -109,6 +81,35 @@ public class AlGoHo extends Application{
 
 		
 		return tableroDeJuego;
+	}
+
+	private VBox generarZonaMonstruosyTrampa(boolean normal) {
+		GridPane zonaMonstruos2 = new GridPane();
+		zonaMonstruos2.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
+		zonaMonstruos2.getStyleClass().add("gridPane-cartas");
+		zonaMonstruos2.setAlignment(Pos.CENTER);
+		for(int i = 0; i < 5; i++) {
+			Rectangle contenedor = new Rectangle(150,150);
+			contenedor.setFill(javafx.scene.paint.Color.GRAY);
+			contenedor.setOnMouseClicked(new CuadradoEventHandler(contenedor,javafx.scene.paint.Color.BLUE));
+			zonaMonstruos2.add(contenedor, i+1 , 0);
+		}
+		
+		GridPane zonaTrampas2 = new GridPane();
+		zonaTrampas2.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
+		zonaTrampas2.getStyleClass().add("gridPane-cartas");
+		zonaTrampas2.setAlignment(Pos.CENTER);
+		for(int i = 0; i < 5; i++) {
+			Rectangle contenedor = new Rectangle(150,150);
+			contenedor.setFill(javafx.scene.paint.Color.GRAY);
+			contenedor.setOnMouseClicked(new CuadradoEventHandler(contenedor,javafx.scene.paint.Color.GREEN));
+			zonaTrampas2.add(contenedor, i+1, 1);
+		}
+		
+		if (normal) {
+			return new VBox(zonaTrampas2,zonaMonstruos2);
+		}
+		return new VBox(zonaMonstruos2,zonaTrampas2);
 	}
 
 	private VBox crearInterfazPrincipal(Stage stage, Scene sceneJuego) {
