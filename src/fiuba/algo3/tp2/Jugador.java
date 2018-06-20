@@ -9,6 +9,7 @@ import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
+import fiuba.algo3.tp2.Cartas.CartaTrampa;
 import fiuba.algo3.tp2.Cartas.CartaTrampaOMagica;
 import fiuba.algo3.tp2.Excepciones.InvocacionInvalida;
 import fiuba.algo3.tp2.Tableros.Cementerio;
@@ -55,6 +56,10 @@ public class Jugador {
 
 	public int obtenerPuntosDeVida() {
 		return this.puntosDeVida;
+	}
+	
+	public boolean tieneTrampaEnElCampo() {
+		return this.zonaCartasMagicasOTrampas.tieneTrampa();
 	}
 
 	public void destruirMonstruos() {
@@ -135,6 +140,10 @@ public class Jugador {
 	
 	public Collection<Carta> obtenerCartaCampo() {
 		return this.zonaCartasDeCampo.obtenerCartas();
+	}
+	
+	public CartaTrampa obtenerProximaCartaTrampa() {
+		return this.zonaCartasMagicasOTrampas.obtenerProximaCartaTrampa();
 	}
 	
 	

@@ -10,11 +10,16 @@ public class AccionDefensa implements Accionable {
 	}
 
 	public void defender(CartaMonstruo cartaAtacante, CartaMonstruo cartaActual) {
-		int diferenciaAtaque = cartaActual.obtenerPuntosDefensa() - cartaAtacante.obtenerPuntosAtaque();
+		int diferenciaAtaque = this.calcularDanio(cartaAtacante, cartaActual);
 		
 		if (diferenciaAtaque > 0) return;
 		cartaActual.enviarAlCementerio();
 	
+	}
+
+	public int calcularDanio(CartaMonstruo cartaAtacante, CartaMonstruo cartaActual) {
+		int diferenciaAtaque = cartaActual.obtenerPuntosDefensa() - cartaAtacante.obtenerPuntosAtaque();
+		return diferenciaAtaque;
 	}
 
 }

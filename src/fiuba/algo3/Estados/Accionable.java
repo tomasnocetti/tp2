@@ -6,4 +6,5 @@ public interface Accionable {
 
 	public void atacar(CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada);
 	public void defender(CartaMonstruo cartaAtacante, CartaMonstruo cartaActual);
+	public int calcularDanio(CartaMonstruo atacante, CartaMonstruo atacada);
 }
