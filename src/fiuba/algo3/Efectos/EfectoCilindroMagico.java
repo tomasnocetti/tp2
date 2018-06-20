@@ -12,15 +12,4 @@ public class EfectoCilindroMagico extends Efecto {
 			jugadorAtacante.quitarPuntosDeVida(- puntosDeDanio);
 		}
 	}
-
-	@Override
-	public void activarSobreJugadorAtacante(Jugador jugador) {
-		return;
-	}
-
-	@Override
-	public void activarSobreJugadorAtacado(Jugador jugador) {
-		return;
-	}
-	
 }

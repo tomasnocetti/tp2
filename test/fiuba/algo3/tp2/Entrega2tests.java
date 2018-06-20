@@ -244,6 +244,7 @@ public class Entrega2tests {
 	@Test
 	public void test10extraerTodasLasCartasDelMazoYVerificarPartidaTerminada() {
 		Juego juego = Juego.ObtenerJuego();
+		juego.resetearJuego();
 		Jugador perdedor = juego.jugadorActual();
 		perdedor.agarrarCartasDelMazo(perdedor.obtenerCantidadDeCartasDelMazo() + 1);
 		assertTrue(juego.estadoDelJuegoTerminado());
@@ -252,6 +253,7 @@ public class Entrega2tests {
 	@Test
 	public void test11colocarPartesDeExodiaEnLaManoYVerificarPartidaTerminada() {
 		Juego juego = Juego.ObtenerJuego();
+		juego.resetearJuego();
 		Jugador ganador = juego.jugadorActual();
 		CartaFactory factoryAtacante = new CartaFactory(ganador);
 		ArrayList<CartaMonstruo> partesDeExodia = factoryAtacante.crear5PartesDeExodia();

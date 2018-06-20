@@ -22,6 +22,7 @@ import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.Efectos.EfectoMejoraAtaqueDefensa;
 import fiuba.algo3.Efectos.EfectoOllaDeLaCodicia;
+import fiuba.algo3.Efectos.EfectoReinforcements;
 
 public class CartaFactory {
 	
@@ -123,6 +124,12 @@ public class CartaFactory {
 	
 	public CartaTrampa crearCartaCilindroMagico() {
 		Efecto efecto = new EfectoCilindroMagico();
+		CartaTrampa carta = new CartaTrampa(this.jugador, efecto);
+		return carta;
+	}
+	
+	public CartaTrampa crearCartaReinforcements() {
+		Efecto efecto = new EfectoReinforcements();
 		CartaTrampa carta = new CartaTrampa(this.jugador, efecto);
 		return carta;
 	}
