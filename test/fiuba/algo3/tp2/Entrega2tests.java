@@ -228,9 +228,7 @@ public class Entrega2tests {
 	public void test10extraerTodasLasCartasDelMazoYVerificarPartidaTerminada() {
 		Juego juego = Juego.ObtenerJuego();
 		Jugador perdedor = juego.jugadorActual();
-		for(int i =0; i < 41; i++) {
-			perdedor.agarrarCarta();
-		}
+		perdedor.agarrarCartasDelMazo(perdedor.obtenerCantidadDeCartasDelMazo() + 1);
 		assertTrue(juego.estadoDelJuegoTerminado());
 	}
 
