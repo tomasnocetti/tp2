@@ -1,21 +1,21 @@
 package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
 import fiuba.algo3.tp2.Cartas.Carta;
 
-public class Juego {
+public class Juego extends Observable{
 	
 	private ArrayList<Jugador> jugadores;
 	private static Juego instancia = null;
 	private Integer iJugadorActual = null; 
-	private NotificarFinalDeJuego finDeJuego;
+	private String estado = "Jugando";
 	
 	public Juego() {
 		this.jugadores = new ArrayList<Jugador>();
 		this.jugadores.add(new Jugador());
 		this.jugadores.add(new Jugador());
-		this.finDeJuego = new NotificarFinalDeJuego();
 	}
 	
 	public static Juego ObtenerJuego() {
@@ -46,11 +46,14 @@ public class Juego {
 		return 1 - this.iJugadorActual;
 	}
 	
-	private void verificarFinDeJuego() {
-		//Se verifican todas las condiciones para el final del jeugo si alguna da true se notifica al jugador (y creo que deberiamos resetear el juego)
-		
+	public void verificarFinDeJuego() {
+       this.estado = "Terminado";
+	   setChanged();
+       notifyObservers();
 	}
 	
-	
+	public String estadoDelJuego() {
+		return this.estado;
+	}
 }
 
