@@ -3,14 +3,15 @@ package fiuba.algo3.tp2;
 import java.util.ArrayList;
 import java.util.Observable;
 
-import fiuba.algo3.tp2.Cartas.Carta;
+import fiuba.algo3.tp2.Excepciones.FinalDeJuegoException;
 
 public class Juego extends Observable{
 	
 	private ArrayList<Jugador> jugadores;
 	private static Juego instancia = null;
 	private Integer iJugadorActual = null; 
-	private String estado = "Jugando";
+	private boolean juegoTerminado  = false;
+	private Jugador ganador = null;
 	
 	public Juego() {
 		this.jugadores = new ArrayList<Jugador>();
@@ -31,6 +32,9 @@ public class Juego extends Observable{
 	}
 	
 	public void cambiarTurno() {
+		if (this.estadoDelJuegoTerminado()) {
+			throw new FinalDeJuegoException();
+		}
 		this.iJugadorActual = this.obtenerIJugadorOponente();
 	}
 	
@@ -46,14 +50,33 @@ public class Juego extends Observable{
 		return 1 - this.iJugadorActual;
 	}
 	
-	public void verificarFinDeJuego() {
-       this.estado = "Terminado";
-	   setChanged();
-       notifyObservers();
+	private void terminarJuego(Jugador jugador) { 
+		this.ganador = jugador;
+        this.juegoTerminado = true;
+	    setChanged();
+        notifyObservers();
 	}
 	
-	public String estadoDelJuego() {
-		return this.estado;
+	public void asignarGanador(Jugador jugador) {
+		this.terminarJuego(jugador);
 	}
+	
+	public void asignarPerdedor(Jugador jugador) {
+		if (this.jugadores.get(0) == jugador) {
+			this.terminarJuego(this.jugadores.get(1));
+			return;
+		}
+		this.terminarJuego(this.jugadores.get(0));
+	}
+	
+	public boolean estadoDelJuegoTerminado() {
+		return this.juegoTerminado;
+	}
+	
+	public Jugador obtenerGanador() {
+		return this.ganador;
+	}
+	
+	
 }
 

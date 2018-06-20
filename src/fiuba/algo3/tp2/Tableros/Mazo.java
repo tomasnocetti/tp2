@@ -2,9 +2,9 @@ package fiuba.algo3.tp2.Tableros;
 
 import java.util.ArrayList;
 
+import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
-import fiuba.algo3.tp2.Excepciones.MazoDeCartasVacioException;
 
 public class Mazo{
 	
@@ -20,7 +20,7 @@ public class Mazo{
 
 	public Carta agarrarCarta() {
 		if (this.cantidadDeCartas == 0) {
-			throw new MazoDeCartasVacioException();
+			Juego.ObtenerJuego().asignarPerdedor(this.jugador);
 		}
 		Carta carta = cartas.remove(cantidadDeCartas - 1);
 		this.cantidadDeCartas -=1;
