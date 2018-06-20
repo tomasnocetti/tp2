@@ -6,10 +6,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Efectos.EfectoAgujeroNegro;
+import fiuba.algo3.Efectos.EfectoFisura;
 import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.Efectos.EfectoMejoraAtaqueDefensa;
+import fiuba.algo3.Efectos.EfectoOllaDeLaCodicia;
 import fiuba.algo3.tp2.Tableros.Mazo;
-import fiuba.algo3.Efectos.EfectoMejoraAtaqueDefensa;;
 
 public class CartaFactory {
 	
@@ -73,6 +75,17 @@ public class CartaFactory {
 		return carta;
 	}
 	
+	public CartaMagica crearCartaOllaDeLaCodicia() {
+		Efecto efecto = new EfectoOllaDeLaCodicia();
+		CartaMagica carta = new CartaMagica(this.jugador, efecto);
+		return carta;
+	}
+	
+	public CartaMagica crearCartaFisura() {
+		Efecto efecto = new EfectoFisura();
+		CartaMagica carta = new CartaMagica(this.jugador, efecto);
+		return carta;
+	}
 	
 	public static ArrayList<Carta> inicializarMazoGenerico(Jugador jugador) {
 		ArrayList<Carta> cartas = new ArrayList<Carta>();

@@ -2,7 +2,7 @@ package fiuba.algo3.Estados;
 
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
-public class MonstruoPosicionArriba implements MonstruoPosicionable {
+public class MonstruoPosicionArriba extends PosicionArriba implements MonstruoPosicionable {
 	
 	public void atacar(CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada){
 		Accionable accionAtacante = cartaAtacante.obtenerAccion(); 

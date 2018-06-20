@@ -3,7 +3,7 @@ package fiuba.algo3.Estados;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.MonstruoBocaAbajoException;
 
-public class MonstruoPosicionAbajo implements MonstruoPosicionable {
+public class MonstruoPosicionAbajo extends PosicionAbajo implements MonstruoPosicionable {
 	
 	public MonstruoPosicionAbajo() {
 	}

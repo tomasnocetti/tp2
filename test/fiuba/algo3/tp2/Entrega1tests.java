@@ -48,7 +48,7 @@ public class Entrega1tests {
 		carta.colocarBocaAbajo();
 		jugador.colocarCartaEnZona(carta,  0);
 		
-		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
+		assertEquals(carta.obtenerPosicion().getClass(), PosicionAbajo.class);
 		assertTrue(jugador.obtenerCartasMagicasYTrampas().contains(carta)); 
 	}
 	
@@ -61,7 +61,7 @@ public class Entrega1tests {
 		carta.colocarBocaAbajo();
 		jugador.colocarCartaEnZona(carta,  0);
 		
-		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
+		assertEquals(carta.obtenerPosicion().getClass(), PosicionAbajo.class);
 		assertTrue(jugador.obtenerCartasMagicasYTrampas().contains(carta)); 
 	}
 

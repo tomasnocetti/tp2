@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Cartas.CartaFactory;
+import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
 public class Entrega2tests {
@@ -74,7 +75,21 @@ public class Entrega2tests {
 	
 	@Test
 	public void test04activarCartaMagicaFisuraYVerificarEfecto() {
+		Jugador atacante = new Jugador();
+		CartaFactory cartaFactoryAtacante = new CartaFactory(atacante);
+		Jugador atacado = new Jugador();
+		CartaFactory cartaFactoryAtacado = new CartaFactory(atacado);
+		CartaMagica fisura = cartaFactoryAtacante.crearCartaFisura();
 		
+		CartaMonstruo c1 = cartaFactoryAtacado.crearCartaMonstruoGenerica(300, 100);
+		CartaMonstruo c2 = cartaFactoryAtacado.crearCartaMonstruoGenerica(500, 100);
+		atacado.colocarCartaEnZona(c1, 0, new ArrayList<CartaMonstruo>());
+		atacado.colocarCartaEnZona(c2, 1, new ArrayList<CartaMonstruo>());
+		
+		fisura.activar(atacado);
+		
+		assertTrue(atacado.obtenerCartasEnCementerio().contains(c1));
+		assertFalse(atacado.obtenerCartasEnCementerio().contains(c2));
 	}
 
 	@Test

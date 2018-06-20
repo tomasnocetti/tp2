@@ -17,7 +17,7 @@ public class CartaTrampaTest {
 		CartaFactory factory = new CartaFactory(jugador);
 		CartaTrampa carta = factory.crearCartaTrampaGenerica();
 		carta.colocarBocaAbajo();
-		assertEquals(carta.obtenerEstado().getClass(), PosicionAbajo.class);
+		assertEquals(carta.obtenerPosicion().getClass(), PosicionAbajo.class);
 	}
 	
 	@Test
