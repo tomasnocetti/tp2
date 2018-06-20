@@ -13,7 +13,8 @@ import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
-//import fiuba.algo3.tp2.Cartas.CartaObserver;
+import fiuba.algo3.tp2.Cartas.CartaTrampa;
+
 
 public class Entrega2tests {
 	
@@ -197,7 +198,25 @@ public class Entrega2tests {
 
 	@Test
 	public void test08colocarCartaTrampaCilindroMagicoDelLadoDelCampoYAtacarConElMonstruoEnemigoVerificandoEfecto() {
+		Jugador atacante = new Jugador();
+		Jugador atacado = new Jugador();
 		
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		
+		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(2000, 1000);
+		CartaMonstruo monstruoAtacado = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
+		CartaTrampa cilindroMagico = factoryAtacado.crearCartaCilindroMagico();
+		
+		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
+		atacado.colocarCartaEnZona(monstruoAtacado, 0, new ArrayList<CartaMonstruo>());
+		atacado.colocarCartaEnZona(cilindroMagico, 1);
+		
+		monstruoAtacante.atacar(monstruoAtacado);
+		
+		assertEquals(atacado.obtenerPuntosDeVida(), 8000);
+		assertEquals(atacante.obtenerPuntosDeVida(), 7000);
+		assertTrue(atacado.obtenerMonstruos().contains(monstruoAtacado));
 	}
 
 	@Test
