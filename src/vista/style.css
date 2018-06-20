@@ -6,6 +6,10 @@
     /*-fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);*/ 
 }
 .flowPane{
+	-fx-background-image: url("fondoMano.jpg");
+	-fx-background-repeat: repeat-x;   
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
 	-fx-padding: 10.0 3.0 5.0 0.0;
     -fx-hgap: 4;
     -fx-vgap: 4;
@@ -14,4 +18,30 @@
 }
 .image-mano{
 	-fx-stroke-size: 150 150;
+}
+.button{
+	-fx-background-color: 
+        linear-gradient(#f2f2f2, #d6d6d6),
+        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
+        linear-gradient(#dddddd 0%, #f6f6f6 50%);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.button-carta {
+	
+}
+.gridPane-cartas {
+	-fx-hgap: 2;
+    -fx-vgap: 4;
+}
+/*.contenedorCarta{
+	
+}*/
+.tablero {
+	-fx-background-image: url("fondoTablero.jpg");
+	-fx-background-repeat: stretch;   
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
 }
