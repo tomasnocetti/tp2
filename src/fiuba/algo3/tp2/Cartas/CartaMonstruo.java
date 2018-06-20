@@ -60,6 +60,10 @@ public class CartaMonstruo extends Carta{
 		return this.puntosDeDefensa;
 	}
 	
+	public Efecto obtenerEfecto() {
+		return this.efecto;
+	}
+	
 	public void configurarPuntosAtaque(int puntos) {
 		this.puntosDeAtaque = puntos;
 	}
@@ -88,17 +92,15 @@ public class CartaMonstruo extends Carta{
 	public void activar(Jugador atacado) {
 		this.efecto.activarSobreJugadorAtacante(this.jugador);
 		this.efecto.activarSobreJugadorAtacado(atacado);
-		
 	}
-
+	
 	public void colocarBocaAbajo() {
 		this.posicion = new MonstruoPosicionAbajo();
-		
 	}
 
 	public void colocarBocaArriba() {
 		this.posicion = new MonstruoPosicionArriba();
-		
+		this.efecto.activarSobreJugadorAtacante(this.jugador);
 	}
 
 	public boolean estaEnElCampo() {
@@ -113,7 +115,4 @@ public class CartaMonstruo extends Carta{
 		return this.estrellas;
 	}
 	
-	public String nombre() {
-		return this.nombre;
-	}
 }

@@ -3,13 +3,17 @@ package fiuba.algo3.tp2;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.junit.Test;
 
+import fiuba.algo3.Estados.PosicionArriba;
+import fiuba.algo3.Estados.Posicionable;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
+import fiuba.algo3.tp2.Cartas.CartaObserver;
 
 public class Entrega2tests {
 	
@@ -108,7 +112,7 @@ public class Entrega2tests {
 		CartaFactory factoryAtacado = new CartaFactory(atacado);
 		
 		CartaMonstruo monstruoAtacado = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
-		CartaMonstruo jinzo7 = factoryAtacante.crearCartaJinzo7(atacado);
+		CartaMonstruo jinzo7 = factoryAtacante.crearCartaJinzo7();
 		
 		atacado.colocarCartaEnZona(monstruoAtacado, 0, new ArrayList<CartaMonstruo>());
 		atacante.colocarCartaEnZona(jinzo7, 0, new ArrayList<CartaMonstruo>());
@@ -172,7 +176,22 @@ public class Entrega2tests {
 	
 	@Test
 	public void test07colocarInsectoComeHombresEnDefensaBocaAbajoYProbarEfectoEnBatalla() {
+		Jugador atacante = new Jugador();
+		Jugador atacado = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
 		
+		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo insectoComeHombres = factoryAtacado.crearInsectoComeHombres();
+		insectoComeHombres.colocarBocaAbajo();
+		insectoComeHombres.colocarEnAccionDeDefensa();
+		
+		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
+		atacado.colocarCartaEnZona(insectoComeHombres, 0, new ArrayList<CartaMonstruo>());
+//		CartaObserver observer = new CartaObserver(insectoComeHombres);
+//		
+//		insectoComeHombres.addObserver(observer);
+		monstruoAtacante.atacar(insectoComeHombres);
 	}
 
 	@Test
@@ -192,7 +211,17 @@ public class Entrega2tests {
 
 	@Test
 	public void test11colocarPartesDeExodiaEnLaManoYVerificarPartidaTerminada() {
+		Jugador atacante = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		ArrayList<CartaMonstruo> partesDeExodia = factoryAtacante.crear5PartesDeExodia();
 		
+		Iterator<CartaMonstruo> i = partesDeExodia.iterator();
+		
+		while (i.hasNext()) {
+			atacante.colocarEnMano(i.next());
+		}
+
+		// Probar que se gano el juego ! 
 	}
 
 }

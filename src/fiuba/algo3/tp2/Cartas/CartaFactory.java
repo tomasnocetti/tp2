@@ -2,11 +2,19 @@ package fiuba.algo3.tp2.Cartas;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.Predicate;
 
 import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Efectos.EfectoAgujeroNegro;
+import fiuba.algo3.Efectos.EfectoExodia;
 import fiuba.algo3.Efectos.EfectoFisura;
+import fiuba.algo3.Efectos.EfectoInsectoComeHombres;
 import fiuba.algo3.Efectos.EfectoJinzo7;
 import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
@@ -87,7 +95,7 @@ public class CartaFactory {
 		return carta;
 	}
 	
-	public CartaMonstruo crearCartaJinzo7(Jugador atacado) {
+	public CartaMonstruo crearCartaJinzo7() {
 		Efecto efecto = new EfectoJinzo7();
 		CartaMonstruo jinzo7 = new CartaMonstruo("Jinzo#7", this.jugador, efecto, 2, 500, 400);
 		return jinzo7;
@@ -103,6 +111,33 @@ public class CartaFactory {
 		Efecto efecto = new EfectoVacio();
 		CartaMonstruo carta = new CartaMonstruo("Dragon Definitivo De Ojos Azules", jugador, efecto, 8, 4500, 3800);
 		return carta;
+	}
+	
+	public CartaMonstruo crearInsectoComeHombres() {
+		Efecto efecto = new EfectoInsectoComeHombres();
+		CartaMonstruo carta = new CartaMonstruo("Insecto Come Hombres", jugador, efecto, 2, 450, 600);
+		return carta;
+	} 
+	
+	public ArrayList<CartaMonstruo> crear5PartesDeExodia() {
+		String cartasNecesarias[] = {
+			"Cabeza Exodia", 
+			"Brazo Izquierdo Exodia", 
+			"Brazo Derecho Exodia", 
+			"Pierna Izquierda Exodia",
+			"Pierna Derecha Exodia"};  
+		
+		ArrayList<CartaMonstruo> colleccion = new ArrayList<CartaMonstruo>();
+		Efecto efecto = new EfectoExodia();
+		List<String> list = Arrays.asList(cartasNecesarias);
+		Iterator<String> i = list.iterator();
+		
+		while (i.hasNext()) {
+			final String nombre = i.next();
+			colleccion.add(new CartaMonstruo(nombre, jugador, efecto, 2, 450, 600));
+		}
+		
+		return colleccion;
 	}
 	
 	public static ArrayList<Carta> inicializarMazoGenerico(Jugador jugador) {

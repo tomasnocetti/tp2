@@ -6,6 +6,7 @@ import java.util.Iterator;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
+import fiuba.algo3.tp2.Tableros.ZonaMano;
 
 public class EfectoWasteland extends Efecto {
 
@@ -31,6 +32,12 @@ public class EfectoWasteland extends Efecto {
 			int puntosDefensa = monstruo.obtenerPuntosDefensa() + 300;
 			monstruo.configurarPuntosDefensa(puntosDefensa);
 		}
+	}
+
+	@Override
+	public void activarAlAgregarAZonaMano(ZonaMano zona, Carta carta) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -40,8 +40,13 @@ public class Jugador {
 
 	public void agarrarCartasDelMazo(int numero) {
 		for (int i = 0; i < numero; i++ ) {
-			this.mano.agarrarCarta(this.mazo);
+			Carta nuevaCarta = mazo.agarrarCarta();
+			this.mano.agregarCarta(nuevaCarta);
 		}
+	}
+	
+	public void colocarEnMano(Carta carta) {
+		this.mano.agregarCarta(carta);
 	}
 	
 	public void quitarPuntosDeVida(int puntosPerdidos) {
@@ -107,7 +112,9 @@ public class Jugador {
 	}
 	
 	public Carta agarrarCarta() {
-		return this.mano.agarrarCarta(this.mazo);
+		Carta nuevaCarta = mazo.agarrarCarta();
+		this.mano.agregarCarta(nuevaCarta);
+		return nuevaCarta;
 	}
 
 	public Collection<Carta> obtenerCartasMagicasYTrampas() {

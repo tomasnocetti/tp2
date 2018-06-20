@@ -10,6 +10,7 @@ import fiuba.algo3.Estados.Posicionable;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
+import fiuba.algo3.tp2.Tableros.ZonaMano;
 
 public class EfectoFisura extends Efecto {
 
@@ -36,5 +37,12 @@ public class EfectoFisura extends Efecto {
 		if(cartaConMenorAtaqueBocaArriba == null) return;
 		
 		cartaConMenorAtaqueBocaArriba.enviarAlCementerio();		
-	};
+	}
+
+	@Override
+	public void activarAlAgregarAZonaMano(ZonaMano zona, Carta carta) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
