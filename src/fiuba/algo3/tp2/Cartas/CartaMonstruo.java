@@ -1,5 +1,7 @@
 package fiuba.algo3.tp2.Cartas;
 
+import java.util.ArrayList;
+
 import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Estados.AccionAtaque;
 import fiuba.algo3.Estados.AccionDefensa;
@@ -8,6 +10,7 @@ import fiuba.algo3.Estados.MonstruoPosicionAbajo;
 import fiuba.algo3.Estados.MonstruoPosicionArriba;
 import fiuba.algo3.Estados.MonstruoPosicionable;
 import fiuba.algo3.Estados.Posicionable;
+import fiuba.algo3.tp2.Invocador;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
 
@@ -18,14 +21,17 @@ public class CartaMonstruo extends Carta{
     private int estrellas;
 	private MonstruoPosicionable posicion;
 	private Accionable accion;
+	private Invocador invocador;
 	
-    public CartaMonstruo(Jugador jugador, Efecto efecto, int estrella, int ataque, int defenza) {
+    public CartaMonstruo(String nombre, Jugador jugador, Efecto efecto, int estrella, int ataque, int defenza) {
     	super(jugador, efecto);
     	this.puntosDeAtaque = ataque;
 		this.estrellas = estrella;
+		this.invocador = Invocador.obtenerInvocador(this);
 		this.puntosDeDefensa = defenza;
 		this.posicion = new MonstruoPosicionArriba(); 
 		this.accion = new AccionAtaque();
+		this.nombre = nombre;
 	}
     
 	public void atacar(CartaMonstruo otro) {
@@ -109,5 +115,17 @@ public class CartaMonstruo extends Carta{
 		else {
 			return 0;
 		}
+	}
+
+	public boolean invocacionValida(ArrayList<CartaMonstruo> cartasSacrificadas) {
+		return this.invocador.invocacionValida(cartasSacrificadas);
+	}
+
+	public int estrellas() {
+		return this.estrellas;
+	}
+	
+	public String nombre() {
+		return this.nombre;
 	}
 }

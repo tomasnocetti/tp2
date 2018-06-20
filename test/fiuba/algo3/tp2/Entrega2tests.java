@@ -115,12 +115,57 @@ public class Entrega2tests {
 		
 		jinzo7.activar(atacado);
 		
-
 	}
 
 	@Test
 	public void test06invocarAlDragonDefinitivoDeOjosAzulesSacrificando3DragonesBlancos() {
+		Jugador atacante = new Jugador();
+		CartaFactory factory = new CartaFactory(atacante);
+
+		CartaMonstruo dragon1 = factory.crearCartaDragonBlancoDeOjosAzules();
+		CartaMonstruo dragon2 = factory.crearCartaDragonBlancoDeOjosAzules();
+		CartaMonstruo dragon3 = factory.crearCartaDragonBlancoDeOjosAzules();
 		
+		CartaMonstruo sacrificado1 = factory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo sacrificado2 = factory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo sacrificado3 = factory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo sacrificado4 = factory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo sacrificado5 = factory.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo sacrificado6 = factory.crearCartaMonstruoGenerica(1000, 1000);
+		
+		atacante.colocarCartaEnZona(sacrificado1, 0, new ArrayList<CartaMonstruo>());
+		atacante.colocarCartaEnZona(sacrificado2, 1, new ArrayList<CartaMonstruo>());
+		atacante.colocarCartaEnZona(sacrificado3, 2, new ArrayList<CartaMonstruo>());
+		atacante.colocarCartaEnZona(sacrificado4, 3, new ArrayList<CartaMonstruo>());
+		atacante.colocarCartaEnZona(sacrificado5, 4, new ArrayList<CartaMonstruo>());
+		atacante.colocarCartaEnZona(sacrificado6, 5, new ArrayList<CartaMonstruo>());
+		
+		ArrayList<CartaMonstruo> sacrificio1 = new ArrayList<CartaMonstruo>();
+		sacrificio1.add(sacrificado1);
+		sacrificio1.add(sacrificado2);
+		atacante.colocarCartaEnZona(dragon1, 0, sacrificio1);
+		
+		ArrayList<CartaMonstruo> sacrificio2 = new ArrayList<CartaMonstruo>();
+		sacrificio2.add(sacrificado3);
+		sacrificio2.add(sacrificado4);
+		atacante.colocarCartaEnZona(dragon2, 0, sacrificio2);
+		
+		ArrayList<CartaMonstruo> sacrificio3 = new ArrayList<CartaMonstruo>();
+		sacrificio3.add(sacrificado5);
+		sacrificio3.add(sacrificado6);
+		atacante.colocarCartaEnZona(dragon3, 0, sacrificio3);
+		
+		CartaMonstruo dragonDefinitivo = factory.crearCartaDragonDefinitivo();
+		
+		ArrayList<CartaMonstruo> sacrificioDragones = new ArrayList<CartaMonstruo>();
+		sacrificioDragones.add(dragon1);
+		sacrificioDragones.add(dragon2);
+		sacrificioDragones.add(dragon3);
+		atacante.colocarCartaEnZona(dragonDefinitivo, 0, sacrificioDragones);
+		
+		assertTrue(atacante.obtenerMonstruos().contains(dragonDefinitivo));
+		assertEquals(atacante.obtenerMonstruos().size(), 1);
+
 	}
 	
 	@Test

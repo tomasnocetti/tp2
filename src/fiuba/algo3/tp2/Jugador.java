@@ -10,6 +10,7 @@ import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampaOMagica;
+import fiuba.algo3.tp2.Excepciones.InvocacionInvalida;
 import fiuba.algo3.tp2.Tableros.Cementerio;
 import fiuba.algo3.tp2.Tableros.Mazo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
@@ -78,8 +79,13 @@ public class Jugador {
 	
 	
 	public void colocarCartaEnZona(CartaMonstruo carta, int posicion, ArrayList<CartaMonstruo> cartasSacrificadas) {
+		if (carta.invocacionValida(cartasSacrificadas)) {
 		this.mano.eliminarCarta(carta);
 		this.zonaMonstruos.agregarCarta(carta, posicion, cartasSacrificadas);
+		}
+		else {
+			throw new InvocacionInvalida();
+		}
 	}
 
 	public void colocarCartaEnZona(CartaTrampaOMagica carta, int posicion) {

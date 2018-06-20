@@ -10,6 +10,7 @@ public abstract class Carta {
 	protected Efecto efecto;
 	protected Posicionable posicion;
 	protected Jugador jugador;
+	protected String nombre;
 	
 	public abstract void enviarAlCementerio();
 	

@@ -23,19 +23,19 @@ public class CartaFactory {
 	
 	public CartaMonstruo crearCartaMonstruoGenerica(int puntosAtaque, int puntosDefensa) {
 		Efecto efecto = new EfectoVacio();
-		CartaMonstruo carta = new CartaMonstruo(jugador, efecto, 4, puntosAtaque, puntosDefensa);
+		CartaMonstruo carta = new CartaMonstruo("Monstruo Generico", jugador, efecto, 4, puntosAtaque, puntosDefensa);
 		return carta;
 	}
 	
 	public CartaMonstruo crearCartaMonstruoGenerica1Sacrificio(int puntosAtaque, int puntosDefensa) {
 		Efecto efecto = new EfectoVacio();
-		CartaMonstruo carta = new CartaMonstruo(jugador, efecto, 5, puntosAtaque, puntosDefensa);
+		CartaMonstruo carta = new CartaMonstruo("Monstruo Generico", jugador, efecto, 5, puntosAtaque, puntosDefensa);
 		return carta;
 	}
 	
 	public CartaMonstruo crearCartaMonstruoGenerica2Sacrificio(int puntosAtaque, int puntosDefensa) {
 		Efecto efecto = new EfectoVacio();
-		CartaMonstruo carta = new CartaMonstruo(jugador, efecto, 7, puntosAtaque, puntosDefensa);
+		CartaMonstruo carta = new CartaMonstruo("Monstruo Generico", jugador, efecto, 7, puntosAtaque, puntosDefensa);
 		return carta;
 	}
 	
@@ -89,7 +89,7 @@ public class CartaFactory {
 	
 	public CartaMonstruo crearCartaJinzo7(Jugador atacado) {
 		Efecto efecto = new EfectoJinzo7();
-		CartaMonstruo jinzo7 = new CartaMonstruo(this.jugador, efecto, 2, 500, 400);
+		CartaMonstruo jinzo7 = new CartaMonstruo("Jinzo#7", this.jugador, efecto, 2, 500, 400);
 		return jinzo7;
 	}
 	
@@ -112,7 +112,7 @@ public class CartaFactory {
 			int puntosDeDefensa = ThreadLocalRandom.current().nextInt(500, 3001);
 			int estrellas = ThreadLocalRandom.current().nextInt(1, 5);
 			
-			CartaMonstruo nuevaCarta = new CartaMonstruo(jugador, efectoVacio, estrellas, puntosDeAtaque, puntosDeDefensa);
+			CartaMonstruo nuevaCarta = new CartaMonstruo("Monstruo Generico", jugador, efectoVacio, estrellas, puntosDeAtaque, puntosDeDefensa);
 			cartas.add(nuevaCarta);
 		} // agregamos 13 monstruos genericos
 		
@@ -120,7 +120,7 @@ public class CartaFactory {
 			int puntosDeAtaque = ThreadLocalRandom.current().nextInt(500, 3001);
 			int puntosDeDefensa = ThreadLocalRandom.current().nextInt(500, 3001);
 			int estrellas = ThreadLocalRandom.current().nextInt(5, 7);
-			CartaMonstruo nuevaCarta = new CartaMonstruo(jugador, efectoVacio, estrellas, puntosDeAtaque, puntosDeDefensa);
+			CartaMonstruo nuevaCarta = new CartaMonstruo("Monstruo Generico", jugador, efectoVacio, estrellas, puntosDeAtaque, puntosDeDefensa);
 			cartas.add(nuevaCarta);
 		} //agregamos 6 monstruos de 1 sacrificio
 		
@@ -129,7 +129,7 @@ public class CartaFactory {
 			int puntosDeDefensa = ThreadLocalRandom.current().nextInt(500, 3001);
 			int estrellas = ThreadLocalRandom.current().nextInt(7, 11);
 			
-			CartaMonstruo nuevaCarta = new CartaMonstruo(jugador, efectoVacio, estrellas, puntosDeAtaque, puntosDeDefensa);
+			CartaMonstruo nuevaCarta = new CartaMonstruo("Monstruo Generico", jugador, efectoVacio, estrellas, puntosDeAtaque, puntosDeDefensa);
 			cartas.add(nuevaCarta);
 		} //agregamos 4 monstruos de 2 sacrificios
 		
