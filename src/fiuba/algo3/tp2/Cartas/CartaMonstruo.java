@@ -101,6 +101,7 @@ public class CartaMonstruo extends Carta{
 	public void colocarBocaArriba() {
 		this.posicion = new MonstruoPosicionArriba();
 		this.efecto.activarSobreJugadorAtacante(this.jugador);
+		//-- PARAR
 	}
 
 	public boolean estaEnElCampo() {

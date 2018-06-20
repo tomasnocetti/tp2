@@ -192,6 +192,7 @@ public class Entrega2tests {
 //		
 //		insectoComeHombres.addObserver(observer);
 		monstruoAtacante.atacar(insectoComeHombres);
+		
 	}
 
 	@Test

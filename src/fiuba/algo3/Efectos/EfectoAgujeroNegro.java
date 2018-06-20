@@ -14,9 +14,4 @@ public class EfectoAgujeroNegro extends Efecto {
 	public void activarSobreJugadorAtacado(Jugador jugador) {
 		jugador.destruirMonstruos();
 	}
-
-	@Override
-	public void activarAlAgregarAZonaMano(ZonaMano zona, Carta carta) {
-		return;
-	}
 }

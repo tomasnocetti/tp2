@@ -9,14 +9,4 @@ public class EfectoOllaDeLaCodicia extends Efecto {
 	public void activarSobreJugadorAtacante(Jugador jugador) {
 		jugador.agarrarCartasDelMazo(2);
 	}
-	
-	public void activarSobreJugadorAtacado(Jugador jugador) {
-		return;
-	}
-
-	@Override
-	public void activarAlAgregarAZonaMano(ZonaMano zona, Carta carta) {
-		// TODO Auto-generated method stub
-		
-	}
 }

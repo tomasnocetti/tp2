@@ -45,28 +45,4 @@ public class EfectoExodia extends EfectoMonstruo{
 		// ACA GANAR EL JUEGO ! 
 		
 	}
-
-	@Override
-	public boolean activarAntesDeAtaque(CartaMonstruo atacante, CartaMonstruo atacada) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean activarAntesDeDefensa(CartaMonstruo atacante, CartaMonstruo atacada) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void activarSobreJugadorAtacante(Jugador jugador) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void activarSobreJugadorAtacado(Jugador jugador) {
-		// TODO Auto-generated method stub
-		
-	}
 }

@@ -34,10 +34,4 @@ public class EfectoWasteland extends Efecto {
 		}
 	}
 
-	@Override
-	public void activarAlAgregarAZonaMano(ZonaMano zona, Carta carta) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
