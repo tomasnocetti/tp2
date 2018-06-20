@@ -100,8 +100,8 @@ public class Jugador {
 		return this.zonaMonstruos.obtenerCartas().contains(cartaMonstruo);
 	}
 	
-	public void agarrarCarta() {
-		this.mano.agarrarCarta(this.mazo);
+	public Carta agarrarCarta() {
+		return this.mano.agarrarCarta(this.mazo);
 	}
 
 	public Collection<Carta> obtenerCartasMagicasYTrampas() {

@@ -76,16 +76,31 @@ public class JugadorTest {
 	@Test
 	public void test06colocarCartaEnZonaLaEliminaDeLaMano() {
 		Jugador jugador = new Jugador();
-		jugador.agarrarCarta();
-		Collection<Carta> cartasMano = jugador.obtenerCartasEnMano();
+		Carta carta = jugador.agarrarCarta();
 		
-		Carta carta = ((ArrayList<Carta>) cartasMano).get(0);
-		
-		
-		jugador.colocarCartaEnZona(carta, 0);
+		if (carta.getClass() == CartaCampo.class) {
+			jugador.colocarCartaEnZona((CartaCampo) carta, new Jugador());
+		}
+		else {
+			if (carta.getClass() == CartaTrampa.class || carta.getClass() == CartaMagica.class) {
+				jugador.colocarCartaEnZona((CartaTrampaOMagica) carta, 0);
+			}
+			else {
+				jugador.colocarCartaEnZona((CartaMonstruo) carta, 0, new ArrayList<CartaMonstruo>());
+			}
+		}
 		
 		assertEquals(jugador.obtenerCartasEnMano().size(), 0);
 		
+	}
+	
+	
+	@Test
+	public void test07Agarrar2CartasDelMazoLasPoneEnLaMano() {
+		Jugador jugador = new Jugador();
+		jugador.agarrarCartasDelMazo(2);
+		Collection<Carta> mano = jugador.obtenerCartasEnMano();
+		assertEquals(mano.size(), 2);
 	}
 
 

@@ -70,7 +70,15 @@ public class Entrega2tests {
 
 	@Test
 	public void test03activarCartaMagicaOllaDeLaCodiciaYVerificarEfecto() {
+		Jugador jugador = new Jugador();
+		Jugador oponente = new Jugador();
+		CartaFactory factory = new CartaFactory(jugador);
 		
+		CartaMagica ollaCodicia = factory.crearCartaOllaDeLaCodicia();
+		jugador.colocarCartaEnZona(ollaCodicia, 0);
+		ollaCodicia.colocarBocaArriba(oponente);
+		
+		assertEquals(jugador.obtenerCartasEnMano().size(), 2);
 	}
 	
 	@Test
@@ -94,7 +102,7 @@ public class Entrega2tests {
 
 	@Test
 	public void test05colocarJinzo7EnElCampoVerificarAtaqueALosPuntosDeVidaDirecto() {
-		
+
 	}
 
 	@Test

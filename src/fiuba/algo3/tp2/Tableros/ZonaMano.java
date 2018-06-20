@@ -14,8 +14,10 @@ public class ZonaMano extends Zona{
 		// TODO Auto-generated constructor stub
 	}
 
-	public void agarrarCarta(Mazo mazo) {
-		super.agregarCarta(mazo.agarrarCarta(), this.cartas.size());
+	public Carta agarrarCarta(Mazo mazo) {
+		Carta nuevaCarta = mazo.agarrarCarta();
+		super.agregarCarta(nuevaCarta, this.cartas.size());
+		return nuevaCarta;
 	}
 	
 }

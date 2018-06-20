@@ -12,10 +12,6 @@ public abstract class CartaTrampaOMagica extends Carta{
 		this.posicion = new PosicionAbajo();
 	}
 
-	public boolean estaEnElCampo() {
-		return this.jugador.estaEnElCampo(this);
-	}
-
 	public void enviarAlCementerio( ) {
 		this.jugador.enviarAlCementerio(this);
 	}
