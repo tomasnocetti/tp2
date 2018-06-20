@@ -14,10 +14,6 @@ import fiuba.algo3.tp2.Tableros.ZonaMano;
 
 public class EfectoFisura extends Efecto {
 
-	public void activarSobreJugadorAtacante(Jugador jugador) {
-		return;
-	};
-
 	public void activarSobreJugadorAtacado(Jugador jugador) {
 		
 		Collection<Carta> monstruos = jugador.obtenerMonstruos();
@@ -37,12 +33,6 @@ public class EfectoFisura extends Efecto {
 		if(cartaConMenorAtaqueBocaArriba == null) return;
 		
 		cartaConMenorAtaqueBocaArriba.enviarAlCementerio();		
-	}
-
-	@Override
-	public void activarAlAgregarAZonaMano(ZonaMano zona, Carta carta) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

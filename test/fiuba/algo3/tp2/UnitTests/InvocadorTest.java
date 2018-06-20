@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
@@ -15,7 +16,7 @@ public class InvocadorTest {
 	@Test
 	public void test01CreacionInvocadorBasico() {
 		Jugador jugador = new Jugador();
-		EfectoVacio efecto = new EfectoVacio();
+		Efecto efecto = new Efecto();
 		CartaMonstruo carta = new CartaMonstruo("Nombre", jugador, efecto, 1, 1000, 1000);
 		
 		assertTrue(carta.invocacionValida(new ArrayList<CartaMonstruo>()));
@@ -24,7 +25,7 @@ public class InvocadorTest {
 	@Test
 	public void test02CreacionInvocadorDragonDefinitivo() {
 		Jugador jugador = new Jugador();
-		EfectoVacio efecto = new EfectoVacio();
+		Efecto efecto = new Efecto();
 		
 		CartaMonstruo carta = new CartaMonstruo("Dragon Definitivo De Ojos Azules", jugador, efecto, 8, 4500, 3800);
 		CartaMonstruo dragon1 = new CartaMonstruo("Dragon Blanco De Ojos Azules", jugador, efecto, 7, 3000, 2500);
