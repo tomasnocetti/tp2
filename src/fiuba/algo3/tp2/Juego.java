@@ -9,11 +9,13 @@ public class Juego {
 	private ArrayList<Jugador> jugadores;
 	private static Juego instancia = null;
 	private Integer iJugadorActual = null; 
+	private NotificarFinalDeJuego finDeJuego;
 	
 	public Juego() {
 		this.jugadores = new ArrayList<Jugador>();
 		this.jugadores.add(new Jugador());
 		this.jugadores.add(new Jugador());
+		this.finDeJuego = new NotificarFinalDeJuego();
 	}
 	
 	public static Juego ObtenerJuego() {
@@ -43,6 +45,12 @@ public class Juego {
 	private int obtenerIJugadorOponente() {
 		return 1 - this.iJugadorActual;
 	}
+	
+	private void verificarFinDeJuego() {
+		//Se verifican todas las condiciones para el final del jeugo si alguna da true se notifica al jugador (y creo que deberiamos resetear el juego)
+		
+	}
+	
 	
 }
 
