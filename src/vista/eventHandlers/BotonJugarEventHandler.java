@@ -1,4 +1,4 @@
-package vista;
+package vista.eventHandlers;
 
 import java.io.File;
 
@@ -22,9 +22,9 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent arg0) {
 		this.stage.setScene(this.sceneJuego);
 		this.stage.setFullScreen(true);
-	    Media sound = new Media(new File("C:\\Users\\Jmejl\\Desktop\\Fiuba\\algoritmos3\\tp2-copia\\src\\vista\\activarCarta.mp3").toURI().toString());
-	    MediaPlayer mediaPlayer = new MediaPlayer(sound);
-	    mediaPlayer.play();
+//	    Media sound = new Media(new File("C:\\Users\\Jmejl\\Desktop\\Fiuba\\algoritmos3\\tp2-copia\\src\\vista\\activarCarta.mp3").toURI().toString());
+//	    MediaPlayer mediaPlayer = new MediaPlayer(sound);
+//	    mediaPlayer.play();
 	}
 
 }

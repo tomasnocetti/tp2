@@ -22,6 +22,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 //import javafx.scene.paint.Color;
+import vista.eventHandlers.ApretarEnImagenEventHandler;
+import vista.eventHandlers.BotonJugarEventHandler;
+import vista.eventHandlers.BotonSalirEventHandler;
+import vista.eventHandlers.CuadradoEventHandler;
+import vista.eventHandlers.PasarEnImagenEventHandler;
+import vista.eventHandlers.SalirDeImagenEventHandler;
 
 public class AlGoHo extends Application{
 
@@ -37,9 +43,10 @@ public class AlGoHo extends Application{
 		layoutJuego.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		layoutJuego.getStyleClass().add("layout");
 		
-		FlowPane zonaMano = this.crearZonaMano();
+		
 		VBox tableroDeJuego = this.crearTableroDeJuego();
 		VBox zonaInformacionCarta = this.generarZonaInformacionCarta();
+		FlowPane zonaMano = this.crearZonaMano(zonaInformacionCarta);
 		
 		layoutJuego.setBottom(zonaMano);
         layoutJuego.setCenter(tableroDeJuego);
@@ -130,7 +137,7 @@ public class AlGoHo extends Application{
         
         BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage,sceneJuego);
         botonJugar.setOnAction(botonJugarEventHandler);
-
+        
         HBox contenedorHorizontal = new HBox(botonJugar,botonSalir);
         contenedorHorizontal.setSpacing(10);
         
@@ -141,26 +148,28 @@ public class AlGoHo extends Application{
         return contenedorPrincipal;
 	}
 
-	private FlowPane crearZonaMano() {
+	private FlowPane crearZonaMano(VBox zonaInformacionCarta) {
 	
 		FlowPane zonaMano = new FlowPane();
 		zonaMano.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		zonaMano.getStyleClass().add("flowPane");
 		zonaMano.setAlignment(Pos.CENTER);
 		
-		Button pages[] = new Button[2];
+		ImageView pages[] = new ImageView[2];
 		
 		Image cartaBocaAbajo = new Image(AlGoHo.class.getResourceAsStream("cartaBocaAbajo.jpg"),150,150, true, true);
 		
 		for(int i =0; i < 2; i++) {
-			pages[i] = new Button("",new ImageView(new Image(AlGoHo.class.getResourceAsStream("carta" + (i+1) +".jpg"),150,150, true, true)));
-	        BotonCartaEventHandler botonCartaEventHandler = new BotonCartaEventHandler(pages[i],cartaBocaAbajo);
-	        pages[i].setOnAction(botonCartaEventHandler);
-	        BotonCartaEventHandlerDrag botonCartaEventHandlerDrag = new BotonCartaEventHandlerDrag(pages[i]);
-	        pages[i].setOnDragDetected(botonCartaEventHandlerDrag);
+			pages[i] = new ImageView(new Image(AlGoHo.class.getResourceAsStream("carta" + (i+1) +".jpg"),150,150, true, true));
+	        ApretarEnImagenEventHandler aprentarEnCartaEventHandler = new ApretarEnImagenEventHandler(cartaBocaAbajo,pages[i]);
+	        pages[i].setOnMouseClicked(aprentarEnCartaEventHandler);
+//	        PasarEnImagenEventHandler pasarEnCartaEventHandler = new PasarEnImagenEventHandler(pages[i],zonaInformacionCarta);
+//	        pages[i].setOnMousePressed(pasarEnCartaEventHandler);
+//	        SalirDeImagenEventHandler SalirDeCartaEventHandler = new SalirDeImagenEventHandler(pages[i],zonaInformacionCarta);
+//	        pages[i].setOnMouseReleased(SalirDeCartaEventHandler);
 			zonaMano.getChildren().add(pages[i]);
 		}        
-
+		
 		return zonaMano;
 	}
 

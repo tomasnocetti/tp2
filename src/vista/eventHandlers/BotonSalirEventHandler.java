@@ -1,4 +1,4 @@
-package vista;
+package vista.eventHandlers;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
