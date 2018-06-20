@@ -46,6 +46,10 @@ public class Jugador {
 		}
 	}
 	
+	public int obtenerCantidadDeCartasDelMazo() {
+		return mazo.obtenerCantidadDeCartas();
+	}
+	
 	public void colocarEnMano(Carta carta) {
 		this.mano.agregarCarta(carta);
 	}
