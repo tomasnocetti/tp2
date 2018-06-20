@@ -1,6 +1,5 @@
 package fiuba.algo3.Efectos;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
@@ -8,12 +7,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-import fiuba.algo3.Estados.PosicionArriba;
-import fiuba.algo3.Estados.Posicionable;
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
-import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Tableros.ZonaMano;
 
 public class EfectoExodia extends EfectoMonstruo{
