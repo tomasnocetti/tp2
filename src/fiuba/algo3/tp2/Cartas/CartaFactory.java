@@ -93,6 +93,18 @@ public class CartaFactory {
 		return jinzo7;
 	}
 	
+	public CartaMonstruo crearCartaDragonBlancoDeOjosAzules() {
+		Efecto efecto = new EfectoVacio();
+		CartaMonstruo carta = new CartaMonstruo("Dragon Blanco De Ojos Azules", jugador, efecto, 7, 3000, 2500);
+		return carta;
+	}
+	
+	public CartaMonstruo crearCartaDragonDefinitivo() {
+		Efecto efecto = new EfectoVacio();
+		CartaMonstruo carta = new CartaMonstruo("Dragon Definitivo De Ojos Azules", jugador, efecto, 8, 4500, 3800);
+		return carta;
+	}
+	
 	public static ArrayList<Carta> inicializarMazoGenerico(Jugador jugador) {
 		ArrayList<Carta> cartas = new ArrayList<Carta>();
 		Efecto efectoVacio = new EfectoVacio();

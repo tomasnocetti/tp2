@@ -8,8 +8,17 @@ public class InvocadorDragonDefinitivo extends Invocador {
 
 	@Override
 	public boolean invocacionValida(ArrayList<CartaMonstruo> cartasSacrificadas) {
-		// TODO Auto-generated method stub
-		return false;
+		if (cartasSacrificadas.size() != 3) {
+			return false;
+		}
+		else {
+			for (int i = 0; i < 3 ; i++) {
+				if (cartasSacrificadas.get(i).nombre() != "Dragon Blanco De Ojos Azules") {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 }

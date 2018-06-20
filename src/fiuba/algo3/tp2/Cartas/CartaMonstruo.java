@@ -25,13 +25,13 @@ public class CartaMonstruo extends Carta{
 	
     public CartaMonstruo(String nombre, Jugador jugador, Efecto efecto, int estrella, int ataque, int defenza) {
     	super(jugador, efecto);
-    	this.puntosDeAtaque = ataque;
 		this.estrellas = estrella;
+		this.nombre = nombre;
 		this.invocador = Invocador.obtenerInvocador(this);
+    	this.puntosDeAtaque = ataque;
 		this.puntosDeDefensa = defenza;
 		this.posicion = new MonstruoPosicionArriba(); 
 		this.accion = new AccionAtaque();
-		this.nombre = nombre;
 	}
     
 	public void atacar(CartaMonstruo otro) {

@@ -21,7 +21,7 @@ public abstract class Invocador {
 		int estrellas = carta.estrellas();
 		
 		if (0 < estrellas && estrellas < 5) {
-		return invocadorBasico;
+			return invocadorBasico;
 		}
 		if (4 < estrellas && estrellas < 7) {
 			return invocadorSimple;

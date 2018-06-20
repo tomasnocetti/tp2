@@ -135,25 +135,27 @@ public class Entrega2tests {
 		
 		atacante.colocarCartaEnZona(sacrificado1, 0, new ArrayList<CartaMonstruo>());
 		atacante.colocarCartaEnZona(sacrificado2, 1, new ArrayList<CartaMonstruo>());
-		atacante.colocarCartaEnZona(sacrificado3, 2, new ArrayList<CartaMonstruo>());
-		atacante.colocarCartaEnZona(sacrificado4, 3, new ArrayList<CartaMonstruo>());
-		atacante.colocarCartaEnZona(sacrificado5, 4, new ArrayList<CartaMonstruo>());
-		atacante.colocarCartaEnZona(sacrificado6, 5, new ArrayList<CartaMonstruo>());
 		
 		ArrayList<CartaMonstruo> sacrificio1 = new ArrayList<CartaMonstruo>();
 		sacrificio1.add(sacrificado1);
 		sacrificio1.add(sacrificado2);
 		atacante.colocarCartaEnZona(dragon1, 0, sacrificio1);
 		
+		atacante.colocarCartaEnZona(sacrificado3, 1, new ArrayList<CartaMonstruo>());
+		atacante.colocarCartaEnZona(sacrificado4, 2, new ArrayList<CartaMonstruo>());
+		
 		ArrayList<CartaMonstruo> sacrificio2 = new ArrayList<CartaMonstruo>();
 		sacrificio2.add(sacrificado3);
 		sacrificio2.add(sacrificado4);
-		atacante.colocarCartaEnZona(dragon2, 0, sacrificio2);
+		atacante.colocarCartaEnZona(dragon2, 1, sacrificio2);
+		
+		atacante.colocarCartaEnZona(sacrificado5, 2, new ArrayList<CartaMonstruo>());
+		atacante.colocarCartaEnZona(sacrificado6, 3, new ArrayList<CartaMonstruo>());
 		
 		ArrayList<CartaMonstruo> sacrificio3 = new ArrayList<CartaMonstruo>();
 		sacrificio3.add(sacrificado5);
 		sacrificio3.add(sacrificado6);
-		atacante.colocarCartaEnZona(dragon3, 0, sacrificio3);
+		atacante.colocarCartaEnZona(dragon3, 2, sacrificio3);
 		
 		CartaMonstruo dragonDefinitivo = factory.crearCartaDragonDefinitivo();
 		
