@@ -221,6 +221,23 @@ public class Entrega2tests {
 
 	@Test
 	public void test09colocarCartaTrampaReinforcementsYProbarEfectoEnBatalla() {
+		Jugador atacado = new Jugador();
+		Jugador atacante = new Jugador();
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		
+		CartaMonstruo monstruoAtacado = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
+		CartaTrampa reinforcements = factoryAtacado.crearCartaReinforcements();
+		atacado.colocarCartaEnZona(monstruoAtacado, 0, new ArrayList<CartaMonstruo>());
+		atacado.colocarCartaEnZona(reinforcements, 1);
+		
+		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(1400, 1000);
+		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
+		
+		monstruoAtacante.atacar(monstruoAtacado);
+		
+		assertTrue(atacante.obtenerCartasEnCementerio().contains(monstruoAtacante));
+		assertEquals(atacante.obtenerPuntosDeVida(), 7900);
 		
 	}
 
