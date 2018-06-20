@@ -118,7 +118,7 @@ public class CartaMonstruo extends Carta{
 	}
 
 	public boolean invocacionValida(ArrayList<CartaMonstruo> cartasSacrificadas) {
-		return this.invocador.invocacionValida(cartasSacrificadas);
+		return this.invocador.invocar(cartasSacrificadas);
 	}
 
 	public int estrellas() {

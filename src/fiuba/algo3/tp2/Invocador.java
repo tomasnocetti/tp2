@@ -35,6 +35,6 @@ public abstract class Invocador {
 			
 	}
 
-	public abstract boolean invocacionValida(ArrayList<CartaMonstruo> cartasSacrificadas) ;
+	public abstract boolean invocar(ArrayList<CartaMonstruo> cartasSacrificadas) ;
 
 }
