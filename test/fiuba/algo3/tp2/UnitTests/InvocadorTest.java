@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import fiuba.algo3.Efectos.Efecto;
-import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 

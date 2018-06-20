@@ -15,11 +15,7 @@ public class Juego extends Observable{
 	private Jugador ganador = null;
 	
 	public Juego() {
-		this.jugadores = new ArrayList<Jugador>();
-		this.jugadores.add(new Jugador());
-		this.jugadores.add(new Jugador());
-		Random random = new Random();
-		this.iJugadorActual = random.nextInt(2);
+		this.resetearJuego();
 	}
 	
 	public static Juego ObtenerJuego() {
@@ -80,6 +76,13 @@ public class Juego extends Observable{
 		return this.ganador;
 	}
 	
+	private void resetearJuego() {
+		this.jugadores = new ArrayList<Jugador>();
+		this.jugadores.add(new Jugador());
+		this.jugadores.add(new Jugador());
+		Random random = new Random();
+		this.iJugadorActual = random.nextInt(2);
+	}
 	
 }
 

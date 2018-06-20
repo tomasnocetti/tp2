@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import fiuba.algo3.Efectos.Efecto;
-import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasDeCampo;
