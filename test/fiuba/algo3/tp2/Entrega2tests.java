@@ -13,7 +13,7 @@ import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
-import fiuba.algo3.tp2.Cartas.CartaObserver;
+//import fiuba.algo3.tp2.Cartas.CartaObserver;
 
 public class Entrega2tests {
 	
@@ -207,7 +207,12 @@ public class Entrega2tests {
 
 	@Test
 	public void test10extraerTodasLasCartasDelMazoYVerificarPartidaTerminada() {
-		
+		Juego juego = Juego.ObtenerJuego();
+		Jugador perdedor = juego.jugadorActual();
+		for(int i =0; i < 41; i++) {
+			perdedor.agarrarCarta();
+		}
+		assertTrue(juego.estadoDelJuegoTerminado());
 	}
 
 	@Test

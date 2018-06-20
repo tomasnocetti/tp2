@@ -2,6 +2,7 @@ package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
 import java.util.Observable;
+import java.util.Random;
 
 import fiuba.algo3.tp2.Excepciones.FinalDeJuegoException;
 
@@ -17,6 +18,8 @@ public class Juego extends Observable{
 		this.jugadores = new ArrayList<Jugador>();
 		this.jugadores.add(new Jugador());
 		this.jugadores.add(new Jugador());
+		Random random = new Random();
+		this.iJugadorActual = random.nextInt(2);
 	}
 	
 	public static Juego ObtenerJuego() {

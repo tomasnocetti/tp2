@@ -33,6 +33,9 @@ public class Zona {
 		if (cartas.size() +1 > this.limite) {
 			throw new ZonaAlcanzoCantidadMaximaDeCartasExcepcion();
 		}
+		if (carta == null) {
+			return;
+		}
 		this.cartas.put(posicion, carta);
 	}
 	

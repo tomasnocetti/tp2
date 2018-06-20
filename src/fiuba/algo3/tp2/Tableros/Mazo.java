@@ -21,6 +21,7 @@ public class Mazo{
 	public Carta agarrarCarta() {
 		if (this.cantidadDeCartas == 0) {
 			Juego.ObtenerJuego().asignarPerdedor(this.jugador);
+			return null;
 		}
 		Carta carta = cartas.remove(cantidadDeCartas - 1);
 		this.cantidadDeCartas -=1;
