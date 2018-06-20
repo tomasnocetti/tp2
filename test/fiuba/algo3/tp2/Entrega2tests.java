@@ -204,7 +204,7 @@ public class Entrega2tests {
 		CartaFactory factoryAtacante = new CartaFactory(atacante);
 		CartaFactory factoryAtacado = new CartaFactory(atacado);
 		
-		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(2000, 1000);
 		CartaMonstruo monstruoAtacado = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
 		CartaTrampa cilindroMagico = factoryAtacado.crearCartaCilindroMagico();
 		
@@ -215,7 +215,7 @@ public class Entrega2tests {
 		monstruoAtacante.atacar(monstruoAtacado);
 		
 		assertEquals(atacado.obtenerPuntosDeVida(), 8000);
-		assertTrue(atacante.obtenerCartasEnCementerio().contains(monstruoAtacante));
+		assertEquals(atacante.obtenerPuntosDeVida(), 7000);
 		assertTrue(atacado.obtenerMonstruos().contains(monstruoAtacado));
 	}
 

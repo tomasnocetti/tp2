@@ -42,8 +42,10 @@ public class CartaMonstruo extends Carta{
 	public void defender(CartaMonstruo cartaAtacante) {
 		if(!this.estaEnElCampo()) throw new CartaNoSeEncuentraEnZona();
 		if (this.jugador.tieneTrampaEnElCampo()) {
+			System.out.println("Trampa !");
 			CartaTrampa trampa = this.jugador.obtenerProximaCartaTrampa();
-			trampa.activar(this, cartaAtacante);
+			trampa.activar(cartaAtacante.obtenerJugador(), this, cartaAtacante);
+			return;
 		}
 		this.posicion.defender(cartaAtacante, this.accion, this);
 	}
