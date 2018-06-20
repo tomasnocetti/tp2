@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Efectos.EfectoVacio;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
@@ -15,7 +16,7 @@ public class ZonaDeCartasDeCampoTest {
 	public void test01agregoUnaCartaALaZonaYVerificoQueSeAgrego() {
 		Jugador jugador = new Jugador();
 		Jugador oponente = new Jugador();
-		EfectoVacio efecto = new EfectoVacio();
+		Efecto efecto = new Efecto();
 		CartaCampo carta = new CartaCampo(jugador, efecto);
 		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
 		zona.agregarCarta(carta, oponente);
@@ -27,7 +28,7 @@ public class ZonaDeCartasDeCampoTest {
 	public void test02agregarCartaYEliminarCarta() {
 		Jugador jugador = new Jugador();
 		Jugador oponente = new Jugador();
-		EfectoVacio efecto = new EfectoVacio();
+		Efecto efecto = new Efecto();
 		
 		CartaCampo carta = new CartaCampo(jugador, efecto);
 		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
@@ -40,7 +41,7 @@ public class ZonaDeCartasDeCampoTest {
 	public void test03agregarCartaEliminarCartaYAgregarNuevamente() {
 		Jugador jugador = new Jugador();
 		Jugador oponente = new Jugador();
-		EfectoVacio efecto = new EfectoVacio();
+		Efecto efecto = new Efecto();
 		
 		CartaCampo carta = new CartaCampo(jugador, efecto);
 		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
