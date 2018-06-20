@@ -46,7 +46,7 @@ public class AlGoHo extends Application{
 		
 		VBox tableroDeJuego = this.crearTableroDeJuego();
 		VBox zonaInformacionCarta = this.generarZonaInformacionCarta();
-		FlowPane zonaMano = this.crearZonaMano(zonaInformacionCarta);
+		FlowPane zonaMano = this.crearZonaMano();
 		
 		layoutJuego.setBottom(zonaMano);
         layoutJuego.setCenter(tableroDeJuego);
@@ -140,15 +140,17 @@ public class AlGoHo extends Application{
         
         HBox contenedorHorizontal = new HBox(botonJugar,botonSalir);
         contenedorHorizontal.setSpacing(10);
+        contenedorHorizontal.setAlignment(Pos.CENTER);
         
         VBox contenedorPrincipal = new VBox(contenedorHorizontal);
         contenedorPrincipal.setSpacing(10);
         contenedorPrincipal.setPadding(new Insets(20));
+        contenedorPrincipal.setAlignment(Pos.CENTER);
         
         return contenedorPrincipal;
 	}
 
-	private FlowPane crearZonaMano(VBox zonaInformacionCarta) {
+	private FlowPane crearZonaMano() {
 	
 		FlowPane zonaMano = new FlowPane();
 		zonaMano.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
@@ -157,10 +159,10 @@ public class AlGoHo extends Application{
 		
 		ImageView pages[] = new ImageView[2];
 		
-		Image cartaBocaAbajo = new Image(AlGoHo.class.getResourceAsStream("cartaBocaAbajo.jpg"),150,150, true, true);
+		Image cartaBocaAbajo = new Image(AlGoHo.class.getResourceAsStream("img\\cartaBocaAbajo.jpg"),150,150, true, true);
 		
 		for(int i =0; i < 2; i++) {
-			pages[i] = new ImageView(new Image(AlGoHo.class.getResourceAsStream("carta" + (i+1) +".jpg"),150,150, true, true));
+			pages[i] = new ImageView(new Image(AlGoHo.class.getResourceAsStream("img\\carta" + (i+1) +".jpg"),150,150, true, true));
 	        ApretarEnImagenEventHandler aprentarEnCartaEventHandler = new ApretarEnImagenEventHandler(cartaBocaAbajo,pages[i]);
 	        pages[i].setOnMouseClicked(aprentarEnCartaEventHandler);
 //	        PasarEnImagenEventHandler pasarEnCartaEventHandler = new PasarEnImagenEventHandler(pages[i],zonaInformacionCarta);
