@@ -2,6 +2,7 @@ package fiuba.algo3.tp2.UnitTests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.junit.Test;
@@ -24,10 +25,11 @@ public class JugadorTest {
 	@Test
 	public void test02enviarAlCementerioCartaCampoSacaLaCartaDelCampo() {
 		Jugador jugador = new Jugador();
+		Jugador oponente = new Jugador();
 		CartaFactory factory = new CartaFactory(jugador);
 		
 		CartaCampo carta = factory.crearCartaCampoGenerica();
-		jugador.colocarCartaEnZona(carta, 1);
+		jugador.colocarCartaEnZona(carta, oponente);
 		
 		jugador.enviarAlCementerio(carta);
 		assertFalse(jugador.obtenerCartaCampo().contains(carta));
@@ -36,10 +38,11 @@ public class JugadorTest {
 	@Test
 	public void test03enviarAlCementerioCartaCampoLaPoneEnElCementerio() {
 		Jugador jugador = new Jugador();
+		Jugador oponente = new Jugador();
 		CartaFactory factory = new CartaFactory(jugador);
 		
 		CartaCampo carta = factory.crearCartaCampoGenerica();
-		jugador.colocarCartaEnZona(carta, 1);
+		jugador.colocarCartaEnZona(carta, oponente);
 		
 		jugador.enviarAlCementerio(carta);
 		assertTrue(jugador.obtenerCartasEnCementerio().contains(carta));
@@ -73,10 +76,12 @@ public class JugadorTest {
 	@Test
 	public void test06colocarCartaEnZonaLaEliminaDeLaMano() {
 		Jugador jugador = new Jugador();
-		CartaFactory factory = new CartaFactory(jugador);
-		CartaTrampa carta = factory.crearCartaTrampaGenerica();
+		jugador.agarrarCarta();
+		Collection<Carta> cartasMano = jugador.obtenerCartasEnMano();
 		
-		jugador.agregarCartaEnMano(carta);
+		Carta carta = ((ArrayList<Carta>) cartasMano).get(0);
+		
+		
 		jugador.colocarCartaEnZona(carta, 0);
 		
 		assertEquals(jugador.obtenerCartasEnMano().size(), 0);

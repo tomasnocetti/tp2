@@ -74,7 +74,7 @@ public class CartaFactory {
 	}
 	
 	
-	public static Mazo inicializarMazoGenerico(Jugador jugador) {
+	public static ArrayList<Carta> inicializarMazoGenerico(Jugador jugador) {
 		ArrayList<Carta> cartas = new ArrayList<Carta>();
 		Efecto efectoVacio = new EfectoVacio();
 		//Efecto efectoWasteland = new EfectoMejoraAtaqueDefensa(200, 0, 0, 300);
@@ -129,9 +129,8 @@ public class CartaFactory {
 			cartas.add(nuevaCarta);
 		}
 		//total 40 cartas
-		
-		Mazo mazoGenerico = new Mazo(jugador, cartas);
-		return(mazoGenerico);
+	
+		return(cartas);
 		
 	}
 }

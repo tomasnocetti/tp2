@@ -30,7 +30,7 @@ public class Jugador {
 	public Jugador() {
 		this.puntosDeVida = 8000;
 		this.mano = new ZonaMano(this);
-		this.mazo = CartaFactory.inicializarMazoGenerico(this);
+		this.mazo = new Mazo(this, CartaFactory.inicializarMazoGenerico(this));
 		this.cementerio = new Cementerio();
 		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas(this);
 		this.zonaMonstruos = new ZonaDeCartasMonstruos(this);
@@ -75,6 +75,7 @@ public class Jugador {
 		cementerio.agregarCarta(carta);
 		zonaMonstruos.eliminarCarta(carta);
 	}
+	
 	
 	public void colocarCartaEnZona(CartaMonstruo carta, int posicion, ArrayList<CartaMonstruo> cartasSacrificadas) {
 		this.mano.eliminarCarta(carta);
