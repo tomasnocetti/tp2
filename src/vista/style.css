@@ -1,6 +1,5 @@
 .root{
-    -fx-background-image: url("fondo.jpg");
-    -fx-background-repeat: stretch;   
+    -fx-background-image: url("img/fondo2.jpg");   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
@@ -9,7 +8,7 @@
 	-fx-margin: 5;	
 }
 .flowPane{
-	-fx-background-image: url("fondoMano.jpg");
+	-fx-background-image: url("img/fondoMano.jpg");
 	-fx-background-repeat: repeat-x;   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
@@ -23,14 +22,10 @@
 	-fx-stroke-size: 150 150;
 }
 .button{
-	-fx-background-color: 
-        linear-gradient(#f2f2f2, #d6d6d6),
-        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
-        linear-gradient(#dddddd 0%, #f6f6f6 50%);
-    -fx-background-radius: 8,7,6;
-    -fx-background-insets: 0,1,2;
-    -fx-text-fill: black;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	-fx-background-color: red;
+	-fx-border-radius: 15;
+    -fx-text-fill: white;
+    -fx-font-size: 50;
 }
 .gridPane-cartas {
 	-fx-hgap: 2;
@@ -41,14 +36,14 @@
 	
 }*/
 .tablero {
-	-fx-background-image: url("fondoTablero.jpg");
+	-fx-background-image: url("img/fondoTablero.jpg");
 	-fx-background-repeat: stretch;   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
     -fx-margin: 5;
 }
 .informacion{
-	-fx-background-image: url("fondoInformacion.jpg");
+	-fx-background-image: url("img/fondoInformacion.jpg");
 	-fx-background-repeat: stretch;   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
