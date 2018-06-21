@@ -65,6 +65,9 @@ public class AlGoHo extends Application{
         stage.setScene(scenePrincipal);
         stage.setFullScreen(true);
         stage.show();
+        
+        VentanaFinDeJuego ventanaFinal = new VentanaFinDeJuego();
+        ventanaFinal.display("joel");
 	}
 
 	private VBox generarZonaInformacionCarta() {
@@ -177,6 +180,11 @@ public class AlGoHo extends Application{
 		
 		return zonaMano;
 	}
+	
+//	private Scene generarSceneEleccionAvatar() {
+//		Scene eleccionAvatar = new Scene();
+//		
+//	}
 
 	
 }
