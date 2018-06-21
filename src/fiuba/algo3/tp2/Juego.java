@@ -76,7 +76,7 @@ public class Juego extends Observable{
 		return this.ganador;
 	}
 	
-	 void resetearJuego() {
+	public void resetearJuego() {
 		this.jugadores = new ArrayList<Jugador>();
 		this.jugadores.add(new Jugador());
 		this.jugadores.add(new Jugador());

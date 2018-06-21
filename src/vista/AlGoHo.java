@@ -29,7 +29,10 @@ import vista.eventHandlers.CuadradoEventHandler;
 import vista.eventHandlers.PasarEnImagenEventHandler;
 import vista.eventHandlers.SalirDeImagenEventHandler;
 
+
 public class AlGoHo extends Application{
+	
+	public static final String DOBLE_BARRA = "//";
 
     public static void main(String[] args) {
         launch(args);
@@ -159,10 +162,10 @@ public class AlGoHo extends Application{
 		
 		ImageView pages[] = new ImageView[2];
 		
-		Image cartaBocaAbajo = new Image(AlGoHo.class.getResourceAsStream("img\\cartaBocaAbajo.jpg"),150,150, true, true);
+		Image cartaBocaAbajo = new Image(AlGoHo.class.getResourceAsStream("img" +DOBLE_BARRA+"cartaBocaAbajo.jpg"),150,150, true, true);
 		
 		for(int i =0; i < 2; i++) {
-			pages[i] = new ImageView(new Image(AlGoHo.class.getResourceAsStream("img\\carta" + (i+1) +".jpg"),150,150, true, true));
+			pages[i] = new ImageView(new Image(AlGoHo.class.getResourceAsStream("img" + DOBLE_BARRA +"carta" + (i+1) +".jpg"),150,150, true, true));
 	        ApretarEnImagenEventHandler aprentarEnCartaEventHandler = new ApretarEnImagenEventHandler(cartaBocaAbajo,pages[i]);
 	        pages[i].setOnMouseClicked(aprentarEnCartaEventHandler);
 //	        PasarEnImagenEventHandler pasarEnCartaEventHandler = new PasarEnImagenEventHandler(pages[i],zonaInformacionCarta);
