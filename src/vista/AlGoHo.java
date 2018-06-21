@@ -1,7 +1,5 @@
 package vista;
 
-import java.awt.Color;
-
 //import java.io.FileInputStream;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -65,9 +63,6 @@ public class AlGoHo extends Application{
         stage.setScene(scenePrincipal);
         stage.setFullScreen(true);
         stage.show();
-        
-        VentanaFinDeJuego ventanaFinal = new VentanaFinDeJuego();
-        ventanaFinal.display("joel");
 	}
 
 	private VBox generarZonaInformacionCarta() {
