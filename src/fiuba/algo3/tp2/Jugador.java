@@ -28,7 +28,7 @@ public class Jugador {
 	private ZonaDeCartasDeCampo zonaCartasDeCampo;
 	private ZonaDeCartasMagicasOTrampas zonaCartasMagicasOTrampas;
 	private Cementerio cementerio;
-	
+		
 	public Jugador() {
 		this.puntosDeVida = 8000;
 		this.mano = new ZonaMano(this);

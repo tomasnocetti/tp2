@@ -1,7 +1,5 @@
 package vista;
 
-import java.awt.Color;
-
 //import java.io.FileInputStream;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -177,6 +175,11 @@ public class AlGoHo extends Application{
 		
 		return zonaMano;
 	}
+	
+//	private Scene generarSceneEleccionAvatar() {
+//		Scene eleccionAvatar = new Scene();
+//		
+//	}
 
 	
 }
