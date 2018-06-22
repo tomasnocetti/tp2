@@ -11,8 +11,8 @@ public abstract class CartaTrampaOMagica extends Carta{
 		super(jugador, efecto);
 		this.posicion = new PosicionAbajo();
 	}
-
-	public void enviarAlCementerio( ) {
+	
+	public void enviarAlCementerio() {
 		this.jugador.enviarAlCementerio(this);
 	}
 	

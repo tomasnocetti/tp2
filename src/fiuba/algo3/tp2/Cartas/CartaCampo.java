@@ -11,10 +11,8 @@ public class CartaCampo extends Carta{
 		this.posicion = new PosicionArriba();
 	}
 
-	
-	public boolean estaEnElCampo() {
-		// TODO Auto-generated method stub
-		return false;
+	public void enviarAlCementerio() {
+		this.jugador.enviarAlCementerio(this);
 	}
 	
 	public void activar(Jugador jugadorOponente) {
@@ -22,8 +20,5 @@ public class CartaCampo extends Carta{
 		this.efecto.activarSobreJugadorAtacado(jugadorOponente);
 	}
 	
-	public void enviarAlCementerio() {
-		this.jugador.enviarAlCementerio(this);
-	}
 	
 }

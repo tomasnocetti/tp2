@@ -18,7 +18,6 @@ import fiuba.algo3.Efectos.EfectoExodia;
 import fiuba.algo3.Efectos.EfectoFisura;
 import fiuba.algo3.Efectos.EfectoInsectoComeHombres;
 import fiuba.algo3.Efectos.EfectoJinzo7;
-import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.Efectos.EfectoMejoraAtaqueDefensa;
 import fiuba.algo3.Efectos.EfectoOllaDeLaCodicia;
