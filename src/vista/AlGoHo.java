@@ -30,6 +30,18 @@ import vista.eventHandlers.SalirDeImagenEventHandler;
 
 public class AlGoHo extends Application{
 	
+	private	BorderPane layoutContenedorJuego;
+	private VistaTableroDeJuego vistaTableroDeJuego;
+	private VistaInformacionDeCarta vistaInformacionDeCarta;
+	private VistaMano vistaMano;
+//	private VistaMonstruos vistaMonstruos;
+//	private VistaTrampasOMagicas vistaTrampasOMagicas;
+	private Scene sceneJuego;
+	
+
+	private VBox contenedorPrincipal;
+	private Scene scenePrincipal;
+	
 	public static final String DOBLE_BARRA = "//";
 
     public static void main(String[] args) {
@@ -40,84 +52,30 @@ public class AlGoHo extends Application{
 	public void start(Stage stage) throws Exception {
 		stage.setTitle("AlGoHo");
         
-		BorderPane layoutJuego = new BorderPane();
-		layoutJuego.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		layoutJuego.getStyleClass().add("layout");
+		layoutContenedorJuego = new BorderPane();
+		layoutContenedorJuego.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
+		layoutContenedorJuego.getStyleClass().add("layout");
 		
 		
-		VBox tableroDeJuego = this.crearTableroDeJuego();
-		VBox zonaInformacionCarta = this.generarZonaInformacionCarta();
-		FlowPane zonaMano = this.crearZonaMano();
+		vistaTableroDeJuego = new VistaTableroDeJuego();
+		vistaInformacionDeCarta= new VistaInformacionDeCarta(layoutContenedorJuego);
+		vistaMano = new VistaMano();
 		
-		layoutJuego.setBottom(zonaMano);
-        layoutJuego.setCenter(tableroDeJuego);
-        layoutJuego.setLeft(zonaInformacionCarta);
-		Scene sceneJuego = new Scene(layoutJuego, 900, 1000);
+        layoutContenedorJuego.setCenter(vistaTableroDeJuego);
+        layoutContenedorJuego.setLeft(vistaInformacionDeCarta);
+		layoutContenedorJuego.setBottom(vistaMano);
+		
+        sceneJuego = new Scene(layoutContenedorJuego, 900, 1000);
         
-		VBox contenedorPrincipal = this.crearInterfazPrincipal(stage, sceneJuego);
+		contenedorPrincipal = this.crearInterfazPrincipal(stage, sceneJuego);
         
-        Scene scenePrincipal = new Scene(contenedorPrincipal, 900, 1000);
+        scenePrincipal = new Scene(contenedorPrincipal, 900, 1000);
 
         scenePrincipal.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
         
         stage.setScene(scenePrincipal);
         stage.setFullScreen(true);
         stage.show();
-	}
-
-	private VBox generarZonaInformacionCarta() {
-		VBox zonaInformativa = new VBox();
-		zonaInformativa.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		zonaInformativa.getStyleClass().add("informacion");
-		zonaInformativa.getChildren().add(new Button("Info"));
-		zonaInformativa.setPrefWidth(300);
-		return zonaInformativa;
-	}
-
-	private VBox crearTableroDeJuego() {
-		
-		VBox jugador1 = this.generarZonaMonstruosyTrampa(true);
-		jugador1.setSpacing(10);
-		VBox jugador2 = this.generarZonaMonstruosyTrampa(false);
-		jugador2.setSpacing(10);
-
-		VBox tableroDeJuego = new VBox();
-		tableroDeJuego.setSpacing(250);
-		tableroDeJuego.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		tableroDeJuego.getStyleClass().add("tablero");
-		tableroDeJuego.getChildren().addAll(jugador1,jugador2);
-
-		
-		return tableroDeJuego;
-	}
-
-	private VBox generarZonaMonstruosyTrampa(boolean normal) {
-		GridPane zonaMonstruos2 = new GridPane();
-		zonaMonstruos2.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		zonaMonstruos2.getStyleClass().add("gridPane-cartas");
-		zonaMonstruos2.setAlignment(Pos.CENTER);
-		for(int i = 0; i < 5; i++) {
-			Rectangle contenedor = new Rectangle(150,150);
-			contenedor.setFill(javafx.scene.paint.Color.GRAY);
-			contenedor.setOnMouseClicked(new CuadradoEventHandler(contenedor,javafx.scene.paint.Color.BLUE));
-			zonaMonstruos2.add(contenedor, i+1 , 0);
-		}
-		
-		GridPane zonaTrampas2 = new GridPane();
-		zonaTrampas2.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		zonaTrampas2.getStyleClass().add("gridPane-cartas");
-		zonaTrampas2.setAlignment(Pos.CENTER);
-		for(int i = 0; i < 5; i++) {
-			Rectangle contenedor = new Rectangle(150,150);
-			contenedor.setFill(javafx.scene.paint.Color.GRAY);
-			contenedor.setOnMouseClicked(new CuadradoEventHandler(contenedor,javafx.scene.paint.Color.GREEN));
-			zonaTrampas2.add(contenedor, i+1, 1);
-		}
-		
-		if (normal) {
-			return new VBox(zonaTrampas2,zonaMonstruos2);
-		}
-		return new VBox(zonaMonstruos2,zonaTrampas2);
 	}
 
 	private VBox crearInterfazPrincipal(Stage stage, Scene sceneJuego) {
@@ -151,31 +109,7 @@ public class AlGoHo extends Application{
         return contenedorPrincipal;
 	}
 
-	private FlowPane crearZonaMano() {
-	
-		FlowPane zonaMano = new FlowPane();
-		zonaMano.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		zonaMano.getStyleClass().add("flowPane");
-		zonaMano.setAlignment(Pos.CENTER);
-		
-		ImageView pages[] = new ImageView[2];
-		
-		Image cartaBocaAbajo = new Image(AlGoHo.class.getResourceAsStream("img" +DOBLE_BARRA+"cartaBocaAbajo.jpg"),150,150, true, true);
-		
-		for(int i =0; i < 2; i++) {
-			pages[i] = new ImageView(new Image(AlGoHo.class.getResourceAsStream("img" + DOBLE_BARRA +"carta" + (i+1) +".jpg"),150,150, true, true));
-	        ApretarEnImagenEventHandler aprentarEnCartaEventHandler = new ApretarEnImagenEventHandler(cartaBocaAbajo,pages[i]);
-	        pages[i].setOnMouseClicked(aprentarEnCartaEventHandler);
-//	        PasarEnImagenEventHandler pasarEnCartaEventHandler = new PasarEnImagenEventHandler(pages[i],zonaInformacionCarta);
-//	        pages[i].setOnMousePressed(pasarEnCartaEventHandler);
-//	        SalirDeImagenEventHandler SalirDeCartaEventHandler = new SalirDeImagenEventHandler(pages[i],zonaInformacionCarta);
-//	        pages[i].setOnMouseReleased(SalirDeCartaEventHandler);
-			zonaMano.getChildren().add(pages[i]);
-		}        
-		
-		return zonaMano;
-	}
-	
+
 //	private Scene generarSceneEleccionAvatar() {
 //		Scene eleccionAvatar = new Scene();
 //		
