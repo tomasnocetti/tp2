@@ -49,3 +49,10 @@
     -fx-background-position: center center;
     -fx-radius: 5;
 }
+.fondoNombres {
+	-fx-background-image: url("img/fondo_eleccion_nombres.jpg");
+	-fx-background-repeat: stretch;   
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    
+}

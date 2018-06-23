@@ -34,13 +34,21 @@ public class AlGoHo extends Application{
 	private VistaTableroDeJuego vistaTableroDeJuego;
 	private VistaInformacionDeCarta vistaInformacionDeCarta;
 	private VistaMano vistaMano;
-//	private VistaMonstruos vistaMonstruos;
-//	private VistaTrampasOMagicas vistaTrampasOMagicas;
+	private VistaMonstruos vistaMonstruos1;
+	private VistaTrampasOMagicas vistaTrampasOMagicas1;
+	private VistaMonstruos vistaMonstruos2;
+	private VistaTrampasOMagicas vistaTrampasOMagicas2;
 	private Scene sceneJuego;
 	
 
-	private VBox contenedorPrincipal;
+	private LayoutContenedorInicio layoutContenedorInicio;
 	private Scene scenePrincipal;
+	
+	
+	private VBox vistaTableroJugador1;
+	private VBox vistaTableroJugador2;
+	private SceneCompletarNombres sceneCompletarNombres;
+	private LayoutContenedorCompletarNombres layoutContenedorCompletarNombres;
 	
 	public static final String DOBLE_BARRA = "//";
 
@@ -52,12 +60,18 @@ public class AlGoHo extends Application{
 	public void start(Stage stage) throws Exception {
 		stage.setTitle("AlGoHo");
         
-		layoutContenedorJuego = new BorderPane();
-		layoutContenedorJuego.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		layoutContenedorJuego.getStyleClass().add("layout");
+		layoutContenedorJuego = new LayoutContenedorJuego();
 		
+		vistaMonstruos1 = new VistaMonstruos();
+		vistaTrampasOMagicas1 = new VistaTrampasOMagicas();
+		vistaTableroJugador1 = new VBox(vistaTrampasOMagicas1, vistaMonstruos1);
+		vistaTableroJugador1.setSpacing(10);
+		vistaMonstruos2 = new VistaMonstruos();
+		vistaTrampasOMagicas2 = new VistaTrampasOMagicas();
+		vistaTableroJugador2 = new VBox(vistaMonstruos2, vistaTrampasOMagicas2);
+		vistaTableroJugador2.setSpacing(10);
 		
-		vistaTableroDeJuego = new VistaTableroDeJuego();
+		vistaTableroDeJuego = new VistaTableroDeJuego(vistaTableroJugador1, vistaTableroJugador2);
 		vistaInformacionDeCarta= new VistaInformacionDeCarta(layoutContenedorJuego);
 		vistaMano = new VistaMano();
 		
@@ -67,9 +81,12 @@ public class AlGoHo extends Application{
 		
         sceneJuego = new Scene(layoutContenedorJuego, 900, 1000);
         
-		contenedorPrincipal = this.crearInterfazPrincipal(stage, sceneJuego);
+        layoutContenedorCompletarNombres = new LayoutContenedorCompletarNombres(stage, sceneJuego);
+        sceneCompletarNombres = new SceneCompletarNombres(layoutContenedorCompletarNombres);
         
-        scenePrincipal = new Scene(contenedorPrincipal, 900, 1000);
+		layoutContenedorInicio = new LayoutContenedorInicio(stage, sceneCompletarNombres);
+        
+        scenePrincipal = new Scene(layoutContenedorInicio, 900, 1000);
 
         scenePrincipal.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
         
@@ -78,42 +95,6 @@ public class AlGoHo extends Application{
         stage.show();
 	}
 
-	private VBox crearInterfazPrincipal(Stage stage, Scene sceneJuego) {
-
-        Button botonJugar = new Button();
-        botonJugar.setText("Jugar");
-        botonJugar.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-        botonJugar.getStyleClass().add("button");
-        
-
-        Button botonSalir = new Button();
-        botonSalir.setText("Salir");
-        botonSalir.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-        botonSalir.getStyleClass().add("button");
-        
-        BotonSalirEventHandler botonSalirEventHandler = new BotonSalirEventHandler(stage);
-        botonSalir.setOnAction(botonSalirEventHandler);
-        
-        BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage,sceneJuego);
-        botonJugar.setOnAction(botonJugarEventHandler);
-        
-        HBox contenedorHorizontal = new HBox(botonJugar,botonSalir);
-        contenedorHorizontal.setSpacing(10);
-        contenedorHorizontal.setAlignment(Pos.CENTER);
-        
-        VBox contenedorPrincipal = new VBox(contenedorHorizontal);
-        contenedorPrincipal.setSpacing(10);
-        contenedorPrincipal.setPadding(new Insets(20));
-        contenedorPrincipal.setAlignment(Pos.CENTER);
-        
-        return contenedorPrincipal;
-	}
-
-
-//	private Scene generarSceneEleccionAvatar() {
-//		Scene eleccionAvatar = new Scene();
-//		
-//	}
 
 	
 }
