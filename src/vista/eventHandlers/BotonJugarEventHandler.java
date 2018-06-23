@@ -18,10 +18,10 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 		this.mediaPlayer = mediaPlayer;
 	}
 	
-	public void handle(ActionEvent arg0) {
+	public void handle(ActionEvent event) {
+		this.mediaPlayer.stop();
 		this.stage.setScene(this.sceneJuego);
 		this.stage.setFullScreen(true);
-		this.mediaPlayer.stop();
 	}
 
 }

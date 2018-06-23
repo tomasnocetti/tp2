@@ -22,10 +22,12 @@
 	-fx-stroke-size: 150 150;
 }
 .button{
-	-fx-background-color: red;
-	-fx-border-radius: 15;
-    -fx-text-fill: white;
-    -fx-font-size: 50;
+	-fx-background-color: white;
+	-fx-background-radius: 20;
+    -fx-background-size: 75 100;
+    -fx-text-fill: blue;
+    -fx-font-size: 75;
+    -fx-font: underdog;
 }
 .gridPane-cartas {
 	-fx-hgap: 2;

@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import vista.eventHandlers.BotonContinuarInicioEventHandler;
 import vista.eventHandlers.BotonSalirEventHandler;
 
-public class LayoutContenedorInicio extends VBox {
+public class LayoutContenedorInicio extends HBox {
 	
 	public LayoutContenedorInicio(Stage stage, Scene sceneCompletarNombres) {
 		super();
@@ -32,13 +32,14 @@ public class LayoutContenedorInicio extends VBox {
         BotonContinuarInicioEventHandler botonJugarEventHandler = new BotonContinuarInicioEventHandler(stage,sceneCompletarNombres);
         botonContinuar.setOnAction(botonJugarEventHandler);
         
-        HBox contenedorHorizontal = new HBox(botonContinuar,botonSalir);
-        contenedorHorizontal.setSpacing(10);
-        contenedorHorizontal.setAlignment(Pos.CENTER);
+        VBox contenedorVertical = new VBox(botonContinuar,botonSalir);
+        contenedorVertical.setSpacing(50);
+        contenedorVertical.setPadding(new Insets(250));
+        contenedorVertical.setAlignment(Pos.CENTER);
         
-        this.setSpacing(10);
+        this.setSpacing(30);
         this.setPadding(new Insets(20));
-        this.setAlignment(Pos.CENTER);
-        this.getChildren().add(contenedorHorizontal);
+        this.setAlignment(Pos.CENTER_LEFT);
+        this.getChildren().add(contenedorVertical);
 	}
 }

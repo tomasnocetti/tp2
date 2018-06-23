@@ -30,13 +30,15 @@ public class AlGoHo extends Application{
         sceneJuego = new SceneJuego();
         
         mediaPlayer = new MediaPlayer(new Media(new File("src/vista/YugiohTema.wav").toURI().toString()));
-		mediaPlayer.play();
-		mediaPlayer.setVolume(0.05);
+//		mediaPlayer.play();
+		mediaPlayer.setVolume(0.02);
         
         sceneCompletarNombres = new SceneCompletarNombres(stage, sceneJuego, mediaPlayer);
         
         sceneInicio = new SceneInicio(stage, sceneCompletarNombres);
-
+        
+        sceneJuego.agregarSceneInicio(sceneInicio);
+        
         stage.setScene(sceneInicio);
         stage.setFullScreen(true);
         stage.show();
