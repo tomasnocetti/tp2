@@ -60,6 +60,8 @@ public class AlGoHo extends Application{
 	public void start(Stage stage) throws Exception {
 		stage.setTitle("AlGoHo");
         
+		
+		
 		layoutContenedorJuego = new LayoutContenedorJuego();
 		
 		vistaMonstruos1 = new VistaMonstruos();
@@ -92,6 +94,8 @@ public class AlGoHo extends Application{
         
         stage.setScene(scenePrincipal);
         stage.setFullScreen(true);
+		mediaPlayer = new MediaPlayer(new Media(new File("src/vista/YugiohTema.wav").toURI().toString()));
+		mediaPlayer.play();
         stage.show();
 	}
 
