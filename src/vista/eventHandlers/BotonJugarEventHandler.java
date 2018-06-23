@@ -1,11 +1,8 @@
 package vista.eventHandlers;
 
-import java.io.File;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
@@ -24,7 +21,7 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent arg0) {
 		this.stage.setScene(this.sceneJuego);
 		this.stage.setFullScreen(true);
-		mediaPlayer.stop();
+		this.mediaPlayer.stop();
 	}
 
 }

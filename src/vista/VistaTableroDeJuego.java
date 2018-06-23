@@ -6,15 +6,19 @@ public class VistaTableroDeJuego extends VBox {
 	
 	VBox jugador1;
 	VBox jugador2;
+	private VistaTableroJugador vistaTableroJugador1;
+	private VistaTableroJugador vistaTableroJugador2;
 	
-	public VistaTableroDeJuego(VBox vistaTableroJugador1, VBox vistaTableroJugador2) {
+	public VistaTableroDeJuego() {
 		super();
-		jugador1 = vistaTableroJugador1;
-		jugador2 = vistaTableroJugador2;
+		
+		vistaTableroJugador1 = new VistaTableroJugador(true);
+		vistaTableroJugador2 = new VistaTableroJugador(false);
+
 
 		this.setSpacing(250);
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("tablero");
-		this.getChildren().addAll(jugador1,jugador2);	
+		this.getChildren().addAll(vistaTableroJugador1,vistaTableroJugador2);	
 	}
 }

@@ -8,7 +8,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import vista.eventHandlers.BotonContinuarInicioEventHandler;
-import vista.eventHandlers.BotonJugarEventHandler;
 import vista.eventHandlers.BotonSalirEventHandler;
 
 public class LayoutContenedorInicio extends VBox {
