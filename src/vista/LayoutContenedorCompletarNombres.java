@@ -8,12 +8,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import vista.eventHandlers.BotonJugarEventHandler;
 
 public class LayoutContenedorCompletarNombres extends VBox{
 	
-	public LayoutContenedorCompletarNombres(Stage stage, Scene sceneJuego) {
+	public LayoutContenedorCompletarNombres(Stage stage, Scene sceneJuego, MediaPlayer mediaPlayer) {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("fondoNombres");
@@ -33,7 +34,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    Button buttonJugar = new Button("Jugar");
 	    GridPane.setConstraints(buttonJugar, 1, 0);
 	    grid.getChildren().add(buttonJugar);
-	    buttonJugar.setOnAction(new BotonJugarEventHandler(stage, sceneJuego));
+	    buttonJugar.setOnAction(new BotonJugarEventHandler(stage, sceneJuego, mediaPlayer));
 	    
 	    
 	    Button clear = new Button("Borrar");

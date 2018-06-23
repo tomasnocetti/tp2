@@ -1,5 +1,7 @@
 package vista;
 
+import java.io.File;
+
 //import java.io.FileInputStream;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -17,6 +19,8 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 //import javafx.scene.paint.Color;
@@ -40,10 +44,10 @@ public class AlGoHo extends Application{
 	private VistaTrampasOMagicas vistaTrampasOMagicas2;
 	private Scene sceneJuego;
 	
-
 	private LayoutContenedorInicio layoutContenedorInicio;
 	private Scene scenePrincipal;
 	
+	private MediaPlayer mediaPlayer;
 	
 	private VBox vistaTableroJugador1;
 	private VBox vistaTableroJugador2;
@@ -60,8 +64,6 @@ public class AlGoHo extends Application{
 	public void start(Stage stage) throws Exception {
 		stage.setTitle("AlGoHo");
         
-		
-		
 		layoutContenedorJuego = new LayoutContenedorJuego();
 		
 		vistaMonstruos1 = new VistaMonstruos();
@@ -83,7 +85,11 @@ public class AlGoHo extends Application{
 		
         sceneJuego = new Scene(layoutContenedorJuego, 900, 1000);
         
-        layoutContenedorCompletarNombres = new LayoutContenedorCompletarNombres(stage, sceneJuego);
+        mediaPlayer = new MediaPlayer(new Media(new File("src/vista/YugiohTema.wav").toURI().toString()));
+		mediaPlayer.play();
+		mediaPlayer.setVolume(0.05);
+        
+        layoutContenedorCompletarNombres = new LayoutContenedorCompletarNombres(stage, sceneJuego, mediaPlayer);
         sceneCompletarNombres = new SceneCompletarNombres(layoutContenedorCompletarNombres);
         
 		layoutContenedorInicio = new LayoutContenedorInicio(stage, sceneCompletarNombres);
@@ -94,12 +100,7 @@ public class AlGoHo extends Application{
         
         stage.setScene(scenePrincipal);
         stage.setFullScreen(true);
-		mediaPlayer = new MediaPlayer(new Media(new File("src/vista/YugiohTema.wav").toURI().toString()));
-		mediaPlayer.play();
         stage.show();
-	}
-
-
-	
+	}	
 }
 

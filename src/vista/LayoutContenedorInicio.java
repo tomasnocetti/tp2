@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import vista.eventHandlers.BotonContinuarInicioEventHandler;
 import vista.eventHandlers.BotonJugarEventHandler;
 import vista.eventHandlers.BotonSalirEventHandler;
 
@@ -15,10 +16,10 @@ public class LayoutContenedorInicio extends VBox {
 	public LayoutContenedorInicio(Stage stage, Scene sceneCompletarNombres) {
 		super();
 		
-        Button botonJugar = new Button();
-        botonJugar.setText("Continuar");
-        botonJugar.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-        botonJugar.getStyleClass().add("button");
+        Button botonContinuar = new Button();
+        botonContinuar.setText("Continuar");
+        botonContinuar.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
+        botonContinuar.getStyleClass().add("button");
         
 
         Button botonSalir = new Button();
@@ -29,10 +30,10 @@ public class LayoutContenedorInicio extends VBox {
         BotonSalirEventHandler botonSalirEventHandler = new BotonSalirEventHandler(stage);
         botonSalir.setOnAction(botonSalirEventHandler);
         
-        BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage,sceneCompletarNombres);
-        botonJugar.setOnAction(botonJugarEventHandler);
+        BotonContinuarInicioEventHandler botonJugarEventHandler = new BotonContinuarInicioEventHandler(stage,sceneCompletarNombres);
+        botonContinuar.setOnAction(botonJugarEventHandler);
         
-        HBox contenedorHorizontal = new HBox(botonJugar,botonSalir);
+        HBox contenedorHorizontal = new HBox(botonContinuar,botonSalir);
         contenedorHorizontal.setSpacing(10);
         contenedorHorizontal.setAlignment(Pos.CENTER);
         
