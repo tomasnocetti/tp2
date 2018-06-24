@@ -149,5 +149,23 @@ public class Jugador {
 		return this.zonaCartasMagicasOTrampas.obtenerProximaCartaTrampa();
 	}
 	
+	public Mazo obtenerMazo(){
+		return this.mazo;
+	}
 	
+	public ZonaDeCartasMonstruos obtenerZonaMonstruos(){
+		return this.zonaMonstruos;
+	}
+	public ZonaDeCartasMagicasOTrampas obtenerZonaCartaMagicasOTrampas(){
+		return this.zonaCartasMagicasOTrampas;
+	}
+	public  ZonaDeCartasDeCampo obtenerZonaCartasDeCampo(){
+		return this.zonaCartasDeCampo;
+	}
+	public  ZonaMano obtenerMano(){
+		return this.mano;
+	}
+	public Cementerio obtenerCementerio(){
+		return this.cementerio;
+	}
 }

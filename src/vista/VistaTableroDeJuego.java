@@ -1,19 +1,21 @@
 package vista;
 
+import fiuba.algo3.tp2.Juego;
 import javafx.scene.layout.VBox;
 
 public class VistaTableroDeJuego extends VBox {
 	
-	VBox jugador1;
-	VBox jugador2;
 	private VistaTableroJugador vistaTableroJugador1;
 	private VistaTableroJugador vistaTableroJugador2;
+	private Juego juego;
 	
-	public VistaTableroDeJuego() {
+	public VistaTableroDeJuego(Juego juego) {
 		super();
 		
-		vistaTableroJugador1 = new VistaTableroJugador(true);
-		vistaTableroJugador2 = new VistaTableroJugador(false);
+		this.juego = juego;
+		
+		vistaTableroJugador1 = new VistaTableroJugador(true, juego.jugadorActual());
+		vistaTableroJugador2 = new VistaTableroJugador(false, juego.jugadorOponente());
 
 
 		this.setSpacing(250);

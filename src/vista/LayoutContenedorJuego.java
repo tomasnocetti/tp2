@@ -1,5 +1,6 @@
 package vista;
 
+import fiuba.algo3.tp2.Juego;
 import javafx.scene.layout.BorderPane;
 
 public class LayoutContenedorJuego extends BorderPane {
@@ -10,15 +11,18 @@ public class LayoutContenedorJuego extends BorderPane {
 	private VistaPuntosDeVida vistaPuntosDeVida;
 	private SceneJuego sceneJuego;
 	private SceneInicio sceneInicio;
+	private Juego juego;
 	
 	public LayoutContenedorJuego() {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("layout");	
 		
-		vistaTableroDeJuego = new VistaTableroDeJuego();
-		vistaInformacionDeCarta= new VistaInformacionDeCarta(this);
-		vistaMano = new VistaMano();
+		this.juego = new Juego(); 
+			
+		vistaTableroDeJuego = new VistaTableroDeJuego(juego);
+		vistaInformacionDeCarta= new VistaInformacionDeCarta(this,juego);
+		vistaMano = new VistaMano(juego);
 		vistaPuntosDeVida = new VistaPuntosDeVida(this);
 		
 		
