@@ -13,7 +13,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
-public class VistaPuntosDeVida extends HBox {
+public class VistaPuntosDeVida extends VBox {
 	
 	private BorderPane layoutContenedorJuego;
 	
@@ -25,16 +25,17 @@ public class VistaPuntosDeVida extends HBox {
 		this.setSpacing(20);
 		this.getChildren().add(this.informacionPuntosDeVida("Jugador1"));
 		this.getChildren().add(this.informacionPuntosDeVida("Jugador2"));
-		this.setPrefWidth(100);
+		this.setPrefWidth(70);
 	}
 	
 	
 	
-	private HBox informacionPuntosDeVida(String jugador) {
-		HBox hbox = new HBox(5);
+	private VBox informacionPuntosDeVida(String jugador) {
+		VBox vbox = new VBox(5);
 		Text nombre = this.darTextoNombreJugador(jugador);
-		hbox.getChildren().add(nombre);
-		return hbox;
+		vbox.getChildren().add(nombre);
+		vbox.setPrefSize(70, 500);
+		return vbox;
 		
 	}
 	

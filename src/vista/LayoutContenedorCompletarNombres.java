@@ -2,6 +2,9 @@ package vista;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
+import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -23,7 +26,7 @@ import vista.eventHandlers.BotonJugarEventHandler;
 
 public class LayoutContenedorCompletarNombres extends VBox{
 	
-	public LayoutContenedorCompletarNombres(Stage stage, Scene sceneJuego, MediaPlayer mediaPlayer) {
+	public LayoutContenedorCompletarNombres(final Stage stage, final Scene sceneJuego, final MediaPlayer mediaPlayer) {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("fondoNombres");
@@ -35,9 +38,9 @@ public class LayoutContenedorCompletarNombres extends VBox{
 //		grid.setVgap(10);
 //		grid.setHgap(90);
 		
-		VBox vbox1 = new VBox(20);
-		VBox vbox2 = new VBox();
-		VBox vbox3 = new VBox();
+		final VBox vbox1 = new VBox(20);
+		final VBox vbox2 = new VBox();
+		final VBox vbox3 = new VBox();
 		
 		vbox1.setPrefSize(300,300);
 		vbox2.setPrefSize(300,300);
@@ -64,7 +67,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    lighting1.setSurfaceScale(9.0);
 		vbox1.getChildren().add(textoNombre1);
 		
-		TextField name1 = new TextField();
+		final TextField name1 = new TextField();
 	    name1.setPromptText("Enter name player one");
 	    name1.setPrefColumnCount(10);
 	    name1.setMaxWidth(300);
@@ -81,7 +84,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    lighting2.setSurfaceScale(9.0);
 		vbox1.getChildren().add(textoNombre2);
 	    
-		TextField name2 = new TextField();
+		final TextField name2 = new TextField();
 	    name2.setPromptText("Enter name player two");
 	    name2.setPrefColumnCount(10);
 	    name2.setMaxWidth(300);
@@ -91,11 +94,26 @@ public class LayoutContenedorCompletarNombres extends VBox{
 //	    BooleanBinding textField1Valid = Bindings.createBooleanBinding(name2.textProperty());
 //	    BooleanBinding textField2Valid = Bindings.createBooleanBinding(name2.textProperty());
 //	    buttonJugar.disableProperty().bind(textField1Valid.not().or(textField2Valid.not()));
+	    final Text txtState = new Text();
 	    
-	    Button buttonJugar = new Button("CONTINUAR");
+	    final Button buttonJugar = new Button("CONTINUAR");
 	    GridPane.setConstraints(buttonJugar, 1, 0);
 	    vbox2.getChildren().add(buttonJugar);
-	    buttonJugar.setOnAction(new BotonJugarEventHandler(stage, sceneJuego, mediaPlayer));
+	    buttonJugar.setOnAction(new EventHandler<ActionEvent>() {
+            
+            public void handle(ActionEvent event) {
+               
+                if(name2.getText().isEmpty() || name1.getText().isEmpty()){
+                    txtState.setText("Introducir nombres de ambos jugadores");
+                    txtState.setFill(Color.RED);
+                    txtState.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 25));
+                    vbox1.getChildren().add(txtState);
+                }
+                else{
+                	buttonJugar.setOnAction(new BotonJugarEventHandler(stage, sceneJuego, mediaPlayer));
+                }
+            }
+        });
 	    
 	    //Label label = new Label();
 	    //this.getChildren().addAll(label, name);
