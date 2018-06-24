@@ -1,5 +1,7 @@
 package vista;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -42,7 +44,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 		vbox3.setPrefSize(500,300);
 		
 		Text titulo = new Text(300, 300, "Bienvenidos a YuGiOh");
-		titulo.setFill(Color.DARKVIOLET);
+		titulo.setFill(Color.DARKORANGE);
 		titulo.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 60));
 	    final Light.Distant light = new Light.Distant();
 	    light.setAzimuth(-135.0);
@@ -64,6 +66,10 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    name2.setMaxWidth(300);
 	    GridPane.setConstraints(name2, 0, 0);
 	    vbox1.getChildren().add(name2);
+	    
+//	    BooleanBinding textField1Valid = Bindings.createBooleanBinding(name2.textProperty());
+//	    BooleanBinding textField2Valid = Bindings.createBooleanBinding(name2.textProperty());
+//	    buttonJugar.disableProperty().bind(textField1Valid.not().or(textField2Valid.not()));
 	    
 	    Button buttonJugar = new Button("Jugar");
 	    GridPane.setConstraints(buttonJugar, 1, 0);

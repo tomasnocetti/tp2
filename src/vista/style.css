@@ -1,5 +1,5 @@
 .root{
-    -fx-background-image: url("img/fondo2.jpg");   
+    -fx-background-image: url("img/fodo_eleccion_nombres.png");   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
@@ -22,12 +22,10 @@
 	-fx-stroke-size: 150 150;
 }
 .button{
-	-fx-background-color: white;
-	-fx-background-radius: 20;
-    -fx-background-size: 75 100;
-    -fx-text-fill: blue;
-    -fx-font-size: 75;
-    -fx-font: underdog;
+	-fx-background-color: black;
+	-fx-border-radius: 15;
+    -fx-text-fill: orange;
+    -fx-font-size: 50;
 }
 .gridPane-cartas {
 	-fx-hgap: 2;
@@ -38,7 +36,7 @@
 	
 }*/
 .tablero {
-	-fx-background-image: url("img/fondoTablero.jpg");
+	-fx-background-image: url("img/fondoTablero3.jpg");
 	-fx-background-repeat: stretch;   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
@@ -52,7 +50,7 @@
     -fx-radius: 5;
 }
 .fondoNombres {
-	-fx-background-image: url("img/fondo_eleccion_nombres.jpg");
+	-fx-background-image: url("img/fodo_eleccion_nombres.png");
 	-fx-background-repeat: stretch;   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
