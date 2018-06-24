@@ -43,15 +43,26 @@ public class LayoutContenedorCompletarNombres extends VBox{
 		vbox2.setPrefSize(300,300);
 		vbox3.setPrefSize(500,300);
 		
-		Text titulo = new Text(300, 300, "Bienvenidos a YuGiOh");
-		titulo.setFill(Color.DARKORANGE);
-		titulo.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 60));
-	    final Light.Distant light = new Light.Distant();
-	    light.setAzimuth(-135.0);
-	    final Lighting lighting = new Lighting();
-	    lighting.setLight(light);
-	    lighting.setSurfaceScale(9.0);
-		vbox3.getChildren().add(titulo);
+		//Esto tiene que ir en el contenedor inicio
+//		Text titulo = new Text(300, 300, "Bienvenidos a YuGiOh");
+//		titulo.setFill(Color.DARKORANGE);
+//		titulo.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 60));
+//	    final Light.Distant light = new Light.Distant();
+//	    light.setAzimuth(-135.0);
+//	    final Lighting lighting = new Lighting();
+//	    lighting.setLight(light);
+//	    lighting.setSurfaceScale(9.0);
+//		vbox3.getChildren().add(titulo);
+		
+		Text textoNombre1= new Text(300, 300, "NOMBRE JUGADOR 1");
+		textoNombre1.setFill(Color.DARKORANGE);
+		textoNombre1.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 30));
+	    final Light.Distant light1 = new Light.Distant();
+	    light1.setAzimuth(-135.0);
+	    final Lighting lighting1 = new Lighting();
+	    lighting1.setLight(light1);
+	    lighting1.setSurfaceScale(9.0);
+		vbox1.getChildren().add(textoNombre1);
 		
 		TextField name1 = new TextField();
 	    name1.setPromptText("Enter name player one");
@@ -59,6 +70,16 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    name1.setMaxWidth(300);
 	    GridPane.setConstraints(name1, 0, 0);
 	    vbox1.getChildren().add(name1);
+	    
+		Text textoNombre2= new Text(300, 300, "NOMBRE JUGADOR 2");
+		textoNombre2.setFill(Color.DARKORANGE);
+		textoNombre2.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 30));
+	    final Light.Distant light2 = new Light.Distant();
+	    light1.setAzimuth(-135.0);
+	    final Lighting lighting2 = new Lighting();
+	    lighting2.setLight(light2);
+	    lighting2.setSurfaceScale(9.0);
+		vbox1.getChildren().add(textoNombre2);
 	    
 		TextField name2 = new TextField();
 	    name2.setPromptText("Enter name player two");
@@ -71,7 +92,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 //	    BooleanBinding textField2Valid = Bindings.createBooleanBinding(name2.textProperty());
 //	    buttonJugar.disableProperty().bind(textField1Valid.not().or(textField2Valid.not()));
 	    
-	    Button buttonJugar = new Button("Jugar");
+	    Button buttonJugar = new Button("CONTINUAR");
 	    GridPane.setConstraints(buttonJugar, 1, 0);
 	    vbox2.getChildren().add(buttonJugar);
 	    buttonJugar.setOnAction(new BotonJugarEventHandler(stage, sceneJuego, mediaPlayer));

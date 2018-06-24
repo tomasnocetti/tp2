@@ -7,6 +7,7 @@ public class LayoutContenedorJuego extends BorderPane {
 	private VistaInformacionDeCarta vistaInformacionDeCarta;
 	private VistaTableroDeJuego vistaTableroDeJuego;
 	private VistaMano vistaMano;
+	private VistaPuntosDeVida vistaPuntosDeVida;
 	private SceneJuego sceneJuego;
 	private SceneInicio sceneInicio;
 	
@@ -18,7 +19,10 @@ public class LayoutContenedorJuego extends BorderPane {
 		vistaTableroDeJuego = new VistaTableroDeJuego();
 		vistaInformacionDeCarta= new VistaInformacionDeCarta(this);
 		vistaMano = new VistaMano();
+		vistaPuntosDeVida = new VistaPuntosDeVida(this);
 		
+		
+		this.setTop(vistaPuntosDeVida);
         this.setCenter(vistaTableroDeJuego);
         this.setLeft(vistaInformacionDeCarta);
 		this.setBottom(vistaMano);

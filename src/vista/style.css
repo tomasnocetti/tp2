@@ -43,7 +43,7 @@
     -fx-margin: 5;
 }
 .informacion{
-	-fx-background-image: url("img/fondoInformacion.jpg");
+	-fx-background-image: url("img/fondoInoformacion2.jpg");
 	-fx-background-repeat: stretch;   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
@@ -56,3 +56,10 @@
     -fx-background-position: center center;
     
 }
+.fondoPuntosDeVida {
+	-fx-background-image: url("img/fondoPuntosDeVida.jpeg");
+	-fx-background-repeat: stretch;   
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+}
+

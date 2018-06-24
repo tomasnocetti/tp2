@@ -16,13 +16,13 @@ public class LayoutContenedorInicio extends HBox {
 		super();
 		
         Button botonContinuar = new Button();
-        botonContinuar.setText("Continuar");
+        botonContinuar.setText("JUGAR");
         botonContinuar.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
         botonContinuar.getStyleClass().add("button");
         
 
         Button botonSalir = new Button();
-        botonSalir.setText("Salir");
+        botonSalir.setText("SALIR");
         botonSalir.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
         botonSalir.getStyleClass().add("button");
         
