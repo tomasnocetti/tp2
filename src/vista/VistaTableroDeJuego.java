@@ -7,15 +7,14 @@ public class VistaTableroDeJuego extends VBox {
 	
 	private VistaTableroJugador vistaTableroJugador1;
 	private VistaTableroJugador vistaTableroJugador2;
-	private Juego juego;
+
 	
-	public VistaTableroDeJuego(Juego juego) {
+	public VistaTableroDeJuego() {
 		super();
+
 		
-		this.juego = juego;
-		
-		vistaTableroJugador1 = new VistaTableroJugador(true, juego.jugadorActual());
-		vistaTableroJugador2 = new VistaTableroJugador(false, juego.jugadorOponente());
+		vistaTableroJugador1 = new VistaTableroJugador(true, Juego.ObtenerJuego().jugadorActual());
+		vistaTableroJugador2 = new VistaTableroJugador(false, Juego.ObtenerJuego().jugadorOponente());
 
 
 		this.setSpacing(250);

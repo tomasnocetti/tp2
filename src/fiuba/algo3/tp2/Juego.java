@@ -17,6 +17,8 @@ public class Juego extends Observable{
 	
 	public Juego() {
 		this.resetearJuego();
+		jugadores.get(0).agarrar5CartasDeMazo();
+		jugadores.get(1).agarrar5CartasDeMazo();
 	}
 	
 	public static Juego ObtenerJuego() {
@@ -50,9 +52,10 @@ public class Juego extends Observable{
 		 if(iFaseActual == 4) {
 			 this.cambiarTurno();
 			 iFaseActual = 0;
+		 } else {
+			 iFaseActual ++;	 
 		 }
-		 
-		 iFaseActual ++;
+		 	 
          this.setChanged();
          this.notifyObservers(); 
 	}
@@ -70,6 +73,10 @@ public class Juego extends Observable{
 	
 	public void asignarGanador(Jugador jugador) {
 		this.terminarJuego(jugador);
+	}
+	
+	public int iFaseActual() {
+		return iFaseActual;
 	}
 	
 	public void asignarPerdedor(Jugador jugador) {

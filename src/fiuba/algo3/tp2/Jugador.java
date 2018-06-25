@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Observable;
-import java.util.Observer;
-
 
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
@@ -34,7 +32,6 @@ public class Jugador extends Observable{
 	public Jugador() {
 		this.puntosDeVida = 8000;
 		this.mano = new ZonaMano(this);
-		
 		this.mazo = new Mazo(this, CartaFactory.inicializarMazoGenerico(this));
 		this.cementerio = new Cementerio();
 		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas(this);
@@ -170,5 +167,11 @@ public class Jugador extends Observable{
 	}
 	public Cementerio obtenerCementerio(){
 		return this.cementerio;
+	}
+
+	public void agarrar5CartasDeMazo() {
+		for(int i = 0; i< 5; i++) {
+			this.agarrarCarta();
+		}
 	}
 }
