@@ -3,7 +3,7 @@ package fiuba.algo3.tp2;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-
+import java.util.Observable;
 
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
@@ -19,7 +19,7 @@ import fiuba.algo3.tp2.Tableros.ZonaDeCartasMonstruos;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasDeCampo;
 import fiuba.algo3.tp2.Tableros.ZonaMano;
 
-public class Jugador {
+public class Jugador extends Observable{
 	
 	private int puntosDeVida;
 	private ZonaMano mano;
@@ -32,7 +32,6 @@ public class Jugador {
 	public Jugador() {
 		this.puntosDeVida = 8000;
 		this.mano = new ZonaMano(this);
-		
 		this.mazo = new Mazo(this, CartaFactory.inicializarMazoGenerico(this));
 		this.cementerio = new Cementerio();
 		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas(this);

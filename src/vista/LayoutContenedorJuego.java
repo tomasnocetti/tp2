@@ -5,7 +5,7 @@ import javafx.scene.layout.BorderPane;
 
 public class LayoutContenedorJuego extends BorderPane {
 	
-	private VistaInformacionDeCarta vistaInformacionDeCarta;
+	private VistaInformacionDeJuego vistaInformacionDeCarta;
 	private VistaTableroDeJuego vistaTableroDeJuego;
 	private VistaMano vistaMano;
 	private VistaPuntosDeVida vistaPuntosDeVida;
@@ -21,7 +21,7 @@ public class LayoutContenedorJuego extends BorderPane {
 		this.juego = new Juego(); 
 			
 		vistaTableroDeJuego = new VistaTableroDeJuego(juego);
-		vistaInformacionDeCarta= new VistaInformacionDeCarta(this);
+		vistaInformacionDeCarta= new VistaInformacionDeJuego(this);
 		vistaMano = new VistaMano(juego);
 		vistaPuntosDeVida = new VistaPuntosDeVida(this);
 		
