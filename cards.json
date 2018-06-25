@@ -1,0 +1,3092 @@
+[  
+  {  
+    "Name":"Wingweaver",
+    "Level":7,
+    "ATK":2750,
+    "DEF":2400
+  },
+  {  
+    "Name":"Witty Phantom",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1300
+  },
+  {  
+    "Name":"Wolf",
+    "Level":3,
+    "ATK":1200,
+    "DEF":800
+  },
+  {  
+    "Name":"Wolf Axwielder",
+    "Level":4,
+    "ATK":1650,
+    "DEF":1000
+  },
+  {  
+    "Name":"Woodborg Inpachi",
+    "Level":5,
+    "ATK":500,
+    "DEF":2500
+  },
+  {  
+    "Name":"Worm Drake",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1500
+  },
+  {  
+    "Name":"Wow Warrior",
+    "Level":4,
+    "ATK":1250,
+    "DEF":900
+  },
+  {  
+    "Name":"Wretched Ghost of the Attic",
+    "Level":2,
+    "ATK":550,
+    "DEF":400
+  },
+  {  
+    "Name":"X-Head Cannon",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1500
+  },
+  {  
+    "Name":"X-Saber Anu Piranha",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1100
+  },
+  {  
+    "Name":"Yamadron",
+    "Level":5,
+    "ATK":1600,
+    "DEF":1800
+  },
+  {  
+    "Name":"Yaranzo",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1500
+  },
+  {  
+    "Name":"Zoa",
+    "Level":7,
+    "ATK":2600,
+    "DEF":1900
+  },
+  {  
+    "Name":"Zombino",
+    "Level":4,
+    "ATK":2000,
+    "DEF":0
+  },
+  {  
+    "Name":"Zure, Knight of Dark World",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1500
+  },
+  {  
+    "Name":"Skull Red Bird",
+    "Level":4,
+    "ATK":1550,
+    "DEF":1200
+  },
+  {  
+    "Name":"Skull Servant",
+    "Level":1,
+    "ATK":300,
+    "DEF":200
+  },
+  {  
+    "Name":"Skull Stalker",
+    "Level":3,
+    "ATK":900,
+    "DEF":800
+  },
+  {  
+    "Name":"Sky Dragon",
+    "Level":6,
+    "ATK":1900,
+    "DEF":1800
+  },
+  {  
+    "Name":"Sky Dragoons of Draconia",
+    "Level":5,
+    "ATK":2200,
+    "DEF":200
+  },
+  {  
+    "Name":"Sky Scout (Updated from: Harpie's Brother)",
+    "Level":4,
+    "ATK":1800,
+    "DEF":600
+  },
+  {  
+    "Name":"Sleeping Lion",
+    "Level":4,
+    "ATK":700,
+    "DEF":1700
+  },
+  {  
+    "Name":"Slime Toad (Updated from: Frog the Jam)",
+    "Level":2,
+    "ATK":700,
+    "DEF":500
+  },
+  {  
+    "Name":"Slot Machine",
+    "Level":7,
+    "ATK":2000,
+    "DEF":2300
+  },
+  {  
+    "Name":"Snakeyashi",
+    "Level":4,
+    "ATK":1000,
+    "DEF":1200
+  },
+  {  
+    "Name":"Soitsu",
+    "Level":3,
+    "ATK":0,
+    "DEF":0
+  },
+  {  
+    "Name":"Sonic Duck",
+    "Level":3,
+    "ATK":1700,
+    "DEF":700
+  },
+  {  
+    "Name":"Sonic Maid",
+    "Level":3,
+    "ATK":1200,
+    "DEF":900
+  },
+  {  
+    "Name":"Sorcerer of the Doomed",
+    "Level":4,
+    "ATK":1450,
+    "DEF":1200
+  },
+  {  
+    "Name":"Soul Tiger",
+    "Level":4,
+    "ATK":0,
+    "DEF":2100
+  },
+  {  
+    "Name":"Souleater",
+    "Level":4,
+    "ATK":1200,
+    "DEF":0
+  },
+  {  
+    "Name":"Souls of the Forgotten",
+    "Level":2,
+    "ATK":900,
+    "DEF":200
+  },
+  {  
+    "Name":"Space Mambo",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1000
+  },
+  {  
+    "Name":"Spherous Lady",
+    "Level":3,
+    "ATK":400,
+    "DEF":1400
+  },
+  {  
+    "Name":"Spike Seadra",
+    "Level":5,
+    "ATK":1600,
+    "DEF":1300
+  },
+  {  
+    "Name":"Spikebot",
+    "Level":5,
+    "ATK":1800,
+    "DEF":1700
+  },
+  {  
+    "Name":"Spiral Serpent",
+    "Level":8,
+    "ATK":2900,
+    "DEF":2900
+  },
+  {  
+    "Name":"Spirit of the Books",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1200
+  },
+  {  
+    "Name":"Spirit of the Harp",
+    "Level":4,
+    "ATK":800,
+    "DEF":2000
+  },
+  {  
+    "Name":"Steel Ogre Grotto #1",
+    "Level":5,
+    "ATK":1400,
+    "DEF":1800
+  },
+  {  
+    "Name":"Steel Ogre Grotto #2",
+    "Level":6,
+    "ATK":1900,
+    "DEF":2200
+  },
+  {  
+    "Name":"Stone Armadiller",
+    "Level":3,
+    "ATK":800,
+    "DEF":1200
+  },
+  {  
+    "Name":"Stone Dragon",
+    "Level":7,
+    "ATK":2000,
+    "DEF":2300
+  },
+  {  
+    "Name":"Stone Ogre Grotto",
+    "Level":5,
+    "ATK":1600,
+    "DEF":1500
+  },
+  {  
+    "Name":"Stuffed Animal",
+    "Level":3,
+    "ATK":1200,
+    "DEF":900
+  },
+  {  
+    "Name":"Succubus Knight",
+    "Level":5,
+    "ATK":1650,
+    "DEF":1300
+  },
+  {  
+    "Name":"Summoned Skull",
+    "Level":6,
+    "ATK":2500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Sword Arm of Dragon",
+    "Level":6,
+    "ATK":1750,
+    "DEF":2030
+  },
+  {  
+    "Name":"Sword Slasher",
+    "Level":5,
+    "ATK":1450,
+    "DEF":1500
+  },
+  {  
+    "Name":"Swordsman of Landstar",
+    "Level":3,
+    "ATK":500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Swordstalker",
+    "Level":6,
+    "ATK":2000,
+    "DEF":1600
+  },
+  {  
+    "Name":"Takriminos",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Takuhee",
+    "Level":4,
+    "ATK":1450,
+    "DEF":1000
+  },
+  {  
+    "Name":"Temple of Skulls",
+    "Level":4,
+    "ATK":900,
+    "DEF":1300
+  },
+  {  
+    "Name":"Terra the Terrible",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1300
+  },
+  {  
+    "Name":"Terrorking Salmon",
+    "Level":5,
+    "ATK":2400,
+    "DEF":1000
+  },
+  {  
+    "Name":"The 13th Grave",
+    "Level":3,
+    "ATK":1200,
+    "DEF":900
+  },
+  {  
+    "Name":"The All-Seeing White Tiger",
+    "Level":3,
+    "ATK":1300,
+    "DEF":500
+  },
+  {  
+    "Name":"The Dragon Dwelling in the Cave",
+    "Level":4,
+    "ATK":1300,
+    "DEF":2000
+  },
+  {  
+    "Name":"The Earl of Demise",
+    "Level":5,
+    "ATK":2000,
+    "DEF":700
+  },
+  {  
+    "Name":"The Furious Sea King",
+    "Level":3,
+    "ATK":800,
+    "DEF":700
+  },
+  {  
+    "Name":"The Gross Ghost of Fled Dreams",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1800
+  },
+  {  
+    "Name":"The Illusory Gentleman",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1600
+  },
+  {  
+    "Name":"The Judgement Hand",
+    "Level":3,
+    "ATK":1400,
+    "DEF":700
+  },
+  {  
+    "Name":"The Portrait's Secret",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1500
+  },
+  {  
+    "Name":"The Snake Hair",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1200
+  },
+  {  
+    "Name":"The Statue of Easter Island",
+    "Level":4,
+    "ATK":1100,
+    "DEF":1400
+  },
+  {  
+    "Name":"Thousand-Eyes Idol",
+    "Level":1,
+    "ATK":0,
+    "DEF":0
+  },
+  {  
+    "Name":"Three-Headed Geedo",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1400
+  },
+  {  
+    "Name":"Three-Legged Zombies",
+    "Level":3,
+    "ATK":1100,
+    "DEF":800
+  },
+  {  
+    "Name":"Thunder Kid",
+    "Level":2,
+    "ATK":700,
+    "DEF":600
+  },
+  {  
+    "Name":"Tiger Axe",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1100
+  },
+  {  
+    "Name":"Tomozaurus",
+    "Level":2,
+    "ATK":500,
+    "DEF":400
+  },
+  {  
+    "Name":"Tongyo",
+    "Level":4,
+    "ATK":1350,
+    "DEF":800
+  },
+  {  
+    "Name":"Toon Alligator",
+    "Level":4,
+    "ATK":800,
+    "DEF":1600
+  },
+  {  
+    "Name":"Trakodon",
+    "Level":3,
+    "ATK":1300,
+    "DEF":800
+  },
+  {  
+    "Name":"Trance the Magic Swordsman",
+    "Level":6,
+    "ATK":2600,
+    "DEF":200
+  },
+  {  
+    "Name":"Trent",
+    "Level":5,
+    "ATK":1500,
+    "DEF":1800
+  },
+  {  
+    "Name":"Tri-Horned Dragon",
+    "Level":8,
+    "ATK":2850,
+    "DEF":2350
+  },
+  {  
+    "Name":"Trial of Nightmare",
+    "Level":4,
+    "ATK":1300,
+    "DEF":900
+  },
+  {  
+    "Name":"Tripwire Beast",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1300
+  },
+  {  
+    "Name":"Tune Warrior",
+    "Level":3,
+    "ATK":1600,
+    "DEF":200
+  },
+  {  
+    "Name":"Turtle Bird",
+    "Level":6,
+    "ATK":1900,
+    "DEF":1700
+  },
+  {  
+    "Name":"Turtle Tiger",
+    "Level":4,
+    "ATK":1000,
+    "DEF":1500
+  },
+  {  
+    "Name":"Turu-Purun",
+    "Level":2,
+    "ATK":450,
+    "DEF":500
+  },
+  {  
+    "Name":"Twin Long Rods #2",
+    "Level":3,
+    "ATK":850,
+    "DEF":700
+  },
+  {  
+    "Name":"Twin-Headed Fire Dragon",
+    "Level":6,
+    "ATK":2200,
+    "DEF":1700
+  },
+  {  
+    "Name":"Two-Headed King Rex",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1200
+  },
+  {  
+    "Name":"Two-Mouth Darkruler",
+    "Level":3,
+    "ATK":900,
+    "DEF":700
+  },
+  {  
+    "Name":"Tyhone",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1400
+  },
+  {  
+    "Name":"Tyhone #2",
+    "Level":6,
+    "ATK":1700,
+    "DEF":1900
+  },
+  {  
+    "Name":"Unicycular",
+    "Level":1,
+    "ATK":100,
+    "DEF":100
+  },
+  {  
+    "Name":"United Resistance",
+    "Level":3,
+    "ATK":1000,
+    "DEF":400
+  },
+  {  
+    "Name":"Unknown Warrior of Fiend",
+    "Level":3,
+    "ATK":1000,
+    "DEF":500
+  },
+  {  
+    "Name":"Uraby",
+    "Level":4,
+    "ATK":1500,
+    "DEF":800
+  },
+  {  
+    "Name":"Ushi Oni",
+    "Level":6,
+    "ATK":2150,
+    "DEF":1950
+  },
+  {  
+    "Name":"V-Tiger Jet",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1800
+  },
+  {  
+    "Name":"Vector Pendulum, the Dracoverlord",
+    "Level":4,
+    "ATK":1850,
+    "DEF":0
+  },
+  {  
+    "Name":"Venom Cobra",
+    "Level":4,
+    "ATK":100,
+    "DEF":2000
+  },
+  {  
+    "Name":"Violent Rain",
+    "Level":4,
+    "ATK":1550,
+    "DEF":800
+  },
+  {  
+    "Name":"Volcanic Rat",
+    "Level":1,
+    "ATK":500,
+    "DEF":500
+  },
+  {  
+    "Name":"Vorse Raider",
+    "Level":4,
+    "ATK":1900,
+    "DEF":1200
+  },
+  {  
+    "Name":"Warrior Dai Grepher",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1600
+  },
+  {  
+    "Name":"Warrior of Zera",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1600
+  },
+  {  
+    "Name":"Water Magician",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1000
+  },
+  {  
+    "Name":"Water Omotics",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1200
+  },
+  {  
+    "Name":"Water Spirit",
+    "Level":1,
+    "ATK":400,
+    "DEF":1200
+  },
+  {  
+    "Name":"Wattaildragon",
+    "Level":6,
+    "ATK":2500,
+    "DEF":1000
+  },
+  {  
+    "Name":"Wattkid (Updated from: Oscillo Hero #2)",
+    "Level":3,
+    "ATK":1000,
+    "DEF":500
+  },
+  {  
+    "Name":"Whiptail Crow",
+    "Level":4,
+    "ATK":1650,
+    "DEF":1600
+  },
+  {  
+    "Name":"White Duston",
+    "Level":1,
+    "ATK":0,
+    "DEF":1000
+  },
+  {  
+    "Name":"Wilmee",
+    "Level":4,
+    "ATK":1000,
+    "DEF":1200
+  },
+  {  
+    "Name":"Winged Dragon, Guardian of the Fortress #1",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1200
+  },
+  {  
+    "Name":"Winged Dragon, Guardian of the Fortress #2",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1000
+  },
+  {  
+    "Name":"Wings of Wicked Flame",
+    "Level":2,
+    "ATK":700,
+    "DEF":600
+  },
+  {  
+    "Name":"Monster Egg",
+    "Level":3,
+    "ATK":600,
+    "DEF":900
+  },
+  {  
+    "Name":"Monster Tamer",
+    "Level":5,
+    "ATK":1800,
+    "DEF":1600
+  },
+  {  
+    "Name":"Moon Envoy",
+    "Level":4,
+    "ATK":1100,
+    "DEF":1000
+  },
+  {  
+    "Name":"Morinphen",
+    "Level":5,
+    "ATK":1550,
+    "DEF":1300
+  },
+  {  
+    "Name":"Mr. Volcano",
+    "Level":5,
+    "ATK":2100,
+    "DEF":1300
+  },
+  {  
+    "Name":"Mushroom Man",
+    "Level":2,
+    "ATK":800,
+    "DEF":600
+  },
+  {  
+    "Name":"Mystery Shell Dragon",
+    "Level":4,
+    "ATK":2000,
+    "DEF":0
+  },
+  {  
+    "Name":"Mystic Clown",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1000
+  },
+  {  
+    "Name":"Mystic Horseman",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1550
+  },
+  {  
+    "Name":"Mystical Elf",
+    "Level":4,
+    "ATK":800,
+    "DEF":2000
+  },
+  {  
+    "Name":"Mystical Sheep #2",
+    "Level":3,
+    "ATK":800,
+    "DEF":1000
+  },
+  {  
+    "Name":"Mystical Shine Ball",
+    "Level":2,
+    "ATK":500,
+    "DEF":500
+  },
+  {  
+    "Name":"Necrolancer the Time-lord (Updated from: Necrolancer the Timelord)",
+    "Level":3,
+    "ATK":800,
+    "DEF":900
+  },
+  {  
+    "Name":"Nekogal #1",
+    "Level":3,
+    "ATK":1100,
+    "DEF":900
+  },
+  {  
+    "Name":"Nekogal #2",
+    "Level":6,
+    "ATK":1900,
+    "DEF":2000
+  },
+  {  
+    "Name":"Nemuriko",
+    "Level":3,
+    "ATK":800,
+    "DEF":700
+  },
+  {  
+    "Name":"Neo Aqua Madoor",
+    "Level":6,
+    "ATK":1200,
+    "DEF":3000
+  },
+  {  
+    "Name":"Neo Bug",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1700
+  },
+  {  
+    "Name":"Neo the Magic Swordsman",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1000
+  },
+  {  
+    "Name":"Nin-Ken Dog",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1000
+  },
+  {  
+    "Name":"Niwatori",
+    "Level":3,
+    "ATK":900,
+    "DEF":800
+  },
+  {  
+    "Name":"Noble Knight Artorigus",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1800
+  },
+  {  
+    "Name":"Obese Marmot of Nefariousness",
+    "Level":3,
+    "ATK":750,
+    "DEF":800
+  },
+  {  
+    "Name":"Octoberser",
+    "Level":5,
+    "ATK":1600,
+    "DEF":1400
+  },
+  {  
+    "Name":"Ocubeam",
+    "Level":5,
+    "ATK":1550,
+    "DEF":1650
+  },
+  {  
+    "Name":"Odd-Eyes Arc Pendulum Dragon",
+    "Level":7,
+    "ATK":2700,
+    "DEF":2000
+  },
+  {  
+    "Name":"Ogre of the Black Shadow",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1400
+  },
+  {  
+    "Name":"Ojama Black",
+    "Level":2,
+    "ATK":0,
+    "DEF":1000
+  },
+  {  
+    "Name":"Ojama Green",
+    "Level":2,
+    "ATK":0,
+    "DEF":1000
+  },
+  {  
+    "Name":"Ojama Yellow",
+    "Level":2,
+    "ATK":0,
+    "DEF":1000
+  },
+  {  
+    "Name":"One-Eyed Shield Dragon",
+    "Level":3,
+    "ATK":700,
+    "DEF":1300
+  },
+  {  
+    "Name":"Oni Tank T-34",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1700
+  },
+  {  
+    "Name":"Oppressed People",
+    "Level":1,
+    "ATK":400,
+    "DEF":2000
+  },
+  {  
+    "Name":"Opticlops",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1700
+  },
+  {  
+    "Name":"Oscillo Hero",
+    "Level":3,
+    "ATK":1250,
+    "DEF":700
+  },
+  {  
+    "Name":"Overdrive",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1500
+  },
+  {  
+    "Name":"Pale Beast",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Parrot Dragon",
+    "Level":5,
+    "ATK":2000,
+    "DEF":1300
+  },
+  {  
+    "Name":"Peacock",
+    "Level":5,
+    "ATK":1700,
+    "DEF":1500
+  },
+  {  
+    "Name":"Pendulum Machine",
+    "Level":6,
+    "ATK":1750,
+    "DEF":2000
+  },
+  {  
+    "Name":"People Running About",
+    "Level":2,
+    "ATK":600,
+    "DEF":600
+  },
+  {  
+    "Name":"Petit Angel",
+    "Level":3,
+    "ATK":600,
+    "DEF":900
+  },
+  {  
+    "Name":"Petit Dragon",
+    "Level":2,
+    "ATK":600,
+    "DEF":700
+  },
+  {  
+    "Name":"Petit Moth",
+    "Level":1,
+    "ATK":300,
+    "DEF":200
+  },
+  {  
+    "Name":"Phantasm Spiral Dragon",
+    "Level":8,
+    "ATK":2900,
+    "DEF":2900
+  },
+  {  
+    "Name":"Phantom Gryphon",
+    "Level":4,
+    "ATK":2000,
+    "DEF":0
+  },
+  {  
+    "Name":"Pharaoh's Servant",
+    "Level":2,
+    "ATK":900,
+    "DEF":0
+  },
+  {  
+    "Name":"Pharaonic Protector",
+    "Level":2,
+    "ATK":900,
+    "DEF":0
+  },
+  {  
+    "Name":"Prevent Rat",
+    "Level":4,
+    "ATK":500,
+    "DEF":2000
+  },
+  {  
+    "Name":"Prisman",
+    "Level":3,
+    "ATK":800,
+    "DEF":1000
+  },
+  {  
+    "Name":"Protector of the Throne",
+    "Level":4,
+    "ATK":800,
+    "DEF":1500
+  },
+  {  
+    "Name":"Protron",
+    "Level":1,
+    "ATK":100,
+    "DEF":100
+  },
+  {  
+    "Name":"PSY-Frame Driver",
+    "Level":6,
+    "ATK":2500,
+    "DEF":0
+  },
+  {  
+    "Name":"Psychic Kappa",
+    "Level":2,
+    "ATK":400,
+    "DEF":1000
+  },
+  {  
+    "Name":"Qliphort Monolith",
+    "Level":5,
+    "ATK":2400,
+    "DEF":1000
+  },
+  {  
+    "Name":"Qliphort Scout",
+    "Level":5,
+    "ATK":1000,
+    "DEF":2800
+  },
+  {  
+    "Name":"Queen Bird",
+    "Level":5,
+    "ATK":1200,
+    "DEF":2000
+  },
+  {  
+    "Name":"Queen of Autumn Leaves",
+    "Level":5,
+    "ATK":1800,
+    "DEF":1500
+  },
+  {  
+    "Name":"Queen's Knight",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1600
+  },
+  {  
+    "Name":"Rabidragon",
+    "Level":8,
+    "ATK":2950,
+    "DEF":2900
+  },
+  {  
+    "Name":"Ray & Temperature",
+    "Level":3,
+    "ATK":1000,
+    "DEF":1000
+  },
+  {  
+    "Name":"Red Archery Girl",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1500
+  },
+  {  
+    "Name":"Red-Eyes B. Dragon",
+    "Level":7,
+    "ATK":2400,
+    "DEF":2000
+  },
+  {  
+    "Name":"Renge, Gatekeeper of Dark World",
+    "Level":4,
+    "ATK":100,
+    "DEF":2100
+  },
+  {  
+    "Name":"Rhaimundos of the Red Sword",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1300
+  },
+  {  
+    "Name":"Right Arm of the Forbidden One",
+    "Level":1,
+    "ATK":200,
+    "DEF":300
+  },
+  {  
+    "Name":"Right Leg of the Forbidden One",
+    "Level":1,
+    "ATK":200,
+    "DEF":300
+  },
+  {  
+    "Name":"Risebell the Summoner",
+    "Level":3,
+    "ATK":800,
+    "DEF":800
+  },
+  {  
+    "Name":"Robolady",
+    "Level":3,
+    "ATK":450,
+    "DEF":900
+  },
+  {  
+    "Name":"Robotic Knight",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1800
+  },
+  {  
+    "Name":"Roboyarou",
+    "Level":3,
+    "ATK":900,
+    "DEF":450
+  },
+  {  
+    "Name":"Rock Ogre Grotto #1",
+    "Level":3,
+    "ATK":800,
+    "DEF":1200
+  },
+  {  
+    "Name":"Rogue Doll",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1000
+  },
+  {  
+    "Name":"Root Water",
+    "Level":3,
+    "ATK":900,
+    "DEF":800
+  },
+  {  
+    "Name":"Rude Kaiser",
+    "Level":5,
+    "ATK":1800,
+    "DEF":1600
+  },
+  {  
+    "Name":"Ryu-Kishin",
+    "Level":3,
+    "ATK":1000,
+    "DEF":500
+  },
+  {  
+    "Name":"Ryu-Kishin Powered",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1200
+  },
+  {  
+    "Name":"Ryu-Ran",
+    "Level":7,
+    "ATK":2200,
+    "DEF":2600
+  },
+  {  
+    "Name":"Sabersaurus",
+    "Level":4,
+    "ATK":1900,
+    "DEF":500
+  },
+  {  
+    "Name":"Saggi the Dark Clown",
+    "Level":3,
+    "ATK":600,
+    "DEF":1500
+  },
+  {  
+    "Name":"Sakyo, Swordmaster of the Far East",
+    "Level":7,
+    "ATK":2900,
+    "DEF":2600
+  },
+  {  
+    "Name":"Sand Stone",
+    "Level":5,
+    "ATK":1300,
+    "DEF":1600
+  },
+  {  
+    "Name":"Science Soldier",
+    "Level":3,
+    "ATK":800,
+    "DEF":800
+  },
+  {  
+    "Name":"Sea Dragoons of Draconia",
+    "Level":3,
+    "ATK":200,
+    "DEF":2100
+  },
+  {  
+    "Name":"Sea Kamen",
+    "Level":4,
+    "ATK":1100,
+    "DEF":1300
+  },
+  {  
+    "Name":"Sea Serpent Warrior of Darkness",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1500
+  },
+  {  
+    "Name":"Sealmaster Meisei",
+    "Level":3,
+    "ATK":1100,
+    "DEF":900
+  },
+  {  
+    "Name":"Sectarian of Secrets",
+    "Level":2,
+    "ATK":700,
+    "DEF":500
+  },
+  {  
+    "Name":"Seiyaryu",
+    "Level":7,
+    "ATK":2500,
+    "DEF":2300
+  },
+  {  
+    "Name":"Sengenjin",
+    "Level":8,
+    "ATK":2750,
+    "DEF":2500
+  },
+  {  
+    "Name":"Sentinel of the Seas",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1000
+  },
+  {  
+    "Name":"Serpent Night Dragon",
+    "Level":7,
+    "ATK":2350,
+    "DEF":2400
+  },
+  {  
+    "Name":"Shapesnatch",
+    "Level":5,
+    "ATK":1200,
+    "DEF":1700
+  },
+  {  
+    "Name":"Shelga, the Tri-Warlord",
+    "Level":7,
+    "ATK":2800,
+    "DEF":2500
+  },
+  {  
+    "Name":"Shining Abyss",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1800
+  },
+  {  
+    "Name":"Shining Friendship",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1100
+  },
+  {  
+    "Name":"Shovel Crusher",
+    "Level":3,
+    "ATK":900,
+    "DEF":1200
+  },
+  {  
+    "Name":"Silver Fang",
+    "Level":3,
+    "ATK":1200,
+    "DEF":800
+  },
+  {  
+    "Name":"Skull Dog Marron",
+    "Level":4,
+    "ATK":1350,
+    "DEF":2000
+  },
+  {  
+    "Name":"Skull Mariner",
+    "Level":4,
+    "ATK":1600,
+    "DEF":900
+  },
+  {  
+    "Name":"Hinotama Soul",
+    "Level":2,
+    "ATK":600,
+    "DEF":500
+  },
+  {  
+    "Name":"Hitotsu-Me Giant",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1000
+  },
+  {  
+    "Name":"Humanoid Slime",
+    "Level":4,
+    "ATK":800,
+    "DEF":2000
+  },
+  {  
+    "Name":"Hunter Dragon",
+    "Level":3,
+    "ATK":1700,
+    "DEF":100
+  },
+  {  
+    "Name":"Hunter Spider",
+    "Level":5,
+    "ATK":1600,
+    "DEF":1400
+  },
+  {  
+    "Name":"Hyosube",
+    "Level":4,
+    "ATK":1500,
+    "DEF":900
+  },
+  {  
+    "Name":"Hyozanryu",
+    "Level":7,
+    "ATK":2100,
+    "DEF":2800
+  },
+  {  
+    "Name":"Igknight Cavalier",
+    "Level":5,
+    "ATK":2400,
+    "DEF":1200
+  },
+  {  
+    "Name":"Igknight Crusader",
+    "Level":3,
+    "ATK":1600,
+    "DEF":300
+  },
+  {  
+    "Name":"Igknight Gallant",
+    "Level":6,
+    "ATK":2100,
+    "DEF":2200
+  },
+  {  
+    "Name":"Igknight Margrave",
+    "Level":5,
+    "ATK":1500,
+    "DEF":2500
+  },
+  {  
+    "Name":"Igknight Paladin",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1900
+  },
+  {  
+    "Name":"Igknight Squire",
+    "Level":3,
+    "ATK":0,
+    "DEF":2000
+  },
+  {  
+    "Name":"Igknight Templar",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1300
+  },
+  {  
+    "Name":"Igknight Veteran",
+    "Level":6,
+    "ATK":1300,
+    "DEF":2700
+  },
+  {  
+    "Name":"Illusionist Faceless Mage",
+    "Level":5,
+    "ATK":1200,
+    "DEF":2200
+  },
+  {  
+    "Name":"Inpachi",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1900
+  },
+  {  
+    "Name":"Insect Knight",
+    "Level":4,
+    "ATK":1900,
+    "DEF":1500
+  },
+  {  
+    "Name":"Invader from Another Dimension",
+    "Level":4,
+    "ATK":950,
+    "DEF":1400
+  },
+  {  
+    "Name":"Island Turtle",
+    "Level":4,
+    "ATK":1100,
+    "DEF":2000
+  },
+  {  
+    "Name":"Jack's Knight",
+    "Level":5,
+    "ATK":1900,
+    "DEF":1000
+  },
+  {  
+    "Name":"Jellyfish",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1500
+  },
+  {  
+    "Name":"Jerry Beans Man",
+    "Level":3,
+    "ATK":1750,
+    "DEF":0
+  },
+  {  
+    "Name":"Judge Man",
+    "Level":6,
+    "ATK":2200,
+    "DEF":1500
+  },
+  {  
+    "Name":"Kabazauls",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1500
+  },
+  {  
+    "Name":"Kagemusha of the Blue Flame",
+    "Level":2,
+    "ATK":800,
+    "DEF":400
+  },
+  {  
+    "Name":"Kageningen",
+    "Level":2,
+    "ATK":800,
+    "DEF":600
+  },
+  {  
+    "Name":"Kanan the Swordmistress",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1400
+  },
+  {  
+    "Name":"Key Mace",
+    "Level":1,
+    "ATK":400,
+    "DEF":300
+  },
+  {  
+    "Name":"Key Mace #2",
+    "Level":4,
+    "ATK":1050,
+    "DEF":1200
+  },
+  {  
+    "Name":"Killer Needle",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1000
+  },
+  {  
+    "Name":"King Fog",
+    "Level":3,
+    "ATK":1000,
+    "DEF":900
+  },
+  {  
+    "Name":"King of Yamimakai",
+    "Level":5,
+    "ATK":2000,
+    "DEF":1530
+  },
+  {  
+    "Name":"Kojikocy",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Koumori Dragon",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Kozaky",
+    "Level":1,
+    "ATK":400,
+    "DEF":400
+  },
+  {  
+    "Name":"Kumootoko",
+    "Level":3,
+    "ATK":700,
+    "DEF":1400
+  },
+  {  
+    "Name":"Kurama",
+    "Level":3,
+    "ATK":800,
+    "DEF":800
+  },
+  {  
+    "Name":"Kuwagata α",
+    "Level":4,
+    "ATK":1250,
+    "DEF":1000
+  },
+  {  
+    "Name":"La Jinn the Mystical Genie of the Lamp",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1000
+  },
+  {  
+    "Name":"Labradorite Dragon",
+    "Level":6,
+    "ATK":0,
+    "DEF":2400
+  },
+  {  
+    "Name":"Labyrinth Wall",
+    "Level":5,
+    "ATK":0,
+    "DEF":3000
+  },
+  {  
+    "Name":"Lady of Faith",
+    "Level":3,
+    "ATK":1100,
+    "DEF":800
+  },
+  {  
+    "Name":"Lancephorhynchus",
+    "Level":6,
+    "ATK":2500,
+    "DEF":800
+  },
+  {  
+    "Name":"Larvas",
+    "Level":3,
+    "ATK":800,
+    "DEF":1000
+  },
+  {  
+    "Name":"Launcher Spider",
+    "Level":7,
+    "ATK":2200,
+    "DEF":2500
+  },
+  {  
+    "Name":"Left Arm of the Forbidden One",
+    "Level":1,
+    "ATK":200,
+    "DEF":300
+  },
+  {  
+    "Name":"Left Leg of the Forbidden One",
+    "Level":1,
+    "ATK":200,
+    "DEF":300
+  },
+  {  
+    "Name":"Leogun",
+    "Level":5,
+    "ATK":1750,
+    "DEF":1550
+  },
+  {  
+    "Name":"Leonardo's Silver Skyship",
+    "Level":7,
+    "ATK":0,
+    "DEF":3000
+  },
+  {  
+    "Name":"Lesser Dragon",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1000
+  },
+  {  
+    "Name":"Lightning Conger",
+    "Level":3,
+    "ATK":350,
+    "DEF":750
+  },
+  {  
+    "Name":"Liquid Beast",
+    "Level":3,
+    "ATK":950,
+    "DEF":800
+  },
+  {  
+    "Name":"Little D",
+    "Level":3,
+    "ATK":1100,
+    "DEF":700
+  },
+  {  
+    "Name":"Lizard Soldier",
+    "Level":3,
+    "ATK":1100,
+    "DEF":800
+  },
+  {  
+    "Name":"Lord of the Lamp",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1200
+  },
+  {  
+    "Name":"Luster Dragon",
+    "Level":4,
+    "ATK":1900,
+    "DEF":1600
+  },
+  {  
+    "Name":"Luster Dragon #2",
+    "Level":6,
+    "ATK":2400,
+    "DEF":1400
+  },
+  {  
+    "Name":"M-Warrior #1",
+    "Level":3,
+    "ATK":1000,
+    "DEF":500
+  },
+  {  
+    "Name":"M-Warrior #2",
+    "Level":3,
+    "ATK":500,
+    "DEF":1000
+  },
+  {  
+    "Name":"Mad Dog of Darkness",
+    "Level":4,
+    "ATK":1900,
+    "DEF":1400
+  },
+  {  
+    "Name":"Mad Lobster",
+    "Level":3,
+    "ATK":1700,
+    "DEF":1000
+  },
+  {  
+    "Name":"Magical Ghost",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1400
+  },
+  {  
+    "Name":"Maiden of the Moonlight",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1300
+  },
+  {  
+    "Name":"Mammoth Graveyard",
+    "Level":3,
+    "ATK":1200,
+    "DEF":800
+  },
+  {  
+    "Name":"Man Eater",
+    "Level":2,
+    "ATK":800,
+    "DEF":600
+  },
+  {  
+    "Name":"Man-Eating Treasure Chest",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1000
+  },
+  {  
+    "Name":"Mandragon",
+    "Level":5,
+    "ATK":2500,
+    "DEF":1000
+  },
+  {  
+    "Name":"Masaki the Legendary Swordsman",
+    "Level":4,
+    "ATK":1100,
+    "DEF":1100
+  },
+  {  
+    "Name":"Master & Expert",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1000
+  },
+  {  
+    "Name":"Master Kyonshee",
+    "Level":4,
+    "ATK":1750,
+    "DEF":1000
+  },
+  {  
+    "Name":"Master Pendulum, the Dracoslayer",
+    "Level":4,
+    "ATK":1950,
+    "DEF":0
+  },
+  {  
+    "Name":"Mechanical Snail",
+    "Level":3,
+    "ATK":800,
+    "DEF":1000
+  },
+  {  
+    "Name":"Mechanicalchaser",
+    "Level":4,
+    "ATK":1850,
+    "DEF":800
+  },
+  {  
+    "Name":"Meda Bat",
+    "Level":2,
+    "ATK":800,
+    "DEF":400
+  },
+  {  
+    "Name":"Mega Thunderball",
+    "Level":2,
+    "ATK":750,
+    "DEF":600
+  },
+  {  
+    "Name":"Megalosmasher X",
+    "Level":4,
+    "ATK":2000,
+    "DEF":0
+  },
+  {  
+    "Name":"Megasonic Eye",
+    "Level":5,
+    "ATK":1500,
+    "DEF":1800
+  },
+  {  
+    "Name":"Megazowler",
+    "Level":6,
+    "ATK":1800,
+    "DEF":2000
+  },
+  {  
+    "Name":"Mekk-Knight Avram",
+    "Level":4,
+    "ATK":2000,
+    "DEF":0
+  },
+  {  
+    "Name":"Melchid the Four-Face Beast",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Meotoko",
+    "Level":2,
+    "ATK":700,
+    "DEF":600
+  },
+  {  
+    "Name":"Metal Armored Bug",
+    "Level":8,
+    "ATK":2800,
+    "DEF":1500
+  },
+  {  
+    "Name":"Metal Fish",
+    "Level":5,
+    "ATK":1600,
+    "DEF":1900
+  },
+  {  
+    "Name":"Metal Guardian",
+    "Level":5,
+    "ATK":1150,
+    "DEF":2150
+  },
+  {  
+    "Name":"Metalfoes Goldriver",
+    "Level":4,
+    "ATK":1900,
+    "DEF":500
+  },
+  {  
+    "Name":"Metalfoes Silverd",
+    "Level":3,
+    "ATK":1700,
+    "DEF":100
+  },
+  {  
+    "Name":"Metalfoes Steelen",
+    "Level":2,
+    "ATK":0,
+    "DEF":2100
+  },
+  {  
+    "Name":"Metalfoes Volflame",
+    "Level":7,
+    "ATK":2400,
+    "DEF":2000
+  },
+  {  
+    "Name":"Metaphys Armed Dragon",
+    "Level":7,
+    "ATK":2800,
+    "DEF":1000
+  },
+  {  
+    "Name":"Meteor Dragon",
+    "Level":6,
+    "ATK":1800,
+    "DEF":2000
+  },
+  {  
+    "Name":"Mighty Guard",
+    "Level":4,
+    "ATK":500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Mikazukinoyaiba",
+    "Level":7,
+    "ATK":2200,
+    "DEF":2350
+  },
+  {  
+    "Name":"Mild Turkey",
+    "Level":4,
+    "ATK":1000,
+    "DEF":2000
+  },
+  {  
+    "Name":"Millennium Golem",
+    "Level":6,
+    "ATK":2000,
+    "DEF":2200
+  },
+  {  
+    "Name":"Millennium Shield",
+    "Level":5,
+    "ATK":0,
+    "DEF":3000
+  },
+  {  
+    "Name":"Misairuzame",
+    "Level":5,
+    "ATK":1400,
+    "DEF":1600
+  },
+  {  
+    "Name":"Mist Valley Watcher",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1900
+  },
+  {  
+    "Name":"Mokey Mokey",
+    "Level":1,
+    "ATK":300,
+    "DEF":100
+  },
+  {  
+    "Name":"Molten Behemoth",
+    "Level":5,
+    "ATK":1000,
+    "DEF":2200
+  },
+  {  
+    "Name":"7 Colored Fish",
+    "Level":4,
+    "ATK":1800,
+    "DEF":800
+  },
+  {  
+    "Name":"Acrobat Monkey",
+    "Level":3,
+    "ATK":1000,
+    "DEF":1800
+  },
+  {  
+    "Name":"Aitsu",
+    "Level":5,
+    "ATK":100,
+    "DEF":100
+  },
+  {  
+    "Name":"Alexandrite Dragon",
+    "Level":4,
+    "ATK":2000,
+    "DEF":100
+  },
+  {  
+    "Name":"Alien Shocktrooper",
+    "Level":4,
+    "ATK":1900,
+    "DEF":800
+  },
+  {  
+    "Name":"Alligator's Sword",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Ally Mind",
+    "Level":5,
+    "ATK":1800,
+    "DEF":1400
+  },
+  {  
+    "Name":"Ally of Justice Clausolas",
+    "Level":6,
+    "ATK":2300,
+    "DEF":1200
+  },
+  {  
+    "Name":"Alpha The Magnet Warrior",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1700
+  },
+  {  
+    "Name":"Amazon of the Seas",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1400
+  },
+  {  
+    "Name":"Amphibian Beast",
+    "Level":6,
+    "ATK":2400,
+    "DEF":2000
+  },
+  {  
+    "Name":"Ancient Brain",
+    "Level":3,
+    "ATK":1000,
+    "DEF":700
+  },
+  {  
+    "Name":"Ancient Elf",
+    "Level":4,
+    "ATK":1450,
+    "DEF":1200
+  },
+  {  
+    "Name":"Ancient Lizard Warrior",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1100
+  },
+  {  
+    "Name":"Ancient One of the Deep Forest",
+    "Level":6,
+    "ATK":1800,
+    "DEF":1900
+  },
+  {  
+    "Name":"Ancient Tool",
+    "Level":5,
+    "ATK":1700,
+    "DEF":1400
+  },
+  {  
+    "Name":"Angel Trumpeter",
+    "Level":4,
+    "ATK":1900,
+    "DEF":1600
+  },
+  {  
+    "Name":"Ansatsu",
+    "Level":5,
+    "ATK":1700,
+    "DEF":1200
+  },
+  {  
+    "Name":"Anthrosaurus",
+    "Level":3,
+    "ATK":1000,
+    "DEF":850
+  },
+  {  
+    "Name":"Aqua Madoor",
+    "Level":4,
+    "ATK":1200,
+    "DEF":2000
+  },
+  {  
+    "Name":"Archfiend Marmot of Nefariousness",
+    "Level":2,
+    "ATK":400,
+    "DEF":600
+  },
+  {  
+    "Name":"Archfiend Soldier",
+    "Level":4,
+    "ATK":1900,
+    "DEF":1500
+  },
+  {  
+    "Name":"Armaill",
+    "Level":3,
+    "ATK":700,
+    "DEF":1300
+  },
+  {  
+    "Name":"Armored Lizard",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Armored Starfish",
+    "Level":4,
+    "ATK":850,
+    "DEF":1400
+  },
+  {  
+    "Name":"Armored Zombie",
+    "Level":3,
+    "ATK":1500,
+    "DEF":0
+  },
+  {  
+    "Name":"Atlantean Pikeman",
+    "Level":2,
+    "ATK":1400,
+    "DEF":0
+  },
+  {  
+    "Name":"Axe Raider",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1150
+  },
+  {  
+    "Name":"Baby Dragon",
+    "Level":3,
+    "ATK":1200,
+    "DEF":700
+  },
+  {  
+    "Name":"Baron of the Fiend Sword",
+    "Level":4,
+    "ATK":1550,
+    "DEF":800
+  },
+  {  
+    "Name":"Basic Insect",
+    "Level":2,
+    "ATK":500,
+    "DEF":700
+  },
+  {  
+    "Name":"Battle Footballer",
+    "Level":4,
+    "ATK":1000,
+    "DEF":2100
+  },
+  {  
+    "Name":"Battle Ox",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1000
+  },
+  {  
+    "Name":"Battle Steer",
+    "Level":5,
+    "ATK":1800,
+    "DEF":1300
+  },
+  {  
+    "Name":"Battle Warrior",
+    "Level":3,
+    "ATK":700,
+    "DEF":1000
+  },
+  {  
+    "Name":"Bean Soldier",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1300
+  },
+  {  
+    "Name":"Beast of Talwar",
+    "Level":6,
+    "ATK":2400,
+    "DEF":2150
+  },
+  {  
+    "Name":"Beautiful Headhuntress",
+    "Level":4,
+    "ATK":1600,
+    "DEF":800
+  },
+  {  
+    "Name":"Beaver Warrior",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1500
+  },
+  {  
+    "Name":"Beckoned by the World Chalice",
+    "Level":4,
+    "ATK":1800,
+    "DEF":0
+  },
+  {  
+    "Name":"Behegon",
+    "Level":4,
+    "ATK":1350,
+    "DEF":1000
+  },
+  {  
+    "Name":"Beta The Magnet Warrior",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1600
+  },
+  {  
+    "Name":"Big Koala",
+    "Level":7,
+    "ATK":2700,
+    "DEF":2000
+  },
+  {  
+    "Name":"Bio-Mage",
+    "Level":3,
+    "ATK":1150,
+    "DEF":1000
+  },
+  {  
+    "Name":"Bitron",
+    "Level":2,
+    "ATK":200,
+    "DEF":2000
+  },
+  {  
+    "Name":"Blackland Fire Dragon",
+    "Level":4,
+    "ATK":1500,
+    "DEF":800
+  },
+  {  
+    "Name":"Blade Skater",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1500
+  },
+  {  
+    "Name":"Blazing Inpachi",
+    "Level":4,
+    "ATK":1850,
+    "DEF":0
+  },
+  {  
+    "Name":"Blocker",
+    "Level":4,
+    "ATK":850,
+    "DEF":1800
+  },
+  {  
+    "Name":"Blue-Eyes White Dragon",
+    "Level":8,
+    "ATK":3000,
+    "DEF":2500
+  },
+  {  
+    "Name":"Blue-Winged Crown",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1200
+  },
+  {  
+    "Name":"Bokoichi the Freightening Car",
+    "Level":2,
+    "ATK":500,
+    "DEF":500
+  },
+  {  
+    "Name":"Bolt Penguin",
+    "Level":3,
+    "ATK":1100,
+    "DEF":800
+  },
+  {  
+    "Name":"Boneheimer",
+    "Level":3,
+    "ATK":850,
+    "DEF":400
+  },
+  {  
+    "Name":"Bottom Dweller",
+    "Level":5,
+    "ATK":1650,
+    "DEF":1700
+  },
+  {  
+    "Name":"Bujin Hiruko",
+    "Level":4,
+    "ATK":1000,
+    "DEF":2000
+  },
+  {  
+    "Name":"Bunilla",
+    "Level":1,
+    "ATK":150,
+    "DEF":2050
+  },
+  {  
+    "Name":"Burglar",
+    "Level":3,
+    "ATK":850,
+    "DEF":800
+  },
+  {  
+    "Name":"Celtic Guardian",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1200
+  },
+  {  
+    "Name":"Chamberlain of the Six Samurai",
+    "Level":3,
+    "ATK":200,
+    "DEF":2000
+  },
+  {  
+    "Name":"Charcoal Inpachi",
+    "Level":1,
+    "ATK":100,
+    "DEF":2100
+  },
+  {  
+    "Name":"Chosen by the World Chalice",
+    "Level":3,
+    "ATK":1600,
+    "DEF":0
+  },
+  {  
+    "Name":"Chu-Ske the Mouse Fighter",
+    "Level":3,
+    "ATK":1200,
+    "DEF":0
+  },
+  {  
+    "Name":"Claw Reacher",
+    "Level":3,
+    "ATK":1000,
+    "DEF":800
+  },
+  {  
+    "Name":"Cloudian - Smoke Ball",
+    "Level":1,
+    "ATK":200,
+    "DEF":600
+  },
+  {  
+    "Name":"Clown Zombie",
+    "Level":2,
+    "ATK":1350,
+    "DEF":0
+  },
+  {  
+    "Name":"Corroding Shark",
+    "Level":3,
+    "ATK":1100,
+    "DEF":700
+  },
+  {  
+    "Name":"Cosmo Queen",
+    "Level":8,
+    "ATK":2900,
+    "DEF":2450
+  },
+  {  
+    "Name":"Crawling Dragon",
+    "Level":5,
+    "ATK":1600,
+    "DEF":1400
+  },
+  {  
+    "Name":"Crawling Dragon #2",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1200
+  },
+  {  
+    "Name":"Crowned by the World Chalice",
+    "Level":2,
+    "ATK":0,
+    "DEF":2100
+  },
+  {  
+    "Name":"Curse of Dragon",
+    "Level":5,
+    "ATK":2000,
+    "DEF":1500
+  },
+  {  
+    "Name":"Curtain of the Dark Ones",
+    "Level":2,
+    "ATK":600,
+    "DEF":500
+  },
+  {  
+    "Name":"Cyber Falcon",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1200
+  },
+  {  
+    "Name":"Cyber Soldier of Darkworld",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1200
+  },
+  {  
+    "Name":"Cyber-Tech Alligator",
+    "Level":5,
+    "ATK":2500,
+    "DEF":1600
+  },
+  {  
+    "Name":"Cycroid",
+    "Level":3,
+    "ATK":800,
+    "DEF":1000
+  },
+  {  
+    "Name":"D. Human",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1100
+  },
+  {  
+    "Name":"D.D. Trainer",
+    "Level":1,
+    "ATK":100,
+    "DEF":2000
+  },
+  {  
+    "Name":"Dancing Elf",
+    "Level":1,
+    "ATK":300,
+    "DEF":200
+  },
+  {  
+    "Name":"Dark Assailant",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1200
+  },
+  {  
+    "Name":"Dark Bat",
+    "Level":3,
+    "ATK":1000,
+    "DEF":1000
+  },
+  {  
+    "Name":"Dark Blade",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1500
+  },
+  {  
+    "Name":"Dark Gray",
+    "Level":3,
+    "ATK":800,
+    "DEF":900
+  },
+  {  
+    "Name":"Dark King of the Abyss",
+    "Level":3,
+    "ATK":1200,
+    "DEF":800
+  },
+  {  
+    "Name":"Dark Magician",
+    "Level":7,
+    "ATK":2500,
+    "DEF":2100
+  },
+  {  
+    "Name":"Dark Rabbit",
+    "Level":4,
+    "ATK":1100,
+    "DEF":1500
+  },
+  {  
+    "Name":"Dark Titan of Terror",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1100
+  },
+  {  
+    "Name":"Dark Witch",
+    "Level":5,
+    "ATK":1800,
+    "DEF":1700
+  },
+  {  
+    "Name":"Darkfire Soldier #1",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1150
+  },
+  {  
+    "Name":"Darkfire Soldier #2",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1100
+  },
+  {  
+    "Name":"Darkworld Thorns",
+    "Level":3,
+    "ATK":1200,
+    "DEF":900
+  },
+  {  
+    "Name":"Destroyer Golem",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1000
+  },
+  {  
+    "Name":"Dharma Cannon",
+    "Level":2,
+    "ATK":900,
+    "DEF":500
+  },
+  {  
+    "Name":"Dig Beak",
+    "Level":2,
+    "ATK":500,
+    "DEF":800
+  },
+  {  
+    "Name":"Digitron",
+    "Level":2,
+    "ATK":1500,
+    "DEF":0
+  },
+  {  
+    "Name":"Disk Magician",
+    "Level":4,
+    "ATK":1350,
+    "DEF":1000
+  },
+  {  
+    "Name":"Dissolverock",
+    "Level":3,
+    "ATK":900,
+    "DEF":1000
+  },
+  {  
+    "Name":"Divine Dragon Ragnarok",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1000
+  },
+  {  
+    "Name":"Dokuroyaiba",
+    "Level":3,
+    "ATK":1000,
+    "DEF":400
+  },
+  {  
+    "Name":"Doma The Angel of Silence",
+    "Level":5,
+    "ATK":1600,
+    "DEF":1400
+  },
+  {  
+    "Name":"Dragon Core Hexer",
+    "Level":8,
+    "ATK":2300,
+    "DEF":3000
+  },
+  {  
+    "Name":"Dragon Horn Hunter",
+    "Level":6,
+    "ATK":2300,
+    "DEF":1000
+  },
+  {  
+    "Name":"Dragon Zombie",
+    "Level":3,
+    "ATK":1600,
+    "DEF":0
+  },
+  {  
+    "Name":"Dragong",
+    "Level":4,
+    "ATK":500,
+    "DEF":2100
+  },
+  {  
+    "Name":"Dragonpit Magician",
+    "Level":7,
+    "ATK":900,
+    "DEF":2700
+  },
+  {  
+    "Name":"Dragonpulse Magician",
+    "Level":4,
+    "ATK":1800,
+    "DEF":900
+  },
+  {  
+    "Name":"Dragoons of Draconia",
+    "Level":4,
+    "ATK":1800,
+    "DEF":200
+  },
+  {  
+    "Name":"Droll Bird",
+    "Level":2,
+    "ATK":600,
+    "DEF":500
+  },
+  {  
+    "Name":"Drooling Lizard",
+    "Level":3,
+    "ATK":900,
+    "DEF":800
+  },
+  {  
+    "Name":"Dunames Dark Witch",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1050
+  },
+  {  
+    "Name":"Dungeon Worm",
+    "Level":5,
+    "ATK":1800,
+    "DEF":1500
+  },
+  {  
+    "Name":"Earthbound Spirit",
+    "Level":4,
+    "ATK":500,
+    "DEF":2000
+  },
+  {  
+    "Name":"Elemental HERO Avian",
+    "Level":3,
+    "ATK":1000,
+    "DEF":1000
+  },
+  {  
+    "Name":"Elemental HERO Burstinatrix",
+    "Level":3,
+    "ATK":1200,
+    "DEF":800
+  },
+  {  
+    "Name":"Elemental HERO Clayman",
+    "Level":4,
+    "ATK":800,
+    "DEF":2000
+  },
+  {  
+    "Name":"Elemental HERO Neos",
+    "Level":7,
+    "ATK":2500,
+    "DEF":2000
+  },
+  {  
+    "Name":"Elemental HERO Sparkman",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1400
+  },
+  {  
+    "Name":"Empress Mantis",
+    "Level":6,
+    "ATK":2200,
+    "DEF":1400
+  },
+  {  
+    "Name":"Enchanting Mermaid",
+    "Level":3,
+    "ATK":1200,
+    "DEF":900
+  },
+  {  
+    "Name":"Evilswarm Heliotrope",
+    "Level":4,
+    "ATK":1950,
+    "DEF":650
+  },
+  {  
+    "Name":"Fairy Dragon",
+    "Level":4,
+    "ATK":1100,
+    "DEF":1200
+  },
+  {  
+    "Name":"Fairy's Gift",
+    "Level":4,
+    "ATK":1400,
+    "DEF":1000
+  },
+  {  
+    "Name":"Faith Bird",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1100
+  },
+  {  
+    "Name":"Feral Imp",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1400
+  },
+  {  
+    "Name":"Fiend Reflection #2",
+    "Level":4,
+    "ATK":1100,
+    "DEF":1400
+  },
+  {  
+    "Name":"Fiend Scorpion",
+    "Level":2,
+    "ATK":900,
+    "DEF":200
+  },
+  {  
+    "Name":"Fire Kraken",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1500
+  },
+  {  
+    "Name":"Firegrass",
+    "Level":2,
+    "ATK":700,
+    "DEF":600
+  },
+  {  
+    "Name":"Firewing Pegasus",
+    "Level":6,
+    "ATK":2250,
+    "DEF":1800
+  },
+  {  
+    "Name":"Fireyarou",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1000
+  },
+  {  
+    "Name":"Flame Cerebrus",
+    "Level":6,
+    "ATK":2100,
+    "DEF":1800
+  },
+  {  
+    "Name":"Flame Champion",
+    "Level":5,
+    "ATK":1900,
+    "DEF":1300
+  },
+  {  
+    "Name":"Flame Dancer",
+    "Level":2,
+    "ATK":550,
+    "DEF":450
+  },
+  {  
+    "Name":"Flame Manipulator",
+    "Level":3,
+    "ATK":900,
+    "DEF":1000
+  },
+  {  
+    "Name":"Flame Viper",
+    "Level":2,
+    "ATK":400,
+    "DEF":450
+  },
+  {  
+    "Name":"Flamvell Guard",
+    "Level":1,
+    "ATK":100,
+    "DEF":2000
+  },
+  {  
+    "Name":"Flash Knight",
+    "Level":4,
+    "ATK":1800,
+    "DEF":600
+  },
+  {  
+    "Name":"Flying Fish",
+    "Level":4,
+    "ATK":800,
+    "DEF":500
+  },
+  {  
+    "Name":"Flying Kamakiri #2",
+    "Level":4,
+    "ATK":1500,
+    "DEF":800
+  },
+  {  
+    "Name":"Flying Penguin",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1000
+  },
+  {  
+    "Name":"Foucault's Cannon",
+    "Level":5,
+    "ATK":2200,
+    "DEF":1200
+  },
+  {  
+    "Name":"Frenzied Panda",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1000
+  },
+  {  
+    "Name":"Frostosaurus",
+    "Level":6,
+    "ATK":2600,
+    "DEF":1700
+  },
+  {  
+    "Name":"Gadget Soldier",
+    "Level":6,
+    "ATK":1800,
+    "DEF":2000
+  },
+  {  
+    "Name":"Gagagigo",
+    "Level":4,
+    "ATK":1850,
+    "DEF":1000
+  },
+  {  
+    "Name":"Gaia The Fierce Knight",
+    "Level":7,
+    "ATK":2300,
+    "DEF":2100
+  },
+  {  
+    "Name":"Galaxy Serpent",
+    "Level":2,
+    "ATK":1000,
+    "DEF":0
+  },
+  {  
+    "Name":"Gamma The Magnet Warrior",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1800
+  },
+  {  
+    "Name":"Garnecia Elefantis",
+    "Level":7,
+    "ATK":2400,
+    "DEF":2000
+  },
+  {  
+    "Name":"Garoozis",
+    "Level":5,
+    "ATK":1800,
+    "DEF":1500
+  },
+  {  
+    "Name":"Gatekeeper",
+    "Level":5,
+    "ATK":1500,
+    "DEF":1800
+  },
+  {  
+    "Name":"Gazelle the King of Mythical Beasts",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Gem-Knight Crystal",
+    "Level":7,
+    "ATK":2450,
+    "DEF":1950
+  },
+  {  
+    "Name":"Gem-Knight Garnet",
+    "Level":4,
+    "ATK":1900,
+    "DEF":0
+  },
+  {  
+    "Name":"Gem-Knight Lapis",
+    "Level":3,
+    "ATK":1200,
+    "DEF":100
+  },
+  {  
+    "Name":"Gem-Knight Sapphire",
+    "Level":4,
+    "ATK":0,
+    "DEF":2100
+  },
+  {  
+    "Name":"Gem-Knight Tourmaline",
+    "Level":4,
+    "ATK":1600,
+    "DEF":1800
+  },
+  {  
+    "Name":"Gemini Elf",
+    "Level":4,
+    "ATK":1900,
+    "DEF":900
+  },
+  {  
+    "Name":"Gene-Warped Warwolf",
+    "Level":4,
+    "ATK":2000,
+    "DEF":100
+  },
+  {  
+    "Name":"Genex Controller",
+    "Level":3,
+    "ATK":1400,
+    "DEF":1200
+  },
+  {  
+    "Name":"Ghost Beef",
+    "Level":7,
+    "ATK":2000,
+    "DEF":1000
+  },
+  {  
+    "Name":"Giant Flea",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1200
+  },
+  {  
+    "Name":"Giant Red Seasnake",
+    "Level":4,
+    "ATK":1800,
+    "DEF":800
+  },
+  {  
+    "Name":"Giant Soldier of Stone",
+    "Level":3,
+    "ATK":1300,
+    "DEF":2000
+  },
+  {  
+    "Name":"Giant Turtle Who Feeds on Flames",
+    "Level":5,
+    "ATK":1400,
+    "DEF":1800
+  },
+  {  
+    "Name":"Giga Gagagigo",
+    "Level":5,
+    "ATK":2450,
+    "DEF":1500
+  },
+  {  
+    "Name":"Giga-Tech Wolf",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1400
+  },
+  {  
+    "Name":"Giganto",
+    "Level":5,
+    "ATK":1700,
+    "DEF":1800
+  },
+  {  
+    "Name":"Gigobyte",
+    "Level":1,
+    "ATK":350,
+    "DEF":300
+  },
+  {  
+    "Name":"Gil Garth",
+    "Level":4,
+    "ATK":1800,
+    "DEF":1200
+  },
+  {  
+    "Name":"Girochin Kuwagata",
+    "Level":4,
+    "ATK":1700,
+    "DEF":1000
+  },
+  {  
+    "Name":"Gladiator Beast Andal",
+    "Level":4,
+    "ATK":1900,
+    "DEF":1500
+  },
+  {  
+    "Name":"Goblin Calligrapher",
+    "Level":1,
+    "ATK":400,
+    "DEF":400
+  },
+  {  
+    "Name":"Gogiga Gagagigo",
+    "Level":8,
+    "ATK":2950,
+    "DEF":2800
+  },
+  {  
+    "Name":"Gokibore",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1400
+  },
+  {  
+    "Name":"Gradius",
+    "Level":4,
+    "ATK":1200,
+    "DEF":800
+  },
+  {  
+    "Name":"Grand Tiki Elder",
+    "Level":4,
+    "ATK":1500,
+    "DEF":800
+  },
+  {  
+    "Name":"Great Angus",
+    "Level":4,
+    "ATK":1800,
+    "DEF":600
+  },
+  {  
+    "Name":"Great Bill",
+    "Level":4,
+    "ATK":1250,
+    "DEF":1300
+  },
+  {  
+    "Name":"Great White",
+    "Level":4,
+    "ATK":1600,
+    "DEF":800
+  },
+  {  
+    "Name":"Green Phantom King",
+    "Level":3,
+    "ATK":500,
+    "DEF":1600
+  },
+  {  
+    "Name":"Griffore",
+    "Level":4,
+    "ATK":1200,
+    "DEF":1500
+  },
+  {  
+    "Name":"Ground Attacker Bugroth",
+    "Level":4,
+    "ATK":1500,
+    "DEF":1000
+  },
+  {  
+    "Name":"Gruesome Goo",
+    "Level":3,
+    "ATK":1300,
+    "DEF":700
+  },
+  {  
+    "Name":"Guardian of the Labyrinth",
+    "Level":4,
+    "ATK":1000,
+    "DEF":1200
+  },
+  {  
+    "Name":"Guardian of the Throne Room",
+    "Level":4,
+    "ATK":1650,
+    "DEF":1600
+  },
+  {  
+    "Name":"Gyakutenno Megami",
+    "Level":6,
+    "ATK":1800,
+    "DEF":2000
+  },
+  {  
+    "Name":"Hallohallo",
+    "Level":3,
+    "ATK":800,
+    "DEF":600
+  },
+  {  
+    "Name":"Haniwa",
+    "Level":2,
+    "ATK":500,
+    "DEF":500
+  },
+  {  
+    "Name":"Happy Lover",
+    "Level":2,
+    "ATK":800,
+    "DEF":500
+  },
+  {  
+    "Name":"Hard Armor",
+    "Level":3,
+    "ATK":300,
+    "DEF":1200
+  },
+  {  
+    "Name":"Harpie Girl",
+    "Level":2,
+    "ATK":500,
+    "DEF":500
+  },
+  {  
+    "Name":"Harpie Lady",
+    "Level":4,
+    "ATK":1300,
+    "DEF":1400
+  },
+  {  
+    "Name":"Headless Knight",
+    "Level":4,
+    "ATK":1450,
+    "DEF":1700
+  },
+  {  
+    "Name":"Hercules Beetle",
+    "Level":5,
+    "ATK":1500,
+    "DEF":2000
+  },
+  {  
+    "Name":"Hero of the East",
+    "Level":3,
+    "ATK":1100,
+    "DEF":1000
+  },
+  {  
+    "Name":"Hibikime",
+    "Level":4,
+    "ATK":1450,
+    "DEF":1000
+  },
+  {  
+    "Name":"Hieratic Seal of the Sun Dragon Overlord",
+    "Level":8,
+    "ATK":0,
+    "DEF":0
+  },
+  {  
+    "Name":"High Tide Gyojin",
+    "Level":4,
+    "ATK":1650,
+    "DEF":1300
+  }
+]

@@ -170,7 +170,7 @@ public class Entrega1tests {
 		factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
 		factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
 		
-		CartaMagica agujeroNegro = CartaFactory.crearCartaAgujeroNegro(atacante);
+		CartaMagica agujeroNegro = factoryAtacante.crearCartaAgujeroNegro();
 		atacante.colocarCartaEnZona(agujeroNegro, 0);
 		agujeroNegro.colocarBocaArriba(atacado);
 		

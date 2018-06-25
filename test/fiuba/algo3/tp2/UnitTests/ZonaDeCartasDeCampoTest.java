@@ -16,7 +16,7 @@ public class ZonaDeCartasDeCampoTest {
 		Jugador jugador = new Jugador();
 		Jugador oponente = new Jugador();
 		Efecto efecto = new Efecto();
-		CartaCampo carta = new CartaCampo(jugador, efecto);
+		CartaCampo carta = new CartaCampo("Carta Campo Generica", jugador, efecto);
 		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
 		zona.agregarCarta(carta, oponente);
 		assertTrue(zona.obtenerCartas().contains(carta));
@@ -29,7 +29,7 @@ public class ZonaDeCartasDeCampoTest {
 		Jugador oponente = new Jugador();
 		Efecto efecto = new Efecto();
 		
-		CartaCampo carta = new CartaCampo(jugador, efecto);
+		CartaCampo carta = new CartaCampo("Carta Campo Generica",  jugador, efecto);
 		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
 		zona.agregarCarta(carta, oponente);
 		zona.eliminarCarta(carta);
@@ -42,7 +42,7 @@ public class ZonaDeCartasDeCampoTest {
 		Jugador oponente = new Jugador();
 		Efecto efecto = new Efecto();
 		
-		CartaCampo carta = new CartaCampo(jugador, efecto);
+		CartaCampo carta = new CartaCampo("Carta Campo Generica",  jugador, efecto);
 		ZonaDeCartasDeCampo zona = new ZonaDeCartasDeCampo(jugador);
 		zona.agregarCarta(carta, oponente);
 		zona.eliminarCarta(carta);

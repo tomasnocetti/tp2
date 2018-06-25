@@ -119,7 +119,6 @@ public class Entrega2tests {
 		atacante.colocarCartaEnZona(jinzo7, 0, new ArrayList<CartaMonstruo>());
 		
 		jinzo7.activar(atacado);
-		
 	}
 
 	@Test

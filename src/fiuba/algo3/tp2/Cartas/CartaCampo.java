@@ -6,8 +6,8 @@ import fiuba.algo3.tp2.Jugador;
 
 public class CartaCampo extends Carta{
 	
-	public CartaCampo(Jugador jugador, Efecto efecto) {
-		super(jugador, efecto);
+	public CartaCampo(String nombre, Jugador jugador, Efecto efecto) {
+		super(nombre, jugador, efecto);
 		this.posicion = new PosicionArriba();
 	}
 

@@ -1,15 +1,22 @@
 package fiuba.algo3.tp2.Cartas;
 
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.function.Predicate;
+import java.util.Random;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Efectos.EfectoAgujeroNegro;
@@ -18,16 +25,19 @@ import fiuba.algo3.Efectos.EfectoExodia;
 import fiuba.algo3.Efectos.EfectoFisura;
 import fiuba.algo3.Efectos.EfectoInsectoComeHombres;
 import fiuba.algo3.Efectos.EfectoJinzo7;
-import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.Efectos.EfectoMejoraAtaqueDefensa;
 import fiuba.algo3.Efectos.EfectoOllaDeLaCodicia;
 import fiuba.algo3.Efectos.EfectoReinforcements;
 
+
+
+
 public class CartaFactory {
 	
 	private Jugador jugador;
-
+	private static String archivoConCartasMonstruo = "cards.json";
+	
 	public CartaFactory(Jugador jugador) {
 		this.jugador = jugador;
 	}
@@ -52,49 +62,49 @@ public class CartaFactory {
 	
 	public CartaMagica crearCartaMagicaGenerica() {
 		Efecto efecto = new Efecto();
-		CartaMagica carta = new CartaMagica(jugador, efecto);
+		CartaMagica carta = new CartaMagica("Carta Magica Generica",jugador, efecto);
 		return carta;
 	}
 	
 	public CartaTrampa crearCartaTrampaGenerica() {
 		Efecto efecto = new Efecto();
-		CartaTrampa carta = new CartaTrampa(jugador, efecto);
+		CartaTrampa carta = new CartaTrampa("Carta trampa Generica", jugador, efecto);
 		return carta;
 	}
 	
 	public CartaCampo crearCartaCampoGenerica() {
 		Efecto efecto = new Efecto();
-		CartaCampo carta = new CartaCampo(jugador, efecto);
+		CartaCampo carta = new CartaCampo("Carta Campo Generica", jugador, efecto);
 		return carta;
 	}
 
-	public static CartaMagica crearCartaAgujeroNegro(Jugador jugador) {
+	public CartaMagica crearCartaAgujeroNegro() {
 		Efecto efecto = new EfectoAgujeroNegro();
-		CartaMagica carta = new CartaMagica(jugador, efecto);
+		CartaMagica carta = new CartaMagica("Agujero Negro", jugador, efecto);
 		return carta;
 	}
 	
 	public CartaCampo crearCartaWasteland() {
 		Efecto efecto = new EfectoMejoraAtaqueDefensa(200, 0, 0, 300);
-		CartaCampo carta = new CartaCampo(this.jugador, efecto);
+		CartaCampo carta = new CartaCampo("Wasteland", this.jugador, efecto);
 		return carta;
 	}
 	
 	public CartaCampo crearCartaSogen() {
 		Efecto efecto = new EfectoMejoraAtaqueDefensa(0, 500, 200, 0);
-		CartaCampo carta = new CartaCampo(this.jugador, efecto);
+		CartaCampo carta = new CartaCampo("Sogen", this.jugador, efecto);
 		return carta;
 	}
 	
 	public CartaMagica crearCartaOllaDeLaCodicia() {
 		Efecto efecto = new EfectoOllaDeLaCodicia();
-		CartaMagica carta = new CartaMagica(this.jugador, efecto);
+		CartaMagica carta = new CartaMagica("Olla de la codicia", this.jugador, efecto);
 		return carta;
 	}
 	
 	public CartaMagica crearCartaFisura() {
 		Efecto efecto = new EfectoFisura();
-		CartaMagica carta = new CartaMagica(this.jugador, efecto);
+		CartaMagica carta = new CartaMagica("Fisura", this.jugador, efecto);
 		return carta;
 	}
 	
@@ -124,13 +134,13 @@ public class CartaFactory {
 	
 	public CartaTrampa crearCartaCilindroMagico() {
 		Efecto efecto = new EfectoCilindroMagico();
-		CartaTrampa carta = new CartaTrampa(this.jugador, efecto);
+		CartaTrampa carta = new CartaTrampa("Cilindro Magico", this.jugador, efecto);
 		return carta;
 	}
 	
 	public CartaTrampa crearCartaReinforcements() {
 		Efecto efecto = new EfectoReinforcements();
-		CartaTrampa carta = new CartaTrampa(this.jugador, efecto);
+		CartaTrampa carta = new CartaTrampa("Reinforcements", this.jugador, efecto);
 		return carta;
 	}
 	
@@ -155,67 +165,72 @@ public class CartaFactory {
 		return colleccion;
 	}
 	
-	public static ArrayList<Carta> inicializarMazoGenerico(Jugador jugador) {
+	public ArrayList<Carta> obtenerCartasAleatorias(int cantidadDeCartas) {
+		Path currentRelativePath = Paths.get(archivoConCartasMonstruo);
+		String s = currentRelativePath.toAbsolutePath().toString();
+	
+		JSONParser parser = new JSONParser();
 		ArrayList<Carta> cartas = new ArrayList<Carta>();
-		Efecto efectoWasteland = new EfectoMejoraAtaqueDefensa(200, 0, 0, 300);
-		Efecto efectoSogen = new EfectoMejoraAtaqueDefensa(0, 500, 200, 0);
-		Efecto efecto = new Efecto();
-		//Efecto efectoWasteland = new EfectoMejoraAtaqueDefensa(200, 0, 0, 300);
-		//Efecto efectoSogen = new EfectoMejoraAtaqueDefensa(0, 500, 200, 0);
 		
-		CartaCampo cartaSogen = new CartaCampo(jugador, efectoSogen);
-		cartas.add(cartaSogen);
+        try {
+
+            Object obj = parser.parse(new FileReader(s));
+
+            JSONArray cartasArray = (JSONArray) obj;
+            System.out.println(cartasArray.size());
+            Random rand = new Random();
+            Efecto efecto = new Efecto();
+            
+            for (int i = 0; i < cantidadDeCartas; ++i) {
+                int  n = rand.nextInt(cartasArray.size());
+                JSONObject json_obj = (JSONObject) cartasArray.get(n);
+                
+                CartaMonstruo nuevaCarta = new CartaMonstruo(
+	        		(String) json_obj.get("Name"), 
+	        		jugador, 
+	        		efecto, 
+	        		((Long) json_obj.get("Level")).intValue() , 
+	        		((Long) json_obj.get("ATK")).intValue() ,
+	        		((Long) json_obj.get("DEF")).intValue() 
+    			);
+                cartas.add(nuevaCarta);
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return cartas;
+	}
+	
+	public static ArrayList<Carta> inicializarMazoGenerico(Jugador jugador) {
 		
-		CartaCampo cartaWasteland = new CartaCampo(jugador, efectoWasteland);
-		cartas.add(cartaWasteland);
+		CartaFactory factory  = new CartaFactory(jugador);
 		
-		cartas.add(CartaFactory.crearCartaAgujeroNegro(jugador));
 		
-		for (int i=0; i<12 ; i++) {
-			int puntosDeAtaque = ThreadLocalRandom.current().nextInt(500, 3001);
-			int puntosDeDefensa = ThreadLocalRandom.current().nextInt(500, 3001);
-			int estrellas = ThreadLocalRandom.current().nextInt(1, 5);
-			
-			CartaMonstruo nuevaCarta = new CartaMonstruo("Monstruo Generico", jugador, efecto, estrellas, puntosDeAtaque, puntosDeDefensa);
-			cartas.add(nuevaCarta);
-		} // agregamos 12 monstruos genericos
-		
-		for (int i=0; i<6 ; i++) {
-			int puntosDeAtaque = ThreadLocalRandom.current().nextInt(500, 3001);
-			int puntosDeDefensa = ThreadLocalRandom.current().nextInt(500, 3001);
-			int estrellas = ThreadLocalRandom.current().nextInt(5, 7);
-			CartaMonstruo nuevaCarta = new CartaMonstruo("Monstruo Generico", jugador, efecto, estrellas, puntosDeAtaque, puntosDeDefensa);
-			cartas.add(nuevaCarta);
-		} //agregamos 6 monstruos de 1 sacrificio
+		ArrayList<Carta> cartas = factory.obtenerCartasAleatorias(22);
+
+		cartas.add(factory.crearCartaWasteland());
+		cartas.add(factory.crearCartaReinforcements());
+		cartas.add(factory.crearCartaCilindroMagico());
+		cartas.add(factory.crearCartaDragonDefinitivo());
+		cartas.add(factory.crearCartaJinzo7());
+		cartas.add(factory.crearCartaFisura());
+		cartas.add(factory.crearCartaOllaDeLaCodicia());
+		cartas.add(factory.crearCartaSogen());
+		cartas.add(factory.crearCartaAgujeroNegro());
+		cartas.add(factory.crearInsectoComeHombres());
+		cartas.addAll(factory.crear5PartesDeExodia());
 		
 		for (int i=0; i<3 ; i++) {
-			int puntosDeAtaque = ThreadLocalRandom.current().nextInt(500, 3001);
-			int puntosDeDefensa = ThreadLocalRandom.current().nextInt(500, 3001);
-			int estrellas = ThreadLocalRandom.current().nextInt(7, 11);
-			
-			CartaMonstruo nuevaCarta = new CartaMonstruo("Monstruo Generico", jugador, efecto, estrellas, puntosDeAtaque, puntosDeDefensa);
-			cartas.add(nuevaCarta);
-		} //agregamos 3 monstruos de 2 sacrificios
-		
-		for (int i=0; i<5 ; i++) {
-			CartaCampo nuevaCarta = new CartaCampo(jugador, efecto);
-			cartas.add(nuevaCarta);
+			cartas.add(factory.crearCartaDragonBlancoDeOjosAzules());
 		}
-		
-		for (int i=0; i<6 ; i++) {
-			CartaMagica nuevaCarta = new CartaMagica(jugador, efecto);
-			cartas.add(nuevaCarta);
-		}
-		
-		for (int i=0; i<5 ; i++) {
-			CartaTrampa nuevaCarta = new CartaTrampa(jugador, efecto);
-			cartas.add(nuevaCarta);
-		}
-		//total 40 cartas
 	
 		Collections.shuffle(cartas);
 		return(cartas);
-		
 	}
 
 }

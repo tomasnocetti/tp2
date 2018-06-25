@@ -5,7 +5,7 @@ import fiuba.algo3.tp2.Jugador;
 
 public class CartaMagica extends CartaTrampaOMagica{
 	
-	public CartaMagica(Jugador jugador, Efecto efecto) {
-		super(jugador, efecto);
+	public CartaMagica(String nombre, Jugador jugador, Efecto efecto) {
+		super(nombre, jugador, efecto);
 	}
 }

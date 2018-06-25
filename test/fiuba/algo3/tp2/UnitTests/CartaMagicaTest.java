@@ -50,7 +50,7 @@ public class CartaMagicaTest {
 		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
 		defensor.colocarCartaEnZona(monstruoDefensor, 0, new ArrayList<CartaMonstruo>());
 		
-		CartaMagica agujeroNegro = CartaFactory.crearCartaAgujeroNegro(atacante);
+		CartaMagica agujeroNegro = factoryAtacante.crearCartaAgujeroNegro();
 		
 		agujeroNegro.colocarBocaArriba(defensor);
 		
@@ -71,7 +71,7 @@ public class CartaMagicaTest {
 		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
 		defensor.colocarCartaEnZona(monstruoDefensor, 0, new ArrayList<CartaMonstruo>());
 		
-		CartaMagica agujeroNegro = CartaFactory.crearCartaAgujeroNegro(atacante);
+		CartaMagica agujeroNegro = factoryAtacante.crearCartaAgujeroNegro();
 		
 		agujeroNegro.colocarBocaArriba(defensor);
 		
@@ -92,7 +92,7 @@ public class CartaMagicaTest {
 		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
 		defensor.colocarCartaEnZona(monstruoDefensor, 0, new ArrayList<CartaMonstruo>());
 		
-		CartaMagica agujeroNegro = CartaFactory.crearCartaAgujeroNegro(atacante);
+		CartaMagica agujeroNegro = factoryAtacante.crearCartaAgujeroNegro();
 		
 		int pvAtacanteAntesDelAtaque = atacante.obtenerPuntosDeVida();
 		
@@ -117,7 +117,7 @@ public class CartaMagicaTest {
 		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
 		defensor.colocarCartaEnZona(monstruoDefensor, 0, new ArrayList<CartaMonstruo>());
 		
-		CartaMagica agujeroNegro = CartaFactory.crearCartaAgujeroNegro(atacante);
+		CartaMagica agujeroNegro = factoryAtacante.crearCartaAgujeroNegro();
 		
 		int pvAtacadoAntesDelAtaque = defensor.obtenerPuntosDeVida();
 		

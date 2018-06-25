@@ -7,8 +7,8 @@ import fiuba.algo3.tp2.Jugador;
 
 public abstract class CartaTrampaOMagica extends Carta{
 
-	public CartaTrampaOMagica(Jugador jugador, Efecto efecto) {
-		super(jugador, efecto);
+	public CartaTrampaOMagica(String nombre, Jugador jugador, Efecto efecto) {
+		super(nombre, jugador, efecto);
 		this.posicion = new PosicionAbajo();
 	}
 

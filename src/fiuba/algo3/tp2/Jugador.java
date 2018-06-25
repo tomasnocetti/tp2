@@ -32,6 +32,7 @@ public class Jugador {
 	public Jugador() {
 		this.puntosDeVida = 8000;
 		this.mano = new ZonaMano(this);
+		
 		this.mazo = new Mazo(this, CartaFactory.inicializarMazoGenerico(this));
 		this.cementerio = new Cementerio();
 		this.zonaCartasMagicasOTrampas = new ZonaDeCartasMagicasOTrampas(this);

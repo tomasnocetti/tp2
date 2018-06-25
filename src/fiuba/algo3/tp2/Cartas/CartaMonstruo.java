@@ -24,9 +24,8 @@ public class CartaMonstruo extends Carta{
 	private Invocador invocador;
 	
     public CartaMonstruo(String nombre, Jugador jugador, Efecto efecto, int estrella, int ataque, int defenza) {
-    	super(jugador, efecto);
+    	super(nombre, jugador, efecto);
 		this.estrellas = estrella;
-		this.nombre = nombre;
 		this.invocador = Invocador.obtenerInvocador(this);
     	this.puntosDeAtaque = ataque;
 		this.puntosDeDefensa = defenza;

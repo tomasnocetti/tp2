@@ -16,9 +16,10 @@ public abstract class Carta extends Observable {
 	
 	public abstract void enviarAlCementerio();
 	
-	public Carta(Jugador jugador, Efecto efecto) {
+	public Carta(String nombre, Jugador jugador, Efecto efecto) {
 		this.efecto = efecto;
 		this.jugador = jugador;
+		this.nombre = nombre;
 	}
 	
 	public Posicionable obtenerPosicion() {
