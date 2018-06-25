@@ -1,6 +1,7 @@
 .root{
-    -fx-background-image: url("img/fondo2.jpg");   
+    -fx-background-image: url("img/fodo_eleccion_nombres.png");   
     -fx-background-size: 100% 100%;
+    -fx-font-size: 100% 100%;
     -fx-background-position: center center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
 }
@@ -22,9 +23,9 @@
 	-fx-stroke-size: 150 150;
 }
 .button{
-	-fx-background-color: red;
+	-fx-background-color: black;
 	-fx-border-radius: 15;
-    -fx-text-fill: white;
+    -fx-text-fill: orange;
     -fx-font-size: 50;
 }
 .gridPane-cartas {
@@ -36,16 +37,44 @@
 	
 }*/
 .tablero {
-	-fx-background-image: url("img/fondoTablero.jpg");
+	-fx-background-image: url("img/fondoTablero3.jpg");
 	-fx-background-repeat: stretch;   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
     -fx-margin: 5;
 }
 .informacion{
-	-fx-background-image: url("img/fondoInformacion.jpg");
+	-fx-background-image: url("img/fondoInoformacion2.jpg");
 	-fx-background-repeat: stretch;   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
     -fx-radius: 5;
+}
+.fondoNombres {
+	-fx-background-image: url("img/fodo_eleccion_nombres.png");
+	-fx-background-repeat: stretch;   
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    
+}
+.fondoPuntosDeVida {
+	-fx-background-image: url("img/fondoPuntosDeVida.jpeg");
+	-fx-background-repeat: stretch;   
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+}
+.contenedorCarta {
+	-fx-background-color: white;
+	-fx-background-size: 200 150;
+	-fx-padding: 10;
+	-fx-margin: 10;
+}
+.contenedorMano {
+	-fx-background-image: url("img/fondoMano.jpg");
+	-fx-background-repeat: repeat-x;   
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+	-fx-padding: 10.0 3.0 5.0 0.0;
+    -fx-vgap: 15;
+    -fx-alignment: center;
 }

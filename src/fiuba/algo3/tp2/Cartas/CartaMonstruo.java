@@ -33,6 +33,10 @@ public class CartaMonstruo extends Carta{
 		this.accion = new AccionAtaque();
 	}
     
+	public void enviarAlCementerio() {
+		this.jugador.enviarAlCementerio(this);
+	}
+    
 	public void atacar(CartaMonstruo otro) {
 		if(!this.jugador.estaEnElCampo(this)) throw new CartaNoSeEncuentraEnZona();
 		this.posicion.atacar(this, otro);
@@ -75,10 +79,7 @@ public class CartaMonstruo extends Carta{
 	public void configurarPuntosDefensa(int puntos) {
 		this.puntosDeDefensa = puntos;
 	}
-	
-	public void enviarAlCementerio() {
-		this.jugador.enviarAlCementerio(this);
-	}
+
 	
 	public Accionable obtenerAccion() {
 		return this.accion;

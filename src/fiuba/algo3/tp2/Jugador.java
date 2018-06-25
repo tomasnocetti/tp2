@@ -28,7 +28,7 @@ public class Jugador {
 	private ZonaDeCartasDeCampo zonaCartasDeCampo;
 	private ZonaDeCartasMagicasOTrampas zonaCartasMagicasOTrampas;
 	private Cementerio cementerio;
-	
+		
 	public Jugador() {
 		this.puntosDeVida = 8000;
 		this.mano = new ZonaMano(this);
@@ -150,5 +150,23 @@ public class Jugador {
 		return this.zonaCartasMagicasOTrampas.obtenerProximaCartaTrampa();
 	}
 	
+	public Mazo obtenerMazo(){
+		return this.mazo;
+	}
 	
+	public ZonaDeCartasMonstruos obtenerZonaMonstruos(){
+		return this.zonaMonstruos;
+	}
+	public ZonaDeCartasMagicasOTrampas obtenerZonaCartaMagicasOTrampas(){
+		return this.zonaCartasMagicasOTrampas;
+	}
+	public  ZonaDeCartasDeCampo obtenerZonaCartasDeCampo(){
+		return this.zonaCartasDeCampo;
+	}
+	public  ZonaMano obtenerMano(){
+		return this.mano;
+	}
+	public Cementerio obtenerCementerio(){
+		return this.cementerio;
+	}
 }
