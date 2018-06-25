@@ -21,7 +21,7 @@ public class LayoutContenedorJuego extends BorderPane {
 		this.juego = new Juego(); 
 			
 		vistaTableroDeJuego = new VistaTableroDeJuego(juego);
-		vistaInformacionDeCarta= new VistaInformacionDeCarta(this,juego);
+		vistaInformacionDeCarta= new VistaInformacionDeCarta(this);
 		vistaMano = new VistaMano(juego);
 		vistaPuntosDeVida = new VistaPuntosDeVida(this);
 		
