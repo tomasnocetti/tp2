@@ -103,5 +103,9 @@ public class Juego extends Observable{
 		this.iJugadorActual = random.nextInt(2);
 	}
 	
+	public Jugador obtenerJugador(int num){
+		return this.jugadores.get(num);
+	}
+	
 }
 
