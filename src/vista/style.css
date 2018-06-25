@@ -23,7 +23,13 @@
     -fx-text-fill: orange;
     -fx-font-size: 50;
 }
+.button-cartas {
+	-fx-background-color: black;
+	-fx-border-radius: 15;
+    -fx-text-fill: orange;
+    -fx-font-size: 50;
 
+}
 .continue-button{
     -fx-pref-width: 300px;
 }

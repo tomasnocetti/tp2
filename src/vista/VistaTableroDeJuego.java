@@ -13,11 +13,11 @@ public class VistaTableroDeJuego extends VBox {
 		super();
 
 		
-		vistaTableroJugador1 = new VistaTableroJugador(true, Juego.ObtenerJuego().jugadorActual());
-		vistaTableroJugador2 = new VistaTableroJugador(false, Juego.ObtenerJuego().jugadorOponente());
+		vistaTableroJugador1 = new VistaTableroJugador(true);
+		vistaTableroJugador2 = new VistaTableroJugador(false);
 
 
-		this.setSpacing(250);
+		this.setSpacing(300);
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("tablero");
 		this.getChildren().addAll(vistaTableroJugador1,vistaTableroJugador2);	

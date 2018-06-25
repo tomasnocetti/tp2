@@ -14,8 +14,9 @@ public class ContenedorCarta extends VBox {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("contenedorCarta");
-//		this.getChildren().addAll(new Text(carta.nombre()));
-//        
+		this.setMaxHeight(250);
+		this.setMaxWidth(200);
+		
 		if(carta instanceof CartaMonstruo) {
 			Text nombre = new Text(carta.nombre());
 			Text ataque = new Text("" + ((CartaMonstruo) carta).obtenerPuntosAtaque());
