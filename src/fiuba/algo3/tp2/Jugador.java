@@ -169,4 +169,10 @@ public class Jugador {
 	public Cementerio obtenerCementerio(){
 		return this.cementerio;
 	}
+
+	public void agarrar5CartasDeMazo() {
+		for(int i = 0; i< 5; i++) {
+			this.agarrarCarta();
+		}
+	}
 }

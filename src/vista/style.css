@@ -8,16 +8,11 @@
 .layout{
 	-fx-margin: 5;	
 }
-.flowPane{
-	-fx-background-image: url("img/fondoMano.jpg");
-	-fx-background-repeat: repeat-x;   
-    -fx-background-size: 100% 100%;
-    -fx-background-position: center center;
-	-fx-padding: 10.0 3.0 5.0 0.0;
-    -fx-hgap: 4;
-    -fx-vgap: 4;
-    -fx-background-color: lightblue;
-    -fx-alignment: center;
+.scrollPane{
+	-fx-background-color: black;	
+}
+.vistaMano{
+	-fx-background-color: transparent;	
 }
 .image-mano{
 	-fx-stroke-size: 150 150;
@@ -33,9 +28,6 @@
     -fx-vgap: 4;
     -fx-margin: 10;
 }
-/*.contenedorCarta{
-	
-}*/
 .tablero {
 	-fx-background-image: url("img/fondoTablero3.jpg");
 	-fx-background-repeat: stretch;   
@@ -74,7 +66,4 @@
 	-fx-background-repeat: repeat-x;   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
-	-fx-padding: 10.0 3.0 5.0 0.0;
-    -fx-vgap: 15;
-    -fx-alignment: center;
 }

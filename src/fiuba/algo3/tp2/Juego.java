@@ -16,6 +16,8 @@ public class Juego extends Observable{
 	
 	public Juego() {
 		this.resetearJuego();
+		jugadores.get(0).agarrar5CartasDeMazo();
+		jugadores.get(1).agarrar5CartasDeMazo();
 	}
 	
 	public static Juego ObtenerJuego() {

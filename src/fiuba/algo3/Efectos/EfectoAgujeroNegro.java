@@ -1,4 +1,4 @@
-	package fiuba.algo3.Efectos;
+package fiuba.algo3.Efectos;
 
 import fiuba.algo3.tp2.Jugador;
 
