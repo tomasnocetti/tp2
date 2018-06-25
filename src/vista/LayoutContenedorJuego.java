@@ -23,7 +23,7 @@ public class LayoutContenedorJuego extends BorderPane {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("layout");	
-			
+
 		vistaTableroDeJuego = new VistaTableroDeJuego();
 		vistaInformacionDeCarta= new VistaInformacionDeCarta(this);
 		vistaMano = new VistaMano();
@@ -39,6 +39,7 @@ public class LayoutContenedorJuego extends BorderPane {
 		borderMano.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		borderMano.getStyleClass().add("contenedorMano");
 	    
+
 		vistaPuntosDeVida = new VistaPuntosDeVida(this);
 		
 		this.setRight(vistaPuntosDeVida);

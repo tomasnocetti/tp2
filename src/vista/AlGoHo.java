@@ -39,7 +39,7 @@ public class AlGoHo extends Application{
         
         sceneJuego.agregarSceneInicio(sceneInicio);
         
-        stage.setScene(sceneInicio);
+        stage.setScene(sceneJuego);
         stage.setFullScreen(true);
         stage.show();
 	}	

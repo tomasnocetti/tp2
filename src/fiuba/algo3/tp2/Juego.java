@@ -11,6 +11,7 @@ public class Juego extends Observable{
 	private ArrayList<Jugador> jugadores;
 	private static Juego instancia = null;
 	private Integer iJugadorActual = null; 
+	private Integer iFaseActual = 0; 
 	private boolean juegoTerminado  = false;
 	private Jugador ganador = null;
 	
@@ -45,6 +46,17 @@ public class Juego extends Observable{
 	
 	public Jugador jugadorOponente() {
 		return this.jugadores.get(this.obtenerIJugadorOponente());
+	}
+	
+	public void continuarASiguienteFase() {
+		 if(iFaseActual == 4) {
+			 this.cambiarTurno();
+			 iFaseActual = 0;
+		 }
+		 
+		 iFaseActual ++;
+         this.setChanged();
+         this.notifyObservers(); 
 	}
 	
 	private int obtenerIJugadorOponente() {
