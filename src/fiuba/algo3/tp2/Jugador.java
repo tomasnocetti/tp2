@@ -3,6 +3,8 @@ package fiuba.algo3.tp2;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Observable;
+import java.util.Observer;
 
 
 import fiuba.algo3.tp2.Cartas.Carta;
@@ -19,7 +21,7 @@ import fiuba.algo3.tp2.Tableros.ZonaDeCartasMonstruos;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasDeCampo;
 import fiuba.algo3.tp2.Tableros.ZonaMano;
 
-public class Jugador {
+public class Jugador extends Observable{
 	
 	private int puntosDeVida;
 	private ZonaMano mano;
