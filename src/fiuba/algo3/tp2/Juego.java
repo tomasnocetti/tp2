@@ -52,9 +52,10 @@ public class Juego extends Observable{
 		 if(iFaseActual == 4) {
 			 this.cambiarTurno();
 			 iFaseActual = 0;
+		 } else {
+			 iFaseActual ++;	 
 		 }
-		 
-		 iFaseActual ++;
+		 	 
          this.setChanged();
          this.notifyObservers(); 
 	}
@@ -72,6 +73,10 @@ public class Juego extends Observable{
 	
 	public void asignarGanador(Jugador jugador) {
 		this.terminarJuego(jugador);
+	}
+	
+	public int iFaseActual() {
+		return iFaseActual;
 	}
 	
 	public void asignarPerdedor(Jugador jugador) {

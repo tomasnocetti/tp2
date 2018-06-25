@@ -11,7 +11,7 @@ import javafx.scene.paint.Color;
 
 public class LayoutContenedorJuego extends BorderPane {
 	
-	private VistaInformacionDeCarta vistaInformacionDeCarta;
+	private VistaInformacionDeJuego vistaInformacionDeJuego;
 	private VistaTableroDeJuego vistaTableroDeJuego;
 	private VistaMano vistaMano;
 	private VistaPuntosDeVida vistaPuntosDeVida;
@@ -25,7 +25,7 @@ public class LayoutContenedorJuego extends BorderPane {
 		this.getStyleClass().add("layout");	
 
 		vistaTableroDeJuego = new VistaTableroDeJuego();
-		vistaInformacionDeCarta= new VistaInformacionDeCarta(this);
+		vistaInformacionDeJuego = new VistaInformacionDeJuego(this);
 		vistaMano = new VistaMano();
 
 	    ScrollPane scrollPane = new ScrollPane(vistaMano);
@@ -39,12 +39,11 @@ public class LayoutContenedorJuego extends BorderPane {
 		borderMano.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		borderMano.getStyleClass().add("contenedorMano");
 	    
-
 		vistaPuntosDeVida = new VistaPuntosDeVida(this);
 		
 		this.setRight(vistaPuntosDeVida);
         this.setCenter(vistaTableroDeJuego);
-        this.setLeft(vistaInformacionDeCarta);
+        this.setLeft(vistaInformacionDeJuego);
 		this.setBottom(borderMano);
 	}
 
