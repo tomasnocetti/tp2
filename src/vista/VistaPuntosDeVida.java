@@ -45,13 +45,8 @@ public class VistaPuntosDeVida extends VBox {
 	private VBox boxJugador2;
 	private ProgressBar pBar1;
 	private ProgressBar pBar2;
-	private ProgressIndicator pInd1;
-	private ProgressIndicator pInd2;
 	private int puntosDeVidaViejos1;
 	private int puntosDeVidaViejos2;
-	
-	
-	
 	
 	public class PuntosDeVidaObserver implements Observer { 
 		private VistaPuntosDeVida vista;
@@ -76,16 +71,12 @@ public class VistaPuntosDeVida extends VBox {
         Task task = taskCreator(jugador1.obtenerPuntosDeVida(),this.puntosDeVidaViejos1);
         this.pBar1.progressProperty().unbind();
         this.pBar1.progressProperty().bind(task.progressProperty());
-        this.pInd1.progressProperty().unbind();
-        this.pInd1.progressProperty().bind(task.progressProperty());
         this.puntosDeVidaViejos1 = jugador1.obtenerPuntosDeVida();
         new Thread(task).start();
         
         task = taskCreator(jugador2.obtenerPuntosDeVida(),this.puntosDeVidaViejos2);
         this.pBar2.progressProperty().unbind();
         this.pBar2.progressProperty().bind(task.progressProperty());
-        this.pInd2.progressProperty().unbind();
-        this.pInd2.progressProperty().bind(task.progressProperty());
         new Thread(task).start();
         this.puntosDeVidaViejos2 = jugador2.obtenerPuntosDeVida();
 	}
@@ -109,11 +100,8 @@ public class VistaPuntosDeVida extends VBox {
 		
 		this.pBar1 = new ProgressBar(8000);
 		this.pBar2 = new ProgressBar(8000);
-		this.pInd1 = new ProgressIndicator(8000);
-		this.pInd2 = new ProgressIndicator(8000);
 		this.puntosDeVidaViejos1 = 8000;
 		this.puntosDeVidaViejos2 = 8000;
-		
 		
 		
 		this.boxJugador1 = new VBox();
@@ -122,10 +110,10 @@ public class VistaPuntosDeVida extends VBox {
 		this.boxJugador2.setSpacing(10);
 		this.setSpacing(10);
 		this.getChildren().add(this.boxJugador1);
-		this.getChildren().addAll(this.pBar1,this.pInd1);
+		this.getChildren().addAll(this.pBar1);
 		
 		this.getChildren().add(this.boxJugador2);
-		this.getChildren().addAll(this.pBar2,this.pInd2);
+		this.getChildren().addAll(this.pBar2);
 		this.dibujar();
 		this.setPrefWidth(70);
 	}

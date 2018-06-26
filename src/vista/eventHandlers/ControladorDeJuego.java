@@ -1,5 +1,6 @@
 package vista.eventHandlers;
 
+import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
@@ -44,5 +45,33 @@ public class ControladorDeJuego {
 		this.vistaMano.dibujar();
 		this.vistaTableroDeJuego.dibujar();
 		this.vistaInformacionDeJuego.dibujar();
+	}
+
+	public void continuarFase() {
+		Juego juego = Juego.ObtenerJuego();
+		juego.continuarASiguienteFase();
+		Jugador actual = juego.jugadorActual();
+		
+		switch(juego.iFaseActual()) {
+		case 0:
+			actual.agarrarCartasDelMazo(1);
+            break;
+		case 1:
+            break;
+		case 2:
+			
+            break;
+		case 3:
+			
+		    break;
+		case 4:
+			
+            break;
+        }
+		this.dibujar();
+	}
+	
+	public void invocarConSacrificios() {
+		
 	}
 }

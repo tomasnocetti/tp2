@@ -63,11 +63,12 @@ public class VistaInformacionDeJuego extends VBox {
 	public void dibujar() {
 		this.contenedorInformacionJuego.getChildren().clear();
 		Juego juego = Juego.ObtenerJuego();
-		System.out.println(juego.iFaseActual());
+		Jugador jugador = juego.jugadorActual();
+		
 		Text t = new Text();
 		switch(juego.iFaseActual()) {
 			case 0:
-				t.setText("En esta fase el jugador debe tomar 1 carta del Mazo");
+				t.setText("Hay una nueva carta en la mano !");
                 break;
 			case 1:
 				t.setText("En esta fase, es el momento de poner cartas en el campo. \n" + 

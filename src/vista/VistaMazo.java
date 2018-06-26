@@ -13,12 +13,16 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 public class VistaMazo extends HBox {
+	private Jugador jugador;
 	
-	public VistaMazo() {
+	public VistaMazo(Jugador jugador) {
 		super();
-		Juego juego = Juego.ObtenerJuego();
-		Jugador jugador = juego.jugadorActual();
+		this.jugador = jugador;	
+	}
+	
+	public void dibujar() {
+		this.getChildren().clear();
 		Mazo mazo = jugador.obtenerMazo();
-		this.getChildren().add(new ContenedorCartaMazo(String.valueOf(mazo.obtenerCantidadDeCartas())));
+		this.getChildren().add(new ContenedorCartaMazo(String.valueOf(mazo.obtenerCantidadDeCartas()))); 
 	}
 }

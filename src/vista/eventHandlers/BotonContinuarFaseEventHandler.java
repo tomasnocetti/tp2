@@ -19,7 +19,7 @@ public class BotonContinuarFaseEventHandler implements EventHandler<ActionEvent>
     }
 	
 	public void handle(ActionEvent arg0) {
-		Juego juego = Juego.ObtenerJuego();
-		juego.continuarASiguienteFase();
+		ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
+		controlador.continuarFase();
 	}
 }
