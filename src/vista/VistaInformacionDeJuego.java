@@ -28,7 +28,8 @@ public class VistaInformacionDeJuego extends VBox {
 		}
 		
 		public void update(Observable observable, Object args) {
-			vista.dibujar();
+			ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
+			controlador.dibujar();
 	    }
 	}
 	
@@ -57,7 +58,6 @@ public class VistaInformacionDeJuego extends VBox {
 		this.contenedorInformacionJuego.setPadding(new Insets(10));
 		this.getChildren().add(botonContinuar);
 		this.getChildren().add(this.contenedorInformacionJuego);
-		this.dibujar();
 	}
 	
 	public void dibujar() {

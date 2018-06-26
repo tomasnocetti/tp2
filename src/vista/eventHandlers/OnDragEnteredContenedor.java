@@ -23,14 +23,10 @@ public class OnDragEnteredContenedor implements EventHandler<DragEvent>{
 	}
 	
 	public void handle(DragEvent event) {
-        /* the drag-and-drop gesture entered the target */
-        /* show to the user that it is an actual gesture target */
-		Dragboard db = event.getDragboard();
-        Carta carta = (Carta) db.getContent(Carta.Binding);
-        
+		Carta carta = ControladorDeJuego.getDraggedCard();
         Juego juego = Juego.ObtenerJuego();
         
-        if(this.fasePermitida.equals(juego.iFaseActual()) && this.clase.isInstance(carta) ) {	
+        if(contenedor.jugadorEsValido(carta.obtenerJugador()) && this.fasePermitida.equals(juego.iFaseActual()) && this.clase.isInstance(carta) ) {	
         	contenedor.setStyle("-fx-background-color: #FFFFFF;");	 
         }
                     

@@ -37,8 +37,12 @@ public class AlGoHo extends Application{
         sceneCompletarNombres = new SceneCompletarNombres(stage, mediaPlayer);
         
         sceneInicio = new SceneInicio(stage, sceneCompletarNombres);
-        
-        stage.setScene(sceneInicio);
+		Juego juego = Juego.ObtenerJuego();
+		Jugador jugador1 = juego.obtenerJugador(0);
+		Jugador jugador2 = juego.obtenerJugador(1);
+		
+	
+        stage.setScene(new SceneJuego(stage));
         stage.setFullScreen(true);
         stage.show();
 	}	

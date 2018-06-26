@@ -11,17 +11,24 @@ import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMonstruos;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
+import vista.eventHandlers.OnDragDroppedContenedor;
 import vista.eventHandlers.OnDragEnteredContenedor;
 import vista.eventHandlers.OnDragExitedContenedor;
 import vista.eventHandlers.OnDragOverContenedor;
 
 public class VistaTrampasOMagicas extends GridPane{
 	
+	private Integer num_jugador;
 	public VistaTrampasOMagicas(int num_jugador) {
 		super();
+		this.num_jugador = num_jugador;
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("gridPane-cartas");
 		this.setAlignment(Pos.CENTER);
+	}
+	
+	public void dibujar() {
+		this.getChildren().clear();
 		
 		Juego juego = Juego.ObtenerJuego();
 		Jugador jugador = juego.obtenerJugador(num_jugador);
@@ -42,6 +49,8 @@ public class VistaTrampasOMagicas extends GridPane{
 				contenedor.setOnDragExited(event2);
 				OnDragOverContenedor event3 = new OnDragOverContenedor(CartaTrampaOMagica.class, contenedor, 1);
 				contenedor.setOnDragOver(event3);
+				OnDragDroppedContenedor event4 = new OnDragDroppedContenedor(CartaTrampaOMagica.class, contenedor, 1);
+				contenedor.setOnDragDropped(event4);
 				
 				contenedor.setId(String.valueOf(i));
 				this.add(contenedor, i , 0);

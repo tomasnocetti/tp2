@@ -20,8 +20,6 @@ public class OnDragDroppedContenedor implements EventHandler<DragEvent>{
 	public OnDragDroppedContenedor(Class<?> superClass, ContenedorCartaVacia contenedor, Integer fasePermitida) {
 		this.clase = superClass;
 		this.contenedor = contenedor; 
-		System.out.println(contenedor);
-		System.out.println(this.contenedor.getId());
 		this.fasePermitida = fasePermitida;
 	}
 	
@@ -30,11 +28,14 @@ public class OnDragDroppedContenedor implements EventHandler<DragEvent>{
         /* show to the user that it is an actual gesture target */
 	
         Juego juego = Juego.ObtenerJuego();
-        Jugador jugadorActual = juego.jugadorActual();
         
         Carta carta = ControladorDeJuego.getDraggedCard();
         
+        System.out.println("DENTRO DEL DRAG");
+        System.out.println(contenedor.jugadorEsValido(carta.obtenerJugador()));
+        System.out.println(this.clase.isInstance(carta));
         if(contenedor.jugadorEsValido(carta.obtenerJugador()) && this.fasePermitida.equals(juego.iFaseActual()) && this.clase.isInstance(carta) ) {
+        	System.out.println("DENTRO DEL DRAG");
         	Jugador jugador = carta.obtenerJugador();
         	Integer id = Integer.parseInt(this.contenedor.getId());
         	ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
@@ -47,6 +48,7 @@ public class OnDragDroppedContenedor implements EventHandler<DragEvent>{
         		
         		controlador.dibujar();
         	}
+        	System.out.println(this.clase);
         	if(this.clase.equals(CartaTrampaOMagica.class)) {
         		System.out.println("CartaTrampaOMagica");
         		jugador.colocarCartaEnZona((CartaTrampaOMagica) carta , id);

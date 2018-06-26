@@ -43,5 +43,6 @@ public class ControladorDeJuego {
 		System.out.println("REDIBUJAR TABLERO");
 		this.vistaMano.dibujar();
 		this.vistaTableroDeJuego.dibujar();
+		this.vistaInformacionDeJuego.dibujar();
 	}
 }

@@ -177,7 +177,6 @@ public class CartaFactory {
             Object obj = parser.parse(new FileReader(s));
 
             JSONArray cartasArray = (JSONArray) obj;
-            System.out.println(cartasArray.size());
             Random rand = new Random();
             Efecto efecto = new Efecto();
             
