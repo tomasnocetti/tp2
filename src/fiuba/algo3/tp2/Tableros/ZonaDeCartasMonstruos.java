@@ -1,9 +1,11 @@
 package fiuba.algo3.tp2.Tableros;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.Iterator;
 
 import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.CantidadDeSacrificiosIncorrectoException;
 
@@ -30,4 +32,7 @@ public class ZonaDeCartasMonstruos extends Zona{
 		return this.cartas.isEmpty();
 	}
 	
+	public Hashtable<Integer,Carta> obtenerCartasMonstruos() {
+		return this.cartas;
+	}
 }

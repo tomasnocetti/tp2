@@ -13,6 +13,9 @@ public class ContenedorCartaMazo extends VBox {
 		this.setPrefHeight(250);
 		this.setPrefWidth(200);
 		
+//		ButtonMazoEventHandler buttonMazoEventHandler = new ButtonMazoEventHandler(); 
+//		button.setOnAction(buttonMazoEventHandler );
+		
 		button.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		button.getStyleClass().add("button-cartas");
 		button.setPrefHeight(250);

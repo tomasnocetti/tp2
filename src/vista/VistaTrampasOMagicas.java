@@ -6,7 +6,7 @@ import javafx.scene.layout.GridPane;
 
 public class VistaTrampasOMagicas extends GridPane{
 	
-	public VistaTrampasOMagicas() {
+	public VistaTrampasOMagicas(int num_jugador) {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("gridPane-cartas");

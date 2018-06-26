@@ -13,8 +13,8 @@ public class VistaTableroDeJuego extends VBox {
 		super();
 
 		
-		vistaTableroJugador1 = new VistaTableroJugador(true);
-		vistaTableroJugador2 = new VistaTableroJugador(false);
+		vistaTableroJugador1 = new VistaTableroJugador(true,0);
+		vistaTableroJugador2 = new VistaTableroJugador(false,1);
 
 
 		this.setSpacing(300);

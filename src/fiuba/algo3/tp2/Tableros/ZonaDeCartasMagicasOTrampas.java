@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.Tableros;
 
 import java.util.Collection;
+import java.util.Hashtable;
 import java.util.Iterator;
 
 import fiuba.algo3.tp2.Jugador;
@@ -40,6 +41,11 @@ public class ZonaDeCartasMagicasOTrampas extends Zona{
 			}
 		}
 		throw new ZonaNoTieneTrampa();
+	}
+
+	public Hashtable<Integer, Carta> obtenerCartasMagicasOTrampas() {
+		// TODO Auto-generated method stub
+		return this.cartas;
 	}
 
 

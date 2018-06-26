@@ -5,7 +5,7 @@ import javafx.scene.layout.HBox;
 
 public class VistaCampo extends HBox{
 
-	public VistaCampo() {
+	public VistaCampo(int num_jugador) {
 		super(new ContenedorCartaVacia());
 	}
 	

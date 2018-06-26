@@ -14,15 +14,15 @@ public class VistaTableroJugador extends HBox {
 	private VistaCementerio vistaCementerio;
 	private VistaMazo vistaMazo;
 	
-	public VistaTableroJugador(boolean frente) {
+	public VistaTableroJugador(boolean frente, int num_jugador) {
 		super();
 		
 		ContenedorCartaVacia cartaVacia = new ContenedorCartaVacia();
 				
 
-		vistaMonstruos = new VistaMonstruos();
-		vistaTrampasOMagicas = new VistaTrampasOMagicas();
-		vistaCampo = new VistaCampo();
+		vistaMonstruos = new VistaMonstruos(num_jugador);
+		vistaTrampasOMagicas = new VistaTrampasOMagicas(num_jugador);
+		vistaCampo = new VistaCampo(num_jugador);
 		vistaCementerio = new VistaCementerio();
 		vistaMazo = new VistaMazo();
 		
