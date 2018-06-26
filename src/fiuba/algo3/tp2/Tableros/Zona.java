@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.Tableros;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -12,8 +13,12 @@ import fiuba.algo3.tp2.Excepciones.PosicionDeLaZonaOcupadaException;
 import fiuba.algo3.tp2.Excepciones.PosicionDeZonaFueraDeRangoExcepcion;
 import fiuba.algo3.tp2.Excepciones.ZonaAlcanzoCantidadMaximaDeCartasExcepcion;
 
-public class Zona {
+public class Zona implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected Hashtable<Integer,Carta> cartas;
 	protected int limite;
 	protected Jugador jugador;

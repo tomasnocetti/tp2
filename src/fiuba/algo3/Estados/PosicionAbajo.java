@@ -1,5 +1,12 @@
 package fiuba.algo3.Estados;
 
-public class PosicionAbajo implements Posicionable{
+import java.io.Serializable;
+
+public class PosicionAbajo implements Posicionable, Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 }

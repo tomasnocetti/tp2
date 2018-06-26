@@ -1,9 +1,8 @@
 package vista;
 
+
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Rectangle;
-import vista.eventHandlers.CuadradoEventHandler;
 
 public class VistaTrampasOMagicas extends GridPane{
 	

@@ -1,14 +1,25 @@
 package fiuba.algo3.tp2.Cartas ;
 
+import java.io.Serializable;
 import java.util.Observable;
 
 import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.Estados.*;
 import fiuba.algo3.Estados.Posicionable;
 import fiuba.algo3.tp2.Jugador;
+import javafx.scene.input.DataFormat;
 
-public abstract class Carta extends Observable {
-	
+public abstract class Carta extends Observable implements Serializable{
+	/**
+	 * 
+	 */
+    private static final long serialVersionUID = -1458406119115196098L;
+
+    public static final DataFormat Binding = 
+            new DataFormat("com.buddyware.treefrog.filesystem.view.FileSystemBinding");
+    
+    public static final DataFormat Node =
+            new DataFormat("com.buddyware.treefrog.filesystem.view.FileSystemNode");
 	protected Efecto efecto;
 	protected Posicionable posicion;
 	protected Jugador jugador;

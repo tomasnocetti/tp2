@@ -1,13 +1,18 @@
 package fiuba.algo3.tp2.Tableros;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 
-public class Mazo{
+public class Mazo implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Carta> cartas;
 	private Jugador jugador;
 	

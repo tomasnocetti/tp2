@@ -1,9 +1,16 @@
 package fiuba.algo3.Estados;
 
+import java.io.Serializable;
+
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
-public class AccionAtaque implements Accionable {
+public class AccionAtaque implements Accionable, Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public void atacar(CartaMonstruo cartaAtacante, CartaMonstruo cartaAtacada) {
 		cartaAtacada.defender(cartaAtacante);
 	}

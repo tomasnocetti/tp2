@@ -1,12 +1,17 @@
 package fiuba.algo3.tp2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.NumeroDeEstrellasInvalido;
 
-public abstract class Invocador {
+public abstract class Invocador implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static InvocadorBasico invocadorBasico = new InvocadorBasico();
 	private static InvocadorSimple invocadorSimple = new InvocadorSimple();
 	private static InvocadorDoble invocadorDoble = new InvocadorDoble();
