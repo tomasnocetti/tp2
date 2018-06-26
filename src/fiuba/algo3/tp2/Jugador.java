@@ -62,6 +62,9 @@ public class Jugador extends Observable implements Serializable{
 	
 	public void quitarPuntosDeVida(int puntosPerdidos) {
 		this.puntosDeVida = this.puntosDeVida - puntosPerdidos;
+		if (this.puntosDeVida<= 0) {//AGEGO ESTO PORQUE NO ESTA LA LOGICA DE LAS CARTAS TODAVIA EN LA INTERFAZ
+			Juego.ObtenerJuego().asignarPerdedor(this); 
+		}
         this.setChanged();
         this.notifyObservers(); 
 	}

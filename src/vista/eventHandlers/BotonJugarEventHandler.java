@@ -33,7 +33,7 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 		jugador2.asignarnombre(this.nombre2);
 		
 		this.mediaPlayer.stop();
-		this.stage.setScene(new SceneJuego());
+		this.stage.setScene(new SceneJuego(stage));
 		this.stage.setFullScreen(true);
 	}
 

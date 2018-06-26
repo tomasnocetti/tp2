@@ -8,6 +8,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class LayoutContenedorJuego extends BorderPane {
 	
@@ -19,12 +20,12 @@ public class LayoutContenedorJuego extends BorderPane {
 	private SceneInicio sceneInicio;
 	private Juego juego;
 	
-	public LayoutContenedorJuego() {
+	public LayoutContenedorJuego(Stage stage) {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("layout");	
 
-		vistaTableroDeJuego = new VistaTableroDeJuego();
+		vistaTableroDeJuego = new VistaTableroDeJuego(stage);
 		vistaInformacionDeJuego = new VistaInformacionDeJuego(this);
 		vistaMano = new VistaMano();
 
