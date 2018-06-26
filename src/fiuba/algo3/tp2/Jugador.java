@@ -28,6 +28,7 @@ public class Jugador extends Observable{
 	private ZonaDeCartasDeCampo zonaCartasDeCampo;
 	private ZonaDeCartasMagicasOTrampas zonaCartasMagicasOTrampas;
 	private Cementerio cementerio;
+	private String nombre;
 		
 	public Jugador() {
 		this.puntosDeVida = 8000;
@@ -175,5 +176,15 @@ public class Jugador extends Observable{
 		for(int i = 0; i< 5; i++) {
 			this.agarrarCarta();
 		}
+	}
+	
+	public void asignarnombre(String nombre) {
+		this.nombre = nombre;
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public String obtenerNombre() {
+		return this.nombre;
 	}
 }

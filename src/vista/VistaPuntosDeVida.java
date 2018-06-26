@@ -33,7 +33,6 @@ public class VistaPuntosDeVida extends VBox {
 		}
 		
 		public void update(Observable observable, Object args) {
-			System.out.println("ACTUALIZAR PUNTOS DE VIDA");
 			this.vista.dibujar();
 	    }
 	}
@@ -43,15 +42,8 @@ public class VistaPuntosDeVida extends VBox {
 		Jugador jugador1 = juego.obtenerJugador(0);
 		Jugador jugador2 = juego.obtenerJugador(1);
 		
-		int puntosDeVida = jugador1.obtenerPuntosDeVida();
-		this.boxJugador1.getChildren().clear();
-		Text text1 = this.darTextoNombreJugador(""+puntosDeVida);
-		this.boxJugador1.getChildren().add(text1);
-		
-		puntosDeVida = jugador2.obtenerPuntosDeVida();
-		this.boxJugador2.getChildren().clear();
-		Text text2 = this.darTextoNombreJugador(""+puntosDeVida);
-		this.boxJugador2.getChildren().add(text2);
+		this.modificarVBoxJugador(this.boxJugador1,jugador1);
+		this.modificarVBoxJugador(this.boxJugador2,jugador2);
 	}
 	
 	public VistaPuntosDeVida(BorderPane layoutContenedorJuego) {
@@ -71,18 +63,22 @@ public class VistaPuntosDeVida extends VBox {
 		this.getStyleClass().add("fondoPuntosDeVida");
 		this.setSpacing(20);
 		this.boxJugador1 = new VBox();
+		this.boxJugador1.setSpacing(10);
 		this.boxJugador2 = new VBox();
+		this.boxJugador2.setSpacing(10);
 		this.setSpacing(400);
 		this.getChildren().addAll(this.boxJugador1,this.boxJugador2);
 		this.dibujar();
 		this.setPrefWidth(70);
 	}
 	
-//	private VBox darVBoxJugador(String nombre) {
-//		box.getChildren().add(this.darTextoNombreJugador(nombre));
-//		box.setSpacing(10);
-//		return box;
-//	}
+	private void modificarVBoxJugador(VBox box,Jugador jugador) {
+		int puntosDeVida = jugador.obtenerPuntosDeVida();
+		box.getChildren().clear();
+		box.getChildren().add(this.darTextoNombreJugador(jugador.obtenerNombre()));
+		Text text1 = this.darTextoNombreJugador(""+puntosDeVida);
+		box.getChildren().add(text1);
+	}
 	
 	private Text darTextoNombreJugador(String jugador) {
 		Text nombre = new Text(300, 300, jugador);

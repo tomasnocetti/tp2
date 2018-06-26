@@ -7,8 +7,8 @@ import javafx.stage.Stage;
 
 public class SceneCompletarNombres extends Scene{
 
-	public SceneCompletarNombres(Stage stage, SceneJuego sceneJuego, MediaPlayer mediaPlayer) {
-		super(new LayoutContenedorCompletarNombres(stage, sceneJuego, mediaPlayer),900,1000);
+	public SceneCompletarNombres(Stage stage, MediaPlayer mediaPlayer) {
+		super(new LayoutContenedorCompletarNombres(stage, mediaPlayer),900,1000);
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 	}
 	

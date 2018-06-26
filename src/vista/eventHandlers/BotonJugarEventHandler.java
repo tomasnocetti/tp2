@@ -1,5 +1,8 @@
 package vista.eventHandlers;
 
+import vista.SceneJuego;
+import fiuba.algo3.tp2.Juego;
+import fiuba.algo3.tp2.Jugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -11,16 +14,26 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 	private Stage stage;
 	private Scene sceneJuego;
 	private MediaPlayer mediaPlayer;
+	private String nombre1;
+	private String nombre2;
 
-	public BotonJugarEventHandler (Stage stage, Scene sceneJuego, MediaPlayer mediaPlayer) {
+	public BotonJugarEventHandler (Stage stage, MediaPlayer mediaPlayer,String nombre1, String nombre2) {
 		this.stage = stage;
-		this.sceneJuego = sceneJuego;
 		this.mediaPlayer = mediaPlayer;
+		this.nombre1 = nombre1;
+		this.nombre2 = nombre2;
 	}
 	
 	public void handle(ActionEvent event) {
+		Juego juego = Juego.ObtenerJuego();
+		Jugador jugador1 = juego.obtenerJugador(0);
+		Jugador jugador2 = juego.obtenerJugador(1);
+		
+		jugador1.asignarnombre(this.nombre1);
+		jugador2.asignarnombre(this.nombre2);
+		
 		this.mediaPlayer.stop();
-		this.stage.setScene(this.sceneJuego);
+		this.stage.setScene(new SceneJuego());
 		this.stage.setFullScreen(true);
 	}
 

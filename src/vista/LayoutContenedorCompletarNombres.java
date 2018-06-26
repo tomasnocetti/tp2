@@ -26,17 +26,10 @@ import vista.eventHandlers.BotonJugarEventHandler;
 
 public class LayoutContenedorCompletarNombres extends VBox{
 	
-	public LayoutContenedorCompletarNombres(final Stage stage, final Scene sceneJuego, final MediaPlayer mediaPlayer) {
+	public LayoutContenedorCompletarNombres(final Stage stage, final MediaPlayer mediaPlayer) {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("fondoNombres");
-		
-		
-		
-//		GridPane grid = new GridPane();
-//		grid.setPadding(new Insets(10, 10, 10, 10));
-//		grid.setVgap(10);
-//		grid.setHgap(90);
 		
 		final VBox vbox1 = new VBox(20);
 		final VBox vbox2 = new VBox();
@@ -91,9 +84,6 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    GridPane.setConstraints(name2, 0, 0);
 	    vbox1.getChildren().add(name2);
 	    
-//	    BooleanBinding textField1Valid = Bindings.createBooleanBinding(name2.textProperty());
-//	    BooleanBinding textField2Valid = Bindings.createBooleanBinding(name2.textProperty());
-//	    buttonJugar.disableProperty().bind(textField1Valid.not().or(textField2Valid.not()));
 	    final Text txtState = new Text();
 	    
 	    final Button buttonJugar = new Button("CONTINUAR");
@@ -110,7 +100,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
                     vbox1.getChildren().add(txtState);
                 }
                 else{
-                	buttonJugar.setOnAction(new BotonJugarEventHandler(stage, sceneJuego, mediaPlayer));
+                	buttonJugar.setOnAction(new BotonJugarEventHandler(stage, mediaPlayer,name1.getText(),name2.getText()));
                 }
             }
         });
