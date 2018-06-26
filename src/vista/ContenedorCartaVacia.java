@@ -14,9 +14,9 @@ public class ContenedorCartaVacia extends VBox{
 		this.getChildren().add(button);
 		this.setAlignment(Pos.CENTER);
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		this.getStyleClass().add("button-cartas");
+		this.getStyleClass().add("button");
 		button.setPrefHeight(250);
-		this.setPrefWidth(200);
+		button.setPrefWidth(200);
 		this.setPrefHeight(250);
 		this.setPrefWidth(200);
 	}

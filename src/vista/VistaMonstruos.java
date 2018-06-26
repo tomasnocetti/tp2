@@ -16,7 +16,6 @@ public class VistaMonstruos extends GridPane{
 			ContenedorCartaVacia contenedor = new ContenedorCartaVacia();
 			contenedor.setId("" + (i));
 			this.add(contenedor, i , 0);
-//			System.out.println(contenedor.getId());
 		}
 	}
 }

@@ -19,8 +19,6 @@ public class VistaMazo extends HBox {
 		Juego juego = Juego.ObtenerJuego();
 		Jugador jugador = juego.jugadorActual();
 		Mazo mazo = jugador.obtenerMazo();
-		this.getChildren().add(new ContenedorCartaVacia());
-//		Background fondo = new Background(new BackgroundImage(new Image("cartaBocaAbajo.jpg",150,150,true,true), null, null, null, null));
-//		this.setBackground(fondo);
+		this.getChildren().add(new ContenedorCartaMazo(String.valueOf(mazo.obtenerCantidadDeCartas())));
 	}
 }
