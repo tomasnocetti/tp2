@@ -11,12 +11,12 @@ import vista.ContenedorCarta;
 import vista.ContenedorCartaVacia;
 
 public class OnDragExitedContenedor implements EventHandler<DragEvent>{
-	private String nombreDeClase = null; 
+	private Class<?> clase = null; 
 	private ContenedorCartaVacia contenedor = null;
 	private Integer fasePermitida = null; 
 	
-	public OnDragExitedContenedor(String nombreDeClase, ContenedorCartaVacia contenedor, Integer fasePermitida) {
-		this.nombreDeClase = nombreDeClase;
+	public OnDragExitedContenedor(Class<?> superClass, ContenedorCartaVacia contenedor, Integer fasePermitida) {
+		this.clase = superClass;
 		this.contenedor = contenedor; 
 		this.fasePermitida = fasePermitida;
 	}
@@ -27,12 +27,9 @@ public class OnDragExitedContenedor implements EventHandler<DragEvent>{
 		Dragboard db = event.getDragboard();
         Carta carta = (Carta) db.getContent(Carta.Binding);
         
-        System.out.println(carta.getClass().getSimpleName());
-        System.out.println(this.nombreDeClase);
         Juego juego = Juego.ObtenerJuego();
         
-        if(this.fasePermitida.equals(juego.iFaseActual()) 
-        	&& this.nombreDeClase.equals(carta.getClass().getSimpleName())) {	
+        if(this.fasePermitida.equals(juego.iFaseActual()) && this.clase.isInstance(carta) ) {	
         	contenedor.setStyle("-fx-background-color: #000000;");
         }
                     

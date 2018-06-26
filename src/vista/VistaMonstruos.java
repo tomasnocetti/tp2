@@ -16,11 +16,11 @@ public class VistaMonstruos extends GridPane{
 		this.setAlignment(Pos.CENTER);
 		for(int i = 0; i < 5; i++) {
 			ContenedorCartaVacia contenedor = new ContenedorCartaVacia();
-			OnDragEnteredContenedor event = new OnDragEnteredContenedor(CartaMonstruo.class.getSimpleName(), contenedor, 1);
+			OnDragEnteredContenedor event = new OnDragEnteredContenedor(CartaMonstruo.class, contenedor, 1);
 			contenedor.setOnDragEntered(event);
-			OnDragExitedContenedor event2 = new OnDragExitedContenedor(CartaMonstruo.class.getSimpleName(), contenedor, 1);
+			OnDragExitedContenedor event2 = new OnDragExitedContenedor(CartaMonstruo.class, contenedor, 1);
 			contenedor.setOnDragExited(event2);
-			OnDragOverContenedor event3 = new OnDragOverContenedor(CartaMonstruo.class.getSimpleName(), contenedor, 1);
+			OnDragOverContenedor event3 = new OnDragOverContenedor(CartaMonstruo.class, contenedor, 1);
 			contenedor.setOnDragOver(event3);
 			
 			contenedor.setId(String.valueOf(i));

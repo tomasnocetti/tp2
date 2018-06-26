@@ -12,12 +12,12 @@ import vista.ContenedorCarta;
 import vista.ContenedorCartaVacia;
 
 public class OnDragOverContenedor implements EventHandler<DragEvent>{
-	private String nombreDeClase = null; 
+	private Class<?> clase = null;  
 	private ContenedorCartaVacia contenedor = null;
 	private Integer fasePermitida = null; 
 	
-	public OnDragOverContenedor(String nombreDeClase, ContenedorCartaVacia contenedor, Integer fasePermitida) {
-		this.nombreDeClase = nombreDeClase;
+	public OnDragOverContenedor(Class<?> superClass, ContenedorCartaVacia contenedor, Integer fasePermitida) {
+		this.clase = superClass;
 		this.contenedor = contenedor; 
 		this.fasePermitida = fasePermitida;
 	}
@@ -28,11 +28,9 @@ public class OnDragOverContenedor implements EventHandler<DragEvent>{
 		Dragboard db = event.getDragboard();
         Carta carta = (Carta) db.getContent(Carta.Binding);
         
-        System.out.println(carta.getClass().getSimpleName());
-        System.out.println(this.nombreDeClase);
         Juego juego = Juego.ObtenerJuego();
         
-        if(this.fasePermitida.equals(juego.iFaseActual()) && this.nombreDeClase.equals(carta.getClass().getSimpleName())) {	
+        if(this.fasePermitida.equals(juego.iFaseActual()) && this.clase.isInstance(carta) ) {	
         	event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
         }
                     
