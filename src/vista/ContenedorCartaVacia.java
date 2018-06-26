@@ -10,10 +10,10 @@ import javafx.scene.text.Text;
 public class ContenedorCartaVacia extends VBox{
 	
 	private Jugador jugador;
-	public ContenedorCartaVacia(Jugador jugador) {
+	public ContenedorCartaVacia(Jugador jugador, String zona) {
 		super();
 		this.jugador = jugador;
-		Button button = new Button("+");
+		Button button = new Button(zona);
 		this.getChildren().add(button);
 		this.setAlignment(Pos.CENTER);
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());

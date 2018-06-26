@@ -27,7 +27,7 @@ public class VistaTableroJugador extends HBox {
 		vistaMonstruos = new VistaMonstruos(num_jugador);
 		vistaTrampasOMagicas = new VistaTrampasOMagicas(num_jugador);
 		vistaCampo = new VistaCampo(num_jugador);
-		vistaCementerio = new VistaCementerio();
+		vistaCementerio = new VistaCementerio(num_jugador);
 		vistaMazo = new VistaMazo();
 		
 		if(frente) {

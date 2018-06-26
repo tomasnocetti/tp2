@@ -60,7 +60,7 @@ public class VistaMonstruos extends GridPane{
 				contenedor.setOnMouseClicked(evento);
 				this.add(contenedor, i , 0);
 			}else {
-				ContenedorCartaVacia contenedor = new ContenedorCartaVacia(jugador);
+				ContenedorCartaVacia contenedor = new ContenedorCartaVacia(jugador, "Monstruo");
 				contenedor.setId(String.valueOf(i));
 				OnDragEnteredContenedor event = new OnDragEnteredContenedor(CartaMonstruo.class, contenedor, 1);
 				contenedor.setOnDragEntered(event);

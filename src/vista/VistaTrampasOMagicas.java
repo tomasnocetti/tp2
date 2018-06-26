@@ -42,7 +42,7 @@ public class VistaTrampasOMagicas extends GridPane{
 				contenedor.setId(String.valueOf(i));
 				this.add(contenedor, i , 0);
 			}else {
-				ContenedorCartaVacia contenedor = new ContenedorCartaVacia(jugador);
+				ContenedorCartaVacia contenedor = new ContenedorCartaVacia(jugador,"Magica/Trampa");
 				OnDragEnteredContenedor event = new OnDragEnteredContenedor(CartaTrampaOMagica.class, contenedor, 1);
 				contenedor.setOnDragEntered(event);
 				OnDragExitedContenedor event2 = new OnDragExitedContenedor(CartaTrampaOMagica.class, contenedor, 1);
