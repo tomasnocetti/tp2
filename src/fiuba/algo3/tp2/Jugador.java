@@ -56,6 +56,8 @@ public class Jugador extends Observable{
 	
 	public void quitarPuntosDeVida(int puntosPerdidos) {
 		this.puntosDeVida = this.puntosDeVida - puntosPerdidos;
+        this.setChanged();
+        this.notifyObservers(); 
 	}
 
 	public int obtenerPuntosDeVida() {
