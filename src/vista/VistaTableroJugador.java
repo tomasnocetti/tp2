@@ -1,6 +1,13 @@
 package vista;
 
+import java.util.Collection;
+import java.util.Iterator;
+
+import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.Cartas.Carta;
+import fiuba.algo3.tp2.Cartas.CartaMagica;
+import fiuba.algo3.tp2.Cartas.CartaTrampa;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -18,8 +25,7 @@ public class VistaTableroJugador extends HBox {
 		super();
 		
 		ContenedorCartaVacia cartaVacia = new ContenedorCartaVacia();
-				
-
+		
 		vistaMonstruos = new VistaMonstruos(num_jugador);
 		vistaTrampasOMagicas = new VistaTrampasOMagicas(num_jugador);
 		vistaCampo = new VistaCampo(num_jugador);
@@ -40,5 +46,6 @@ public class VistaTableroJugador extends HBox {
 			this.getChildren().addAll(tableroPrincipal,tableroSecundario);
 		}
 		this.setSpacing(10);
+
 	}
 }

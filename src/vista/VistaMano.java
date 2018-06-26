@@ -5,6 +5,9 @@ import java.util.Iterator;
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
+import fiuba.algo3.tp2.Cartas.CartaMagica;
+import fiuba.algo3.tp2.Cartas.CartaMonstruo;
+import fiuba.algo3.tp2.Cartas.CartaTrampa;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -29,6 +32,8 @@ public class VistaMano extends HBox{
 		this.setAlignment(Pos.CENTER);
 		
 		this.dibujar(); 
+		
+
 	}
 	
 	public void dibujar() {
