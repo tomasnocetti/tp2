@@ -23,22 +23,24 @@ public class ContenedorCarta extends VBox {
 		
 		if(carta instanceof CartaMonstruo) {
 			Text nombre = new Text(carta.nombre());
+			nombre.setWrappingWidth(100);
 			Text ataque = new Text("ATK: " + ((CartaMonstruo) carta).obtenerPuntosAtaque());
 			Text defensa = new Text("DEN: " + ((CartaMonstruo) carta).obtenerPuntosDefensa());
 			Text estrellas = new Text("EST: " + ((CartaMonstruo) carta).obtenerEstrellas());
 			Text tipo = new Text(carta.getClass().getSimpleName());
 			this.getChildren().addAll(nombre,tipo,ataque,defensa, estrellas);
-			this.setMargin(this.getChildren().get(0),new Insets(10));
-	        this.setMargin(this.getChildren().get(1),new Insets(10));
-	        this.setMargin(this.getChildren().get(2),new Insets(10));
-	        this.setMargin(this.getChildren().get(3),new Insets(10));
-	        this.setMargin(this.getChildren().get(4),new Insets(10));
+			this.setMargin(this.getChildren().get(0),new Insets(5));
+	        this.setMargin(this.getChildren().get(1),new Insets(5));
+	        this.setMargin(this.getChildren().get(2),new Insets(5));
+	        this.setMargin(this.getChildren().get(3),new Insets(5));
+	        this.setMargin(this.getChildren().get(4),new Insets(5));
 		}else {
 			Text nombre = new Text(carta.nombre());
+			nombre.setWrappingWidth(150);
 			Text tipo = new Text(carta.getClass().getSimpleName());
 			this.getChildren().addAll(nombre,tipo);
-			this.setMargin(this.getChildren().get(0),new Insets(10));
-			this.setMargin(this.getChildren().get(1),new Insets(10));
+			this.setMargin(this.getChildren().get(0),new Insets(5));
+			this.setMargin(this.getChildren().get(1),new Insets(5));
 		}
 		
 	}
