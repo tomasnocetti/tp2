@@ -1,5 +1,6 @@
 package vista;
 
+import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -7,9 +8,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 public class ContenedorCartaVacia extends VBox{
-
-	public ContenedorCartaVacia() {
+	
+	private Jugador jugador;
+	public ContenedorCartaVacia(Jugador jugador) {
 		super();
+		this.jugador = jugador;
 		Button button = new Button("+");
 		this.getChildren().add(button);
 		this.setAlignment(Pos.CENTER);
@@ -19,6 +22,10 @@ public class ContenedorCartaVacia extends VBox{
 		button.setPrefWidth(200);
 		this.setPrefHeight(250);
 		this.setPrefWidth(200);
+	}
+	
+	public boolean jugadorEsValido(Jugador jugador2) {
+		return this.jugador.equals(jugador2);
 	}
 
 }

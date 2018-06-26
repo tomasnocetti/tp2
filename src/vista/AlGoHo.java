@@ -1,6 +1,9 @@
 package vista;
 
 import java.io.File;
+
+import fiuba.algo3.tp2.Juego;
+import fiuba.algo3.tp2.Jugador;
 import javafx.application.Application;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;

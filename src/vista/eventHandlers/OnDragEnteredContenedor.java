@@ -28,11 +28,7 @@ public class OnDragEnteredContenedor implements EventHandler<DragEvent>{
 		Dragboard db = event.getDragboard();
         Carta carta = (Carta) db.getContent(Carta.Binding);
         
-        System.out.println(carta.getClass().getSimpleName());
         Juego juego = Juego.ObtenerJuego();
-        Jugador jugadorActual = juego.jugadorActual();
-        boolean success = false;
-
         
         if(this.fasePermitida.equals(juego.iFaseActual()) && this.clase.isInstance(carta) ) {	
         	contenedor.setStyle("-fx-background-color: #FFFFFF;");	 

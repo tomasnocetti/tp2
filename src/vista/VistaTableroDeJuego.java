@@ -53,5 +53,7 @@ public class VistaTableroDeJuego extends VBox {
 			ventana.display(juego.obtenerGanador().obtenerNombre(), stage);
 		}
 		
+		this.vistaTableroJugador1.dibujar();
+		this.vistaTableroJugador2.dibujar();
 	}
 }

@@ -25,15 +25,6 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 	}
 	
 	public void handle(ActionEvent event) {
-		Juego juego = Juego.ObtenerJuego();
-		Jugador jugador1 = juego.obtenerJugador(0);
-		Jugador jugador2 = juego.obtenerJugador(1);
-		
-		jugador1.asignarnombre(this.nombre1);
-		jugador2.asignarnombre(this.nombre2);
-		
-		this.mediaPlayer.stop();
-		this.stage.setScene(new SceneJuego(stage));
 		this.stage.setFullScreen(true);
 	}
 

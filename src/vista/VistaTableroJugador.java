@@ -24,8 +24,6 @@ public class VistaTableroJugador extends HBox {
 	public VistaTableroJugador(boolean frente, int num_jugador) {
 		super();
 		
-		ContenedorCartaVacia cartaVacia = new ContenedorCartaVacia();
-		
 		vistaMonstruos = new VistaMonstruos(num_jugador);
 		vistaTrampasOMagicas = new VistaTrampasOMagicas(num_jugador);
 		vistaCampo = new VistaCampo(num_jugador);
@@ -46,6 +44,9 @@ public class VistaTableroJugador extends HBox {
 			this.getChildren().addAll(tableroPrincipal,tableroSecundario);
 		}
 		this.setSpacing(10);
-
+	}
+	
+	public void dibujar() {
+		this.vistaMonstruos.dibujar();
 	}
 }

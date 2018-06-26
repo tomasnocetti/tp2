@@ -27,9 +27,8 @@ public class OnDragOverContenedor implements EventHandler<DragEvent>{
         /* show to the user that it is an actual gesture target */
 		Dragboard db = event.getDragboard();
         Carta carta = (Carta) db.getContent(Carta.Binding);
-        
-        Juego juego = Juego.ObtenerJuego();
-        
+   
+        Juego juego = Juego.ObtenerJuego();    
         if(this.fasePermitida.equals(juego.iFaseActual()) && this.clase.isInstance(carta) ) {	
         	event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
         }

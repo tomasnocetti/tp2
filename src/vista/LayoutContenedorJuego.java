@@ -9,6 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import vista.eventHandlers.ControladorDeJuego;
 
 public class LayoutContenedorJuego extends BorderPane {
 	
@@ -46,6 +47,10 @@ public class LayoutContenedorJuego extends BorderPane {
         this.setCenter(vistaTableroDeJuego);
         this.setLeft(vistaInformacionDeJuego);
 		this.setBottom(borderMano);
+		
+		ControladorDeJuego.inicializar(vistaMano, vistaInformacionDeJuego, vistaTableroDeJuego);
+		ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
+		controlador.dibujar();
 	}
 
 	public void agregarSceneJuego(SceneJuego sceneJuego) {

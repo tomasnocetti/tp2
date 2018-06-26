@@ -13,6 +13,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import vista.eventHandlers.BotonContinuarFaseEventHandler;
+import vista.eventHandlers.ControladorDeJuego;
 
 public class VistaInformacionDeJuego extends VBox {
 	

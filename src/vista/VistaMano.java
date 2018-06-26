@@ -19,6 +19,7 @@ import javafx.scene.layout.HBox;
 //import javafx.scene.layout.VBox;
 //import vista.eventHandlers.ApretarEnImagenEventHandler;
 import javafx.scene.text.Text;
+import vista.eventHandlers.ControladorDeJuego;
 
 public class VistaMano extends HBox{
 	
@@ -30,13 +31,11 @@ public class VistaMano extends HBox{
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("vistaMano");
 		this.setAlignment(Pos.CENTER);
-		
-		this.dibujar(); 
-		
-
 	}
 	
 	public void dibujar() {
+		this.getChildren().clear();
+		System.out.println("REDIBUJAR TABLERO");
 		Juego juego = Juego.ObtenerJuego();
 		Jugador jugador = juego.jugadorActual();
 		Collection<Carta> cartas = jugador.obtenerCartasEnMano();
@@ -48,19 +47,12 @@ public class VistaMano extends HBox{
 			ContenedorCarta contenedor = new ContenedorCarta(carta);
 			contenedor.setOnDragDetected(new EventHandler<MouseEvent>() {
 			    public void handle(MouseEvent event) {
-			        /* drag was detected, start a drag-and-drop gesture*/
-			        /* allow any transfer mode */
-			    	
-			        Dragboard db = contenedor.startDragAndDrop(TransferMode.MOVE);
-			        
-			        /* Put a string on a dragboard */
+
+			        ControladorDeJuego.setDraggedCard(carta);
+			        Dragboard db = contenedor.startDragAndDrop(TransferMode.COPY_OR_MOVE);
 			        ClipboardContent content = new ClipboardContent();
-			        System.out.println("ACA2");
-			        
 			        content.put(Carta.Binding, carta);
-			        System.out.println("ACA3");
-			       
-			        db.setContent(content);
+			        db.setContent(content);			  
 			        
 			        event.consume();
 			    }
