@@ -117,7 +117,7 @@ public class CartaMonstruo extends Carta{
 		return this.invocador.invocar(cartasSacrificadas);
 	}
 
-	public int estrellas() {
+	public int obtenerEstrellas() {
 		return this.estrellas;
 	}
 	

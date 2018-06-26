@@ -14,19 +14,25 @@ public class ContenedorCarta extends VBox {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("contenedorCarta");
-		this.setMaxHeight(250);
-		this.setMaxWidth(200);
+		this.setPrefHeight(200);
+		this.setPrefWidth(150);
+		this.setMaxHeight(200);
+		this.setMaxWidth(150);
+		this.setMinHeight(200);
+		this.setMinWidth(150);
 		
 		if(carta instanceof CartaMonstruo) {
 			Text nombre = new Text(carta.nombre());
-			Text ataque = new Text("" + ((CartaMonstruo) carta).obtenerPuntosAtaque());
-			Text defensa = new Text("" + ((CartaMonstruo) carta).obtenerPuntosDefensa());
+			Text ataque = new Text("ATK: " + ((CartaMonstruo) carta).obtenerPuntosAtaque());
+			Text defensa = new Text("DEN: " + ((CartaMonstruo) carta).obtenerPuntosDefensa());
+			Text estrellas = new Text("EST: " + ((CartaMonstruo) carta).obtenerEstrellas());
 			Text tipo = new Text(carta.getClass().getSimpleName());
-			this.getChildren().addAll(tipo,nombre,ataque,defensa);
+			this.getChildren().addAll(nombre,tipo,ataque,defensa, estrellas);
 			this.setMargin(this.getChildren().get(0),new Insets(10));
 	        this.setMargin(this.getChildren().get(1),new Insets(10));
 	        this.setMargin(this.getChildren().get(2),new Insets(10));
 	        this.setMargin(this.getChildren().get(3),new Insets(10));
+	        this.setMargin(this.getChildren().get(4),new Insets(10));
 		}else {
 			Text nombre = new Text(carta.nombre());
 			Text tipo = new Text(carta.getClass().getSimpleName());
