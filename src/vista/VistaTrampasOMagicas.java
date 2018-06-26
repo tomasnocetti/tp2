@@ -13,7 +13,8 @@ public class VistaTrampasOMagicas extends GridPane{
 		this.setAlignment(Pos.CENTER);
 		for(int i = 0; i < 5; i++) {
 			ContenedorCartaVacia contenedor = new ContenedorCartaVacia();
-			this.add(contenedor, i+1 , 1);
+			contenedor.setId("" + (i));
+			this.add(contenedor, i , 1);
 		}
 	}
 }

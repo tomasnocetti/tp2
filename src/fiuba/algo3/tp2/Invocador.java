@@ -23,7 +23,7 @@ public abstract class Invocador implements Serializable{
 			return invocadorDragonDefinitivo;
 		}
 		
-		int estrellas = carta.estrellas();
+		int estrellas = carta.obtenerEstrellas();
 		
 		if (0 < estrellas && estrellas < 5) {
 			return invocadorBasico;

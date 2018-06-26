@@ -1,5 +1,10 @@
 package vista;
 
+import java.util.Observable;
+import java.util.Observer;
+
+import fiuba.algo3.tp2.Juego;
+import fiuba.algo3.tp2.Jugador;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.effect.Light;
@@ -16,27 +21,63 @@ import javafx.scene.text.Text;
 public class VistaPuntosDeVida extends VBox {
 	
 	private BorderPane layoutContenedorJuego;
+	private VBox boxJugador1;
+	private VBox boxJugador2;
+	
+	
+	public class PuntosDeVidaObserver implements Observer { 
+		private VistaPuntosDeVida vista;
+		
+		public PuntosDeVidaObserver(VistaPuntosDeVida vistaPuntosDeVida) {
+			this.vista = vistaPuntosDeVida;
+		}
+		
+		public void update(Observable observable, Object args) {
+			this.vista.dibujar();
+	    }
+	}
+	
+	public void dibujar() {
+		Juego juego = Juego.ObtenerJuego();
+		Jugador jugador1 = juego.obtenerJugador(0);
+		Jugador jugador2 = juego.obtenerJugador(1);
+		
+		this.modificarVBoxJugador(this.boxJugador1,jugador1);
+		this.modificarVBoxJugador(this.boxJugador2,jugador2);
+	}
 	
 	public VistaPuntosDeVida(BorderPane layoutContenedorJuego) {
 		super();
+		
+		Juego juego = Juego.ObtenerJuego();
+		Jugador jugador1 = juego.obtenerJugador(0);
+		Jugador jugador2 = juego.obtenerJugador(1);
+		
+		PuntosDeVidaObserver puntosDeVidaObserver1 = new PuntosDeVidaObserver(this);
+		jugador1.addObserver(puntosDeVidaObserver1);
+		PuntosDeVidaObserver puntosDeVidaObserver2 = new PuntosDeVidaObserver(this);
+		jugador2.addObserver(puntosDeVidaObserver2);
+		
 		this.layoutContenedorJuego = layoutContenedorJuego;
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("fondoPuntosDeVida");
 		this.setSpacing(20);
-		this.getChildren().add(this.informacionPuntosDeVida("Jugador1"));
-		this.getChildren().add(this.informacionPuntosDeVida("Jugador2"));
+		this.boxJugador1 = new VBox();
+		this.boxJugador1.setSpacing(10);
+		this.boxJugador2 = new VBox();
+		this.boxJugador2.setSpacing(10);
+		this.setSpacing(400);
+		this.getChildren().addAll(this.boxJugador1,this.boxJugador2);
+		this.dibujar();
 		this.setPrefWidth(70);
 	}
 	
-	
-	
-	private VBox informacionPuntosDeVida(String jugador) {
-		VBox vbox = new VBox(5);
-		Text nombre = this.darTextoNombreJugador(jugador);
-		vbox.getChildren().add(nombre);
-		vbox.setPrefSize(70, 500);
-		return vbox;
-		
+	private void modificarVBoxJugador(VBox box,Jugador jugador) {
+		int puntosDeVida = jugador.obtenerPuntosDeVida();
+		box.getChildren().clear();
+		box.getChildren().add(this.darTextoNombreJugador(jugador.obtenerNombre()));
+		Text text1 = this.darTextoNombreJugador(""+puntosDeVida);
+		box.getChildren().add(text1);
 	}
 	
 	private Text darTextoNombreJugador(String jugador) {

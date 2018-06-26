@@ -3,8 +3,6 @@ package vista;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Rectangle;
-import vista.eventHandlers.CuadradoEventHandler;
 import vista.eventHandlers.OnDragEnteredContenedor;
 import vista.eventHandlers.OnDragExitedContenedor;
 import vista.eventHandlers.OnDragOverContenedor;
@@ -25,7 +23,8 @@ public class VistaMonstruos extends GridPane{
 			OnDragOverContenedor event3 = new OnDragOverContenedor(CartaMonstruo.class.getSimpleName(), contenedor, 1);
 			contenedor.setOnDragOver(event3);
 			
-			this.add(contenedor, i+1 , 0);
+			contenedor.setId(String.valueOf(i));
+			this.add(contenedor, i , 0);
 		}
 	}
 }

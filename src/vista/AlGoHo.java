@@ -27,19 +27,15 @@ public class AlGoHo extends Application{
 	public void start(Stage stage) throws Exception {
 		stage.setTitle("AlGoHo");
         
-        sceneJuego = new SceneJuego();
-        
         mediaPlayer = new MediaPlayer(new Media(new File("src/vista/YugiohTema.wav").toURI().toString()));
 //		mediaPlayer.play();
 		mediaPlayer.setVolume(0.02);
         
-        sceneCompletarNombres = new SceneCompletarNombres(stage, sceneJuego, mediaPlayer);
+        sceneCompletarNombres = new SceneCompletarNombres(stage, mediaPlayer);
         
         sceneInicio = new SceneInicio(stage, sceneCompletarNombres);
         
-        sceneJuego.agregarSceneInicio(sceneInicio);
-        
-        stage.setScene(sceneJuego);
+        stage.setScene(sceneInicio);
         stage.setFullScreen(true);
         stage.show();
 	}	
