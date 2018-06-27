@@ -48,7 +48,7 @@ public class LayoutContenedorJuego extends BorderPane {
         this.setLeft(vistaInformacionDeJuego);
 		this.setBottom(borderMano);
 		
-		ControladorDeJuego.inicializar(vistaMano, vistaInformacionDeJuego, vistaTableroDeJuego);
+		ControladorDeJuego.inicializar(vistaMano, vistaInformacionDeJuego, vistaTableroDeJuego, vistaPuntosDeVida);
 		ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
 		controlador.dibujar();
 	}

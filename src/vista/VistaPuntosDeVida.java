@@ -65,6 +65,7 @@ public class VistaPuntosDeVida extends VBox {
 		Jugador jugador1 = juego.obtenerJugador(0);
 		Jugador jugador2 = juego.obtenerJugador(1);
 		
+		
 		this.modificarVBoxJugador(this.boxJugador1,jugador1);
 		this.modificarVBoxJugador(this.boxJugador2,jugador2);
 		
@@ -106,8 +107,10 @@ public class VistaPuntosDeVida extends VBox {
 		
 		this.boxJugador1 = new VBox();
 		this.boxJugador1.setSpacing(10);
+		this.boxJugador1.setAlignment(Pos.BOTTOM_CENTER);
 		this.boxJugador2 = new VBox();
 		this.boxJugador2.setSpacing(10);
+		this.boxJugador2.setAlignment(Pos.BOTTOM_CENTER);
 		this.setSpacing(10);
 		this.getChildren().add(this.boxJugador1);
 		this.getChildren().addAll(this.pBar1);
@@ -123,7 +126,16 @@ public class VistaPuntosDeVida extends VBox {
 		box.getChildren().clear();
 		box.getChildren().add(this.darTextoNombreJugador(jugador.obtenerNombre()));
 		Text text1 = this.darTextoNombreJugador(""+puntosDeVida);
+		Juego juego = Juego.ObtenerJuego();
+		Jugador jugadorActual = juego.jugadorActual();
 		box.getChildren().add(text1);
+		if(jugador.equals(jugadorActual)) {
+			Text active = new Text();
+			active.setText("●");
+			active.setFill(Color.RED);
+			box.getChildren().add(active);
+			
+		}
 	}
 	
 	private Text darTextoNombreJugador(String jugador) {

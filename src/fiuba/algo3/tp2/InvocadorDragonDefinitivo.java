@@ -6,9 +6,11 @@ import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
 public class InvocadorDragonDefinitivo extends Invocador {
 
+	private static int cartasNecesarias = 3;
+	
 	@Override
 	public boolean invocar(ArrayList<CartaMonstruo> cartasSacrificadas) {
-		if (cartasSacrificadas.size() != 3) {
+		if (cartasSacrificadas.size() != cartasNecesarias) {
 			return false;
 		}
 		else {
@@ -19,6 +21,12 @@ public class InvocadorDragonDefinitivo extends Invocador {
 			}
 		}
 		return true;
+	}
+
+	@Override
+	public int numeroInvocaciones() {
+		// TODO Auto-generated method stub
+		return cartasNecesarias;
 	}
 
 }

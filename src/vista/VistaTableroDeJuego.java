@@ -47,12 +47,6 @@ public class VistaTableroDeJuego extends VBox {
 
 	@SuppressWarnings("static-access")
 	public void dibujar() {
-		Juego juego = Juego.ObtenerJuego();
-		if (juego.estadoDelJuegoTerminado()) {
-			VentanaFinDeJuego ventana = new VentanaFinDeJuego();
-			ventana.display(juego.obtenerGanador().obtenerNombre(), stage);
-		}
-		
 		this.vistaTableroJugador1.dibujar();
 		this.vistaTableroJugador2.dibujar();
 	}

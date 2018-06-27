@@ -210,7 +210,7 @@ public class CartaFactory {
 		CartaFactory factory  = new CartaFactory(jugador);
 		
 		
-		ArrayList<Carta> cartas = factory.obtenerCartasAleatorias(22);
+		ArrayList<Carta> cartas = new ArrayList<Carta>();
 
 		cartas.add(factory.crearCartaWasteland());
 		cartas.add(factory.crearCartaReinforcements());

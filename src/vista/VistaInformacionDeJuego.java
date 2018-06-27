@@ -124,6 +124,7 @@ public class VistaInformacionDeJuego extends VBox {
 	    t.setWrappingWidth(300);
 	    t.minWidth(300);
 		this.contenedorInformacionJuego.getChildren().add(0,t);
+		this.contenedorInformacionJuego.setSpacing(10);	
 	}
 
 	public void mostrarSeccionSacrificios(String numeroNecesario) {
@@ -140,7 +141,6 @@ public class VistaInformacionDeJuego extends VBox {
 	    boton.setOnAction(handler);
 	    boton.getStyleClass().add("info-window-button");
 		this.contenedorInformacionJuego.getChildren().addAll(t, boton);
-		this.contenedorInformacionJuego.setSpacing(10);		
 	}
 
 	public void mostrarSeccionAtaque() {
@@ -161,4 +161,36 @@ public class VistaInformacionDeJuego extends VBox {
 		this.contenedorInformacionJuego.setSpacing(10);		
 	}
 	
+	public void mostrarSeccionAccionGenerica(String accion) { 
+		this.contenedorInformacionJuego.getChildren().clear();
+		Text t = new Text();
+		t.setText("Selecciona la carta de tu campo a la cual le queres aplicar la accion: " + accion);
+		t.setWrappingWidth(300);
+	    t.minWidth(300);
+	    t.setFont(Font.font ("Verdana", 16));
+	    t.setFill(Color.RED);
+	    
+	    Button boton = new Button("Cancelar");
+	    BotonCancelarHandler handler = new BotonCancelarHandler (); 
+	    boton.setOnAction(handler);
+	    boton.getStyleClass().add("info-window-button");
+		this.contenedorInformacionJuego.getChildren().addAll(t, boton);
+	}
+
+	public void mostrarSeccionFinDeJuego(String nombre, String razon) {
+		this.contenedorInformacionJuego.getChildren().clear();
+		Text t = new Text();
+		t.setText("El juego se ha terminado ! Razon: " + razon);
+		t.setWrappingWidth(300);
+	    t.minWidth(300);
+	    t.setFont(Font.font ("Verdana", 13));
+	    Text t2 = new Text();
+		t2.setText("Ganador: " + nombre);
+		t2.setWrappingWidth(300);
+	    t2.minWidth(300);
+	    t2.setFont(Font.font ("Verdana", 20));
+	    System.out.println("ACA TERMINADO EL JUEGO");
+	  
+		this.contenedorInformacionJuego.getChildren().addAll(t, t2);
+	}
 }

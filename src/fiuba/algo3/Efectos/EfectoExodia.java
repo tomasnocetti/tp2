@@ -40,7 +40,7 @@ public class EfectoExodia extends EfectoMonstruo{
 		}
 		
 		Juego juego = Juego.ObtenerJuego();
-		juego.asignarGanador(carta.obtenerJugador()); 
+		juego.asignarGanador(carta.obtenerJugador(), "Exodia"); 
 		
 	}
 }

@@ -7,8 +7,12 @@ import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import vista.VentanaFinDeJuego;
 import vista.VistaInformacionDeJuego;
 import vista.VistaMano;
+import vista.VistaPuntosDeVida;
 import vista.VistaTableroDeJuego;
 
 public class ControladorDeJuego {
@@ -21,6 +25,7 @@ public class ControladorDeJuego {
 	private ArrayList<CartaMonstruo> cartaClipboard = new ArrayList<CartaMonstruo>();
 	private CartaMonstruo cartaAInvocar; 
 	private int posicionAColocarInvocacion;
+	private VistaPuntosDeVida vistaPuntosDeVida;
 	
 	public static final String MODO_SACRIFICIO = "SACRIFICIO";
 	public static final String MODO_NORMAL = "NORMAL";
@@ -31,11 +36,12 @@ public class ControladorDeJuego {
 	public static final String BOCA_ABAJO = "BOCA_ABAJO";
 	public static final String BOCA_ARRIBA = "BOCA_ARRIBA";
 	
-	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego) {
+	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego, VistaPuntosDeVida vistaPuntosDeVida) {
 		ControladorDeJuego controlador = new ControladorDeJuego();
 		controlador.vistaTableroDeJuego = vistaTableroDeJuego;
 		controlador.vistaMano = vistaMano;
 		controlador.vistaInformacionDeJuego = vistaInformacionDeJuego;
+		controlador.vistaPuntosDeVida = vistaPuntosDeVida;
 		controladorActual = controlador;
 	}
 
@@ -60,27 +66,22 @@ public class ControladorDeJuego {
 		this.vistaMano.dibujar();
 		this.vistaTableroDeJuego.dibujar();
 		this.vistaInformacionDeJuego.dibujar();
+		this.vistaPuntosDeVida.dibujar();
 	}
 
 	public void continuarFase() {
 		Juego juego = Juego.ObtenerJuego();
+		
+		if(juego.estadoDelJuegoTerminado()) {
+			this.vistaInformacionDeJuego.mostrarSeccionFinDeJuego(juego.obtenerGanador().obtenerNombre(), juego.obtenerRazonFinalizacion());
+			return;
+		}
 		juego.continuarASiguienteFase();
 		Jugador actual = juego.jugadorActual();
 		
 		switch(juego.iFaseActual()) {
 		case 0:
 			actual.agarrarCartasDelMazo(1);
-            break;
-		case 1:
-            break;
-		case 2:
-			
-            break;
-		case 3:
-			
-		    break;
-		case 4:
-			
             break;
         }
 		this.dibujar();
@@ -122,18 +123,22 @@ public class ControladorDeJuego {
 				break;
 			case COLOCAR_ATAQUE:
 				this.accionActual = COLOCAR_ATAQUE;
+				this.vistaInformacionDeJuego.mostrarSeccionAccionGenerica("'Colocar en ataque'");
 				break;
 			case COLOCAR_DEFENSA:
 				this.accionActual = COLOCAR_DEFENSA;
+				this.vistaInformacionDeJuego.mostrarSeccionAccionGenerica("'Colocar en defensa'");
 				break;
 			case MODO_NORMAL:
 				this.accionActual = MODO_NORMAL;
 				break;
 			case BOCA_ABAJO:
 				this.accionActual = BOCA_ABAJO;
+				this.vistaInformacionDeJuego.mostrarSeccionAccionGenerica("'Colocar boca abajo'");
 				break;
 			case BOCA_ARRIBA:
 				this.accionActual = BOCA_ARRIBA;
+				this.vistaInformacionDeJuego.mostrarSeccionAccionGenerica("'Colocar boca arriba'");
 				break;
 		}
 	}
@@ -151,17 +156,4 @@ public class ControladorDeJuego {
 		}
 	}
 	
-	public void configurarAccion() {
-		
-	}
-	
-	
-	public void colocarCartaEnPosicionDefensa(CartaMonstruo carta) {
-//		if(this.accionActual == MODO_POSICION_DEFENSA)
-		
-	}
-
-	public void colocarCartaEnPosicionAtaque(CartaMonstruo carta) {
-
-	}
 }

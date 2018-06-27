@@ -14,7 +14,7 @@ public class JuegoTest {
 	public void test01CrearJuegoAsignarGanadorYVerficarQueEsteTerminado() {
 		Juego juego = Juego.ObtenerJuego();
 		Jugador ganador = juego.jugadorActual();
-		juego.asignarGanador(ganador);
+		juego.asignarGanador(ganador, "PRUEBA");
 		assertTrue(juego.estadoDelJuegoTerminado());
 	}
 	
@@ -22,7 +22,7 @@ public class JuegoTest {
 	public void test02CrearJuegoAsignarGanadorYVerficarQueEsteTerminado() {
 		Juego juego = Juego.ObtenerJuego();
 		Jugador perdedor = juego.jugadorActual();
-		juego.asignarPerdedor(perdedor);
+		juego.asignarPerdedor(perdedor, "PRUEBA");
 		assertTrue(juego.estadoDelJuegoTerminado());
 	}
 	
@@ -30,7 +30,7 @@ public class JuegoTest {
 	public void test03CrearJuegoAsignarGanadorYVerficarQueEsteGane() {
 		Juego juego = Juego.ObtenerJuego();
 		Jugador ganador = juego.jugadorActual();
-		juego.asignarGanador(ganador);
+		juego.asignarGanador(ganador, "PRUEBA");
 		assertTrue(ganador == juego.obtenerGanador());
 	}
 	
@@ -38,7 +38,7 @@ public class JuegoTest {
 	public void test04CrearJuegoAsignarPerdedorYVerficarQueEsteNoGano() {
 		Juego juego = Juego.ObtenerJuego();
 		Jugador perdedor = juego.jugadorActual();
-		juego.asignarPerdedor(perdedor);
+		juego.asignarPerdedor(perdedor, "PRUEBA");
 		assertTrue(perdedor != juego.obtenerGanador());
 	}
 	

@@ -23,7 +23,7 @@ public class Mazo implements Serializable{
 
 	public Carta agarrarCarta() {
 		if (this.cartas.size() == 0) {
-			Juego.ObtenerJuego().asignarPerdedor(this.jugador);
+			Juego.ObtenerJuego().asignarPerdedor(this.jugador, "Cartas En El Mazo");
 			return null;
 		}
 		Carta carta = cartas.remove(this.cartas.size() - 1);

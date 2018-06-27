@@ -41,5 +41,7 @@ public abstract class Invocador implements Serializable{
 	}
 
 	public abstract boolean invocar(ArrayList<CartaMonstruo> cartasSacrificadas) ;
+	
+	public abstract int numeroInvocaciones();
 
 }

@@ -13,6 +13,7 @@ public class Juego extends Observable{
 	private Integer iJugadorActual = null; 
 	private Integer iFaseActual = 0; 
 	private boolean juegoTerminado  = false;
+	private String razonFinalizacionJuego;
 	private Jugador ganador = null;
 	
 	public Juego() {
@@ -71,7 +72,8 @@ public class Juego extends Observable{
         notifyObservers();
 	}
 	
-	public void asignarGanador(Jugador jugador) {
+	public void asignarGanador(Jugador jugador, String razonFinalizacionJuego) {
+		this.razonFinalizacionJuego = razonFinalizacionJuego;
 		this.terminarJuego(jugador);
 	}
 	
@@ -79,7 +81,8 @@ public class Juego extends Observable{
 		return iFaseActual;
 	}
 	
-	public void asignarPerdedor(Jugador jugador) {
+	public void asignarPerdedor(Jugador jugador, String razonFinalizacionJuego) {
+		this.razonFinalizacionJuego = razonFinalizacionJuego;
 		if (this.jugadores.get(0) == jugador) {
 			this.terminarJuego(this.jugadores.get(1));
 			return;
@@ -93,6 +96,10 @@ public class Juego extends Observable{
 	
 	public Jugador obtenerGanador() {
 		return this.ganador;
+	}
+	
+	public String obtenerRazonFinalizacion() {
+		return this.razonFinalizacionJuego;
 	}
 	
 	public void resetearJuego() {
