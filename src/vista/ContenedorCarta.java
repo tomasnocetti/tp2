@@ -66,7 +66,7 @@ public class ContenedorCarta extends VBox {
 		        box.setMargin(this.getChildren().get(4),new Insets(5));
 		        CartaMonstruo cartaMon = (CartaMonstruo) carta;
 		        if(cartaMon.obtenerAccion() instanceof AccionDefensa) {
-		        	this.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+		        	this.setRotate(90);
 		        }
 			}else {
 				Text nombre = new Text(carta.nombre());
