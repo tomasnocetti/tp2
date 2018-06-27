@@ -20,12 +20,10 @@ public class OnMouseClickedMagica implements EventHandler<MouseEvent> {
 	
 	@Override
 	public void handle(MouseEvent event) {
-		// TODO Auto-generated method stub
 		ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
 		CartaMagica carta = (CartaMagica) contenedor.obtenerCarta();
 		Jugador jugador_actual = Juego.ObtenerJuego().jugadorActual();
 		Jugador jugador_oponente = Juego.ObtenerJuego().jugadorOponente();
-//		int fasePermitida = 3;
 
 		switch(controlador.obtenerAccion()) {
 			case "ACTIVAR_MAGICA":
