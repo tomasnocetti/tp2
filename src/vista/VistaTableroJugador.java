@@ -23,12 +23,15 @@ public class VistaTableroJugador extends HBox {
 	
 	public VistaTableroJugador(boolean frente, int num_jugador) {
 		super();
+		Juego juego = Juego.ObtenerJuego();
+		jugador = juego.obtenerJugador(num_jugador);
 		
 		vistaMonstruos = new VistaMonstruos(num_jugador);
 		vistaTrampasOMagicas = new VistaTrampasOMagicas(num_jugador);
 		vistaCampo = new VistaCampo(num_jugador);
 		vistaCementerio = new VistaCementerio(num_jugador);
 		vistaMazo = new VistaMazo(num_jugador);
+
 		
 		if(frente) {
 			VBox tableroPrincipal = new VBox(vistaTrampasOMagicas, vistaMonstruos);
@@ -49,5 +52,6 @@ public class VistaTableroJugador extends HBox {
 	public void dibujar() {
 		this.vistaMonstruos.dibujar();
 		this.vistaTrampasOMagicas.dibujar();
+		this.vistaMazo.dibujar();
 	}
 }

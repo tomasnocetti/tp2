@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 public class ContenedorCarta extends VBox {
 	
 	public static final String DOBLE_BARRA = "//";
+	private Carta carta;
 	
 	public ContenedorCarta(Carta carta) {
 		super();
@@ -20,7 +21,7 @@ public class ContenedorCarta extends VBox {
 		this.setMaxWidth(150);
 		this.setMinHeight(200);
 		this.setMinWidth(150);
-		
+		this.carta = carta;
 		if(carta instanceof CartaMonstruo) {
 			Text nombre = new Text(carta.nombre());
 			nombre.setWrappingWidth(100);
@@ -43,5 +44,9 @@ public class ContenedorCarta extends VBox {
 			this.setMargin(this.getChildren().get(1),new Insets(5));
 		}
 		
+	}
+
+	public Carta obtenerCarta() {
+		return carta;
 	}
 }

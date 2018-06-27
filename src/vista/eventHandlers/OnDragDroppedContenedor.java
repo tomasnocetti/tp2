@@ -34,19 +34,25 @@ public class OnDragDroppedContenedor implements EventHandler<DragEvent>{
         System.out.println("DENTRO DEL DRAG");
         System.out.println(contenedor.jugadorEsValido(carta.obtenerJugador()));
         System.out.println(this.clase.isInstance(carta));
-        if(contenedor.jugadorEsValido(carta.obtenerJugador()) && this.fasePermitida.equals(juego.iFaseActual()) && this.clase.isInstance(carta) ) {
+        ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
+        
+        if(controlador.obtenerAccion() == "NORMAL" && contenedor.jugadorEsValido(carta.obtenerJugador()) && this.fasePermitida.equals(juego.iFaseActual())) {
         	System.out.println("DENTRO DEL DRAG");
         	Jugador jugador = carta.obtenerJugador();
         	Integer id = Integer.parseInt(this.contenedor.getId());
-        	ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
+        	
         	
         	if(this.clase.equals(CartaMonstruo.class)) {
         		
         		ArrayList<CartaMonstruo> cartasSacrificio = new ArrayList<CartaMonstruo>();
+        		CartaMonstruo cartaMonstruo = (CartaMonstruo) carta;
         		
-        		jugador.colocarCartaEnZona((CartaMonstruo) carta , id, cartasSacrificio);
-        		
-        		controlador.dibujar();
+        		if(cartaMonstruo.obtenerEstrellas() <= 4) {
+        			jugador.colocarCartaEnZona((CartaMonstruo) carta , id, cartasSacrificio);	
+            		controlador.dibujar();
+        		} else {
+        			controlador.invocarConSacrificios(cartaMonstruo, id);
+        		}
         	}
         	System.out.println(this.clase);
         	if(this.clase.equals(CartaTrampaOMagica.class)) {

@@ -11,7 +11,10 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import vista.eventHandlers.BotonCancelarHandler;
 import vista.eventHandlers.BotonContinuarFaseEventHandler;
 import vista.eventHandlers.ControladorDeJuego;
 
@@ -63,11 +66,12 @@ public class VistaInformacionDeJuego extends VBox {
 	public void dibujar() {
 		this.contenedorInformacionJuego.getChildren().clear();
 		Juego juego = Juego.ObtenerJuego();
-		System.out.println(juego.iFaseActual());
+		Jugador jugador = juego.jugadorActual();
+		
 		Text t = new Text();
 		switch(juego.iFaseActual()) {
 			case 0:
-				t.setText("En esta fase el jugador debe tomar 1 carta del Mazo");
+				t.setText("Hay una nueva carta en la mano !");
                 break;
 			case 1:
 				t.setText("En esta fase, es el momento de poner cartas en el campo. \n" + 
@@ -89,6 +93,23 @@ public class VistaInformacionDeJuego extends VBox {
 	    t.minWidth(300);
 		this.contenedorInformacionJuego.getChildren().add(t);
 		
+	}
+
+	public void mostrarSeccionSacrificios(String numeroNecesario) {
+		this.contenedorInformacionJuego.getChildren().clear();
+		Text t = new Text();
+		t.setText("Selecciona " + numeroNecesario + " cartas de la Zona Monstruos para sacrificar!");
+		t.setWrappingWidth(300);
+	    t.minWidth(300);
+	    t.setFont(Font.font ("Verdana", 16));
+	    t.setFill(Color.RED);
+	    
+	    Button boton = new Button("Cancelar");
+	    BotonCancelarHandler handler = new BotonCancelarHandler (); 
+	    boton.setOnAction(handler);
+	    boton.getStyleClass().add("info-window-button");
+		this.contenedorInformacionJuego.getChildren().addAll(t, boton);
+		this.contenedorInformacionJuego.setSpacing(10);		
 	}
 	
 }

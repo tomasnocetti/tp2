@@ -7,7 +7,8 @@ import javafx.scene.layout.HBox;
 import vista.eventHandlers.ButtonMazoEventHandler;
 
 public class VistaMazo extends HBox {
-	
+	private Jugador jugador;
+
 	private int num_jugador;
 	private VistaMano mano;
 
@@ -24,5 +25,6 @@ public class VistaMazo extends HBox {
 		Jugador jugador = juego.obtenerJugador(num_jugador);
 		Mazo mazo = jugador.obtenerMazo();
 		this.getChildren().add(new ContenedorCartaMazo(String.valueOf(mazo.obtenerCantidadDeCartas()),num_jugador,this));
+
 	}
 }
