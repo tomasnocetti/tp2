@@ -57,7 +57,9 @@ public class OnDragDroppedContenedor implements EventHandler<DragEvent>{
         	System.out.println(this.clase);
         	if(this.clase.equals(CartaTrampaOMagica.class)) {
         		System.out.println("CartaTrampaOMagica");
-        		jugador.colocarCartaEnZona((CartaTrampaOMagica) carta , id);
+        		CartaTrampaOMagica cartaTrampaOMagica = (CartaTrampaOMagica) carta; 
+        		jugador.colocarCartaEnZona(cartaTrampaOMagica, id);
+        		cartaTrampaOMagica.colocarBocaAbajo();
         		controlador.dibujar();
         	}
         	

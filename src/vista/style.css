@@ -45,9 +45,9 @@
     -fx-pref-width: 300px;
 }
 .gridPane-cartas {
-	-fx-hgap: 2;
+	-fx-hgap: 50;
     -fx-vgap: 4;
-    -fx-margin: 10;
+    -fx-margin: 50;
 }
 .tablero {
 	-fx-background-image: url("img/fondoTablero3.jpg");

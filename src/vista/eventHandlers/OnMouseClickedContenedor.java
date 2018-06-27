@@ -1,5 +1,7 @@
 package vista.eventHandlers;
 
+import fiuba.algo3.tp2.Juego;
+import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -24,12 +26,24 @@ public class OnMouseClickedContenedor implements EventHandler< MouseEvent>{
 	public void handle(MouseEvent event) {
 		// TODO Auto-generated method stub
 		ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
+		CartaMonstruo carta = (CartaMonstruo) contenedor.obtenerCarta();
+		Jugador jugador_actual = Juego.ObtenerJuego().jugadorActual();
+		Jugador jugador_oponente = Juego.ObtenerJuego().jugadorOponente();
+		
 		switch(controlador.obtenerAccion()) {
-		case "SACRIFICIO":
-			this.contenedor.setStyle("-fx-background-color: red");
-			controlador.agregarCartaDeSacrificio((CartaMonstruo) contenedor.obtenerCarta());
-            break;
-        }
+			case "SACRIFICIO":
+				this.contenedor.setStyle("-fx-background-color: red");
+				controlador.agregarCartaDeSacrificio(carta);
+	            break;
+			case "ATAQUE_1":
+				if(! jugador_actual.equals(carta.obtenerJugador())) return;
+				this.contenedor.setStyle("-fx-background-color: green");
+				controlador.agregarCartaAlAtaque(carta);
+			case "ATAQUE_2":
+				if(! jugador_oponente.equals(carta.obtenerJugador())) return;
+				this.contenedor.setStyle("-fx-background-color: yellow");
+				controlador.agregarCartaAlAtaque(carta);
+	    }
 		
 		System.out.println("EN CLICK DE CONTENEDOR");
 		

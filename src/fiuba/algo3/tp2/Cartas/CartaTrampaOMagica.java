@@ -9,17 +9,23 @@ public abstract class CartaTrampaOMagica extends Carta{
 
 	public CartaTrampaOMagica(String nombre, Jugador jugador, Efecto efecto) {
 		super(nombre, jugador, efecto);
-		this.posicion = new PosicionAbajo();
+		this.posicion = new PosicionArriba();
 	}
 	
 	public void enviarAlCementerio() {
 		this.jugador.enviarAlCementerio(this);
 	}
 	
+	
 	public void colocarBocaArriba(Jugador oponente) {
 		this.posicion = new PosicionArriba();
 		this.activar(oponente);
 	}
+	
+	public void colocarBocaAbajo() {
+		this.posicion = new PosicionAbajo();
+	}
+	
 	
 	public void activar(Jugador oponente) {
 		this.efecto.activarSobreJugadorAtacante(this.jugador);

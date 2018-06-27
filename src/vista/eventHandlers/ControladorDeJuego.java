@@ -1,6 +1,7 @@
 package vista.eventHandlers;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
@@ -23,6 +24,8 @@ public class ControladorDeJuego {
 	
 	static final String MODO_SACRIFICIO = "SACRIFICIO";
 	static final String MODO_NORMAL = "NORMAL";
+	static final String MODO_ATAQUE_1 = "ATAQUE_1";
+	static final String MODO_ATAQUE_2 = "ATAQUE_2";
 
 	
 	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego) {
@@ -100,10 +103,29 @@ public class ControladorDeJuego {
 	
 	public void cancelarAccion() {
 		this.accionActual = MODO_NORMAL;
+		cartaClipboard.clear();
 		this.dibujar();
 	}
 	
 	public String obtenerAccion() {
 		return this.accionActual;
+	}
+
+	public void iniciarAtaque() {
+		this.accionActual = MODO_ATAQUE_1;
+		this.vistaInformacionDeJuego.mostrarSeccionAtaque();
+	}
+
+	public void agregarCartaAlAtaque(CartaMonstruo carta) {
+		Jugador jugador = Juego.ObtenerJuego().jugadorActual();
+		Collection cartas = jugador.obtenerMonstruos();
+		if (this.accionActual == MODO_ATAQUE_1) {
+			cartaClipboard.add(carta);
+			this.accionActual = MODO_ATAQUE_2;
+		} else {
+			CartaMonstruo carta1 = cartaClipboard.get(0);
+			carta1.atacar(carta);
+			this.cancelarAccion();
+		}
 	}
 }

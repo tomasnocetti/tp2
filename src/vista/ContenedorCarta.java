@@ -47,23 +47,23 @@ public class ContenedorCarta extends VBox {
 			button.setPrefWidth(200);
 			box.getChildren().add(button);
 			this.getChildren().add(box);
-			System.out.println("Abajo");
-			System.out.println(this.getChildren());
+//			System.out.println("Abajo");
+//			System.out.println(this.getChildren());
 		}else {
 			if(carta instanceof CartaMonstruo) {
 				VBox box = new VBox();
 				Text nombre = new Text(carta.nombre());
 				nombre.setWrappingWidth(100);
 				Text ataque = new Text("ATK: " + ((CartaMonstruo) carta).obtenerPuntosAtaque());
-				Text defensa = new Text("DEN: " + ((CartaMonstruo) carta).obtenerPuntosDefensa());
+				Text defensa = new Text("DEF: " + ((CartaMonstruo) carta).obtenerPuntosDefensa());
 				Text estrellas = new Text("EST: " + ((CartaMonstruo) carta).obtenerEstrellas());
 				Text tipo = new Text(carta.getClass().getSimpleName());
 				this.getChildren().addAll(nombre,tipo,ataque,defensa, estrellas);
-				box.setMargin(this.getChildren().get(0),new Insets(5));
-		        box.setMargin(this.getChildren().get(1),new Insets(5));
-		        box.setMargin(this.getChildren().get(2),new Insets(5));
-		        box.setMargin(this.getChildren().get(3),new Insets(5));
-		        box.setMargin(this.getChildren().get(4),new Insets(5));
+				box.setMargin(this.getChildren().get(0),new Insets(2));
+		        box.setMargin(this.getChildren().get(1),new Insets(2));
+		        box.setMargin(this.getChildren().get(2),new Insets(2));
+		        box.setMargin(this.getChildren().get(3),new Insets(2));
+		        box.setMargin(this.getChildren().get(4),new Insets(2));
 		        CartaMonstruo cartaMon = (CartaMonstruo) carta;
 		        if(cartaMon.obtenerAccion() instanceof AccionDefensa) {
 		        	this.setRotate(90);
@@ -73,8 +73,8 @@ public class ContenedorCarta extends VBox {
 				nombre.setWrappingWidth(150);
 				Text tipo = new Text(carta.getClass().getSimpleName());
 				this.getChildren().addAll(nombre,tipo);
-				this.setMargin(this.getChildren().get(0),new Insets(5));
-				this.setMargin(this.getChildren().get(1),new Insets(5));
+				this.setMargin(this.getChildren().get(0),new Insets(2));
+				this.setMargin(this.getChildren().get(1),new Insets(2));
 			}
 		}	
 	}

@@ -80,7 +80,12 @@ public class VistaInformacionDeJuego extends VBox {
                 break;
 			case 2:
 				t.setText("En esta fase, se pueden realizar tantos ataques como quiera, pero cada monstruo puede atacar una vez.");
-                break;
+                Button boton = new Button("ATACAR");
+        	    boton.getStyleClass().add("info-window-button");
+        	    BotonAtacarHandlerEvent botonAtacarHandlerEvent = new BotonAtacarHandlerEvent(); 
+        	    boton.setOnAction(botonAtacarHandlerEvent);
+        	    this.contenedorInformacionJuego.getChildren().add(boton);
+				break;
 			case 3:
 				t.setText("En esta fase, se pueden activar cartas de magia.");
 			    break;
@@ -91,14 +96,31 @@ public class VistaInformacionDeJuego extends VBox {
 	    
 	    t.setWrappingWidth(300);
 	    t.minWidth(300);
-		this.contenedorInformacionJuego.getChildren().add(t);
-		
+		this.contenedorInformacionJuego.getChildren().add(0,t);
 	}
 
 	public void mostrarSeccionSacrificios(String numeroNecesario) {
 		this.contenedorInformacionJuego.getChildren().clear();
 		Text t = new Text();
 		t.setText("Selecciona " + numeroNecesario + " cartas de la Zona Monstruos para sacrificar!");
+		t.setWrappingWidth(300);
+	    t.minWidth(300);
+	    t.setFont(Font.font ("Verdana", 16));
+	    t.setFill(Color.RED);
+	    
+	    Button boton = new Button("Cancelar");
+	    BotonCancelarHandler handler = new BotonCancelarHandler (); 
+	    boton.setOnAction(handler);
+	    boton.getStyleClass().add("info-window-button");
+		this.contenedorInformacionJuego.getChildren().addAll(t, boton);
+		this.contenedorInformacionJuego.setSpacing(10);		
+	}
+
+	public void mostrarSeccionAtaque() {
+		this.contenedorInformacionJuego.getChildren().clear();
+		Text t = new Text();
+		t.setText("Primero selecciona una carta de la Zona Monstruos para realizar el ataque y luego, una del "
+				+ "contrincante para atacar");
 		t.setWrappingWidth(300);
 	    t.minWidth(300);
 	    t.setFont(Font.font ("Verdana", 16));
