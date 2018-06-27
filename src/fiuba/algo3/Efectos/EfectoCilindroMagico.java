@@ -7,7 +7,7 @@ public class EfectoCilindroMagico extends Efecto {
 
 	public boolean activarAntesDeDefensa(Jugador jugadorAtacante, CartaMonstruo atacada, CartaMonstruo atacante) {
 		int puntosDeDanio = atacada.obtenerAccion().calcularDanio(atacante, atacada);
-		if (puntosDeDanio < 0) jugadorAtacante.quitarPuntosDeVida(- puntosDeDanio);
+		if (puntosDeDanio < 0) jugadorAtacante.quitarPuntosDeVida(atacante.obtenerPuntosAtaque());
 		return false;
 	}
 }

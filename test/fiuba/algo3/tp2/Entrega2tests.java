@@ -214,7 +214,7 @@ public class Entrega2tests {
 		monstruoAtacante.atacar(monstruoAtacado);
 		
 		assertEquals(atacado.obtenerPuntosDeVida(), 8000);
-		assertEquals(atacante.obtenerPuntosDeVida(), 7000);
+		assertEquals(atacante.obtenerPuntosDeVida(), 6000);
 		assertTrue(atacado.obtenerMonstruos().contains(monstruoAtacado));
 	}
 

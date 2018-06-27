@@ -75,14 +75,36 @@ public class VistaInformacionDeJuego extends VBox {
                 break;
 			case 1:
 				t.setText("En esta fase, es el momento de poner cartas en el campo. \n" + 
-				"Se pueden colocar tantas cartas de magia y trampa como se quiera, pero solo una invocación de monstruo (no se puede cambiar la posición del monstruo ni voltearla el mismo turno que es colocada en el campo).\n" + 
+				"Se pueden colocar tantas cartas de magia y trampa como se quiera, pero solo una invocacion de monstruo (no se puede cambiar la posicion del monstruo "
+				+ " ni voltearla el mismo turno que es colocada en el campo).\n" + 
 				"");
-                break;
+				Button boton1 = new Button("POSICION ATAQUE");
+        	    boton1.getStyleClass().add("info-window-button");
+        	    BotonAccionHandlerEvent botonAccionHandlerEvent1 = new BotonAccionHandlerEvent(ControladorDeJuego.COLOCAR_ATAQUE); 
+        	    boton1.setOnAction(botonAccionHandlerEvent1);
+				Button boton2 = new Button("POSICION DEFENSA");
+        	    boton2.getStyleClass().add("info-window-button");
+        	    BotonAccionHandlerEvent botonAccionHandlerEvent2 = new BotonAccionHandlerEvent(ControladorDeJuego.COLOCAR_DEFENSA); 
+        	    boton2.setOnAction(botonAccionHandlerEvent2);
+				Button boton3 = new Button("BOCA ABAJO");
+        	    boton3.getStyleClass().add("info-window-button");
+        	    BotonAccionHandlerEvent botonAccionHandlerEvent3 = new BotonAccionHandlerEvent(ControladorDeJuego.BOCA_ABAJO); 
+        	    boton3.setOnAction(botonAccionHandlerEvent3);
+//				Button boton4 = new Button("BOCA ARRIBA");
+//        	    boton4.getStyleClass().add("info-window-button");
+//        	    BotonAccionHandlerEvent botonAccionHandlerEvent = new BotonAccionHandlerEvent(ControladorDeJuego.BOCA_ARRIBA); 
+//        	    boton4.setOnAction(botonAccionHandlerEvent);
+        	    contenedorInformacionJuego.getChildren().addAll(boton1,boton2,boton3);
+//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(0),new Insets(5));
+//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(1),new Insets(5));
+//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(2),new Insets(5));
+//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(3),new Insets(5));
+        	    break;
 			case 2:
 				t.setText("En esta fase, se pueden realizar tantos ataques como quiera, pero cada monstruo puede atacar una vez.");
                 Button boton = new Button("ATACAR");
         	    boton.getStyleClass().add("info-window-button");
-        	    BotonAtacarHandlerEvent botonAtacarHandlerEvent = new BotonAtacarHandlerEvent(); 
+        	    BotonAccionHandlerEvent botonAtacarHandlerEvent = new BotonAccionHandlerEvent("ATAQUE_1"); 
         	    boton.setOnAction(botonAtacarHandlerEvent);
         	    this.contenedorInformacionJuego.getChildren().add(boton);
 				break;

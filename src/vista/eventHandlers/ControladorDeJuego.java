@@ -22,11 +22,14 @@ public class ControladorDeJuego {
 	private CartaMonstruo cartaAInvocar; 
 	private int posicionAColocarInvocacion;
 	
-	static final String MODO_SACRIFICIO = "SACRIFICIO";
-	static final String MODO_NORMAL = "NORMAL";
-	static final String MODO_ATAQUE_1 = "ATAQUE_1";
-	static final String MODO_ATAQUE_2 = "ATAQUE_2";
-
+	public static final String MODO_SACRIFICIO = "SACRIFICIO";
+	public static final String MODO_NORMAL = "NORMAL";
+	public static final String MODO_ATAQUE_1 = "ATAQUE_1";
+	public static final String MODO_ATAQUE_2 = "ATAQUE_2";
+	public static final String COLOCAR_ATAQUE = "COLOCAR_ATAQUE";
+	public static final String COLOCAR_DEFENSA = "COLOCAR_DEFENSA";
+	public static final String BOCA_ABAJO = "BOCA_ABAJO";
+	public static final String BOCA_ARRIBA = "BOCA_ARRIBA";
 	
 	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego) {
 		ControladorDeJuego controlador = new ControladorDeJuego();
@@ -111,9 +114,28 @@ public class ControladorDeJuego {
 		return this.accionActual;
 	}
 
-	public void iniciarAtaque() {
-		this.accionActual = MODO_ATAQUE_1;
-		this.vistaInformacionDeJuego.mostrarSeccionAtaque();
+	public void iniciarAccion(String accion) {
+		switch(accion) {
+			case MODO_ATAQUE_1:
+				this.accionActual = MODO_ATAQUE_1;
+				this.vistaInformacionDeJuego.mostrarSeccionAtaque();
+				break;
+			case COLOCAR_ATAQUE:
+				this.accionActual = COLOCAR_ATAQUE;
+				break;
+			case COLOCAR_DEFENSA:
+				this.accionActual = COLOCAR_DEFENSA;
+				break;
+			case MODO_NORMAL:
+				this.accionActual = MODO_NORMAL;
+				break;
+			case BOCA_ABAJO:
+				this.accionActual = BOCA_ABAJO;
+				break;
+			case BOCA_ARRIBA:
+				this.accionActual = BOCA_ARRIBA;
+				break;
+		}
 	}
 
 	public void agregarCartaAlAtaque(CartaMonstruo carta) {
@@ -127,5 +149,19 @@ public class ControladorDeJuego {
 			carta1.atacar(carta);
 			this.cancelarAccion();
 		}
+	}
+	
+	public void configurarAccion() {
+		
+	}
+	
+	
+	public void colocarCartaEnPosicionDefensa(CartaMonstruo carta) {
+//		if(this.accionActual == MODO_POSICION_DEFENSA)
+		
+	}
+
+	public void colocarCartaEnPosicionAtaque(CartaMonstruo carta) {
+
 	}
 }
