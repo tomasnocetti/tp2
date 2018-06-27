@@ -2,8 +2,6 @@ package vista;
 
 import java.io.File;
 
-import fiuba.algo3.tp2.Juego;
-import fiuba.algo3.tp2.Jugador;
 import javafx.application.Application;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -13,7 +11,6 @@ import javafx.stage.Stage;
 
 public class AlGoHo extends Application{
 	
-	private SceneJuego sceneJuego;
 	private SceneCompletarNombres sceneCompletarNombres;
 	private SceneInicio sceneInicio;
 	
@@ -37,10 +34,6 @@ public class AlGoHo extends Application{
         sceneCompletarNombres = new SceneCompletarNombres(stage, mediaPlayer);
         
         sceneInicio = new SceneInicio(stage, sceneCompletarNombres);
-		Juego juego = Juego.ObtenerJuego();
-		Jugador jugador1 = juego.obtenerJugador(0);
-		Jugador jugador2 = juego.obtenerJugador(1);
-		
 	
         stage.setScene(new SceneJuego(stage));
         stage.setFullScreen(true);
