@@ -121,4 +121,10 @@ public class CartaMonstruo extends Carta{
 		return this.estrellas;
 	}
 	
+	public int numeroDeSacrificios() {
+		if(this.estrellas < 4) return 0;
+		if(this.estrellas < 7) return 1;
+		return 2;
+	}
+	
 }

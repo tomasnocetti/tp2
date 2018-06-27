@@ -1,5 +1,7 @@
 package vista.eventHandlers;
 
+import java.util.ArrayList;
+
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
@@ -11,10 +13,17 @@ import vista.VistaTableroDeJuego;
 public class ControladorDeJuego {
 	private VistaMano vistaMano;
 	private VistaInformacionDeJuego vistaInformacionDeJuego;
-	private String accionActua;
+	private String accionActual = MODO_NORMAL;
 	private VistaTableroDeJuego vistaTableroDeJuego; 
 	private static ControladorDeJuego controladorActual;
-	private static Carta draggedCard;  
+	private static Carta draggedCard;
+	private ArrayList<CartaMonstruo> cartaClipboard = new ArrayList<CartaMonstruo>();
+	private CartaMonstruo cartaAInvocar; 
+	private int posicionAColocarInvocacion;
+	
+	static final String MODO_SACRIFICIO = "SACRIFICIO";
+	static final String MODO_NORMAL = "NORMAL";
+
 	
 	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego) {
 		ControladorDeJuego controlador = new ControladorDeJuego();
@@ -71,7 +80,30 @@ public class ControladorDeJuego {
 		this.dibujar();
 	}
 	
-	public void invocarConSacrificios() {
-		
+	public void invocarConSacrificios(CartaMonstruo carta, int posicion) {
+		this.accionActual = MODO_SACRIFICIO;
+		this.cartaClipboard = new ArrayList<CartaMonstruo>();
+		this.vistaInformacionDeJuego.mostrarSeccionSacrificios(String.valueOf(carta.numeroDeSacrificios()));
+		cartaAInvocar = carta;
+		posicionAColocarInvocacion = posicion;
+	}
+	
+	public void agregarCartaDeSacrificio(CartaMonstruo carta) {	
+		cartaClipboard.add(carta);
+		if(cartaAInvocar.numeroDeSacrificios() != cartaClipboard.size()) return;
+		this.accionActual = MODO_NORMAL;
+		Jugador jugador = cartaAInvocar.obtenerJugador();
+		jugador.colocarCartaEnZona(cartaAInvocar, posicionAColocarInvocacion, cartaClipboard);
+		this.cartaClipboard = new ArrayList<CartaMonstruo>();
+		this.dibujar();	
+	}
+	
+	public void cancelarAccion() {
+		this.accionActual = MODO_NORMAL;
+		this.dibujar();
+	}
+	
+	public String obtenerAccion() {
+		return this.accionActual;
 	}
 }

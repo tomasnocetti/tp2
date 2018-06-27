@@ -54,8 +54,8 @@ public class VistaMonstruos extends GridPane{
  
 		for(int i = 0; i < 5; i++) {
 			if(cartas.containsKey(i)) {
-				OnMouseClickedContenedor evento = new OnMouseClickedContenedor();
 				ContenedorCarta contenedor = new ContenedorCarta(cartas.get(i));
+				OnMouseClickedContenedor evento = new OnMouseClickedContenedor(contenedor);
 				contenedor.setId(String.valueOf(i));
 				contenedor.setOnMouseClicked(evento);
 				this.add(contenedor, i , 0);
