@@ -15,11 +15,11 @@ public class ContenedorCarta extends VBox {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("contenedorCarta");
-		this.setPrefHeight(200);
+		this.setPrefHeight(180);
 		this.setPrefWidth(150);
-		this.setMaxHeight(200);
+		this.setMaxHeight(180);
 		this.setMaxWidth(150);
-		this.setMinHeight(200);
+		this.setMinHeight(180);
 		this.setMinWidth(150);
 		this.carta = carta;
 		if(carta instanceof CartaMonstruo) {

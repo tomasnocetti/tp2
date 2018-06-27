@@ -25,6 +25,12 @@ public class VistaTrampasOMagicas extends GridPane{
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("gridPane-cartas");
 		this.setAlignment(Pos.CENTER);
+//		this.setMaxHeight(200);
+//		this.setMaxWidth(150);
+		this.setPrefHeight(200);
+//		this.setPrefWidth(150);
+		this.setMinHeight(200);
+//		this.setMinWidth(150);
 	}
 	
 	public void dibujar() {

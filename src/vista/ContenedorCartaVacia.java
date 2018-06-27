@@ -18,10 +18,10 @@ public class ContenedorCartaVacia extends VBox{
 		this.setAlignment(Pos.CENTER);
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("button");
-		button.setPrefHeight(250);
-		button.setPrefWidth(200);
-		this.setPrefHeight(250);
-		this.setPrefWidth(200);
+		button.setPrefHeight(180);
+		button.setPrefWidth(150);
+		this.setPrefHeight(180);
+		this.setPrefWidth(150);
 	}
 	
 	public boolean jugadorEsValido(Jugador jugador2) {

@@ -44,8 +44,8 @@ public class VistaMonstruos extends GridPane{
 //		this.setMaxHeight(200);
 //		this.setMaxWidth(150);
 		this.setPrefHeight(200);
-		this.setPrefWidth(150);
-//		this.setMinHeight(200);
+//		this.setPrefWidth(150);
+		this.setMinHeight(200);
 //		this.setMinWidth(150);
 	}
 

@@ -38,7 +38,7 @@ public class VistaTableroDeJuego extends VBox {
 		FinalizacionDeJuegoObserver finalizacionDeJuegoObserver = new FinalizacionDeJuegoObserver(this);
 		Juego.ObtenerJuego().addObserver(finalizacionDeJuegoObserver);
 
-		this.setSpacing(300);
+		this.setSpacing(10);
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("tablero");
 		this.getChildren().addAll(vistaTableroJugador1,vistaTableroJugador2);	

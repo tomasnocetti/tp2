@@ -11,11 +11,11 @@ public class ContenedorCartaMazo extends VBox {
 		Button button = new Button(cartas);
 		this.getChildren().add(button);
 		this.setAlignment(Pos.CENTER);
-		this.setPrefHeight(250);
-		this.setPrefWidth(200);
+		this.setPrefHeight(180);
+		this.setPrefWidth(150);
 		
-		ButtonMazoEventHandler buttonMazoEventHandler = new ButtonMazoEventHandler(num_jugador, vista,0,button); 
-		button.setOnAction(buttonMazoEventHandler);
+//		ButtonMazoEventHandler buttonMazoEventHandler = new ButtonMazoEventHandler(num_jugador, vista,0,button); 
+//		button.setOnAction(buttonMazoEventHandler);
 
 		
 		button.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());

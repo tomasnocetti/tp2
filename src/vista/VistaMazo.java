@@ -8,7 +8,6 @@ import vista.eventHandlers.ButtonMazoEventHandler;
 
 public class VistaMazo extends HBox {
 	private Jugador jugador;
-
 	private int num_jugador;
 	private VistaMano mano;
 
