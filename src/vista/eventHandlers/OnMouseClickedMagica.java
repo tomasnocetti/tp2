@@ -31,15 +31,7 @@ public class OnMouseClickedMagica implements EventHandler<MouseEvent> {
 			case "ACTIVAR_MAGICA":
 				if(! jugador_actual.equals(carta.obtenerJugador())) return;
 				carta.colocarBocaArriba(jugador_oponente);
-//				controlador.dibujar();
-//				this.contenedor.setStyle("-fx-background-color: red");
 				controlador.dibujar();
-				try {
-					TimeUnit.SECONDS.sleep(8);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}	
 				carta.enviarAlCementerio();
 				controlador.dibujar();
 		}		

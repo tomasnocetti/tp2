@@ -46,6 +46,8 @@ public class VistaTrampasOMagicas extends GridPane{
 		for(int i = 0; i < 5; i++) {
 			if(cartas.containsKey(i)) {
 				ContenedorCarta contenedor = new ContenedorCarta(cartas.get(i));
+				System.out.println(cartas.get(i).obtenerPosicion());
+				System.out.println(cartas.get(i));
 				contenedor.setId(String.valueOf(i));
 				OnMouseClickedMagica event5 = new OnMouseClickedMagica(contenedor);
 				contenedor.setOnMouseClicked(event5);

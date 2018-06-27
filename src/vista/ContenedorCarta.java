@@ -40,7 +40,6 @@ public class ContenedorCarta extends VBox {
 		this.getChildren().clear();
 		if(carta.obtenerPosicion() instanceof PosicionAbajo || carta.obtenerPosicion() instanceof MonstruoPosicionAbajo) {
 			VBox box = new VBox();
-
 			box.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 			box.getStyleClass().add("button-cartas");
 			box.setPrefHeight(250);
@@ -77,10 +76,10 @@ public class ContenedorCarta extends VBox {
 				Text nombre = new Text(carta.nombre());
 				nombre.setWrappingWidth(150);
 				Text tipo = new Text(carta.getClass().getSimpleName());
-				this.getChildren().add(box);
 				box.getChildren().addAll(nombre,tipo);
 				box.setMargin(box.getChildren().get(0),new Insets(2));
 				box.setMargin(box.getChildren().get(1),new Insets(2));
+				this.getChildren().add(box);
 			}
 		}	
 	}
