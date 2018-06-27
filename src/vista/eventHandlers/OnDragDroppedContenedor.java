@@ -44,16 +44,10 @@ public class OnDragDroppedContenedor implements EventHandler<DragEvent>{
         	
         	
         	if(this.clase.equals(CartaMonstruo.class)) {
-        		
-        		ArrayList<CartaMonstruo> cartasSacrificio = new ArrayList<CartaMonstruo>();
+        
         		CartaMonstruo cartaMonstruo = (CartaMonstruo) carta;
+    			controlador.invocar(cartaMonstruo, id);
         		
-        		if(cartaMonstruo.obtenerEstrellas() <= 4) {
-        			jugador.colocarCartaEnZona((CartaMonstruo) carta , id, cartasSacrificio);	
-            		controlador.dibujar();
-        		} else {
-        			controlador.invocarConSacrificios(cartaMonstruo, id);
-        		}
         	}
         	System.out.println(this.clase);
         	if(this.clase.equals(CartaTrampaOMagica.class)) {

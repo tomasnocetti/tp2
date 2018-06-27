@@ -25,6 +25,7 @@ public class ControladorDeJuego {
 	private static Carta draggedCard;
 	private ArrayList<CartaMonstruo> cartaClipboard = new ArrayList<CartaMonstruo>();
 	private ArrayList<CartaMonstruo> cartasQueAtacaron = new ArrayList<CartaMonstruo>();
+	private boolean colocoCartaEnCampoMonstruo;
 	private CartaMonstruo cartaAInvocar; 
 	private int posicionAColocarInvocacion;
 	private VistaPuntosDeVida vistaPuntosDeVida;
@@ -86,6 +87,8 @@ public class ControladorDeJuego {
 			case 0:
 				actual.agarrarCartasDelMazo(1);
 	            break;
+			case 1:
+				colocoCartaEnCampoMonstruo = false;
 			case 2:
 				cartasQueAtacaron = new ArrayList<CartaMonstruo>();
 		        break;
@@ -93,7 +96,16 @@ public class ControladorDeJuego {
 		this.dibujar();
 	}
 	
-	public void invocarConSacrificios(CartaMonstruo carta, int posicion) {
+	public void invocar(CartaMonstruo carta, int posicion) {
+		if(colocoCartaEnCampoMonstruo) return;
+		Jugador jugador = carta.obtenerJugador();
+		if(carta.obtenerEstrellas() <= 4) {
+			ArrayList<CartaMonstruo> cartasSacrificio = new ArrayList<CartaMonstruo>();
+			jugador.colocarCartaEnZona((CartaMonstruo) carta , posicion, cartasSacrificio);
+			colocoCartaEnCampoMonstruo = true;
+			this.dibujar();
+			return;
+		} 
 		this.accionActual = MODO_SACRIFICIO;
 		this.cartaClipboard = new ArrayList<CartaMonstruo>();
 		this.vistaInformacionDeJuego.mostrarSeccionSacrificios(String.valueOf(carta.numeroDeSacrificios()));
@@ -108,7 +120,8 @@ public class ControladorDeJuego {
 		Jugador jugador = cartaAInvocar.obtenerJugador();
 		jugador.colocarCartaEnZona(cartaAInvocar, posicionAColocarInvocacion, cartaClipboard);
 		this.cartaClipboard = new ArrayList<CartaMonstruo>();
-		this.dibujar();	
+		colocoCartaEnCampoMonstruo = true;
+		this.dibujar();
 	}
 	
 	public void cancelarAccion() {
