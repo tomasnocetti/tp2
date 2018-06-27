@@ -12,6 +12,7 @@ import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasDeCampo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMonstruos;
+import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
 import vista.eventHandlers.OnDragDroppedContenedor;
 import vista.eventHandlers.OnDragEnteredContenedor;
@@ -49,6 +50,8 @@ public class VistaCampo extends HBox{
 		
 		if(carta != null) {
 			ContenedorCarta contenedor = new ContenedorCarta(carta);
+			contenedor.setPrefHeight(180);
+			contenedor.setPrefWidth(150);
 			this.getChildren().add(contenedor);
 		} else {
 			ContenedorCartaVacia contenedor = new ContenedorCartaVacia(jugador, "Campo");
@@ -63,5 +66,6 @@ public class VistaCampo extends HBox{
 			contenedor.setOnDragDropped(event4);
 			this.getChildren().add(contenedor);
 		}
+		this.setAlignment(Pos.CENTER);
 	}
 }

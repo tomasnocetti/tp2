@@ -82,6 +82,12 @@
 	-fx-padding: 10;
 	-fx-margin: 10;
 }
+.contenedorCartaCampo{
+	-fx-background-color: white;
+	-fx-padding: 10;
+	-fx-margin: 10;
+}	
+
 .contenedorMano {
 	-fx-background-image: url("img/fondoMano.jpg");
 	-fx-background-repeat: repeat-x;   

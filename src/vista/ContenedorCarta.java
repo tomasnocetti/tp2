@@ -8,6 +8,7 @@ import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -54,23 +55,26 @@ public class ContenedorCarta extends VBox {
 				Text defensa = new Text("DEF: " + ((CartaMonstruo) carta).obtenerPuntosDefensa());
 				Text estrellas = new Text("EST: " + ((CartaMonstruo) carta).obtenerEstrellas());
 				Text tipo = new Text(carta.getClass().getSimpleName());
-				this.getChildren().addAll(nombre,tipo,ataque,defensa, estrellas);
-				box.setMargin(this.getChildren().get(0),new Insets(2));
-		        box.setMargin(this.getChildren().get(1),new Insets(2));
-		        box.setMargin(this.getChildren().get(2),new Insets(2));
-		        box.setMargin(this.getChildren().get(3),new Insets(2));
-		        box.setMargin(this.getChildren().get(4),new Insets(2));
+				box.getChildren().addAll(nombre,tipo,ataque,defensa, estrellas);
+				this.getChildren().add(box);
+				box.setMargin(box.getChildren().get(0),new Insets(2));
+		        box.setMargin(box.getChildren().get(1),new Insets(2));
+		        box.setMargin(box.getChildren().get(2),new Insets(2));
+		        box.setMargin(box.getChildren().get(3),new Insets(2));
+		        box.setMargin(box.getChildren().get(4),new Insets(2));
 		        CartaMonstruo cartaMon = (CartaMonstruo) carta;
 		        if(cartaMon.obtenerAccion() instanceof AccionDefensa) {
 		        	this.setRotate(90);
 		        }
 			}else {
+				VBox box = new VBox();
 				Text nombre = new Text(carta.nombre());
 				nombre.setWrappingWidth(150);
 				Text tipo = new Text(carta.getClass().getSimpleName());
-				this.getChildren().addAll(nombre,tipo);
-				this.setMargin(this.getChildren().get(0),new Insets(2));
-				this.setMargin(this.getChildren().get(1),new Insets(2));
+				this.getChildren().add(box);
+				box.getChildren().addAll(nombre,tipo);
+				box.setMargin(box.getChildren().get(0),new Insets(2));
+				box.setMargin(box.getChildren().get(1),new Insets(2));
 			}
 		}	
 	}

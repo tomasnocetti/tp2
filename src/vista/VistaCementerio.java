@@ -7,6 +7,7 @@ import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
+import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
 
 public class VistaCementerio extends HBox {
@@ -31,5 +32,6 @@ public class VistaCementerio extends HBox {
 		} else {
 			this.getChildren().add(new ContenedorCartaVacia(jugador, "Cementerio"));	
 		}
-		}
+		this.setAlignment(Pos.CENTER);
+	}
 }

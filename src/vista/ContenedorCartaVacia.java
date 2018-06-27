@@ -22,6 +22,7 @@ public class ContenedorCartaVacia extends VBox{
 		button.setPrefWidth(150);
 		this.setPrefHeight(180);
 		this.setPrefWidth(150);
+		this.setMaxSize(getPrefWidth(), getPrefHeight());
 	}
 	
 	public boolean jugadorEsValido(Jugador jugador2) {
