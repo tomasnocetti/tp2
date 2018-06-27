@@ -46,6 +46,12 @@ public class ContenedorCarta extends VBox {
 			box.setPrefHeight(250);
 			box.setPrefWidth(200);
 			this.getChildren().add(box);
+			if(carta instanceof CartaMonstruo) {
+				CartaMonstruo cartaMon = (CartaMonstruo) carta;
+		        if(cartaMon.obtenerAccion() instanceof AccionDefensa) {
+		        	this.setRotate(90);
+		        }
+			}
 		}else {
 			if(carta instanceof CartaMonstruo) {
 				VBox box = new VBox();

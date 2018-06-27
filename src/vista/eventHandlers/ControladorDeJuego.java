@@ -39,6 +39,7 @@ public class ControladorDeJuego {
 	public static final String BOCA_ABAJO = "BOCA_ABAJO";
 	public static final String BOCA_ARRIBA = "BOCA_ARRIBA";
 	public static final String ATAQUE_JUGADOR = "ATAQUE_JUGADOR";
+	public static final String ACTIVAR_MAGICA = "ACTIVAR_MAGICA";
 	
 	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego, VistaPuntosDeVida vistaPuntosDeVida) {
 		ControladorDeJuego controlador = new ControladorDeJuego();
@@ -163,6 +164,9 @@ public class ControladorDeJuego {
 				this.accionActual = ATAQUE_JUGADOR;
 				this.vistaInformacionDeJuego.mostrarSeccionAccionGenerica("'Atacar jugador'");
 				break;
+			case ACTIVAR_MAGICA:
+				this.accionActual = ACTIVAR_MAGICA;
+				this.vistaInformacionDeJuego.mostrarSeccionAccionGenerica("'Activar Magica'");
 		}
 	}
 

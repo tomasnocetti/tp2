@@ -25,25 +25,23 @@ public class OnMouseClickedMagica implements EventHandler<MouseEvent> {
 		CartaMagica carta = (CartaMagica) contenedor.obtenerCarta();
 		Jugador jugador_actual = Juego.ObtenerJuego().jugadorActual();
 		Jugador jugador_oponente = Juego.ObtenerJuego().jugadorOponente();
-		int fasePermitida = 3;
-			if(carta.obtenerJugador().equals(jugador_actual) && (Juego.ObtenerJuego().iFaseActual()) == fasePermitida) {
+//		int fasePermitida = 3;
+
+		switch(controlador.obtenerAccion()) {
+			case "ACTIVAR_MAGICA":
+				if(! jugador_actual.equals(carta.obtenerJugador())) return;
 				carta.colocarBocaArriba(jugador_oponente);
-				controlador.dibujar();
-				this.contenedor.setStyle("-fx-background-color: red");
+//				controlador.dibujar();
+//				this.contenedor.setStyle("-fx-background-color: red");
 				controlador.dibujar();
 				try {
-					TimeUnit.SECONDS.sleep(3);
+					TimeUnit.SECONDS.sleep(8);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				}	
 				carta.enviarAlCementerio();
-				controlador.dibujar();	
-			}
-			
-//		controlador.dibujar();
-
-//		carta.activar(jugador_actual);
-//		controlador.dibujar();
+				controlador.dibujar();
+		}		
 	}
 }

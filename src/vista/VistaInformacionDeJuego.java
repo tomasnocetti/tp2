@@ -114,11 +114,11 @@ public class VistaInformacionDeJuego extends VBox {
 				break;
 			case 3:
 				t.setText("En esta fase, se pueden activar cartas de magia.");
-//				Button botonMag = new Button("ACTIVAR MAGICA");
-//				botonMag.getStyleClass().add("info-window-button");
-////        	    BotonAccionHandlerEvent botonAccionHandlerEvent = new BotonAccionHandlerEvent(ControladorDeJuego.ACTIVAR_MAGICA); 
-////        	    boton.setOnAction(botonAccionHandlerEvent);
-//				 contenedorInformacionJuego.getChildren().add(botonMag);
+				Button botonMag = new Button("ACTIVAR MAGICA");
+				botonMag.getStyleClass().add("info-window-button");
+        	    BotonAccionHandlerEvent botonAccionHandlerEvent = new BotonAccionHandlerEvent(ControladorDeJuego.ACTIVAR_MAGICA); 
+        	    botonMag.setOnAction(botonAccionHandlerEvent);
+        	    contenedorInformacionJuego.getChildren().add(botonMag);
 			    break;
 			case 4:
 				t.setText("CAMBIO DE TURNO!");
