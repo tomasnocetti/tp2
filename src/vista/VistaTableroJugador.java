@@ -54,5 +54,6 @@ public class VistaTableroJugador extends HBox {
 		this.vistaTrampasOMagicas.dibujar();
 		this.vistaMazo.dibujar();
 		this.vistaCampo.dibujar();
+		this.vistaCementerio.dibujar();
 	}
 }

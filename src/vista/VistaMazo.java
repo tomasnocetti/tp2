@@ -23,7 +23,6 @@ public class VistaMazo extends HBox {
 		Juego juego = Juego.ObtenerJuego();
 		Jugador jugador = juego.obtenerJugador(num_jugador);
 		Mazo mazo = jugador.obtenerMazo();
-		this.getChildren().add(new ContenedorCartaMazo(String.valueOf(mazo.obtenerCantidadDeCartas()),num_jugador,this));
-
+		this.getChildren().add(new ContenedorCartaMazo(String.valueOf(mazo.obtenerCantidadDeCartas()),num_jugador));
 	}
 }

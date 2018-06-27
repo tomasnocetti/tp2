@@ -7,7 +7,7 @@ import vista.eventHandlers.ButtonMazoEventHandler;
 
 public class ContenedorCartaMazo extends VBox {
 	
-	public ContenedorCartaMazo(String cartas, int num_jugador, VistaMazo vista) {
+	public ContenedorCartaMazo(String cartas, int num_jugador) {
 		Button button = new Button(cartas);
 
 		button.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
