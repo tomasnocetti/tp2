@@ -42,6 +42,11 @@ public class CartaMonstruo extends Carta{
 		this.posicion.atacar(this, otro);
     }
 
+	public void atacarJugador(Jugador otro) {
+		if(!this.jugador.estaEnElCampo(this)) throw new CartaNoSeEncuentraEnZona();
+		this.posicion.atacarJugador(this, otro);
+    }
+	
 	public void defender(CartaMonstruo cartaAtacante) {
 		if(!this.estaEnElCampo()) throw new CartaNoSeEncuentraEnZona();
 		if (this.jugador.tieneTrampaEnElCampo()) {

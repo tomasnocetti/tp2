@@ -23,6 +23,7 @@ public class ControladorDeJuego {
 	private static ControladorDeJuego controladorActual;
 	private static Carta draggedCard;
 	private ArrayList<CartaMonstruo> cartaClipboard = new ArrayList<CartaMonstruo>();
+	private ArrayList<CartaMonstruo> cartasQueAtacaron = new ArrayList<CartaMonstruo>();
 	private CartaMonstruo cartaAInvocar; 
 	private int posicionAColocarInvocacion;
 	private VistaPuntosDeVida vistaPuntosDeVida;
@@ -35,6 +36,7 @@ public class ControladorDeJuego {
 	public static final String COLOCAR_DEFENSA = "COLOCAR_DEFENSA";
 	public static final String BOCA_ABAJO = "BOCA_ABAJO";
 	public static final String BOCA_ARRIBA = "BOCA_ARRIBA";
+	public static final String ATAQUE_JUGADOR = "ATAQUE_JUGADOR";
 	
 	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego, VistaPuntosDeVida vistaPuntosDeVida) {
 		ControladorDeJuego controlador = new ControladorDeJuego();
@@ -80,10 +82,13 @@ public class ControladorDeJuego {
 		Jugador actual = juego.jugadorActual();
 		
 		switch(juego.iFaseActual()) {
-		case 0:
-			actual.agarrarCartasDelMazo(1);
-            break;
-        }
+			case 0:
+				actual.agarrarCartasDelMazo(1);
+	            break;
+			case 2:
+				cartasQueAtacaron = new ArrayList<CartaMonstruo>();
+		        break;
+	    }
 		this.dibujar();
 	}
 	
@@ -140,9 +145,22 @@ public class ControladorDeJuego {
 				this.accionActual = BOCA_ARRIBA;
 				this.vistaInformacionDeJuego.mostrarSeccionAccionGenerica("'Colocar boca arriba'");
 				break;
+			case ATAQUE_JUGADOR:
+				this.accionActual = ATAQUE_JUGADOR;
+				this.vistaInformacionDeJuego.mostrarSeccionAccionGenerica("'Atacar jugador'");
+				break;
 		}
 	}
 
+	public void atacarAlJugador(CartaMonstruo carta) {
+		this.accionActual = MODO_NORMAL;
+		Jugador jugador = Juego.ObtenerJuego().jugadorOponente();
+		if(jugador.obtenerMonstruos().size() > 0 || this.cartasQueAtacaron.contains(carta)) return;
+		cartasQueAtacaron.add(carta);
+		carta.atacarJugador(jugador);
+		this.vistaInformacionDeJuego.dibujar();
+	}
+	
 	public void agregarCartaAlAtaque(CartaMonstruo carta) {
 		Jugador jugador = Juego.ObtenerJuego().jugadorActual();
 		Collection cartas = jugador.obtenerMonstruos();

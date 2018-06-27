@@ -104,9 +104,13 @@ public class VistaInformacionDeJuego extends VBox {
 				t.setText("En esta fase, se pueden realizar tantos ataques como quiera, pero cada monstruo puede atacar una vez.");
                 Button boton = new Button("ATACAR");
         	    boton.getStyleClass().add("info-window-button");
-        	    BotonAccionHandlerEvent botonAtacarHandlerEvent = new BotonAccionHandlerEvent("ATAQUE_1"); 
+        	    BotonAccionHandlerEvent botonAtacarHandlerEvent = new BotonAccionHandlerEvent(ControladorDeJuego.MODO_ATAQUE_1);
         	    boton.setOnAction(botonAtacarHandlerEvent);
-        	    this.contenedorInformacionJuego.getChildren().add(boton);
+        	    Button botonAtacarJugador = new Button("ATACAR JUGADOR");
+        	    botonAtacarJugador.getStyleClass().add("info-window-button");
+        	    BotonAccionHandlerEvent botonAtacarHandlerEvent2 = new BotonAccionHandlerEvent(ControladorDeJuego.ATAQUE_JUGADOR);
+        	    botonAtacarJugador.setOnAction(botonAtacarHandlerEvent2);
+        	    this.contenedorInformacionJuego.getChildren().addAll(boton, botonAtacarJugador);
 				break;
 			case 3:
 				t.setText("En esta fase, se pueden activar cartas de magia.");
