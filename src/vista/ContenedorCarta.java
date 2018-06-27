@@ -39,16 +39,12 @@ public class ContenedorCarta extends VBox {
 		this.getChildren().clear();
 		if(carta.obtenerPosicion() instanceof PosicionAbajo || carta.obtenerPosicion() instanceof MonstruoPosicionAbajo) {
 			VBox box = new VBox();
-			Button button = new Button();
 
-			button.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-			button.getStyleClass().add("button-cartas");
-			button.setPrefHeight(250);
-			button.setPrefWidth(200);
-			box.getChildren().add(button);
+			box.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
+			box.getStyleClass().add("button-cartas");
+			box.setPrefHeight(250);
+			box.setPrefWidth(200);
 			this.getChildren().add(box);
-//			System.out.println("Abajo");
-//			System.out.println(this.getChildren());
 		}else {
 			if(carta instanceof CartaMonstruo) {
 				VBox box = new VBox();

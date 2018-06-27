@@ -90,11 +90,11 @@ public class VistaInformacionDeJuego extends VBox {
         	    boton3.getStyleClass().add("info-window-button");
         	    BotonAccionHandlerEvent botonAccionHandlerEvent3 = new BotonAccionHandlerEvent(ControladorDeJuego.BOCA_ABAJO); 
         	    boton3.setOnAction(botonAccionHandlerEvent3);
-//				Button boton4 = new Button("BOCA ARRIBA");
-//        	    boton4.getStyleClass().add("info-window-button");
-//        	    BotonAccionHandlerEvent botonAccionHandlerEvent = new BotonAccionHandlerEvent(ControladorDeJuego.BOCA_ARRIBA); 
-//        	    boton4.setOnAction(botonAccionHandlerEvent);
-        	    contenedorInformacionJuego.getChildren().addAll(boton1,boton2,boton3);
+				Button boton4 = new Button("BOCA ARRIBA");
+        	    boton4.getStyleClass().add("info-window-button");
+        	    BotonAccionHandlerEvent botonAccionHandlerEvent = new BotonAccionHandlerEvent(ControladorDeJuego.BOCA_ARRIBA); 
+        	    boton4.setOnAction(botonAccionHandlerEvent);
+        	    contenedorInformacionJuego.getChildren().addAll(boton1,boton2,boton3,boton4);
 //        	    contenedorInformacionJuego.setMargin(this.getChildren().get(0),new Insets(5));
 //        	    contenedorInformacionJuego.setMargin(this.getChildren().get(1),new Insets(5));
 //        	    contenedorInformacionJuego.setMargin(this.getChildren().get(2),new Insets(5));
