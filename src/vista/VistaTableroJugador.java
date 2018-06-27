@@ -28,7 +28,7 @@ public class VistaTableroJugador extends HBox {
 		vistaTrampasOMagicas = new VistaTrampasOMagicas(num_jugador);
 		vistaCampo = new VistaCampo(num_jugador);
 		vistaCementerio = new VistaCementerio(num_jugador);
-		vistaMazo = new VistaMazo();
+		vistaMazo = new VistaMazo(num_jugador);
 		
 		if(frente) {
 			VBox tableroPrincipal = new VBox(vistaTrampasOMagicas, vistaMonstruos);

@@ -26,7 +26,7 @@
 .button{
 	-fx-background-color: black;
     -fx-text-fill: orange;
-    -fx-font-size: 25;
+    -fx-font-size: 15;
 }
 
 .continue-button{

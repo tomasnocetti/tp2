@@ -1,24 +1,28 @@
 package vista;
 
-import com.sun.prism.paint.Color;
-
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Tableros.Mazo;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
+import vista.eventHandlers.ButtonMazoEventHandler;
 
 public class VistaMazo extends HBox {
 	
-	public VistaMazo() {
+	private int num_jugador;
+	private VistaMano mano;
+
+	public VistaMazo(int num_jugador) {
 		super();
+		this.num_jugador = num_jugador;
+		this.mano = mano;
+		this.dibujar();
+	}
+
+	public void dibujar() {
+		this.getChildren().clear();
 		Juego juego = Juego.ObtenerJuego();
-		Jugador jugador = juego.jugadorActual();
+		Jugador jugador = juego.obtenerJugador(num_jugador);
 		Mazo mazo = jugador.obtenerMazo();
-		this.getChildren().add(new ContenedorCartaMazo(String.valueOf(mazo.obtenerCantidadDeCartas())));
+		this.getChildren().add(new ContenedorCartaMazo(String.valueOf(mazo.obtenerCantidadDeCartas()),num_jugador,this));
 	}
 }
