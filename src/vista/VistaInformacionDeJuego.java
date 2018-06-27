@@ -171,7 +171,7 @@ public class VistaInformacionDeJuego extends VBox {
 		t.setText("Selecciona la carta de tu campo a la cual le queres aplicar la accion: " + accion);
 		t.setWrappingWidth(300);
 	    t.minWidth(300);
-	    t.setFont(Font.font ("Verdana", 16));
+	    t.setFont(Font.font ("Verdana", 13));
 	    t.setFill(Color.RED);
 	    
 	    Button boton = new Button("Cancelar");
@@ -196,5 +196,19 @@ public class VistaInformacionDeJuego extends VBox {
 	    System.out.println("ACA TERMINADO EL JUEGO");
 	  
 		this.contenedorInformacionJuego.getChildren().addAll(t, t2);
+	}
+	
+	public void mensajeDeError(String mensaje) {
+		this.contenedorInformacionJuego.getChildren().clear();
+	    Text t = new Text();
+		t.setText(mensaje);
+		t.setWrappingWidth(300);
+	    t.minWidth(300);
+	   
+	    Button boton = new Button("OK");
+	    BotonCancelarHandler handler = new BotonCancelarHandler (); 
+	    boton.setOnAction(handler);
+	    boton.getStyleClass().add("info-window-button");
+		this.contenedorInformacionJuego.getChildren().addAll(t, boton);
 	}
 }

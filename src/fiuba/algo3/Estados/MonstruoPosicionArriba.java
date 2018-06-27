@@ -15,8 +15,9 @@ public class MonstruoPosicionArriba extends PosicionArriba implements MonstruoPo
 	}
 
 	@Override
-	public void atacarJugador(CartaMonstruo cartaMonstruo, Jugador otro) {
-		otro.quitarPuntosDeVida(cartaMonstruo.obtenerPuntosAtaque());
+	public void atacarJugador(CartaMonstruo cartaAtacante, Jugador otro) {
+		Accionable accionAtacante = cartaAtacante.obtenerAccion();
+		accionAtacante.atacarJugador(cartaAtacante, otro);
 	}
 
 }

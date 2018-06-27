@@ -2,6 +2,7 @@ package fiuba.algo3.Estados;
 
 import java.io.Serializable;
 
+import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
 
@@ -27,6 +28,11 @@ public class AccionDefensa implements Accionable, Serializable{
 	public int calcularDanio(CartaMonstruo cartaAtacante, CartaMonstruo cartaActual) {
 		int diferenciaAtaque = cartaActual.obtenerPuntosDefensa() - cartaAtacante.obtenerPuntosAtaque();
 		return diferenciaAtaque;
+	}
+
+	@Override
+	public void atacarJugador(CartaMonstruo cartaAtacante, Jugador otro) {
+		throw new CartaEnAccionDefensaException();
 	}
 
 }

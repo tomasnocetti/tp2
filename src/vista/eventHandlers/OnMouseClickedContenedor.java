@@ -56,19 +56,23 @@ public class OnMouseClickedContenedor implements EventHandler< MouseEvent>{
 				System.out.println("ATAQUE_JUGADOR");
 				break;
 			case "COLOCAR_ATAQUE":
+				if(! jugador_actual.equals(carta.obtenerJugador())) return;
 				carta.colocarEnAccionDeAtaque();
 				controlador.cancelarAccion();
 				System.out.println("colocarAtaque");
 				break;
 			case "COLOCAR_DEFENSA":
+				if(! jugador_actual.equals(carta.obtenerJugador())) return;
 				carta.colocarEnAccionDeDefensa();
 				controlador.cancelarAccion();
 				break;
 			case "BOCA_ABAJO":
+				if(! jugador_actual.equals(carta.obtenerJugador())) return;
 				carta.colocarBocaAbajo();
 				controlador.cancelarAccion();
 				break;
 			case "BOCA_ARRIBA":
+				if(! jugador_actual.equals(carta.obtenerJugador())) return;
 				carta.colocarBocaArriba();
 				controlador.cancelarAccion();
 				break;

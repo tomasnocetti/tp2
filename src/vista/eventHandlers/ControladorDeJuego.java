@@ -7,6 +7,7 @@ import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
+import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import vista.VentanaFinDeJuego;
@@ -156,9 +157,14 @@ public class ControladorDeJuego {
 		this.accionActual = MODO_NORMAL;
 		Jugador jugador = Juego.ObtenerJuego().jugadorOponente();
 		if(jugador.obtenerMonstruos().size() > 0 || this.cartasQueAtacaron.contains(carta)) return;
-		cartasQueAtacaron.add(carta);
-		carta.atacarJugador(jugador);
-		this.vistaInformacionDeJuego.dibujar();
+		try {
+			carta.atacarJugador(jugador);
+			cartasQueAtacaron.add(carta);
+			this.vistaInformacionDeJuego.dibujar();
+        }catch (CartaEnAccionDefensaException e) {
+        	System.out.println("ACA LA CARTA NO SE ENCUENTRO");
+        	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra en posicion de defensa. No puede atacar !");
+        }
 	}
 	
 	public void agregarCartaAlAtaque(CartaMonstruo carta) {
@@ -167,11 +173,15 @@ public class ControladorDeJuego {
 		if (this.accionActual == MODO_ATAQUE_1) {
 			cartaClipboard.add(carta);
 			this.accionActual = MODO_ATAQUE_2;
-		} else {
+			return;
+		} 
+		try {
 			CartaMonstruo carta1 = cartaClipboard.get(0);
 			carta1.atacar(carta);
 			this.cancelarAccion();
-		}
+        }catch (CartaEnAccionDefensaException e) {
+        	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra en posicion de defensa. No puede atacar !");
+        }
 	}
 	
 }
