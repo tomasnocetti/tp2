@@ -92,8 +92,8 @@ public class VistaInformacionDeJuego extends VBox {
         	    boton3.setOnAction(botonAccionHandlerEvent3);
 				Button boton4 = new Button("BOCA ARRIBA");
         	    boton4.getStyleClass().add("info-window-button");
-        	    BotonAccionHandlerEvent botonAccionHandlerEvent = new BotonAccionHandlerEvent(ControladorDeJuego.BOCA_ARRIBA); 
-        	    boton4.setOnAction(botonAccionHandlerEvent);
+        	    BotonAccionHandlerEvent botonAccionHandlerEvent4 = new BotonAccionHandlerEvent(ControladorDeJuego.BOCA_ARRIBA); 
+        	    boton4.setOnAction(botonAccionHandlerEvent4);
         	    contenedorInformacionJuego.getChildren().addAll(boton1,boton2,boton3,boton4);
 //        	    contenedorInformacionJuego.setMargin(this.getChildren().get(0),new Insets(5));
 //        	    contenedorInformacionJuego.setMargin(this.getChildren().get(1),new Insets(5));
@@ -110,6 +110,11 @@ public class VistaInformacionDeJuego extends VBox {
 				break;
 			case 3:
 				t.setText("En esta fase, se pueden activar cartas de magia.");
+//				Button botonMag = new Button("ACTIVAR MAGICA");
+//				botonMag.getStyleClass().add("info-window-button");
+////        	    BotonAccionHandlerEvent botonAccionHandlerEvent = new BotonAccionHandlerEvent(ControladorDeJuego.ACTIVAR_MAGICA); 
+////        	    boton.setOnAction(botonAccionHandlerEvent);
+//				 contenedorInformacionJuego.getChildren().add(botonMag);
 			    break;
 			case 4:
 				t.setText("CAMBIO DE TURNO!");

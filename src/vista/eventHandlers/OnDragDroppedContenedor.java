@@ -32,9 +32,9 @@ public class OnDragDroppedContenedor implements EventHandler<DragEvent>{
         
         Carta carta = ControladorDeJuego.getDraggedCard();
         
-        System.out.println("DENTRO DEL DRAG");
-        System.out.println(contenedor.jugadorEsValido(carta.obtenerJugador()));
-        System.out.println(this.clase.isInstance(carta));
+//        System.out.println("DENTRO DEL DRAG");
+//        System.out.println(contenedor.jugadorEsValido(carta.obtenerJugador()));
+//        System.out.println(this.clase.isInstance(carta));
         ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
         
         if(controlador.obtenerAccion() == "NORMAL" && contenedor.jugadorEsValido(carta.obtenerJugador()) && this.fasePermitida.equals(juego.iFaseActual())) {

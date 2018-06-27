@@ -45,9 +45,11 @@ public class CartaMagicaTest {
 		CartaFactory factoryDefensor = new CartaFactory(defensor);
 		
 		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo monstruo2 = factoryAtacante.crearCartaJinzo7();
 		CartaMonstruo monstruoDefensor = factoryDefensor.crearCartaMonstruoGenerica(1000, 1000);
 		
 		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
+		atacante.colocarCartaEnZona(monstruo2, 1, new ArrayList<CartaMonstruo>());
 		defensor.colocarCartaEnZona(monstruoDefensor, 0, new ArrayList<CartaMonstruo>());
 		
 		CartaMagica agujeroNegro = factoryAtacante.crearCartaAgujeroNegro();
@@ -55,6 +57,7 @@ public class CartaMagicaTest {
 		agujeroNegro.colocarBocaArriba(defensor);
 		
 		assertTrue(atacante.noTieneMonstruos());
+		assertTrue(defensor.noTieneMonstruos());
 	}
 	
 	@Test

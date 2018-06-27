@@ -15,6 +15,7 @@ import vista.eventHandlers.OnDragDroppedContenedor;
 import vista.eventHandlers.OnDragEnteredContenedor;
 import vista.eventHandlers.OnDragExitedContenedor;
 import vista.eventHandlers.OnDragOverContenedor;
+import vista.eventHandlers.OnMouseClickedMagica;
 
 public class VistaTrampasOMagicas extends GridPane{
 	
@@ -46,6 +47,8 @@ public class VistaTrampasOMagicas extends GridPane{
 			if(cartas.containsKey(i)) {
 				ContenedorCarta contenedor = new ContenedorCarta(cartas.get(i));
 				contenedor.setId(String.valueOf(i));
+				OnMouseClickedMagica event5 = new OnMouseClickedMagica(contenedor);
+				contenedor.setOnMouseClicked(event5);
 				this.add(contenedor, i , 0);
 			}else {
 				ContenedorCartaVacia contenedor = new ContenedorCartaVacia(jugador,"Magica/Trampa");
@@ -57,7 +60,7 @@ public class VistaTrampasOMagicas extends GridPane{
 				contenedor.setOnDragOver(event3);
 				OnDragDroppedContenedor event4 = new OnDragDroppedContenedor(CartaTrampaOMagica.class, contenedor, 1);
 				contenedor.setOnDragDropped(event4);
-				
+			
 				contenedor.setId(String.valueOf(i));
 				this.add(contenedor, i , 0);
 			}
