@@ -113,9 +113,9 @@ public class Jugador extends Observable implements Serializable{
 		}
 	}
 
-	public void colocarCartaEnZona(CartaTrampaOMagica carta, int posicion) {
-		this.mano.eliminarCarta(carta);
-		this.zonaCartasMagicasOTrampas.agregarCarta(carta, posicion);
+	public void colocarCartaEnZona(CartaTrampaOMagica cartaTrampaOMagica, int posicion) {
+		this.mano.eliminarCarta(cartaTrampaOMagica);
+		this.zonaCartasMagicasOTrampas.agregarCarta(cartaTrampaOMagica, posicion);
 	}
 	
 	public void colocarCartaEnZona(CartaCampo carta, Jugador jugadorOponente) {

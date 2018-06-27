@@ -44,6 +44,7 @@ public class OnMouseClickedContenedor implements EventHandler< MouseEvent>{
 				if(! jugador_oponente.equals(carta.obtenerJugador())) return;
 				this.contenedor.setStyle("-fx-background-color: yellow");
 				controlador.agregarCartaAlAtaque(carta);
+				System.out.println("ATAQUE2");
 				break;
 			case "COLOCAR_ATAQUE":
 				carta.colocarEnAccionDeAtaque();

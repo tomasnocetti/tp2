@@ -7,6 +7,7 @@ import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Cartas.CartaTrampaOMagica;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
+import fiuba.algo3.tp2.Cartas.CartaCampo;
 import javafx.event.EventHandler;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
@@ -62,7 +63,12 @@ public class OnDragDroppedContenedor implements EventHandler<DragEvent>{
         		cartaTrampaOMagica.colocarBocaAbajo();
         		controlador.dibujar();
         	}
-        	
+        	if(this.clase.equals(CartaCampo.class)) {
+        		System.out.println("CartaCampo");
+        		CartaCampo cartaCampo = (CartaCampo) carta;
+        		jugador.colocarCartaEnZona(cartaCampo,juego.jugadorOponente());
+        		controlador.dibujar();
+        	}
         	contenedor.setStyle("-fx-background-color: #FFFFFF;");	 
         }
                     
