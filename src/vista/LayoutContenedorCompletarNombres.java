@@ -39,17 +39,6 @@ public class LayoutContenedorCompletarNombres extends VBox{
 		vbox2.setPrefSize(300,300);
 		vbox3.setPrefSize(500,300);
 		
-		//Esto tiene que ir en el contenedor inicio
-//		Text titulo = new Text(300, 300, "Bienvenidos a YuGiOh");
-//		titulo.setFill(Color.DARKORANGE);
-//		titulo.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 60));
-//	    final Light.Distant light = new Light.Distant();
-//	    light.setAzimuth(-135.0);
-//	    final Lighting lighting = new Lighting();
-//	    lighting.setLight(light);
-//	    lighting.setSurfaceScale(9.0);
-//		vbox3.getChildren().add(titulo);
-		
 		Text textoNombre1= new Text(300, 300, "NOMBRE JUGADOR 1");
 		textoNombre1.setFill(Color.DARKORANGE);
 		textoNombre1.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 30));
@@ -105,8 +94,6 @@ public class LayoutContenedorCompletarNombres extends VBox{
             }
         });
 	    
-	    //Label label = new Label();
-	    //this.getChildren().addAll(label, name);
 	    vbox1.setAlignment(Pos.CENTER);
 	    vbox2.setAlignment(Pos.CENTER);
 	    vbox3.setAlignment(Pos.CENTER);
