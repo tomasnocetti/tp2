@@ -6,11 +6,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.junit.Test;
-
-import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.*;
-import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
+import fiuba.algo3.tp2.Excepciones.*;
 
 public class JugadorTest {
 
@@ -73,26 +71,21 @@ public class JugadorTest {
 		assertTrue(jugador.obtenerCartasEnCementerio().contains(carta));
 	}
 	
-//	@Test
-//	public void test06colocarCartaEnZonaLaEliminaDeLaMano() {
-//		Jugador jugador = new Jugador();
-//		Carta carta = jugador.agarrarCarta();
-//		
-//		if (carta.getClass() == CartaCampo.class) {
-//			jugador.colocarCartaEnZona((CartaCampo) carta, new Jugador());
-//		}
-//		else {
-//			if (carta.getClass() == CartaTrampa.class || carta.getClass() == CartaMagica.class) {
-//				jugador.colocarCartaEnZona((CartaTrampaOMagica) carta, 0);
-//			}
-//			else {
-//				jugador.colocarCartaEnZona((CartaMonstruo) carta, 0, new ArrayList<CartaMonstruo>());
-//			}
-//		}
-//		
-//		assertEquals(jugador.obtenerCartasEnMano().size(), 0);
-//	}
-//	
+	@Test (expected = InvocacionInvalida.class)
+	public void test06InvocacionInvalida() {
+		Jugador jugador = new Jugador();
+		CartaFactory factory = new CartaFactory(jugador);
+		
+		CartaMonstruo sacrificada = factory.crearCartaMonstruoGenerica(1000, 1000);
+		
+		CartaMonstruo invocada = factory.crearCartaMonstruoGenerica2Sacrificio(2000, 2000);
+		
+		ArrayList<CartaMonstruo> cartasSacrificadas = new ArrayList<CartaMonstruo>() ;
+		jugador.colocarCartaEnZona(sacrificada, 0, cartasSacrificadas);
+		
+		cartasSacrificadas.add(sacrificada);
+		jugador.colocarCartaEnZona(invocada, 0, cartasSacrificadas);
+	}
 	
 	@Test
 	public void test07Agarrar2CartasDelMazoLasPoneEnLaMano() {

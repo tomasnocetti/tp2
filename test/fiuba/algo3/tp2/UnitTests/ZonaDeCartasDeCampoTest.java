@@ -7,6 +7,7 @@ import org.junit.Test;
 import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
+import fiuba.algo3.tp2.Excepciones.ZonaAlcanzoCantidadMaximaDeCartasExcepcion;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasDeCampo;
 
 public class ZonaDeCartasDeCampoTest {
@@ -49,4 +50,5 @@ public class ZonaDeCartasDeCampoTest {
 		zona.agregarCarta(carta, oponente);
 		assertTrue(zona.obtenerCartas().contains(carta));
 	}
+	
 }

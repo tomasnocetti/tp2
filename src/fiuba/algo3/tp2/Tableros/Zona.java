@@ -36,9 +36,11 @@ public class Zona implements Serializable{
 		if (cartas.get(posicion) != null) {
 			throw new PosicionDeLaZonaOcupadaException();
 		}
+
 		if (cartas.size() +1 > this.limite) {
 			throw new ZonaAlcanzoCantidadMaximaDeCartasExcepcion();
 		}
+		
 		if (carta == null) {
 			return;
 		}

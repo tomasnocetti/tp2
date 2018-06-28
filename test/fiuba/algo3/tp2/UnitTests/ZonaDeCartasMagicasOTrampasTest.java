@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.*;
+import fiuba.algo3.tp2.Excepciones.ZonaNoTieneTrampa;
+import fiuba.algo3.tp2.Tableros.ZonaDeCartasMagicasOTrampas;
 
 public class ZonaDeCartasMagicasOTrampasTest {
 
@@ -37,6 +39,19 @@ public class ZonaDeCartasMagicasOTrampasTest {
 		jugador.enviarAlCementerio(trampa);
 		
 		assertEquals(jugador.obtenerProximaCartaTrampa(), trampa2);
+	}
+	
+	@Test (expected = ZonaNoTieneTrampa.class)
+	public void test03NoTieneTrampaYObtenerProximaTrampaLevantaExcepcion() {
+		Jugador jugador = new Jugador();
+		CartaFactory factory = new CartaFactory(jugador);
+		
+		CartaMagica magica = factory.crearCartaMagicaGenerica();
+		
+		ZonaDeCartasMagicasOTrampas zona = new ZonaDeCartasMagicasOTrampas(jugador);
+		
+		zona.agregarCarta(magica, 0);
+		zona.obtenerProximaCartaTrampa();
 	}
 
 }

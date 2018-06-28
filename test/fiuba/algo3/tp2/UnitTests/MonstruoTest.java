@@ -10,7 +10,7 @@ import fiuba.algo3.tp2.Cartas.CartaFactory;
 //import fiuba.algo3.tp2.Cartas.AgujeroNegro;
 //import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
-import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
+import fiuba.algo3.tp2.Excepciones.*;
 import fiuba.algo3.Estados.*;
 import fiuba.algo3.tp2.Jugador;
 
@@ -135,6 +135,24 @@ public class MonstruoTest {
 
 		monstruoAtacante.atacar(insectoComeHombres);
 		assertFalse(atacante.obtenerMonstruos().contains(monstruoAtacante));
+	}
+	
+	@Test (expected = MonstruoBocaAbajoException.class)
+	public void test10CartaBocaAbajoQueAtacaLevantaExcepcion() {
+		Jugador atacante = new Jugador();
+		Jugador atacado = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		
+		ArrayList<CartaMonstruo> cartasSacrificadas = new ArrayList<CartaMonstruo>();
+		
+		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo monstruoAtacado = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
+		atacante.colocarCartaEnZona(monstruoAtacante, 0, cartasSacrificadas);
+		atacado.colocarCartaEnZona(monstruoAtacado, 0, cartasSacrificadas);
+		
+		monstruoAtacante.colocarBocaAbajo();
+		monstruoAtacante.atacar(monstruoAtacado);
 	}
 	
 	
