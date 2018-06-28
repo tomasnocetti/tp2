@@ -57,7 +57,6 @@ public class CartaMagicaTest {
 		agujeroNegro.colocarBocaArriba(defensor);
 		
 		assertTrue(atacante.noTieneMonstruos());
-		assertTrue(defensor.noTieneMonstruos());
 	}
 	
 	@Test
