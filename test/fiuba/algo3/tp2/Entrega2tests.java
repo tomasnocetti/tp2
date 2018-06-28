@@ -188,10 +188,11 @@ public class Entrega2tests {
 		
 		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
 		atacado.colocarCartaEnZona(insectoComeHombres, 0, new ArrayList<CartaMonstruo>());
-//		CartaObserver observer = new CartaObserver(insectoComeHombres);
-//		
-//		insectoComeHombres.addObserver(observer);
+
 		monstruoAtacante.atacar(insectoComeHombres);
+		assertFalse(atacante.obtenerMonstruos().contains(monstruoAtacante));
+		assertEquals(atacante.obtenerPuntosDeVida(), 8000);
+		assertEquals(atacado.obtenerPuntosDeVida(), 8000);
 		
 	}
 

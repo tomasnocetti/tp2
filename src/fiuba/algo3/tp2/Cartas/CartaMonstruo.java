@@ -54,7 +54,7 @@ public class CartaMonstruo extends Carta{
 			if(!trampa.activar(cartaAtacante.obtenerJugador(), this, cartaAtacante)) return;
 			
 		}
-		this.posicion.defender(cartaAtacante, this.accion, this);
+		this.posicion.defender(cartaAtacante, this.accion, this.efecto, this);
 	}
 	
 	public void colocarEnAccionDeDefensa() {
@@ -110,8 +110,6 @@ public class CartaMonstruo extends Carta{
 
 	public void colocarBocaArriba() {
 		this.posicion = new MonstruoPosicionArriba();
-		this.efecto.activarSobreJugadorAtacante(this.jugador);
-		//-- PARAR
 	}
 
 	public boolean estaEnElCampo() {

@@ -117,5 +117,26 @@ public class MonstruoTest {
 		carta1.atacar(carta2); // se destruye la carta2
 		carta2.atacar(carta1); //esta destruida la carta2 y por lo tanto lanza excepcion
 	}
+	
+	@Test
+	public void test09InsectoComeHombresDestruyeCartaAtacanteAlEstarAtacada() {
+		Jugador atacante = new Jugador();
+		Jugador atacado = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		
+		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo insectoComeHombres = factoryAtacado.crearInsectoComeHombres();
+		insectoComeHombres.colocarBocaAbajo();
+		insectoComeHombres.colocarEnAccionDeDefensa();
+		
+		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
+		atacado.colocarCartaEnZona(insectoComeHombres, 0, new ArrayList<CartaMonstruo>());
+
+		monstruoAtacante.atacar(insectoComeHombres);
+		assertFalse(atacante.obtenerMonstruos().contains(monstruoAtacante));
+	}
+	
+	
 
 }
