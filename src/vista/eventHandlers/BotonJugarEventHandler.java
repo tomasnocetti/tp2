@@ -25,6 +25,9 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 	}
 	
 	public void handle(ActionEvent event) {
+		sceneJuego = new SceneJuego(stage);
+		mediaPlayer.stop();
+		this.stage.setScene(sceneJuego);
 		this.stage.setFullScreen(true);
 	}
 

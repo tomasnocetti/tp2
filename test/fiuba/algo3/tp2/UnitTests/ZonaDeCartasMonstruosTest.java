@@ -6,9 +6,12 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import fiuba.algo3.tp2.Tableros.ZonaDeCartasDeCampo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasMonstruos;
+import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Excepciones.*;
+import fiuba.algo3.tp2.Cartas.CartaCampo;
 import fiuba.algo3.tp2.Cartas.CartaFactory;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
@@ -91,5 +94,6 @@ public class ZonaDeCartasMonstruosTest {
 		zona.agregarCarta(carta2, 1,cartasSacrificio);
 		assertTrue(zona.obtenerCartas().contains(carta2));
 	}
+	
 	
 }

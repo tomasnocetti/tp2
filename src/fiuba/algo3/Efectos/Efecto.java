@@ -16,4 +16,5 @@ public class Efecto implements Serializable{
 	public void activarSobreJugadorAtacante(Jugador jugador) {return;}
 	public void activarSobreJugadorAtacado(Jugador jugador) {return;}
 	public boolean activarAntesDeDefensa(Jugador jugador, CartaMonstruo cartaAtacada, CartaMonstruo cartaAtacante) {return true;}
+	public void activarAlVoltear(CartaMonstruo cartaAtacante) {return;}
 }

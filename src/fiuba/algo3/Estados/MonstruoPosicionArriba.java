@@ -1,5 +1,6 @@
 package fiuba.algo3.Estados;
 
+import fiuba.algo3.Efectos.Efecto;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 
@@ -10,7 +11,7 @@ public class MonstruoPosicionArriba extends PosicionArriba implements MonstruoPo
 		accionAtacante.atacar(cartaAtacante, cartaAtacada);
 	}
 	
-	public void defender(CartaMonstruo cartaAtacante, Accionable posicion, CartaMonstruo cartaActual) {
+	public void defender(CartaMonstruo cartaAtacante, Accionable posicion, Efecto efecto, CartaMonstruo cartaActual) {
 		posicion.defender(cartaAtacante,cartaActual);
 	}
 

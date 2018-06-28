@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.Excepciones.FinalDeJuegoException;
 
 import org.junit.Test;
 
@@ -42,15 +43,12 @@ public class JuegoTest {
 		assertTrue(perdedor != juego.obtenerGanador());
 	}
 	
-	
-//	@Test
-//	public void testCrearJuegoYTerminarJuegoConNotificacion() {
-//		Juego juego = Juego.ObtenerJuego();
-//		JuegoObserver juegoObserver = new JuegoObserver(juego);
-//		juego.addObserver(juegoObserver);
-//		
-//		juego.verificarFinDeJuego();
-//		
-//	}
-//}
+	@Test (expected = FinalDeJuegoException.class)
+	public void test05CambioDeTurnoMientrasJuegoTerminadoLevantaExcepcion() {
+		Juego juego = Juego.ObtenerJuego();
+		Jugador perdedor = juego.jugadorActual();
+		juego.asignarPerdedor(perdedor, "PRUEBA");
+		juego.cambiarTurno();
+	}
+
 }

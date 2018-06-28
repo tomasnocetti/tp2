@@ -78,12 +78,13 @@ public class Jugador extends Observable implements Serializable{
 	}
 
 	public void destruirMonstruos() {
-		this.zonaMonstruos.vaciar();
 		Collection<Carta> monstruos = this.zonaMonstruos.obtenerCartas();
 		Iterator<Carta> i = monstruos.iterator();
 		while (i.hasNext()) {
 			CartaMonstruo monstruo = (CartaMonstruo) i.next();
-			this.enviarAlCementerio(monstruo);
+			cementerio.agregarCarta(monstruo);
+			i.remove(); // hay que pasar por el metodo remove del iterator para evitar errores de concurrencia, porque en su método eliminarCarta(), la zona usa también un remove
+			
 		}
 	}	
 	

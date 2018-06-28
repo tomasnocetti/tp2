@@ -10,7 +10,7 @@ import fiuba.algo3.tp2.Cartas.CartaFactory;
 //import fiuba.algo3.tp2.Cartas.AgujeroNegro;
 //import fiuba.algo3.tp2.Cartas.CartaMagica;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
-import fiuba.algo3.tp2.Excepciones.CartaNoSeEncuentraEnZona;
+import fiuba.algo3.tp2.Excepciones.*;
 import fiuba.algo3.Estados.*;
 import fiuba.algo3.tp2.Jugador;
 
@@ -117,5 +117,44 @@ public class MonstruoTest {
 		carta1.atacar(carta2); // se destruye la carta2
 		carta2.atacar(carta1); //esta destruida la carta2 y por lo tanto lanza excepcion
 	}
+	
+	@Test
+	public void test09InsectoComeHombresDestruyeCartaAtacanteAlEstarAtacada() {
+		Jugador atacante = new Jugador();
+		Jugador atacado = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		
+		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo insectoComeHombres = factoryAtacado.crearInsectoComeHombres();
+		insectoComeHombres.colocarBocaAbajo();
+		insectoComeHombres.colocarEnAccionDeDefensa();
+		
+		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
+		atacado.colocarCartaEnZona(insectoComeHombres, 0, new ArrayList<CartaMonstruo>());
+
+		monstruoAtacante.atacar(insectoComeHombres);
+		assertFalse(atacante.obtenerMonstruos().contains(monstruoAtacante));
+	}
+	
+	@Test (expected = MonstruoBocaAbajoException.class)
+	public void test10CartaBocaAbajoQueAtacaLevantaExcepcion() {
+		Jugador atacante = new Jugador();
+		Jugador atacado = new Jugador();
+		CartaFactory factoryAtacante = new CartaFactory(atacante);
+		CartaFactory factoryAtacado = new CartaFactory(atacado);
+		
+		ArrayList<CartaMonstruo> cartasSacrificadas = new ArrayList<CartaMonstruo>();
+		
+		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
+		CartaMonstruo monstruoAtacado = factoryAtacado.crearCartaMonstruoGenerica(1000, 1000);
+		atacante.colocarCartaEnZona(monstruoAtacante, 0, cartasSacrificadas);
+		atacado.colocarCartaEnZona(monstruoAtacado, 0, cartasSacrificadas);
+		
+		monstruoAtacante.colocarBocaAbajo();
+		monstruoAtacante.atacar(monstruoAtacado);
+	}
+	
+	
 
 }

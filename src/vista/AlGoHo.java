@@ -28,14 +28,14 @@ public class AlGoHo extends Application{
 		stage.setTitle("AlGoHo");
         
         mediaPlayer = new MediaPlayer(new Media(new File("src/vista/YugiohTema.wav").toURI().toString()));
-//		mediaPlayer.play();
+		mediaPlayer.play();
 		mediaPlayer.setVolume(0.02);
         
         sceneCompletarNombres = new SceneCompletarNombres(stage, mediaPlayer);
         
         sceneInicio = new SceneInicio(stage, sceneCompletarNombres);
 	
-        stage.setScene(new SceneJuego(stage));
+        stage.setScene(sceneInicio);
         stage.setFullScreen(true);
         stage.show();
 	}	
