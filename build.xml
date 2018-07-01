@@ -148,6 +148,8 @@
 
     <target name="compilar.paquete" depends="test">
 		<javac srcdir="src" destdir="${build}/classes" debug="no">
+		<classpath location="${build}" />
+            	<classpath refid="classpath" />
 		</javac>
 	</target>
 
@@ -200,14 +202,15 @@
 
 
 		<target name="empaquetar.con.imagenes" depends="compilar.paquete">
-			<copydir src="src/gui/imagess"
-				dest="${build}/classes/gui/imagess"
-				includes="**/*.png"/>
+			<copydir src="src/vista/img"
+				dest="${build}/vista/img"/>
+			<copy file="src/vista/style.css" tofile="${build}/vista/style.css"/>
 		<jar destfile="${build}/dist/algo3.jar" basedir="${build}/classes"/>
 	</target>
 
-	<target name="ejecutar.aplicacion" depends="empaquetar">
-		<java classname="fiuba.algo3.ejemplo1.Foo" fork="true">
+
+	<target name="jugar" depends="empaquetar.con.imagenes">
+		<java classname="vista.AlGoHo" fork="true">
 			<classpath refid="classpath" />
 			<classpath location="${build}/dist/algo3.jar" />
 		</java>
