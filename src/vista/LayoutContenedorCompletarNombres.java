@@ -76,6 +76,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    final Text txtState = new Text();
 	    
 	    final Button buttonJugar = new Button("CONTINUAR");
+	    buttonJugar.getStyleClass().add("button-inicio");
 	    GridPane.setConstraints(buttonJugar, 1, 0);
 	    vbox2.getChildren().add(buttonJugar);
 	    buttonJugar.setOnAction(new EventHandler<ActionEvent>() {
@@ -94,15 +95,18 @@ public class LayoutContenedorCompletarNombres extends VBox{
             }
         });
 	    
-	    vbox1.setAlignment(Pos.CENTER);
-	    vbox2.setAlignment(Pos.CENTER);
-	    vbox3.setAlignment(Pos.CENTER);
+	    vbox1.setAlignment(Pos.TOP_LEFT);
+	    vbox1.setPadding(new Insets(100));
+	    vbox2.setAlignment(Pos.TOP_LEFT);
+	    vbox2.setPadding(new Insets(100));
+	    vbox3.setAlignment(Pos.TOP_LEFT);
+	    vbox3.setPadding(new Insets(120));
 	    
 	    this.getChildren().add(vbox3);
 	    this.getChildren().add(vbox1);
 		this.getChildren().add(vbox2);
 		
-		this.setAlignment(Pos.CENTER);
+		this.setAlignment(Pos.TOP_LEFT);
 	    this.setSpacing(15);
 	}
 }

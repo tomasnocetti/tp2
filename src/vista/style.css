@@ -1,5 +1,5 @@
 .root{
-    -fx-background-image: url("img/fodo_eleccion_nombres.png");   
+    -fx-background-image: url("img/fodo_eleccion_nombres.png");
     -fx-background-size: 100% 100%;
     -fx-font-size: 100% 100%;
     -fx-background-position: center center;
@@ -27,6 +27,12 @@
 	-fx-background-color: black;
     -fx-text-fill: orange;
     -fx-font-size: 15;
+}
+
+.button-inicio{
+	-fx-background-color: black;
+    -fx-text-fill: orange;
+    -fx-font-size: 40;
 }
 
 .info-window-button{

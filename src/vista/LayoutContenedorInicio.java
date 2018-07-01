@@ -24,10 +24,10 @@ public class LayoutContenedorInicio extends HBox {
         Button botonContinuar = new Button();
         botonContinuar.setText("JUGAR");
         botonContinuar.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-        botonContinuar.getStyleClass().add("button");
+        botonContinuar.getStyleClass().add("button-inicio");
         
 		//Esto tiene que ir en el contenedor inicio
-		Text titulo = new Text(300, 300, "Bienvenidos a YuGiOh");
+		Text titulo = new Text(100, 100, "Bienvenidos a YuGiOh");
 		titulo.setFill(Color.DARKORANGE);
 		titulo.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 60));
 	    final Light.Distant light = new Light.Distant();
@@ -39,7 +39,7 @@ public class LayoutContenedorInicio extends HBox {
         Button botonSalir = new Button();
         botonSalir.setText("SALIR");
         botonSalir.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-        botonSalir.getStyleClass().add("button");
+        botonSalir.getStyleClass().add("button-inicio");
         
         BotonSalirEventHandler botonSalirEventHandler = new BotonSalirEventHandler(stage);
         botonSalir.setOnAction(botonSalirEventHandler);
@@ -49,8 +49,8 @@ public class LayoutContenedorInicio extends HBox {
         
         VBox contenedorVertical = new VBox(titulo,botonContinuar,botonSalir);
         contenedorVertical.setSpacing(50);
-        contenedorVertical.setPadding(new Insets(250));
-        contenedorVertical.setAlignment(Pos.CENTER);
+        contenedorVertical.setPadding(new Insets(100));
+        contenedorVertical.setAlignment(Pos.TOP_LEFT);
         
         this.setSpacing(30);
         this.setPadding(new Insets(20));
