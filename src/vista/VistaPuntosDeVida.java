@@ -95,8 +95,9 @@ public class VistaPuntosDeVida extends VBox {
 		jugador2.addObserver(puntosDeVidaObserver2);
 		
 		this.layoutContenedorJuego = layoutContenedorJuego;
-		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		this.getStyleClass().add("informacion");
+		//this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
+		//this.getStyleClass().add("informacion");
+		this.setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");
 		this.setSpacing(20);
 		
 		this.pBar1 = new ProgressBar(8000);
@@ -118,16 +119,19 @@ public class VistaPuntosDeVida extends VBox {
 		this.getChildren().add(this.boxJugador2);
 		this.getChildren().addAll(this.pBar2);
 		this.dibujar();
-		this.setPrefWidth(70);
+		this.setPrefWidth(300);
+		this.setPrefWidth(getScaleY());
+		this.setAlignment(Pos.CENTER_LEFT);
 	}
 	
 	private void modificarVBoxJugador(VBox box,Jugador jugador) {
 		final int puntosDeVida = jugador.obtenerPuntosDeVida();
 		box.getChildren().clear();
-		box.getChildren().add(this.darTextoNombreJugador(jugador.obtenerNombre()));
+		Text text0 = this.darTextoNombreJugador(jugador.obtenerNombre());
 		Text text1 = this.darTextoNombreJugador(""+puntosDeVida);
 		Juego juego = Juego.ObtenerJuego();
 		Jugador jugadorActual = juego.jugadorActual();
+		box.getChildren().add(text0);
 		box.getChildren().add(text1);
 		if(jugador.equals(jugadorActual)) {
 			Text active = new Text();

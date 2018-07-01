@@ -37,14 +37,14 @@
 
 .info-window-button{
     -fx-background-color: transparent;
-    -fx-text-fill: black;
-    -fx-border-color: black;
+    -fx-text-fill: white;
+    -fx-border-color: white;
     -fx-alignment: CENTER;
     -fx-font-size: 16;
 }
 
 .info-window-button:hover{
-    -fx-text-fill: white;
+    -fx-text-fill: orange;
     -fx-background-color: black;
 }
 .continue-button{

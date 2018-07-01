@@ -57,10 +57,15 @@ public class VistaInformacionDeJuego extends VBox {
 		botonContinuar.setOnAction(botonContinuarHandler);
 		
 		this.contenedorInformacionJuego = new VBox();
-		this.contenedorInformacionJuego.setStyle("-fx-background-color: #FFFFFF;");
+		this.contenedorInformacionJuego.setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");
 		this.contenedorInformacionJuego.setPadding(new Insets(10));
+		this.contenedorInformacionJuego.setPrefHeight(500);
 		this.getChildren().add(botonContinuar);
 		this.getChildren().add(this.contenedorInformacionJuego);
+		VistaPuntosDeVida vistaPuntosDeVida = new VistaPuntosDeVida(layoutContenedorJuego);
+		vistaPuntosDeVida.setAlignment(Pos.CENTER);
+		vistaPuntosDeVida.setPrefHeight(layoutContenedorJuego.getHeight() - this.contenedorInformacionJuego.getHeight());
+		this.getChildren().add(vistaPuntosDeVida);
 	}
 	
 	public void dibujar() {
@@ -127,8 +132,9 @@ public class VistaInformacionDeJuego extends VBox {
 	    
 	    t.setWrappingWidth(300);
 	    t.minWidth(300);
+	    t.setFill(Color.WHITE);
 		this.contenedorInformacionJuego.getChildren().add(0,t);
-		this.contenedorInformacionJuego.setSpacing(10);	
+		this.contenedorInformacionJuego.setSpacing(10);
 	}
 
 	public void mostrarSeccionSacrificios(String numeroNecesario) {
