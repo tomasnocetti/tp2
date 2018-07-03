@@ -6,41 +6,19 @@ import java.util.Observer;
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.effect.Light;
 import javafx.scene.effect.Lighting;
 import javafx.scene.layout.BorderPane;
-//import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.ProgressIndicator;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 public class VistaPuntosDeVida extends VBox {
 	
-	private BorderPane layoutContenedorJuego;
 	private VBox boxJugador1;
 	private VBox boxJugador2;
 	private ProgressBar pBar1;
@@ -69,7 +47,7 @@ public class VistaPuntosDeVida extends VBox {
 		this.modificarVBoxJugador(this.boxJugador1,jugador1);
 		this.modificarVBoxJugador(this.boxJugador2,jugador2);
 		
-        Task task = taskCreator(jugador1.obtenerPuntosDeVida(),this.puntosDeVidaViejos1);
+        Task<?> task = taskCreator(jugador1.obtenerPuntosDeVida(),this.puntosDeVidaViejos1);
         this.pBar1.progressProperty().unbind();
         this.pBar1.progressProperty().bind(task.progressProperty());
         this.puntosDeVidaViejos1 = jugador1.obtenerPuntosDeVida();
@@ -155,8 +133,8 @@ public class VistaPuntosDeVida extends VBox {
 	}
 	
     //Create a New Task
-    private Task taskCreator(final int puntosActuales,final int puntosDeVidaViejos){
-        return new Task() {
+    private Task<?> taskCreator(final int puntosActuales,final int puntosDeVidaViejos){
+        return new Task<Object>() {
 
                    @Override
                    protected Object call() throws Exception {

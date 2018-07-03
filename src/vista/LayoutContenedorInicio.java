@@ -26,10 +26,9 @@ public class LayoutContenedorInicio extends HBox {
         botonContinuar.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
         botonContinuar.getStyleClass().add("button-inicio");
         
-		//Esto tiene que ir en el contenedor inicio
 		Text titulo = new Text(100, 100, "Bienvenidos a YuGiOh");
-		titulo.setFill(Color.DARKORANGE);
-		titulo.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 60));
+		titulo.setFill(Color.RED);
+		titulo.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 70));
 	    final Light.Distant light = new Light.Distant();
 	    light.setAzimuth(-135.0);
 	    final Lighting lighting = new Lighting();
@@ -47,14 +46,19 @@ public class LayoutContenedorInicio extends HBox {
         BotonContinuarInicioEventHandler botonJugarEventHandler = new BotonContinuarInicioEventHandler(stage,sceneCompletarNombres);
         botonContinuar.setOnAction(botonJugarEventHandler);
         
-        VBox contenedorVertical = new VBox(titulo,botonContinuar,botonSalir);
-        contenedorVertical.setSpacing(50);
+        VBox contenedorBotones = new VBox(botonContinuar,botonSalir); 
+        contenedorBotones.setSpacing(50);
+        contenedorBotones.setPadding(new Insets(100));
+        contenedorBotones.setAlignment(Pos.CENTER);
+        
+        VBox contenedorVertical = new VBox(titulo,contenedorBotones);
+        contenedorVertical.setSpacing(180);
         contenedorVertical.setPadding(new Insets(100));
-        contenedorVertical.setAlignment(Pos.TOP_LEFT);
+        contenedorVertical.setAlignment(Pos.CENTER);
         
         this.setSpacing(30);
         this.setPadding(new Insets(20));
-        this.setAlignment(Pos.CENTER_LEFT);
+        this.setAlignment(Pos.CENTER);
         this.getChildren().add(contenedorVertical);
 	}
 }

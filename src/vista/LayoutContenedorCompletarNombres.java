@@ -30,6 +30,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("fondoNombres");
+		this.setSpacing(15);
 		
 		final VBox vbox1 = new VBox(20);
 		final VBox vbox2 = new VBox();
@@ -40,7 +41,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 		vbox3.setPrefSize(500,300);
 		
 		Text textoNombre1= new Text(300, 300, "NOMBRE JUGADOR 1");
-		textoNombre1.setFill(Color.DARKORANGE);
+		textoNombre1.setFill(Color.RED);
 		textoNombre1.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 30));
 	    final Light.Distant light1 = new Light.Distant();
 	    light1.setAzimuth(-135.0);
@@ -57,7 +58,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    vbox1.getChildren().add(name1);
 	    
 		Text textoNombre2= new Text(300, 300, "NOMBRE JUGADOR 2");
-		textoNombre2.setFill(Color.DARKORANGE);
+		textoNombre2.setFill(Color.RED);
 		textoNombre2.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 30));
 	    final Light.Distant light2 = new Light.Distant();
 	    light1.setAzimuth(-135.0);
@@ -95,18 +96,17 @@ public class LayoutContenedorCompletarNombres extends VBox{
             }
         });
 	    
-	    vbox1.setAlignment(Pos.TOP_LEFT);
-	    vbox1.setPadding(new Insets(100));
-	    vbox2.setAlignment(Pos.TOP_LEFT);
-	    vbox2.setPadding(new Insets(100));
-	    vbox3.setAlignment(Pos.TOP_LEFT);
-	    vbox3.setPadding(new Insets(120));
+	    vbox1.setAlignment(Pos.CENTER);
+	    vbox1.setPadding(new Insets(50));
+	    vbox2.setAlignment(Pos.CENTER);
+	    vbox2.setPadding(new Insets(50));
+	    vbox3.setAlignment(Pos.CENTER);
+	    vbox3.setPadding(new Insets(70));
 	    
 	    this.getChildren().add(vbox3);
 	    this.getChildren().add(vbox1);
 		this.getChildren().add(vbox2);
 		
-		this.setAlignment(Pos.TOP_LEFT);
-	    this.setSpacing(15);
+		this.setAlignment(Pos.CENTER);
 	}
 }
