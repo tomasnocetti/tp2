@@ -72,7 +72,7 @@ public class VistaPuntosDeVida extends VBox {
 		PuntosDeVidaObserver puntosDeVidaObserver2 = new PuntosDeVidaObserver(this);
 		jugador2.addObserver(puntosDeVidaObserver2);
 		
-		this.layoutContenedorJuego = layoutContenedorJuego;
+		//this.layoutContenedorJuego = layoutContenedorJuego;
 		//this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		//this.getStyleClass().add("informacion");
 		this.setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");

@@ -14,7 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import vista.eventHandlers.BotonAccionHandlerEvent;
+import vista.BotonAccionHandlerEvent;
 import vista.eventHandlers.BotonCancelarHandler;
 import vista.eventHandlers.BotonContinuarFaseEventHandler;
 import vista.eventHandlers.ControladorDeJuego;
