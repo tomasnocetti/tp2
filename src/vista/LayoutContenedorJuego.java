@@ -24,7 +24,7 @@ public class LayoutContenedorJuego extends BorderPane {
 	public LayoutContenedorJuego(Stage stage) {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		this.getStyleClass().add("layout");	
+		this.getStyleClass().add("layout");
 
 		vistaTableroDeJuego = new VistaTableroDeJuego(stage);
 		vistaInformacionDeJuego = new VistaInformacionDeJuego(this);
@@ -48,7 +48,7 @@ public class LayoutContenedorJuego extends BorderPane {
         this.setLeft(vistaInformacionDeJuego);
 		this.setBottom(borderMano);
 		
-		ControladorDeJuego.inicializar(vistaMano, vistaInformacionDeJuego, vistaTableroDeJuego, vistaPuntosDeVida);
+		ControladorDeJuego.inicializar(vistaMano, vistaInformacionDeJuego, vistaTableroDeJuego, vistaPuntosDeVida,stage);
 		ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
 		controlador.dibujar();
 	}
