@@ -1,13 +1,8 @@
 package vista;
 
-import fiuba.algo3.tp2.Juego;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import vista.eventHandlers.ControladorDeJuego;
 
@@ -19,7 +14,6 @@ public class LayoutContenedorJuego extends BorderPane {
 	private VistaPuntosDeVida vistaPuntosDeVida;
 	private SceneJuego sceneJuego;
 	private SceneInicio sceneInicio;
-	private Juego juego;
 	
 	public LayoutContenedorJuego(Stage stage) {
 		super();

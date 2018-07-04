@@ -1,6 +1,5 @@
 package vista;
 
-import vista.eventHandlers.BotonJugarEventHandler;
 import vista.eventHandlers.BotonJuegoTerminadoEventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

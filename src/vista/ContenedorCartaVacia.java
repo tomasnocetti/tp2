@@ -1,11 +1,9 @@
 package vista;
 
 import fiuba.algo3.tp2.Jugador;
-import fiuba.algo3.tp2.Cartas.Carta;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 public class ContenedorCartaVacia extends VBox{
 	
