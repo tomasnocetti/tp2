@@ -17,6 +17,14 @@
 .image-mano{
 	-fx-stroke-size: 150 150;
 }
+.button-play {
+	-fx-background-image: url("img/play-button.jpg");
+	-fx-background-size: 100% 100%;
+}
+.button-stop {
+	-fx-background-image: url("img/stop-button.jpg");
+	-fx-background-size: 100% 100%;
+}
 .button-cartas {
 	-fx-background-image: url("cartaBocaAbajo.jpg");
 	-fx-background-size: 100% 100%;
@@ -60,7 +68,6 @@
 	-fx-background-repeat: stretch;   
     -fx-background-size: 100% 100%;
     -fx-background-position: center center;
-    -fx-margin: 5;
 }
 .informacion{
 	-fx-background-image: url("img/fondoInoformacion2.jpg");

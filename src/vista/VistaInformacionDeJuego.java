@@ -60,12 +60,12 @@ public class VistaInformacionDeJuego extends VBox {
 		this.contenedorInformacionJuego = new VBox();
 		this.contenedorInformacionJuego.setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");
 		this.contenedorInformacionJuego.setPadding(new Insets(10));
-		this.contenedorInformacionJuego.setPrefHeight(500);
+		this.contenedorInformacionJuego.setPrefHeight(400);
 		this.getChildren().add(botonContinuar);
 		this.getChildren().add(this.contenedorInformacionJuego);
 		VistaPuntosDeVida vistaPuntosDeVida = new VistaPuntosDeVida(layoutContenedorJuego);
 		vistaPuntosDeVida.setAlignment(Pos.CENTER);
-		vistaPuntosDeVida.setPrefHeight(layoutContenedorJuego.getHeight() - this.contenedorInformacionJuego.getHeight());
+		vistaPuntosDeVida.setPrefHeight(200);
 		this.getChildren().add(vistaPuntosDeVida);
 	}
 	
@@ -77,7 +77,7 @@ public class VistaInformacionDeJuego extends VBox {
 		Text t = new Text();
 		switch(juego.iFaseActual()) {
 			case 0:
-				t.setText("Hay una nueva carta en la mano !");
+				t.setText("Hay una nueva carta en la mano, aparecen a la derecha de la mano !");
                 break;
 			case 1:
 				t.setText("En esta fase, es el momento de poner cartas en el campo. \n" + 

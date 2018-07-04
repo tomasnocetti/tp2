@@ -40,12 +40,11 @@ public class VistaTableroDeJuego extends VBox {
 		FinalizacionDeJuegoObserver finalizacionDeJuegoObserver = new FinalizacionDeJuegoObserver(this);
 		Juego.ObtenerJuego().addObserver(finalizacionDeJuegoObserver);
 
-		this.setSpacing(10);
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("tablero");
 		Rectangle rectanguloSeparador = new Rectangle();
 		rectanguloSeparador.setFill(Color.YELLOW);
-		rectanguloSeparador.setHeight(25);
+		rectanguloSeparador.setHeight(15);
 		rectanguloSeparador.setWidth(1500);
 		this.getChildren().addAll(vistaTableroJugador1,rectanguloSeparador,vistaTableroJugador2);	
 	}

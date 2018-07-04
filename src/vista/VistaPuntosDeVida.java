@@ -104,7 +104,7 @@ public class VistaPuntosDeVida extends VBox {
 		boxJugador2.setAlignment(Pos.BOTTOM_CENTER);
 		
 		this.getChildren().addAll(boxJugador1,boxJugador2);
-		this.setSpacing(300);
+		this.setSpacing(100);
 		this.dibujar();
 		this.setPrefWidth(300);
 		this.setPrefWidth(getScaleY());
@@ -117,7 +117,7 @@ public class VistaPuntosDeVida extends VBox {
 		Text text0 = this.darTextoNombreJugador(jugador.obtenerNombre());
 		Text text1 = this.darTextoNombreJugador(""+puntosDeVida);
 		Juego juego = Juego.ObtenerJuego();
-		Jugador jugadorActual = juego.jugadorActual();
+		Jugador jugadorActual = juego.jugadorOponente();
 		box.getChildren().add(text0);
 		box.getChildren().add(text1);
 		if(jugador.equals(jugadorActual)) {
