@@ -106,20 +106,22 @@ public class LayoutContenedorCompletarNombres extends VBox{
 		final Text txtState = new Text();
         txtState.setFill(Color.YELLOW);
         txtState.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 25));
-        vbox.getChildren().add(txtState);
 		
 		if (textfield.getText().isEmpty()) {
             txtState.setText("Introducir nombres de ambos jugadores");
+            vbox.getChildren().add(txtState);
             return false;
 		}
 		
 		if (textfield.getText().trim().isEmpty()) {
             txtState.setText("Los nombres de los jugadores no pueden ser espacios en blanco");
+            vbox.getChildren().add(txtState);
             return false;
 		}
 		
 		if (textfield.getText().length() > 8) {
             txtState.setText("Los nombres de los jugadores no pueden tener mas de 8 caracteres");
+            vbox.getChildren().add(txtState);
             return false;
 		} 
 		return true;

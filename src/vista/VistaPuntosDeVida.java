@@ -19,8 +19,8 @@ import javafx.concurrent.Task;
 
 public class VistaPuntosDeVida extends VBox {
 	
-	private VBox boxJugador1;
-	private VBox boxJugador2;
+	private VBox boxNombreJugador1;
+	private VBox boxNombreJugador2;
 	private ProgressBar pBar1;
 	private ProgressBar pBar2;
 	private int puntosDeVidaViejos1;
@@ -44,8 +44,8 @@ public class VistaPuntosDeVida extends VBox {
 		Jugador jugador2 = juego.obtenerJugador(1);
 		
 		
-		this.modificarVBoxJugador(this.boxJugador1,jugador1);
-		this.modificarVBoxJugador(this.boxJugador2,jugador2);
+		this.modificarVBoxJugador(this.boxNombreJugador1,jugador1);
+		this.modificarVBoxJugador(this.boxNombreJugador2,jugador2);
 		
         Task<?> task = taskCreator(jugador1.obtenerPuntosDeVida(),this.puntosDeVidaViejos1);
         this.pBar1.progressProperty().unbind();
@@ -72,30 +72,39 @@ public class VistaPuntosDeVida extends VBox {
 		PuntosDeVidaObserver puntosDeVidaObserver2 = new PuntosDeVidaObserver(this);
 		jugador2.addObserver(puntosDeVidaObserver2);
 		
+		VBox boxJugador1 = new VBox();
+		VBox boxJugador2 = new VBox();
+		
+		
 		//this.layoutContenedorJuego = layoutContenedorJuego;
 		//this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		//this.getStyleClass().add("informacion");
 		this.setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");
-		this.setSpacing(20);
 		
 		this.pBar1 = new ProgressBar(8000);
 		this.pBar2 = new ProgressBar(8000);
 		this.puntosDeVidaViejos1 = 8000;
 		this.puntosDeVidaViejos2 = 8000;
 		
+		this.boxNombreJugador1 = new VBox();
+		this.boxNombreJugador1.setSpacing(10);
+		this.boxNombreJugador1.setAlignment(Pos.BOTTOM_CENTER);
+		this.boxNombreJugador2 = new VBox();
+		this.boxNombreJugador2.setSpacing(10);
+		this.boxNombreJugador2.setAlignment(Pos.BOTTOM_CENTER);
 		
-		this.boxJugador1 = new VBox();
-		this.boxJugador1.setSpacing(10);
-		this.boxJugador1.setAlignment(Pos.BOTTOM_CENTER);
-		this.boxJugador2 = new VBox();
-		this.boxJugador2.setSpacing(10);
-		this.boxJugador2.setAlignment(Pos.BOTTOM_CENTER);
-		this.setSpacing(10);
-		this.getChildren().add(this.boxJugador1);
-		this.getChildren().addAll(this.pBar1);
+		boxJugador1.getChildren().add(this.boxNombreJugador1);
+		boxJugador1.getChildren().add(this.pBar1);
 		
-		this.getChildren().add(this.boxJugador2);
-		this.getChildren().addAll(this.pBar2);
+		boxJugador2.getChildren().add(this.boxNombreJugador2);
+		boxJugador2.getChildren().add(this.pBar2);
+		
+		
+		boxJugador1.setAlignment(Pos.BOTTOM_CENTER);
+		boxJugador2.setAlignment(Pos.BOTTOM_CENTER);
+		
+		this.getChildren().addAll(boxJugador1,boxJugador2);
+		this.setSpacing(300);
 		this.dibujar();
 		this.setPrefWidth(300);
 		this.setPrefWidth(getScaleY());
@@ -111,17 +120,17 @@ public class VistaPuntosDeVida extends VBox {
 		Jugador jugadorActual = juego.jugadorActual();
 		box.getChildren().add(text0);
 		box.getChildren().add(text1);
-//		if(jugador.equals(jugadorActual)) {
-//			Text active = new Text();
-//			active.setText("turno actual");
-//			active.setFill(Color.RED);
-//			box.getChildren().add(active);
-//		}
+		if(jugador.equals(jugadorActual)) {
+			Text active = new Text();
+			active.setText("turno actual");
+			active.setFill(Color.RED);
+			box.getChildren().add(active);
+		}
 	}
 	
 	private Text darTextoNombreJugador(String jugador) {
 		Text nombre = new Text(300, 300, jugador);
-		nombre.setFill(Color.DARKORANGE);
+		nombre.setFill(Color.RED);
 		nombre.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 30));
 	    final Light.Distant light = new Light.Distant();
 	    light.setAzimuth(-135.0);
