@@ -67,5 +67,10 @@ public class VistaTrampasOMagicas extends GridPane{
 				this.add(contenedor, i , 0);
 			}
 		}
+		if (jugador.equals(juego.jugadorOponente())) {
+			this.setOpacity(0.5);	
+		}else {
+			this.setOpacity(1);	
+		}
 	}
 }

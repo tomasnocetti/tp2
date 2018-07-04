@@ -24,5 +24,10 @@ public class VistaMazo extends HBox {
 		Jugador jugador = juego.obtenerJugador(num_jugador);
 		Mazo mazo = jugador.obtenerMazo();
 		this.getChildren().add(new ContenedorCartaMazo(String.valueOf(mazo.obtenerCantidadDeCartas()),num_jugador));
+	if (jugador.equals(juego.jugadorOponente())) {
+		this.setOpacity(0.5);	
+	}else {
+		this.setOpacity(1);	
+	}
 	}
 }

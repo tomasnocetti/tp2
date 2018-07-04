@@ -67,5 +67,10 @@ public class VistaCampo extends HBox{
 			this.getChildren().add(contenedor);
 		}
 		this.setAlignment(Pos.CENTER);
+	if (jugador.equals(juego.jugadorOponente())) {
+		this.setOpacity(0.5);	
+	}else {
+		this.setOpacity(1);	
+	}
 	}
 }

@@ -25,6 +25,9 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 	}
 	
 	public void handle(ActionEvent event) {
+		Juego juego = Juego.ObtenerJuego();
+		juego.obtenerJugador(0).asignarnombre(nombre1);
+		juego.obtenerJugador(1).asignarnombre(nombre2);
 		sceneJuego = new SceneJuego(stage);
 		mediaPlayer.stop();
 		this.stage.setScene(sceneJuego);

@@ -1,8 +1,7 @@
-package vista;
+package vista.eventHandlers;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import vista.eventHandlers.ControladorDeJuego;
 
 public class BotonAccionHandlerEvent implements EventHandler<ActionEvent> {
 

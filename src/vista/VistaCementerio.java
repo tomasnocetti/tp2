@@ -33,5 +33,10 @@ public class VistaCementerio extends HBox {
 			this.getChildren().add(new ContenedorCartaVacia(jugador, "Cementerio"));	
 		}
 		this.setAlignment(Pos.CENTER);
+	if (jugador.equals(Juego.ObtenerJuego().jugadorOponente())) {
+		this.setOpacity(0.5);	
+	}else {
+		this.setOpacity(1);	
+	}
 	}
 }

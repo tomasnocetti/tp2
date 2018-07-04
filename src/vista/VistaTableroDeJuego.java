@@ -7,6 +7,8 @@ import vista.VistaPuntosDeVida.PuntosDeVidaObserver;
 
 import fiuba.algo3.tp2.Juego;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class VistaTableroDeJuego extends VBox {
@@ -41,7 +43,11 @@ public class VistaTableroDeJuego extends VBox {
 		this.setSpacing(10);
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("tablero");
-		this.getChildren().addAll(vistaTableroJugador1,vistaTableroJugador2);	
+		Rectangle rectanguloSeparador = new Rectangle();
+		rectanguloSeparador.setFill(Color.YELLOW);
+		rectanguloSeparador.setHeight(25);
+		rectanguloSeparador.setWidth(1500);
+		this.getChildren().addAll(vistaTableroJugador1,rectanguloSeparador,vistaTableroJugador2);	
 	}
 
 

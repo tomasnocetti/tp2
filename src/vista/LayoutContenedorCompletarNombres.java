@@ -1,20 +1,14 @@
 package vista;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.binding.BooleanBinding;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Light;
 import javafx.scene.effect.Lighting;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -35,6 +29,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 		final VBox vbox1 = new VBox(20);
 		final VBox vbox2 = new VBox();
 		final VBox vbox3 = new VBox();
+		final VBox vbox4 = new VBox();
 		
 		vbox1.setPrefSize(300,300);
 		vbox2.setPrefSize(300,300);
@@ -74,8 +69,6 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    GridPane.setConstraints(name2, 0, 0);
 	    vbox1.getChildren().add(name2);
 	    
-	    final Text txtState = new Text();
-	    
 	    final Button buttonJugar = new Button("CONTINUAR");
 	    buttonJugar.getStyleClass().add("button-inicio");
 	    GridPane.setConstraints(buttonJugar, 1, 0);
@@ -84,13 +77,8 @@ public class LayoutContenedorCompletarNombres extends VBox{
             
             public void handle(ActionEvent event) {
                
-                if(name2.getText().isEmpty() || name1.getText().isEmpty()){
-                    txtState.setText("Introducir nombres de ambos jugadores");
-                    txtState.setFill(Color.RED);
-                    txtState.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 25));
-                    vbox1.getChildren().add(txtState);
-                }
-                else{
+            	vbox4.getChildren().clear();
+                if (validar_nombre(name2,vbox4) && validar_nombre(name2,vbox4)){
                 	buttonJugar.setOnAction(new BotonJugarEventHandler(stage, mediaPlayer,name1.getText(),name2.getText()));
                 }
             }
@@ -102,11 +90,39 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    vbox2.setPadding(new Insets(50));
 	    vbox3.setAlignment(Pos.CENTER);
 	    vbox3.setPadding(new Insets(70));
+	    vbox4.setAlignment(Pos.CENTER);
+	    vbox4.setPadding(new Insets(70));
 	    
 	    this.getChildren().add(vbox3);
 	    this.getChildren().add(vbox1);
-		this.getChildren().add(vbox2);
+	    this.getChildren().add(vbox4);
+	    this.getChildren().add(vbox2);
 		
 		this.setAlignment(Pos.CENTER);
 	}
+	
+	private boolean validar_nombre(TextField textfield, VBox vbox) {
+		
+		final Text txtState = new Text();
+        txtState.setFill(Color.YELLOW);
+        txtState.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 25));
+        vbox.getChildren().add(txtState);
+		
+		if (textfield.getText().isEmpty()) {
+            txtState.setText("Introducir nombres de ambos jugadores");
+            return false;
+		}
+		
+		if (textfield.getText().trim().isEmpty()) {
+            txtState.setText("Los nombres de los jugadores no pueden ser espacios en blanco");
+            return false;
+		}
+		
+		if (textfield.getText().length() > 8) {
+            txtState.setText("Los nombres de los jugadores no pueden tener mas de 8 caracteres");
+            return false;
+		} 
+		return true;
+	}
 }
+

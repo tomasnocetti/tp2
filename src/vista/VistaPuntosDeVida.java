@@ -111,13 +111,12 @@ public class VistaPuntosDeVida extends VBox {
 		Jugador jugadorActual = juego.jugadorActual();
 		box.getChildren().add(text0);
 		box.getChildren().add(text1);
-		if(jugador.equals(jugadorActual)) {
-			Text active = new Text();
-			active.setText("●");
-			active.setFill(Color.RED);
-			box.getChildren().add(active);
-			
-		}
+//		if(jugador.equals(jugadorActual)) {
+//			Text active = new Text();
+//			active.setText("turno actual");
+//			active.setFill(Color.RED);
+//			box.getChildren().add(active);
+//		}
 	}
 	
 	private Text darTextoNombreJugador(String jugador) {
