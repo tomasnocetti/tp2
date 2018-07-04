@@ -1,6 +1,5 @@
 package vista;
 
-import vista.eventHandlers.BotonJugarEventHandler;
 import vista.eventHandlers.BotonJuegoTerminadoEventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -15,7 +14,7 @@ public class VentanaFinDeJuego {
 	
 	public static final String DOBLE_BARRA = "//";
 	
-	public static void display(String nombre,Stage stage) {
+	public void display(String nombre,Stage stage,String motivo) {
 		
 		Stage stage1 = new Stage();
 		
@@ -28,6 +27,9 @@ public class VentanaFinDeJuego {
 		
 		Text text2 = new Text(5,5, "El Jugador " + nombre + " a ganado");
 	    pane.getChildren().add(text2);
+	    
+	    Text text3 = new Text(5,5, "Motivo: " + motivo);
+	    pane.getChildren().add(text3);
 		
 		Button boton = new Button("Salir");
 		boton.setOnAction(new BotonJuegoTerminadoEventHandler(stage,stage1));

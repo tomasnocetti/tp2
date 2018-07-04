@@ -10,6 +10,7 @@ import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 import vista.VentanaFinDeJuego;
 import vista.VistaInformacionDeJuego;
 import vista.VistaMano;
@@ -29,6 +30,7 @@ public class ControladorDeJuego {
 	private CartaMonstruo cartaAInvocar; 
 	private int posicionAColocarInvocacion;
 	private VistaPuntosDeVida vistaPuntosDeVida;
+	private Stage stage;
 	
 	public static final String MODO_SACRIFICIO = "SACRIFICIO";
 	public static final String MODO_NORMAL = "NORMAL";
@@ -41,12 +43,13 @@ public class ControladorDeJuego {
 	public static final String ATAQUE_JUGADOR = "ATAQUE_JUGADOR";
 	public static final String ACTIVAR_MAGICA = "ACTIVAR_MAGICA";
 	
-	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego, VistaPuntosDeVida vistaPuntosDeVida) {
+	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego, VistaPuntosDeVida vistaPuntosDeVida,Stage stage) {
 		ControladorDeJuego controlador = new ControladorDeJuego();
 		controlador.vistaTableroDeJuego = vistaTableroDeJuego;
 		controlador.vistaMano = vistaMano;
 		controlador.vistaInformacionDeJuego = vistaInformacionDeJuego;
 		controlador.vistaPuntosDeVida = vistaPuntosDeVida;
+		controlador.stage = stage;
 		controladorActual = controlador;
 	}
 
@@ -78,8 +81,9 @@ public class ControladorDeJuego {
 		Juego juego = Juego.ObtenerJuego();
 		
 		if(juego.estadoDelJuegoTerminado()) {
-			this.vistaInformacionDeJuego.mostrarSeccionFinDeJuego(juego.obtenerGanador().obtenerNombre(), juego.obtenerRazonFinalizacion());
-			return;
+			VentanaFinDeJuego ventanaFin = new VentanaFinDeJuego();
+			ventanaFin.display(juego.obtenerGanador().obtenerNombre(), stage,juego.obtenerRazonFinalizacion());
+//			this.vistaInformacionDeJuego.mostrarSeccionFinDeJuego(juego.obtenerGanador().obtenerNombre(), juego.obtenerRazonFinalizacion());			return;
 		}
 		juego.continuarASiguienteFase();
 		Jugador actual = juego.jugadorActual();
