@@ -18,8 +18,6 @@ public class Juego extends Observable{
 	
 	public Juego() {
 		this.resetearJuego();
-		jugadores.get(0).agarrar5CartasDeMazo();
-		jugadores.get(1).agarrar5CartasDeMazo();
 	}
 	
 	public static Juego ObtenerJuego() {
@@ -109,6 +107,8 @@ public class Juego extends Observable{
 		this.jugadores.add(new Jugador());
 		Random random = new Random();
 		this.iJugadorActual = random.nextInt(2);
+		jugadores.get(0).agarrar5CartasDeMazo();
+		jugadores.get(1).agarrar5CartasDeMazo();
 	}
 	
 	public Jugador obtenerJugador(int num){

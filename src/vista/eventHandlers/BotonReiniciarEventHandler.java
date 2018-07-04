@@ -28,5 +28,6 @@ public class BotonReiniciarEventHandler implements EventHandler<ActionEvent> {
 		
 		SceneJuego sceneJuego = new SceneJuego(stageJuego);
 		stageJuego.setScene(sceneJuego);
+		stageJuego.setFullScreen(true);
 	}
 }
