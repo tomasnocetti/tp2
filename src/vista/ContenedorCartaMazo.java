@@ -3,7 +3,6 @@ package vista;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
-import vista.eventHandlers.ButtonMazoEventHandler;
 
 public class ContenedorCartaMazo extends VBox {
 	
