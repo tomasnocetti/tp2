@@ -21,15 +21,15 @@ import vista.SceneJuego;
 public class BotonJuegoTerminadoEventHandler implements EventHandler<ActionEvent> {
 
 	private Stage stageJuego;
-	private Stage stageVentanaReiniciar;
+	private Stage stageFinDeJuego;
 	
-	public BotonJuegoTerminadoEventHandler(Stage stageJuego,Stage ventanaReiniciar) {
+	public BotonJuegoTerminadoEventHandler(Stage stageJuego,Stage stageFinDeJuego) {
 		this.stageJuego = stageJuego;
-		this.stageVentanaReiniciar = ventanaReiniciar;
+		this.stageFinDeJuego = stageFinDeJuego;
     }
 	
 	public void handle(ActionEvent arg0) {
         this.stageJuego.close();
-        this.stageVentanaReiniciar.close();
+        this.stageFinDeJuego.close();
 	}
 }

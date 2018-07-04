@@ -1,8 +1,10 @@
 package vista;
 
 import vista.eventHandlers.BotonJuegoTerminadoEventHandler;
+import vista.eventHandlers.BotonReiniciarEventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -30,10 +32,20 @@ public class VentanaFinDeJuego {
 	    
 	    Text text3 = new Text(5,5, "Motivo: " + motivo);
 	    pane.getChildren().add(text3);
+	    
+	    HBox contenedorBotones = new HBox();
+	    contenedorBotones.setSpacing(10);
+	    contenedorBotones.setAlignment(Pos.CENTER);
+	    pane.getChildren().add(contenedorBotones);
 		
-		Button boton = new Button("Salir");
-		boton.setOnAction(new BotonJuegoTerminadoEventHandler(stage,stage1));
-		pane.getChildren().add(boton);
+		Button botonSalir = new Button("Salir");
+		botonSalir.setOnAction(new BotonJuegoTerminadoEventHandler(stage,stage1));
+		contenedorBotones.getChildren().add(botonSalir);
+		
+		Button botonReiniciar = new Button("Reiniciar");
+		botonReiniciar.setOnAction(new BotonReiniciarEventHandler(stage,stage1));
+		contenedorBotones.getChildren().add(botonReiniciar);
+		
 		
 		pane.setAlignment(Pos.CENTER);
 	    pane.setSpacing(15);
