@@ -8,6 +8,7 @@ import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
+import fiuba.algo3.tp2.Excepciones.MonstruoBocaAbajoException;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
@@ -183,6 +184,8 @@ public class ControladorDeJuego {
 			this.vistaInformacionDeJuego.dibujar();
         }catch (CartaEnAccionDefensaException e) {
         	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra en posicion de defensa. No puede atacar !");
+        }catch (MonstruoBocaAbajoException e) {
+        	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra boca abajo. No puede atacar !");
         }
 	}
 	
@@ -200,7 +203,8 @@ public class ControladorDeJuego {
 			this.cancelarAccion();
         }catch (CartaEnAccionDefensaException e) {
         	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra en posicion de defensa. No puede atacar !");
+        }catch (MonstruoBocaAbajoException e) {
+        	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra boca abajo. No puede atacar !");
         }
 	}
-	
 }
