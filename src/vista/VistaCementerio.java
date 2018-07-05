@@ -1,12 +1,9 @@
 package vista;
 
 import java.util.Collection;
-import java.util.Iterator;
-
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
-import fiuba.algo3.tp2.Cartas.CartaCampo;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
 
@@ -33,5 +30,10 @@ public class VistaCementerio extends HBox {
 			this.getChildren().add(new ContenedorCartaVacia(jugador, "Cementerio"));	
 		}
 		this.setAlignment(Pos.CENTER);
+	if (jugador.equals(Juego.ObtenerJuego().jugadorOponente())) {
+		this.setOpacity(0.5);	
+	}else {
+		this.setOpacity(1);	
+	}
 	}
 }

@@ -6,43 +6,21 @@ import java.util.Observer;
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.effect.Light;
 import javafx.scene.effect.Lighting;
 import javafx.scene.layout.BorderPane;
-//import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.ProgressIndicator;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 public class VistaPuntosDeVida extends VBox {
 	
-	private BorderPane layoutContenedorJuego;
-	private VBox boxJugador1;
-	private VBox boxJugador2;
+	private VBox boxNombreJugador1;
+	private VBox boxNombreJugador2;
 	private ProgressBar pBar1;
 	private ProgressBar pBar2;
 	private int puntosDeVidaViejos1;
@@ -66,10 +44,10 @@ public class VistaPuntosDeVida extends VBox {
 		Jugador jugador2 = juego.obtenerJugador(1);
 		
 		
-		this.modificarVBoxJugador(this.boxJugador1,jugador1);
-		this.modificarVBoxJugador(this.boxJugador2,jugador2);
+		this.modificarVBoxJugador(this.boxNombreJugador1,jugador1);
+		this.modificarVBoxJugador(this.boxNombreJugador2,jugador2);
 		
-        Task task = taskCreator(jugador1.obtenerPuntosDeVida(),this.puntosDeVidaViejos1);
+        Task<?> task = taskCreator(jugador1.obtenerPuntosDeVida(),this.puntosDeVidaViejos1);
         this.pBar1.progressProperty().unbind();
         this.pBar1.progressProperty().bind(task.progressProperty());
         this.puntosDeVidaViejos1 = jugador1.obtenerPuntosDeVida();
@@ -94,53 +72,53 @@ public class VistaPuntosDeVida extends VBox {
 		PuntosDeVidaObserver puntosDeVidaObserver2 = new PuntosDeVidaObserver(this);
 		jugador2.addObserver(puntosDeVidaObserver2);
 		
-		this.layoutContenedorJuego = layoutContenedorJuego;
-		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		this.getStyleClass().add("informacion");
-		this.setSpacing(20);
+		VBox boxJugador1 = new VBox();
+		VBox boxJugador2 = new VBox();
+		
+		this.setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");
 		
 		this.pBar1 = new ProgressBar(8000);
 		this.pBar2 = new ProgressBar(8000);
 		this.puntosDeVidaViejos1 = 8000;
 		this.puntosDeVidaViejos2 = 8000;
 		
+		this.boxNombreJugador1 = new VBox();
+		this.boxNombreJugador1.setSpacing(10);
+		this.boxNombreJugador1.setAlignment(Pos.BOTTOM_CENTER);
+		this.boxNombreJugador2 = new VBox();
+		this.boxNombreJugador2.setSpacing(10);
+		this.boxNombreJugador2.setAlignment(Pos.BOTTOM_CENTER);
 		
-		this.boxJugador1 = new VBox();
-		this.boxJugador1.setSpacing(10);
-		this.boxJugador1.setAlignment(Pos.BOTTOM_CENTER);
-		this.boxJugador2 = new VBox();
-		this.boxJugador2.setSpacing(10);
-		this.boxJugador2.setAlignment(Pos.BOTTOM_CENTER);
-		this.setSpacing(10);
-		this.getChildren().add(this.boxJugador1);
-		this.getChildren().addAll(this.pBar1);
+		boxJugador1.getChildren().add(this.boxNombreJugador1);
+		boxJugador1.getChildren().add(this.pBar1);
 		
-		this.getChildren().add(this.boxJugador2);
-		this.getChildren().addAll(this.pBar2);
+		boxJugador2.getChildren().add(this.boxNombreJugador2);
+		boxJugador2.getChildren().add(this.pBar2);
+		
+		
+		boxJugador1.setAlignment(Pos.BOTTOM_CENTER);
+		boxJugador2.setAlignment(Pos.BOTTOM_CENTER);
+		
+		this.getChildren().addAll(boxJugador1,boxJugador2);
+		this.setSpacing(100);
 		this.dibujar();
-		this.setPrefWidth(70);
+		this.setPrefWidth(300);
+		this.setPrefWidth(getScaleY());
+		this.setAlignment(Pos.CENTER_LEFT);
 	}
 	
 	private void modificarVBoxJugador(VBox box,Jugador jugador) {
 		final int puntosDeVida = jugador.obtenerPuntosDeVida();
 		box.getChildren().clear();
-		box.getChildren().add(this.darTextoNombreJugador(jugador.obtenerNombre()));
+		Text text0 = this.darTextoNombreJugador(jugador.obtenerNombre());
 		Text text1 = this.darTextoNombreJugador(""+puntosDeVida);
-		Juego juego = Juego.ObtenerJuego();
-		Jugador jugadorActual = juego.jugadorActual();
+		box.getChildren().add(text0);
 		box.getChildren().add(text1);
-		if(jugador.equals(jugadorActual)) {
-			Text active = new Text();
-			active.setText("●");
-			active.setFill(Color.RED);
-			box.getChildren().add(active);
-			
-		}
 	}
 	
 	private Text darTextoNombreJugador(String jugador) {
 		Text nombre = new Text(300, 300, jugador);
-		nombre.setFill(Color.DARKORANGE);
+		nombre.setFill(Color.RED);
 		nombre.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 30));
 	    final Light.Distant light = new Light.Distant();
 	    light.setAzimuth(-135.0);
@@ -151,8 +129,8 @@ public class VistaPuntosDeVida extends VBox {
 	}
 	
     //Create a New Task
-    private Task taskCreator(final int puntosActuales,final int puntosDeVidaViejos){
-        return new Task() {
+    private Task<?> taskCreator(final int puntosActuales,final int puntosDeVidaViejos){
+        return new Task<Object>() {
 
                    @Override
                    protected Object call() throws Exception {

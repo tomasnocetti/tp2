@@ -33,7 +33,7 @@ public class AlGoHo extends Application{
         
         sceneCompletarNombres = new SceneCompletarNombres(stage, mediaPlayer);
         
-        sceneInicio = new SceneInicio(stage, sceneCompletarNombres);
+        sceneInicio = new SceneInicio(stage, sceneCompletarNombres, mediaPlayer);
 	
         stage.setScene(sceneInicio);
         stage.setFullScreen(true);

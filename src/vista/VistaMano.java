@@ -35,7 +35,6 @@ public class VistaMano extends HBox{
 	
 	public void dibujar() {
 		this.getChildren().clear();
-		System.out.println("REDIBUJAR TABLERO");
 		Juego juego = Juego.ObtenerJuego();
 		Jugador jugador = juego.jugadorActual();
 		Collection<Carta> cartas = jugador.obtenerCartasEnMano();
@@ -43,8 +42,8 @@ public class VistaMano extends HBox{
 		Iterator<Carta> i = cartas.iterator();
 
 		while (i.hasNext()) {
-			Carta carta = i.next();
-			ContenedorCarta contenedor = new ContenedorCarta(carta);
+			final Carta carta = i.next();
+			final ContenedorCarta contenedor = new ContenedorCarta(carta);
 			contenedor.setOnDragDetected(new EventHandler<MouseEvent>() {
 			    public void handle(MouseEvent event) {
 

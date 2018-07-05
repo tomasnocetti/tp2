@@ -227,7 +227,8 @@ public class CartaFactory {
 		for (int i=0; i<3 ; i++) {
 			cartas.add(factory.crearCartaDragonBlancoDeOjosAzules());
 		}
-	
+		
+		cartas.addAll(factory.obtenerCartasAleatorias(22));
 		Collections.shuffle(cartas);
 		return(cartas);
 	}

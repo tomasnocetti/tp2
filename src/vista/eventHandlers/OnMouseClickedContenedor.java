@@ -46,20 +46,19 @@ public class OnMouseClickedContenedor implements EventHandler< MouseEvent>{
 				if(! jugador_oponente.equals(carta.obtenerJugador())) return;
 				this.contenedor.setStyle("-fx-background-color: yellow");
 				controlador.agregarCartaAlAtaque(carta);
-				System.out.println("ATAQUE2");
+				controlador.dibujar();
 				break;
 			case "ATAQUE_JUGADOR":
 				if(! jugador_actual.equals(carta.obtenerJugador())) return;
 				this.contenedor.setStyle("-fx-background-color: yellow");
 				controlador.atacarAlJugador(carta);
 				controlador.iniciarAccion("NORMAL");
-				System.out.println("ATAQUE_JUGADOR");
+				controlador.dibujar();
 				break;
 			case "COLOCAR_ATAQUE":
 				if(! jugador_actual.equals(carta.obtenerJugador())) return;
 				carta.colocarEnAccionDeAtaque();
 				controlador.cancelarAccion();
-				System.out.println("colocarAtaque");
 				break;
 			case "COLOCAR_DEFENSA":
 				if(! jugador_actual.equals(carta.obtenerJugador())) return;
@@ -76,10 +75,6 @@ public class OnMouseClickedContenedor implements EventHandler< MouseEvent>{
 				carta.colocarBocaArriba();
 				controlador.cancelarAccion();
 				break;
-		}
-		
-		System.out.println("EN CLICK DE CONTENEDOR");
-		
+		}		
 	}
-
 }

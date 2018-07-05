@@ -7,9 +7,10 @@ import java.util.Iterator;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
-import fiuba.algo3.tp2.Excepciones.CantidadDeSacrificiosIncorrectoException;
 
 public class ZonaDeCartasMonstruos extends Zona{
+
+	private static final long serialVersionUID = -6769818391527323243L;
 
 	public ZonaDeCartasMonstruos(Jugador jugador) {
 		super(jugador);

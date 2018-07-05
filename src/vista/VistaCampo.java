@@ -1,17 +1,12 @@
 package vista;
 
 import java.util.Collection;
-import java.util.Hashtable;
 import java.util.Iterator;
-import java.util.List;
-
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaCampo;
-import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import fiuba.algo3.tp2.Tableros.ZonaDeCartasDeCampo;
-import fiuba.algo3.tp2.Tableros.ZonaDeCartasMonstruos;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
 import vista.eventHandlers.OnDragDroppedContenedor;
@@ -67,5 +62,10 @@ public class VistaCampo extends HBox{
 			this.getChildren().add(contenedor);
 		}
 		this.setAlignment(Pos.CENTER);
+	if (jugador.equals(juego.jugadorOponente())) {
+		this.setOpacity(0.5);	
+	}else {
+		this.setOpacity(1);	
+	}
 	}
 }

@@ -14,6 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 import vista.VentanaFinDeJuego;
 import vista.VistaInformacionDeJuego;
 import vista.VistaMano;
@@ -34,6 +35,7 @@ public class ControladorDeJuego {
 	private int posicionAColocarInvocacion;
 	private VistaPuntosDeVida vistaPuntosDeVida;
 	private MediaPlayer mediaPlayer;
+	private Stage stage;
 	
 	public static final String MODO_SACRIFICIO = "SACRIFICIO";
 	public static final String MODO_NORMAL = "NORMAL";
@@ -46,12 +48,13 @@ public class ControladorDeJuego {
 	public static final String ATAQUE_JUGADOR = "ATAQUE_JUGADOR";
 	public static final String ACTIVAR_MAGICA = "ACTIVAR_MAGICA";
 	
-	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego, VistaPuntosDeVida vistaPuntosDeVida) {
+	public static void inicializar(VistaMano vistaMano, VistaInformacionDeJuego vistaInformacionDeJuego, VistaTableroDeJuego vistaTableroDeJuego, VistaPuntosDeVida vistaPuntosDeVida,Stage stage) {
 		ControladorDeJuego controlador = new ControladorDeJuego();
 		controlador.vistaTableroDeJuego = vistaTableroDeJuego;
 		controlador.vistaMano = vistaMano;
 		controlador.vistaInformacionDeJuego = vistaInformacionDeJuego;
 		controlador.vistaPuntosDeVida = vistaPuntosDeVida;
+		controlador.stage = stage;
 		controladorActual = controlador;
 	}
 
@@ -72,16 +75,21 @@ public class ControladorDeJuego {
 	}
 	
 	public void dibujar() {
-		System.out.println("REDIBUJAR TABLERO");
 		this.vistaMano.dibujar();
 		this.vistaTableroDeJuego.dibujar();
 		this.vistaInformacionDeJuego.dibujar();
 		this.vistaPuntosDeVida.dibujar();
+		Juego juego = Juego.ObtenerJuego();
+		if(juego.estadoDelJuegoTerminado()) {
+			VentanaFinDeJuego ventanaFin = new VentanaFinDeJuego();
+			ventanaFin.display(juego.obtenerGanador().obtenerNombre(), stage,juego.obtenerRazonFinalizacion());
+		}
 	}
 
 	public void continuarFase() {
 		Juego juego = Juego.ObtenerJuego();
 		
+<<<<<<< HEAD
 		if(juego.estadoDelJuegoTerminado()) {
 			this.vistaInformacionDeJuego.mostrarSeccionFinDeJuego(juego.obtenerGanador().obtenerNombre(), juego.obtenerRazonFinalizacion());
 			mediaPlayer = new MediaPlayer(new Media(new File("src/vista/gol.wav").toURI().toString()));
@@ -89,6 +97,8 @@ public class ControladorDeJuego {
 			mediaPlayer.setVolume(0.60);
 			return;
 		}
+=======
+>>>>>>> 6d0952e8e54d53b8da46fa3cf244b5a08949c6b3
 		juego.continuarASiguienteFase();
 		Jugador actual = juego.jugadorActual();
 		
@@ -217,5 +227,4 @@ public class ControladorDeJuego {
         	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra en boca abajo. No puede atacar !");
         }
 	}
-	
 }

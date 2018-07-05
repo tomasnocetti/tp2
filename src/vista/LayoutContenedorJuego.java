@@ -1,13 +1,8 @@
 package vista;
 
-import fiuba.algo3.tp2.Juego;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import vista.eventHandlers.ControladorDeJuego;
 
@@ -19,12 +14,11 @@ public class LayoutContenedorJuego extends BorderPane {
 	private VistaPuntosDeVida vistaPuntosDeVida;
 	private SceneJuego sceneJuego;
 	private SceneInicio sceneInicio;
-	private Juego juego;
 	
 	public LayoutContenedorJuego(Stage stage) {
 		super();
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		this.getStyleClass().add("layout");	
+		this.getStyleClass().add("layout");
 
 		vistaTableroDeJuego = new VistaTableroDeJuego(stage);
 		vistaInformacionDeJuego = new VistaInformacionDeJuego(this);
@@ -43,12 +37,11 @@ public class LayoutContenedorJuego extends BorderPane {
 	    
 		vistaPuntosDeVida = new VistaPuntosDeVida(this);
 		
-		this.setRight(vistaPuntosDeVida);
         this.setCenter(vistaTableroDeJuego);
         this.setLeft(vistaInformacionDeJuego);
 		this.setBottom(borderMano);
 		
-		ControladorDeJuego.inicializar(vistaMano, vistaInformacionDeJuego, vistaTableroDeJuego, vistaPuntosDeVida);
+		ControladorDeJuego.inicializar(vistaMano, vistaInformacionDeJuego, vistaTableroDeJuego, vistaPuntosDeVida,stage);
 		ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
 		controlador.dibujar();
 	}

@@ -32,13 +32,9 @@ public class OnDragDroppedContenedor implements EventHandler<DragEvent>{
         
         Carta carta = ControladorDeJuego.getDraggedCard();
         
-//        System.out.println("DENTRO DEL DRAG");
-//        System.out.println(contenedor.jugadorEsValido(carta.obtenerJugador()));
-//        System.out.println(this.clase.isInstance(carta));
         ControladorDeJuego controlador = ControladorDeJuego.obtenerInstancia();
         
         if(controlador.obtenerAccion() == "NORMAL" && contenedor.jugadorEsValido(carta.obtenerJugador()) && this.fasePermitida.equals(juego.iFaseActual())) {
-        	System.out.println("DENTRO DEL DRAG");
         	Jugador jugador = carta.obtenerJugador();
         	Integer id = Integer.parseInt(this.contenedor.getId());
         	
@@ -49,16 +45,13 @@ public class OnDragDroppedContenedor implements EventHandler<DragEvent>{
     			controlador.invocar(cartaMonstruo, id);
         		
         	}
-        	System.out.println(this.clase);
         	if(this.clase.equals(CartaTrampaOMagica.class)) {
-        		System.out.println("CartaTrampaOMagica");
         		CartaTrampaOMagica cartaTrampaOMagica = (CartaTrampaOMagica) carta; 
         		jugador.colocarCartaEnZona(cartaTrampaOMagica, id);
         		cartaTrampaOMagica.colocarBocaAbajo();
         		controlador.dibujar();
         	}
         	if(this.clase.equals(CartaCampo.class)) {
-        		System.out.println("CartaCampo");
         		CartaCampo cartaCampo = (CartaCampo) carta;
         		jugador.colocarCartaEnZona(cartaCampo,juego.jugadorOponente());
         		controlador.dibujar();

@@ -10,8 +10,8 @@ import javafx.stage.Stage;
 
 public class BotonContinuarInicioEventHandler implements EventHandler<ActionEvent>{
 	
-		private Stage stage;
-		private Scene sceneCompletarNombres;
+	private Stage stage;
+	private Scene sceneCompletarNombres;
 
 		public BotonContinuarInicioEventHandler (Stage stage, Scene sceneCompletarNombres) {
 			this.stage = stage;

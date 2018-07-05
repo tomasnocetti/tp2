@@ -1,19 +1,18 @@
 package vista;
 
-import java.awt.Label;
+
 import java.util.Observable;
 import java.util.Observer;
-
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import vista.eventHandlers.BotonAccionHandlerEvent;
 import vista.eventHandlers.BotonCancelarHandler;
 import vista.eventHandlers.BotonContinuarFaseEventHandler;
 import vista.eventHandlers.ControladorDeJuego;
@@ -49,6 +48,8 @@ public class VistaInformacionDeJuego extends VBox {
 		this.getStyleClass().add("informacion");
 	
 		Button botonContinuar = new Button("Continuar");
+		botonContinuar.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
+		botonContinuar.getStyleClass().add("button-continuar");
 		botonContinuar.prefWidth(350);
 		botonContinuar.maxWidth(350);
 		botonContinuar.setMinWidth(350);
@@ -57,10 +58,15 @@ public class VistaInformacionDeJuego extends VBox {
 		botonContinuar.setOnAction(botonContinuarHandler);
 		
 		this.contenedorInformacionJuego = new VBox();
-		this.contenedorInformacionJuego.setStyle("-fx-background-color: #FFFFFF;");
+		this.contenedorInformacionJuego.setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");
 		this.contenedorInformacionJuego.setPadding(new Insets(10));
+		this.contenedorInformacionJuego.setPrefHeight(400);
 		this.getChildren().add(botonContinuar);
 		this.getChildren().add(this.contenedorInformacionJuego);
+		VistaPuntosDeVida vistaPuntosDeVida = new VistaPuntosDeVida(layoutContenedorJuego);
+		vistaPuntosDeVida.setAlignment(Pos.CENTER);
+		vistaPuntosDeVida.setPrefHeight(200);
+		this.getChildren().add(vistaPuntosDeVida);
 	}
 	
 	public void dibujar() {
@@ -71,7 +77,7 @@ public class VistaInformacionDeJuego extends VBox {
 		Text t = new Text();
 		switch(juego.iFaseActual()) {
 			case 0:
-				t.setText("Hay una nueva carta en la mano !");
+				t.setText("Hay una nueva carta en la mano, aparecen a la derecha de la mano !");
                 break;
 			case 1:
 				t.setText("En esta fase, es el momento de poner cartas en el campo. \n" + 
@@ -95,10 +101,6 @@ public class VistaInformacionDeJuego extends VBox {
         	    BotonAccionHandlerEvent botonAccionHandlerEvent4 = new BotonAccionHandlerEvent(ControladorDeJuego.BOCA_ARRIBA); 
         	    boton4.setOnAction(botonAccionHandlerEvent4);
         	    contenedorInformacionJuego.getChildren().addAll(boton1,boton2,boton3,boton4);
-//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(0),new Insets(5));
-//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(1),new Insets(5));
-//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(2),new Insets(5));
-//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(3),new Insets(5));
         	    break;
 			case 2:
 				t.setText("En esta fase, se pueden realizar tantos ataques como quiera, pero cada monstruo puede atacar una vez.");
@@ -127,8 +129,9 @@ public class VistaInformacionDeJuego extends VBox {
 	    
 	    t.setWrappingWidth(300);
 	    t.minWidth(300);
+	    t.setFill(Color.WHITE);
 		this.contenedorInformacionJuego.getChildren().add(0,t);
-		this.contenedorInformacionJuego.setSpacing(10);	
+		this.contenedorInformacionJuego.setSpacing(10);
 	}
 
 	public void mostrarSeccionSacrificios(String numeroNecesario) {
@@ -193,7 +196,6 @@ public class VistaInformacionDeJuego extends VBox {
 		t2.setWrappingWidth(300);
 	    t2.minWidth(300);
 	    t2.setFont(Font.font ("Verdana", 20));
-	    System.out.println("ACA TERMINADO EL JUEGO");
 	  
 		this.contenedorInformacionJuego.getChildren().addAll(t, t2);
 	}

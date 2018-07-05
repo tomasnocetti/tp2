@@ -26,12 +26,8 @@ public class VistaTrampasOMagicas extends GridPane{
 		this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
 		this.getStyleClass().add("gridPane-cartas");
 		this.setAlignment(Pos.CENTER);
-//		this.setMaxHeight(200);
-//		this.setMaxWidth(150);
 		this.setPrefHeight(200);
-//		this.setPrefWidth(150);
 		this.setMinHeight(200);
-//		this.setMinWidth(150);
 	}
 	
 	public void dibujar() {
@@ -46,8 +42,6 @@ public class VistaTrampasOMagicas extends GridPane{
 		for(int i = 0; i < 5; i++) {
 			if(cartas.containsKey(i)) {
 				ContenedorCarta contenedor = new ContenedorCarta(cartas.get(i));
-				System.out.println(cartas.get(i).obtenerPosicion());
-				System.out.println(cartas.get(i));
 				contenedor.setId(String.valueOf(i));
 				OnMouseClickedMagica event5 = new OnMouseClickedMagica(contenedor);
 				contenedor.setOnMouseClicked(event5);
@@ -62,10 +56,14 @@ public class VistaTrampasOMagicas extends GridPane{
 				contenedor.setOnDragOver(event3);
 				OnDragDroppedContenedor event4 = new OnDragDroppedContenedor(CartaTrampaOMagica.class, contenedor, 1);
 				contenedor.setOnDragDropped(event4);
-			
 				contenedor.setId(String.valueOf(i));
 				this.add(contenedor, i , 0);
 			}
+		}
+		if (jugador.equals(juego.jugadorOponente())) {
+			this.setOpacity(0.5);	
+		}else {
+			this.setOpacity(1);	
 		}
 	}
 }

@@ -6,10 +6,6 @@ import fiuba.algo3.Estados.PosicionAbajo;
 import fiuba.algo3.tp2.Cartas.Carta;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
 import javafx.geometry.Insets;
-import javafx.geometry.NodeOrientation;
-import javafx.geometry.Orientation;
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 

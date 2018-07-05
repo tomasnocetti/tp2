@@ -10,18 +10,13 @@ import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.Carta;
 
 public class ZonaMano implements Serializable{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private ArrayList<Carta> cartas;
-	private Jugador jugador;
 	
 	
 	public ZonaMano(Jugador jugador) {
 		this.cartas = new ArrayList<Carta>();
-		this.jugador = jugador;
 	}
 	
 	public void agregarCarta(Carta carta) {
