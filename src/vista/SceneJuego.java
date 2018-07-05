@@ -10,8 +10,8 @@ public class SceneJuego extends Scene {
 	private Juego juego;
 	
 	public SceneJuego(Stage stage) {
-		super(new LayoutContenedorJuego(stage),900,1000);        
-		((LayoutContenedorJuego) this.getRoot()).agregarSceneJuego(this);
+		super(new LayoutContenedorJuegoTotal(stage),900,1000);        
+		((LayoutContenedorJuegoTotal) this.getRoot()).agregarSceneJuego(this);
 	}
 
 	public void agregarSceneInicio(SceneInicio sceneInicio) {

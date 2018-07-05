@@ -70,21 +70,20 @@ public class ControladorDeJuego {
 	}
 	
 	public void dibujar() {
-		System.out.println("REDIBUJAR TABLERO");
 		this.vistaMano.dibujar();
 		this.vistaTableroDeJuego.dibujar();
 		this.vistaInformacionDeJuego.dibujar();
 		this.vistaPuntosDeVida.dibujar();
+		Juego juego = Juego.ObtenerJuego();
+		if(juego.estadoDelJuegoTerminado()) {
+			VentanaFinDeJuego ventanaFin = new VentanaFinDeJuego();
+			ventanaFin.display(juego.obtenerGanador().obtenerNombre(), stage,juego.obtenerRazonFinalizacion());
+		}
 	}
 
 	public void continuarFase() {
 		Juego juego = Juego.ObtenerJuego();
 		
-		if(juego.estadoDelJuegoTerminado()) {
-			VentanaFinDeJuego ventanaFin = new VentanaFinDeJuego();
-			ventanaFin.display(juego.obtenerGanador().obtenerNombre(), stage,juego.obtenerRazonFinalizacion());
-//			this.vistaInformacionDeJuego.mostrarSeccionFinDeJuego(juego.obtenerGanador().obtenerNombre(), juego.obtenerRazonFinalizacion());			return;
-		}
 		juego.continuarASiguienteFase();
 		Jugador actual = juego.jugadorActual();
 		

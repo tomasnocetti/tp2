@@ -45,8 +45,6 @@ public class LayoutContenedorInicio extends HBox {
         botonSalir.setText("SALIR");
         botonSalir.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
         botonSalir.getStyleClass().add("button-inicio");
-        BotonHoverEventHandler botonHoverEventHandler = new BotonHoverEventHandler(botonSalir);
-        botonSalir.setOnMouseEntered(botonHoverEventHandler);
 
         BotonSalirEventHandler botonSalirEventHandler = new BotonSalirEventHandler(stage);
         botonSalir.setOnAction(botonSalirEventHandler);

@@ -66,8 +66,8 @@ public class Juego extends Observable{
 	private void terminarJuego(Jugador jugador) { 
 		this.ganador = jugador;
         this.juegoTerminado = true;
-	    setChanged();
-        notifyObservers();
+	    this.setChanged();
+        this.notifyObservers();
 	}
 	
 	public void asignarGanador(Jugador jugador, String razonFinalizacionJuego) {
@@ -109,6 +109,7 @@ public class Juego extends Observable{
 		this.iJugadorActual = random.nextInt(2);
 		jugadores.get(0).agarrar5CartasDeMazo();
 		jugadores.get(1).agarrar5CartasDeMazo();
+		this.iFaseActual = 0;
 	}
 	
 	public Jugador obtenerJugador(int num){

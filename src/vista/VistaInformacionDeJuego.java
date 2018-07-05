@@ -50,6 +50,8 @@ public class VistaInformacionDeJuego extends VBox {
 		this.getStyleClass().add("informacion");
 	
 		Button botonContinuar = new Button("Continuar");
+		botonContinuar.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
+		botonContinuar.getStyleClass().add("button-continuar");
 		botonContinuar.prefWidth(350);
 		botonContinuar.maxWidth(350);
 		botonContinuar.setMinWidth(350);

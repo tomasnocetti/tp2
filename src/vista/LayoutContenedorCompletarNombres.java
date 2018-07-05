@@ -118,12 +118,12 @@ public class LayoutContenedorCompletarNombres extends VBox{
             vbox.getChildren().add(txtState);
             return false;
 		}
-		
-		if (textfield.getText().length() > 8) {
-            txtState.setText("Los nombres de los jugadores no pueden tener mas de 8 caracteres");
-            vbox.getChildren().add(txtState);
-            return false;
-		} 
+//		
+//		if (textfield.getText().length() > 8) {
+//            txtState.setText("Los nombres de los jugadores no pueden tener mas de 8 caracteres");
+//            vbox.getChildren().add(txtState);
+//            return false;
+//		} 
 		return true;
 	}
 }

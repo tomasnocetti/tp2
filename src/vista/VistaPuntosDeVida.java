@@ -75,10 +75,6 @@ public class VistaPuntosDeVida extends VBox {
 		VBox boxJugador1 = new VBox();
 		VBox boxJugador2 = new VBox();
 		
-		
-		//this.layoutContenedorJuego = layoutContenedorJuego;
-		//this.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
-		//this.getStyleClass().add("informacion");
 		this.setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");
 		
 		this.pBar1 = new ProgressBar(8000);
