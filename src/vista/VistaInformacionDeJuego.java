@@ -1,15 +1,13 @@
 package vista;
 
-import java.awt.Label;
+
 import java.util.Observable;
 import java.util.Observer;
-
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;

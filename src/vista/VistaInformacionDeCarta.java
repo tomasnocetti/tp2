@@ -1,6 +1,5 @@
 package vista;
 
-import fiuba.algo3.tp2.Juego;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
