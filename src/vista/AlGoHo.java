@@ -29,7 +29,7 @@ public class AlGoHo extends Application{
         
         mediaPlayer = new MediaPlayer(new Media(new File("src/vista/YugiohTema.wav").toURI().toString()));
 		mediaPlayer.play();
-		mediaPlayer.setVolume(0.02);
+		mediaPlayer.setVolume(0.04);
         
         sceneCompletarNombres = new SceneCompletarNombres(stage, mediaPlayer);
         

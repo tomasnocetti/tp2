@@ -1,5 +1,6 @@
 package vista.eventHandlers;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -11,6 +12,8 @@ import fiuba.algo3.tp2.Excepciones.CartaEnAccionDefensaException;
 import fiuba.algo3.tp2.Excepciones.MonstruoBocaAbajoException;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import vista.VentanaFinDeJuego;
 import vista.VistaInformacionDeJuego;
 import vista.VistaMano;
@@ -30,6 +33,7 @@ public class ControladorDeJuego {
 	private CartaMonstruo cartaAInvocar; 
 	private int posicionAColocarInvocacion;
 	private VistaPuntosDeVida vistaPuntosDeVida;
+	private MediaPlayer mediaPlayer;
 	
 	public static final String MODO_SACRIFICIO = "SACRIFICIO";
 	public static final String MODO_NORMAL = "NORMAL";
@@ -80,6 +84,9 @@ public class ControladorDeJuego {
 		
 		if(juego.estadoDelJuegoTerminado()) {
 			this.vistaInformacionDeJuego.mostrarSeccionFinDeJuego(juego.obtenerGanador().obtenerNombre(), juego.obtenerRazonFinalizacion());
+			mediaPlayer = new MediaPlayer(new Media(new File("src/vista/gol.wav").toURI().toString()));
+			mediaPlayer.play();
+			mediaPlayer.setVolume(0.60);
 			return;
 		}
 		juego.continuarASiguienteFase();
@@ -178,6 +185,9 @@ public class ControladorDeJuego {
 		try {
 			carta.atacarJugador(jugador);
 			cartasQueAtacaron.add(carta);
+			mediaPlayer = new MediaPlayer(new Media(new File("src/vista/ouch.wav").toURI().toString()));
+			mediaPlayer.play();
+			mediaPlayer.setVolume(0.60);
 			this.vistaInformacionDeJuego.dibujar();
         }catch (CartaEnAccionDefensaException e) {
         	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra en posicion de defensa. No puede atacar !");
@@ -196,6 +206,9 @@ public class ControladorDeJuego {
 		} 
 		try {
 			CartaMonstruo carta1 = cartaClipboard.get(0);
+			mediaPlayer = new MediaPlayer(new Media(new File("src/vista/pelea.wav").toURI().toString()));
+			mediaPlayer.play();
+			mediaPlayer.setVolume(0.60);
 			carta1.atacar(carta);
 			this.cancelarAccion();
         }catch (CartaEnAccionDefensaException e) {

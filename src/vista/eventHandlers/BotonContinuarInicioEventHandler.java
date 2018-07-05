@@ -20,6 +20,7 @@ public class BotonContinuarInicioEventHandler implements EventHandler<ActionEven
 		
 		public void handle(ActionEvent arg0) {
 			this.stage.setScene(this.sceneCompletarNombres);
+			this.stage.setFullScreenExitHint("");
 			this.stage.setFullScreen(true);
 		}
 

@@ -46,11 +46,13 @@ public class CartaMagicaTest {
 		
 		CartaMonstruo monstruoAtacante = factoryAtacante.crearCartaMonstruoGenerica(1000, 1000);
 		CartaMonstruo monstruo2 = factoryAtacante.crearCartaJinzo7();
+		CartaMonstruo monstruo3 = factoryAtacante.crearCartaJinzo7();
 		CartaMonstruo monstruoDefensor = factoryDefensor.crearCartaMonstruoGenerica(1000, 1000);
 		
 		atacante.colocarCartaEnZona(monstruoAtacante, 0, new ArrayList<CartaMonstruo>());
 		atacante.colocarCartaEnZona(monstruo2, 1, new ArrayList<CartaMonstruo>());
 		defensor.colocarCartaEnZona(monstruoDefensor, 0, new ArrayList<CartaMonstruo>());
+		defensor.colocarCartaEnZona(monstruo3, 1, new ArrayList<CartaMonstruo>());
 		
 		CartaMagica agujeroNegro = factoryAtacante.crearCartaAgujeroNegro();
 		
