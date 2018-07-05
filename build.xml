@@ -205,7 +205,6 @@
 			<copydir src="src/vista/img"
 				dest="${build}/vista/img"/>
 			<copy file="src/vista/style.css" tofile="${build}/vista/style.css"/>
-			<copy file="src/vista/cartaBocaAbajo.jpg" tofile="${build}/vista/cartaBocaAbajo.jpg"/>
 			<copy file="src/vista/activarCarta.mp3" tofile="${build}/vista/activarCarta.mp3"/>
 			<copy file="src/vista/YugiohTema.wav" tofile="${build}/vista/YugiohTema.wav"/>
 		<jar destfile="${build}/dist/algo3.jar" basedir="${build}/classes"/>
