@@ -36,7 +36,7 @@
 	-fx-cursor: hand;
 }
 .button-cartas {
-	-fx-background-image: url("cartaBocaAbajo.jpg");
+	-fx-background-image: url("img/cartaBocaAbajo.jpg");
 	-fx-background-size: 100% 100%;
     -fx-text-fill: orange;
     -fx-font-size: 25;
