@@ -83,22 +83,20 @@ public class ControladorDeJuego {
 		if(juego.estadoDelJuegoTerminado()) {
 			VentanaFinDeJuego ventanaFin = new VentanaFinDeJuego();
 			ventanaFin.display(juego.obtenerGanador().obtenerNombre(), stage,juego.obtenerRazonFinalizacion());
+			mediaPlayer = new MediaPlayer(new Media(new File("src/vista/gol.wav").toURI().toString()));
+			mediaPlayer.play();
+			mediaPlayer.setVolume(0.60);
 		}
 	}
 
 	public void continuarFase() {
 		Juego juego = Juego.ObtenerJuego();
 		
-<<<<<<< HEAD
 		if(juego.estadoDelJuegoTerminado()) {
 			this.vistaInformacionDeJuego.mostrarSeccionFinDeJuego(juego.obtenerGanador().obtenerNombre(), juego.obtenerRazonFinalizacion());
-			mediaPlayer = new MediaPlayer(new Media(new File("src/vista/gol.wav").toURI().toString()));
-			mediaPlayer.play();
-			mediaPlayer.setVolume(0.60);
 			return;
 		}
-=======
->>>>>>> 6d0952e8e54d53b8da46fa3cf244b5a08949c6b3
+
 		juego.continuarASiguienteFase();
 		Jugador actual = juego.jugadorActual();
 		
