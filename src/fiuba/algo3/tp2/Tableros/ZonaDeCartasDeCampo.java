@@ -6,7 +6,8 @@ import fiuba.algo3.tp2.Cartas.CartaCampo;
 
 public class ZonaDeCartasDeCampo extends Zona{
 	
-	
+	private static final long serialVersionUID = 1L;
+
 	public ZonaDeCartasDeCampo(Jugador jugador) {
 		super(jugador);
 		this.limite = 1;

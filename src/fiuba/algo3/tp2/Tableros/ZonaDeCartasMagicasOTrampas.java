@@ -11,7 +11,8 @@ import fiuba.algo3.tp2.Cartas.CartaTrampaOMagica;
 import fiuba.algo3.tp2.Excepciones.ZonaNoTieneTrampa;
 
 public class ZonaDeCartasMagicasOTrampas extends Zona{
-	
+
+	private static final long serialVersionUID = 1L;
 	private boolean tieneTrampa;
 
 	public ZonaDeCartasMagicasOTrampas(Jugador jugador) {
@@ -44,7 +45,6 @@ public class ZonaDeCartasMagicasOTrampas extends Zona{
 	}
 
 	public Hashtable<Integer, Carta> obtenerCartasMagicasOTrampas() {
-		// TODO Auto-generated method stub
 		return this.cartas;
 	}
 
