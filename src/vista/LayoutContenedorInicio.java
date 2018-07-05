@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.Light;
 import javafx.scene.effect.Lighting;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
@@ -29,9 +30,14 @@ public class LayoutContenedorInicio extends HBox {
         botonContinuar.getStylesheets().addAll(AlGoHo.class.getResource("style.css").toExternalForm());
         botonContinuar.getStyleClass().add("button-inicio");
         
+        DropShadow shadow = new DropShadow();
+		shadow.setRadius(10.0);
+		shadow.setColor(Color.WHITE);
+        
 		Text titulo = new Text(100, 100, "Bienvenidos a YuGiOh");
 		titulo.setFill(Color.RED);
 		titulo.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 70));
+		titulo.setEffect(shadow);
 	    final Light.Distant light = new Light.Distant();
 	    light.setAzimuth(-135.0);
 	    final Lighting lighting = new Lighting();

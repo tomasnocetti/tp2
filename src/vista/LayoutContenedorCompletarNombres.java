@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Light;
 import javafx.scene.effect.Lighting;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
@@ -31,12 +32,17 @@ public class LayoutContenedorCompletarNombres extends VBox{
 		final VBox vbox3 = new VBox();
 		final VBox vbox4 = new VBox();
 		
+		DropShadow shadow = new DropShadow();
+		shadow.setRadius(5.0);
+		shadow.setColor(Color.WHITE);
+		
 		vbox1.setPrefSize(300,300);
 		vbox2.setPrefSize(300,300);
 		vbox3.setPrefSize(500,300);
 		
 		Text textoNombre1= new Text(300, 300, "NOMBRE JUGADOR 1");
 		textoNombre1.setFill(Color.RED);
+		textoNombre1.setEffect(shadow);
 		textoNombre1.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 30));
 	    final Light.Distant light1 = new Light.Distant();
 	    light1.setAzimuth(-135.0);
@@ -54,6 +60,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    
 		Text textoNombre2= new Text(300, 300, "NOMBRE JUGADOR 2");
 		textoNombre2.setFill(Color.RED);
+		textoNombre2.setEffect(shadow);
 		textoNombre2.setFont(Font.font(java.awt.Font.SERIF, FontWeight.EXTRA_BOLD, 30));
 	    final Light.Distant light2 = new Light.Distant();
 	    light1.setAzimuth(-135.0);
@@ -86,6 +93,7 @@ public class LayoutContenedorCompletarNombres extends VBox{
 	    
 	    vbox1.setAlignment(Pos.CENTER);
 	    vbox1.setPadding(new Insets(50));
+	    vbox1.setSpacing(80);
 	    vbox2.setAlignment(Pos.CENTER);
 	    vbox2.setPadding(new Insets(50));
 	    vbox3.setAlignment(Pos.CENTER);
