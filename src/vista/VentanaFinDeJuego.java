@@ -60,7 +60,6 @@ public class VentanaFinDeJuego {
 		pane.setAlignment(Pos.CENTER);
 	    pane.setSpacing(15);
 	    
-//		Scene scene = new Scene(layout,300,100);
 		Scene sceneJuego = stage.getScene();
 		LayoutContenedorJuegoTotal stackPane = (LayoutContenedorJuegoTotal) sceneJuego.getRoot();
 		stackPane.getChildren().add(layout);

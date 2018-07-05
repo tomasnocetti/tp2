@@ -37,7 +37,6 @@ public class LayoutContenedorJuego extends BorderPane {
 	    
 		vistaPuntosDeVida = new VistaPuntosDeVida(this);
 		
-		//this.setLeft(vistaPuntosDeVida);
         this.setCenter(vistaTableroDeJuego);
         this.setLeft(vistaInformacionDeJuego);
 		this.setBottom(borderMano);

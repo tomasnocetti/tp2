@@ -182,7 +182,6 @@ public class ControladorDeJuego {
 			cartasQueAtacaron.add(carta);
 			this.vistaInformacionDeJuego.dibujar();
         }catch (CartaEnAccionDefensaException e) {
-        	System.out.println("ACA LA CARTA NO SE ENCUENTRO");
         	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra en posicion de defensa. No puede atacar !");
         }
 	}

@@ -101,10 +101,6 @@ public class VistaInformacionDeJuego extends VBox {
         	    BotonAccionHandlerEvent botonAccionHandlerEvent4 = new BotonAccionHandlerEvent(ControladorDeJuego.BOCA_ARRIBA); 
         	    boton4.setOnAction(botonAccionHandlerEvent4);
         	    contenedorInformacionJuego.getChildren().addAll(boton1,boton2,boton3,boton4);
-//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(0),new Insets(5));
-//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(1),new Insets(5));
-//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(2),new Insets(5));
-//        	    contenedorInformacionJuego.setMargin(this.getChildren().get(3),new Insets(5));
         	    break;
 			case 2:
 				t.setText("En esta fase, se pueden realizar tantos ataques como quiera, pero cada monstruo puede atacar una vez.");
@@ -200,7 +196,6 @@ public class VistaInformacionDeJuego extends VBox {
 		t2.setWrappingWidth(300);
 	    t2.minWidth(300);
 	    t2.setFont(Font.font ("Verdana", 20));
-	    System.out.println("ACA TERMINADO EL JUEGO");
 	  
 		this.contenedorInformacionJuego.getChildren().addAll(t, t2);
 	}

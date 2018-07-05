@@ -35,7 +35,6 @@ public class VistaMano extends HBox{
 	
 	public void dibujar() {
 		this.getChildren().clear();
-		System.out.println("REDIBUJAR TABLERO");
 		Juego juego = Juego.ObtenerJuego();
 		Jugador jugador = juego.jugadorActual();
 		Collection<Carta> cartas = jugador.obtenerCartasEnMano();
