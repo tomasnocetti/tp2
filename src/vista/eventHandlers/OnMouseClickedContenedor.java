@@ -2,6 +2,7 @@ package vista.eventHandlers;
 
 import java.util.concurrent.TimeUnit;
 
+import fiuba.algo3.Estados.AccionDefensa;
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Cartas.CartaMonstruo;
@@ -38,7 +39,7 @@ public class OnMouseClickedContenedor implements EventHandler< MouseEvent>{
 				controlador.agregarCartaDeSacrificio(carta);
 	            break;
 			case "ATAQUE_1":
-				if(! jugador_actual.equals(carta.obtenerJugador())) return;
+				if(! jugador_actual.equals(carta.obtenerJugador()) || carta.obtenerAccion().getClass().equals(AccionDefensa.class)) return;
 				this.contenedor.setStyle("-fx-background-color: green");
 				controlador.agregarCartaAlAtaque(carta);
 				break;

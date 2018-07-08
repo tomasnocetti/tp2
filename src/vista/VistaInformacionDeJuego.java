@@ -204,6 +204,7 @@ public class VistaInformacionDeJuego extends VBox {
 		this.contenedorInformacionJuego.getChildren().clear();
 	    Text t = new Text();
 		t.setText(mensaje);
+		t.setFill(Color.RED);
 		t.setWrappingWidth(300);
 	    t.minWidth(300);
 	   

@@ -189,7 +189,14 @@ public class ControladorDeJuego {
 	public void atacarAlJugador(CartaMonstruo carta) {
 		this.accionActual = MODO_NORMAL;
 		Jugador jugador = Juego.ObtenerJuego().jugadorOponente();
-		if(jugador.obtenerMonstruos().size() > 0 || this.cartasQueAtacaron.contains(carta)) return;
+		if (jugador.obtenerMonstruos().size() > 0) {
+			this.vistaInformacionDeJuego.mensajeDeError("El contricante tiene cartas en su campo. No puede atacar directo al jugador!");
+			return;
+		}
+		if(this.cartasQueAtacaron.contains(carta)) {
+			this.vistaInformacionDeJuego.mensajeDeError("La carta ya ataco. No puede atacar !");
+			return;
+		}
 		try {
 			carta.atacarJugador(jugador);
 			cartasQueAtacaron.add(carta);
@@ -207,6 +214,11 @@ public class ControladorDeJuego {
 	public void agregarCartaAlAtaque(CartaMonstruo carta) {
 		Jugador jugador = Juego.ObtenerJuego().jugadorActual();
 		Collection cartas = jugador.obtenerMonstruos();
+		if (this.cartasQueAtacaron.contains(carta)) {
+        	this.vistaInformacionDeJuego.mensajeDeError("La carta ya ataco. No puede atacar !");
+        	this.cancelarAccion();
+			return;
+		}
 		if (this.accionActual == MODO_ATAQUE_1) {
 			cartaClipboard.add(carta);
 			this.accionActual = MODO_ATAQUE_2;
@@ -214,15 +226,18 @@ public class ControladorDeJuego {
 		} 
 		try {
 			CartaMonstruo carta1 = cartaClipboard.get(0);
+			carta1.atacar(carta);
 			mediaPlayer = new MediaPlayer(new Media(new File("src/vista/pelea.wav").toURI().toString()));
 			mediaPlayer.play();
 			mediaPlayer.setVolume(0.60);
-			carta1.atacar(carta);
+			cartasQueAtacaron.add(carta1);
 			this.cancelarAccion();
         }catch (CartaEnAccionDefensaException e) {
         	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra en posicion de defensa. No puede atacar !");
+        	this.cancelarAccion();
         }catch (MonstruoBocaAbajoException e) {
         	this.vistaInformacionDeJuego.mensajeDeError("La carta se encuentra en boca abajo. No puede atacar !");
+        	this.cancelarAccion();
         }
 	}
 }
