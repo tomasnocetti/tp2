@@ -207,6 +207,9 @@
 			<copy file="src/vista/style.css" tofile="${build}/vista/style.css"/>
 			<copy file="src/vista/activarCarta.mp3" tofile="${build}/vista/activarCarta.mp3"/>
 			<copy file="src/vista/YugiohTema.wav" tofile="${build}/vista/YugiohTema.wav"/>
+			<copy file="src/vista/gol.wav" tofile="${build}/vista/gol.wav"/>
+			<copy file="src/vista/ouch.wav" tofile="${build}/vista/ouch.wav"/>
+			<copy file="src/vista/pelea.wav" tofile="${build}/vista/pelea.wav"/>
 		<jar destfile="${build}/dist/algo3.jar" basedir="${build}/classes"/>
 	</target>
 
